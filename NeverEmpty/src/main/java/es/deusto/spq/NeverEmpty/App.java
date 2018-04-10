@@ -1,7 +1,7 @@
 package es.deusto.spq.NeverEmpty;
 
 /**
- * Hello darkness my old world!
+ * Hello darkness my old world :D!
  *
  */
 public class App 
