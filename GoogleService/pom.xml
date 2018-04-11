@@ -14,5 +14,12 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>org.datanucleus</groupId>
+      <artifactId>datanucleus-core</artifactId>
+      <version>5.1.8</version>
+	</dependency>
+    
   </dependencies>
 </project>
