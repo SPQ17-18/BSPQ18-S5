@@ -12,6 +12,25 @@ public class Producto {
 		this.nombreProducto = nombreProducto;
 		this.precioProducto = precioProducto;
 	}
+	
+	public Producto() {
+	}
+	
+	public ArrayList<Producto> rellenarArrayProduto (ArrayList<Producto> producto){
+		
+		Producto zanahoria = new Producto("Zanahoria", 3.99);
+		Producto platano = new Producto("Platano", 2.99);
+		Producto lechuga = new Producto("Lechuga", 0.99);
+		Producto tomate = new Producto("Tomate", 2.99);
+		
+		producto.add(zanahoria);
+		producto.add(platano);
+		producto.add(lechuga);
+		producto.add(tomate);
+		
+		return producto;
+		
+	}
 
 	public String getNombreProducto() {
 		return nombreProducto;
@@ -30,21 +49,10 @@ public class Producto {
 	}
 
 	public static ArrayList<Producto> getObtenerListaProductos() {
-		
-		Producto zanahoria = new Producto("Zanahoria", 12.99);
-		Producto platano = new Producto("Platano", 12.99);
-		Producto lechuga = new Producto("Lechuga", 12.99);
-		Producto tomate = new Producto("Tomate", 12.99);
-		
-		obtenerListaProductos.add(zanahoria);
-		obtenerListaProductos.add(platano);
-		obtenerListaProductos.add(lechuga);
-		obtenerListaProductos.add(tomate);
-		
 		return obtenerListaProductos;
 	}
 
-	public static void setObtenerListaProductos(ArrayList<Producto> obtenerListaProductos) {
+	public void setObtenerListaProductos(ArrayList<Producto> obtenerListaProductos) {
 		Producto.obtenerListaProductos = obtenerListaProductos;
 	}
 }

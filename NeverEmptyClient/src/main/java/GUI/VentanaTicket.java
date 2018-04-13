@@ -47,9 +47,13 @@ public class VentanaTicket extends JFrame {
 		for (int i = 0; i < titulosColumna.length; i++) {
 			dmt.addColumn(titulosColumna[i]);
 		}
-		ArrayList<Producto>lProducto = Producto.getObtenerListaProductos();
-		for (int i = 0; i < lProducto.size(); i++) {
-			Producto producto = lProducto.get(i);
+		ArrayList<Producto>lProducto = new ArrayList<Producto>();
+		ArrayList<Producto>listaProducto = new ArrayList<Producto>();
+		Producto p = new Producto();
+		listaProducto = p.rellenarArrayProduto(lProducto);
+		
+		for (int i = 0; i < listaProducto.size(); i++) {
+			Producto producto = listaProducto.get(i);
 			String fila[] = {producto.getNombreProducto(),String.valueOf(producto.getPrecioProducto())};
 			dmt.addRow(fila);
 		}
@@ -60,9 +64,18 @@ public class VentanaTicket extends JFrame {
 		lblTotal.setBounds(54, 240, 46, 14);
 		getContentPane().add(lblTotal);
 		
-		JLabel lblprecioTotal = new JLabel("New label");
+		JLabel lblprecioTotal = new JLabel();
 		lblprecioTotal.setBounds(320, 240, 46, 14);
 		getContentPane().add(lblprecioTotal);
+		double t = 0;
+		double pr = 0;
+		if (table.getRowCount()>0) {
+			for (int i = 0; i < table.getRowCount(); i++) {
+				pr = Double.parseDouble((String) table.getValueAt(i, 1));
+				t+=pr;
+			}
+			lblprecioTotal.setText(t+"€");
+		}
 		
 		JButton jbbotonVolver = new JButton("Volver");
 		jbbotonVolver.addActionListener(new ActionListener() {
