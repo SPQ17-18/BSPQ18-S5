@@ -43,4 +43,8 @@ public class Google implements IGoogleGateway{
 		}
 		return message;
 	}
+	
+	public String login(String email, String password) {
+		return this.register(email, password);
+	}
 }
