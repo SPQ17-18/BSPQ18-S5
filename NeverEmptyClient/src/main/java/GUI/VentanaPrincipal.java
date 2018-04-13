@@ -68,7 +68,7 @@ public class VentanaPrincipal extends JFrame {
 		add(btnPanel1);
 		add(btnPanel2);
 		
-		//Añadir boton interno
+		//Solucionar boton interno
 
 
 	}
