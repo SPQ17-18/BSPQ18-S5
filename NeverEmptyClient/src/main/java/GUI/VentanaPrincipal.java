@@ -10,18 +10,20 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class VentanaPrincipal extends JFrame {
+public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	JLabel lblTitulo;
 	JButton btnPanel1, btnPanel2, btnPanelInterno2;
 	JTextArea textArea;
 	JPanel panel1, panel2;
 	JTextArea campo;
+	String texto;
 	
 	Vector vProductos;
 
@@ -44,29 +46,39 @@ public class VentanaPrincipal extends JFrame {
 		panel1.setBackground(Color.GREEN);
 		panel1.setBounds(5,112, 370, 200);
 		panel1.setLayout(null);
+		panel1.setVisible(true);
 		
 		panel2 = new JPanel();
 		panel2.setBackground(Color.RED);
 		panel2.setBounds(5,112, 370, 200);
 		panel2.setLayout(null);
+		panel2.setVisible(false);
 		
-		lblTitulo = new JLabel ("Bienvenido a NeverEmpty");
+		lblTitulo = new JLabel ("Seleccione los productos que desea comprar");
 		lblTitulo.setBounds(10,14,221,51);
 		
 		btnPanel1 = new JButton("Catalogo");
 		btnPanel1.setBounds(10, 76, 95, 23);
-		
+		btnPanel1.addActionListener(this);
 		
 		btnPanel2 = new JButton("Lista de Compra");
 		btnPanel2.setBounds(109, 76, 135, 23);
+		btnPanel2.addActionListener(this);
+		
+		textArea = new JTextArea();
+		textArea.setBounds(10,117,350,181);
+		textArea.setText(texto);
 		
 		cargarComponentesPanel1();
 		cargarComponentesPanel2();
 		
-		add(panel1);
 		add(lblTitulo);
 		add(btnPanel1);
 		add(btnPanel2);
+		
+		add(panel2);
+		add(panel1);
+		
 		
 		//Solucionar boton interno
 
@@ -74,10 +86,10 @@ public class VentanaPrincipal extends JFrame {
 	}
 	
 private void cargarComponentesPanel2() {
-		btnPanelInterno2 = new JButton("Comprar");
-		btnPanelInterno2.setBounds(200, 10, 90, 25);
-		panel2.add(btnPanelInterno2);
-		
+		/*
+		 * listaCompra = new String();
+		 * lblListaCompra = new JLabel;
+		 * */
 		campo = new JTextArea();
 		textArea.setBounds(10, 10, 180, 25);
 		String campo = "Miembros:" + "\nAlvaro" + "\nEnara" + "\nCristian" + "\nJesus" + "\nRebeca";
@@ -86,9 +98,15 @@ private void cargarComponentesPanel2() {
 private void cargarComponentesPanel1() {
 	textArea = new JTextArea();
 	textArea.setBounds(10, 10, 350, 181);
-	String texto = "Miembros:" + "\nAlvaro" + "\nEnara" + "\nCristian" + "\nJesus";
-	textArea.setText(texto);
+//	String texto = "Miembros:" + "\nAlvaro" + "\nEnara" + "\nCristian" + "\nJesus";
+//	textArea.setText(texto);
 	panel1.add(textArea);
+	
+	btnPanelInterno2 = new JButton("Comprar");
+	btnPanelInterno2.setBounds(200, 10, 90, 25);
+	panel1.add(btnPanelInterno2);
+	btnPanelInterno2.addActionListener(this);
+	
 	}
 
 
@@ -157,6 +175,24 @@ private void cargarComponentesPanel1() {
 		VentanaPrincipal v = new VentanaPrincipal();
 		v.setVisible(true);
 	}
+
+public void actionPerformed(ActionEvent e) {
+	if (e.getSource()==btnPanel1) {
+		panel1.setVisible(true);
+		panel2.setVisible(false);
+	}
+	
+	if (e.getSource()==btnPanel2) {
+		panel1.setVisible(false);
+		panel2.setVisible(true);
+	}
+	
+	if (e.getSource()==btnPanelInterno2) {
+		
+		
+	}
+	
+}
 
 
 }
