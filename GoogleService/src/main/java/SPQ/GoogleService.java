@@ -8,24 +8,20 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import dao.UserDAO;
+import data.User;
 
 public class GoogleService extends Thread {
 	private DataInputStream in;
 	private DataOutputStream out;
 	private Socket tcpSocket;
-	private List<String> emails = new ArrayList<String>();
+	// Se instancia el socket
 	public GoogleService(Socket socket) {
 		try {
-			this.emails.add("xsarri9@opendeusto.es");
-			this.emails.add("mikel.fdez@opendeusto.es");
-			this.emails.add("cristian.perez@opendeusto.es");
-			this.emails.add("enara.etxaniz@opendeusto.es");
-			this.emails.add("a");
 			this.tcpSocket = socket;
 		    this.in = new DataInputStream(socket.getInputStream());
 			this.out = new DataOutputStream(socket.getOutputStream());
-			this.start();
+			this.start();	//start llama a run()
 		} catch (IOException e) {
 			System.err.println("# GoogleService - TCPConnection IO error:" + e.getMessage());
 		}
@@ -34,9 +30,8 @@ public class GoogleService extends Thread {
 	public void run() {
 		try {
 			String data = this.in.readUTF();
-			
 			System.out.println("   - GoogleService - Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data + "'");					
-			data = this.mail(data);
+			data = this.readData(data);
 			this.out.writeUTF(data);					
 			System.out.println("   - GoogleService - Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data.toUpperCase() + "'");
 		} catch (EOFException e) {
@@ -52,13 +47,23 @@ public class GoogleService extends Thread {
 		}
 	}
 	
-	public String mail(String msg) {
-		for (int i=0; i<emails.size(); i++){
-			if (emails.get(i).equals(msg)){
-				return "Correct";
+	public String readData(String data) {
+		String[] arrayData = data.split(",");
+		try {
+			String email = arrayData[0];
+			String password = arrayData[1];
+			
+			UserDAO userDAO = new UserDAO();
+			User user = userDAO.getUser(email);
+			
+			if (user.getPassword().equals(password)) {
+				data = "correct";
+			}else {
+				data = "incorrect";
 			}
+		}catch (RuntimeException e) {
+			System.err.println(" # GoogleService - Wrong data");
 		}
-		
-		return "Incorrect";
+		return data;
 	}
 }
