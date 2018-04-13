@@ -3,11 +3,36 @@ package SPQ;
 import dao.UserDAO;
 import data.User;
 import gateway.Google;
+import remote.INeverEmptyFacade;
+import remote.NeverEmptyFacade;
+import java.rmi.Naming;
 
 public class NeverEmptyServer {
 
-	public NeverEmptyServer() {
+	public static void main(String[] args) {
+		if (args.length != 4) {
+			System.exit(0);
+		}
 
+		if (System.getSecurityManager() == null) {
+			System.setSecurityManager(new SecurityManager());
+		}
+
+		String nameNeverEmpty = "//" + args[0] + ":" + args[1] + "/" + args[3];
+
+
+		try {
+			NeverEmptyServer neverEmptyServer = new NeverEmptyServer();
+			
+			INeverEmptyFacade neverEmptyFacade = new NeverEmptyFacade(neverEmptyServer);			
+			Naming.rebind(nameNeverEmpty, neverEmptyFacade);
+			System.out.println("* NeverEmpty Service '" + nameNeverEmpty + "' active and waiting...");
+			
+		
+		} catch (Exception e) {
+			System.err.println("$ NeverEmptyServer exception: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 	public boolean register(String username, String email, String password) {
