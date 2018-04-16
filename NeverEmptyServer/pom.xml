@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<server.IP>127.0.0.1</server.IP>
 		<server.port>1099</server.port>
-		<server.Name>NeverEmptyServer</server.Name>
+		<server.Name>NeverEmptyServerManager</server.Name>
 		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
 	</properties>
@@ -128,7 +128,7 @@
 						<artifactId>exec-maven-plugin</artifactId>  
 						<version>1.2.1</version>  
 						<configuration>  
-									<mainClass>SPQ.NeverEmptyServer</mainClass>
+									<mainClass>SPQ.NeverEmptyServerManager</mainClass>
 									<systemProperties>
 										
 										<systemProperty>
@@ -151,6 +151,8 @@
 									</arguments>  
 								</configuration>  
 					</plugin>  
+		
+						
 				</plugins>  
 			</build>  
 		</profile>  

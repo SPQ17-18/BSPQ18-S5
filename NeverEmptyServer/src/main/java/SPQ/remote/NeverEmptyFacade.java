@@ -1,4 +1,4 @@
-package remote;
+package SPQ.remote;
 
 import SPQ.NeverEmptyServer;
 

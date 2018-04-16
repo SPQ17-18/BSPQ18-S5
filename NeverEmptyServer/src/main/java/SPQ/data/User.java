@@ -1,21 +1,16 @@
-package dto;
+package SPQ.data;
 
-import java.io.Serializable;
-
-
-public class UserDTO implements Serializable{
-	private static final long serialVersionUID = 1L;
+public class User {
 	private String username;
 	private String email;
 	private String password;
-	private String status;
 	
-	public UserDTO (String username, String email, String password) {
+	public User(String username, String email, String password) {
+		super();
 		this.username = username;
 		this.email = email;
 		this.password = password;
-		this.status = "request";
-	}
+		}
 
 	public String getUsername() {
 		return username;
@@ -40,14 +35,6 @@ public class UserDTO implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
+	
 	
 }

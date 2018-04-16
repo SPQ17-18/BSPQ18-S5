@@ -1,4 +1,4 @@
-package gateway;
+package SPQ.gateway;
 
 
 import java.io.DataInputStream;

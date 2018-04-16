@@ -1,8 +1,8 @@
-package dao;
+package SPQ.dao;
 
 import java.util.Arrays;
 
-import data.User;
+import SPQ.data.User;
 
 public class UserDAO {
 	private User[] tmpUsers = {
