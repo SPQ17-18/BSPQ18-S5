@@ -14,15 +14,21 @@ import java.awt.event.ActionEvent;
 import javax.swing.JEditorPane;
 
 public class VentanaPrincipal extends JFrame {
-	private JTextField txtUsuario;
+	VentanaInicio vInicio= new VentanaInicio();
 	
 	//ArrayList de usuarios registrados
-	private ArrayList<Usuario> UsuarioRegistrados;
+	//private ArrayList<Usuario> UsuarioRegistrados;
 	//Ventana de inicio
-	private JFrame ventanaInicio;
+	//private JFrame ventanaInicio;
+	
 	//Usuario
 	private Usuario u;
-	private JTextField textField;
+
+	private JTextField textField_usernamelog;
+	
+
+    
+
 	
 	public VentanaPrincipal() {
 		
@@ -46,22 +52,21 @@ public class VentanaPrincipal extends JFrame {
 		getContentPane().add(btnLogOut);
 		
 		JLabel lblUsuario = new JLabel("Usuario :");
-		lblUsuario.setBounds(228, 40, 56, 16);
+		lblUsuario.setBounds(197, 40, 56, 16);
 		getContentPane().add(lblUsuario);
-	
 		
-		txtUsuario = new JTextField();
-		txtUsuario.setBounds(291, 37, 78, 22);
-		//Muestra el usuario que ha iniciado sesion en el txtUSuario
-		//txtUsuario.setText(u.getUsername());
 		
-		getContentPane().add(txtUsuario);
-		txtUsuario.setColumns(10);
+		textField_usernamelog = new JTextField();
+		textField_usernamelog.setBounds(265, 37, 116, 22);
+		getContentPane().add(textField_usernamelog);
+		textField_usernamelog.setColumns(10);
+		
+		
+		//System.out.println(vInicio.getNombreUsuarioLogueado());
 
 
 		
 		
 
 	}
-
 }

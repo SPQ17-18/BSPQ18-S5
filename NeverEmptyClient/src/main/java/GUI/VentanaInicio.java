@@ -24,13 +24,7 @@ public class VentanaInicio extends JFrame implements ActionListener {
 	private JTextField textFieldUserFinal;
 	private JPasswordField passwordFieldFinal;
 	private JButton botonLogin;
-	
-	//VentanaRegistro vRegistro= new VentanaRegistro();
-	
-	//Declaro un arrayList de usuarios
-	//ArrayList<Usuario> UsuarioRegistrados= new ArrayList<Usuario>();
-	
-	
+
 	
 	public VentanaInicio() {
 		
@@ -87,28 +81,73 @@ public class VentanaInicio extends JFrame implements ActionListener {
 			
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+						
 				//Comprobar que los datos insertados en el campo esten en el ArrayList 
 				String user= textFieldUserFinal.getText().toString();
-				String password= passwordFieldFinal.getPassword().toString();
+				
+				//Creamos un metodo para obtener la passsword no encripada
+				String pass="";
+				char [] password= passwordFieldFinal.getPassword();
+				for(int x=0;x<password.length;x++) {
+					pass+=password[x];
+				}
+				System.out.println("LA CONTRASENIA ES"+ pass);
+				//String password= passwordFieldFinal.getPassword().toString();
+				//String password= passwordFieldFinal.getPassword();
+				
+				
+				System.out.println("La password introducida es"+ password);
 				
 				//Comprobar que esos datos estan en un la lista de usuario registrados
 				
 				VentanaRegistro vRegistro= new VentanaRegistro();
 				
-				System.out.println(vRegistro.getUsuarioRegistrados());
 				
-				boolean enc= encontrarUsuario(vRegistro.getUsuarioRegistrados(), user, password);
+				//Metemos a mano un usuario
 				
-				if(enc){
+				Usuario u1= new Usuario();
+				u1.setUsername("jesus");
+				u1.setPassword("12");
+				u1.setMail("jesus@hotmail.com");
+				
+				//Metemos a mano otro usuario
+				
+				Usuario u2= new Usuario();
+				u2.setUsername("cristian");
+				u2.setPassword("13");
+				u2.setMail("cristian@hotmail.com");
+				
+				//Aniadimos estos usuarios a la 
+				vRegistro.UsuarioRegistrados.add(u1);
+				vRegistro.UsuarioRegistrados.add(u2);
+				
+				//Mostramos los usuarios registrados en el ArrayList<Usuario> usuarioRegistrados
+				
+				System.out.println("ENTRA AL LOGIN Y ESTOS SON LOS USUARIOS QUE YA ESTAN"+ vRegistro.getUsuarioRegistrados().toString());
+				
+				//Comprobamos si el usuario y la contrasenia introducidas se encuentra en el ArrayList de usuarios registrados
+				
+				ArrayList<Usuario> uRegistrados = vRegistro.getUsuarioRegistrados();
+				
+				//System.out.println(uRegistrados.size());
+				
+				int enc= encontrarUsuario(uRegistrados, user, pass);
+				
+				System.out.println("El valor de enc es =" +enc);
+	
+				if(enc != -2 && enc != -1){ //Si devuelve -2, significa que no lo ha encontrado. Por lo que si es distinto de -2, lo encuentra
 					
-					
+					System.out.println("EL USUARIO ESTA REGISTRADO");
 					//Abrimos la ventana principal
 					VentanaPrincipal vPrincipal = new VentanaPrincipal();
 					vPrincipal.setVisible(true);
 					//Y cerramos la ventana de inicio al haber podido iniciar sesion
 					dispose();
+				}else if(enc == -1) {//El nombre de usuario coincide pero la contrasenia NO
+					System.out.println("Tienes que introducir bien la password");
+					JOptionPane.showMessageDialog(null, "ERROR! Tienes que introducir bien la password", "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
+					
 				else{
 					System.out.println("Tienes que registrarte antes de iniciar sesion");
 					JOptionPane.showMessageDialog(null, "ERROR! Tienes que registrarte antes de iniciar sesion", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -144,7 +183,8 @@ public class VentanaInicio extends JFrame implements ActionListener {
 	public void mostrarUsuarios(ArrayList<Usuario> aUsuarios){
 	
 		for(int x=0;x<aUsuarios.size();x++) {
-			  System.out.println(aUsuarios.get(x));
+			  System.out.println(aUsuarios.get(x).toString());
+			  
 			}
 		
 	}
@@ -153,13 +193,14 @@ public class VentanaInicio extends JFrame implements ActionListener {
 	//Funcion encontrar usuario que devuelve TRUE si ha encontrado al usuario en el ArrayList de Usuarios registrados
 	//Le pasamos el arraylist de UsuarioRegistrados y el usuario y la contra del textfield
 	
+	/*
 	public boolean encontrarUsuario (ArrayList<Usuario> aUsuarios, String user, String password) {
 		boolean enc= false;
 		int pos=0;//Posicion del ArrayList
 		 
+		System.out.println("USUARIOS REGISTRADOS"+aUsuarios.size());
 		
-		
-		while(!enc && pos<aUsuarios.size())
+		while(!enc && pos < aUsuarios.size())
 		{
 			Usuario u= aUsuarios.get(pos);
 			if(u.getUsername().equalsIgnoreCase(user) && u.getPassword().equals(password)) {
@@ -167,15 +208,51 @@ public class VentanaInicio extends JFrame implements ActionListener {
 				
 			}else if(u.getUsername().equalsIgnoreCase(user) && !u.getPassword().equals(password)) {
 				//Coincide con el nombre del cliente pero no con la contra
-				enc=false;
-			}else
 				pos++;
+		//}else
+				//System.out.println("El usuario tiene que registrarse antes de iniciar sesion");
 		}
-		
-		
+		}
 		return enc;
 		
 }
+	*/
+	
+	/**
+	 * Método para buscar usuario (si nombre y contraseña igual a contraseña y nombre ingresado por el usuario entonces usuario encontrado)
+	 * @param a
+	 * @param nom
+	 * @param con
+	 * @return
+	 */
+	public static int encontrarUsuario(ArrayList<Usuario> aUsuarios, String user, String password)
+	{
+		boolean enc=false;
+		int pos=0,resul=-2;
+		System.out.println("USUARIOS REGISTRADOS = " +aUsuarios.size());
+		
+		while(!enc && pos<aUsuarios.size())
+		{
+			Usuario u = aUsuarios.get(pos);
+			if(u.getUsername().equalsIgnoreCase(user) && u.getPassword().equals(password))
+			{	
+				enc=true;
+				resul=pos;
+			}
+			else if(u.getUsername().equalsIgnoreCase(user) && !u.getPassword().equals(password))
+			{	
+				resul=-1;
+				enc=true;
+			}
+			else
+				pos++;
+		}
+		if(enc)
+			return resul;
+		else
+			return -2;
+	}
+	
 	
 	
 	public void actionPerformed(ActionEvent e) {		

@@ -34,14 +34,20 @@ public class Usuario {
 		this.mail=mail;
 	}
 	
-	public ArrayList<Usuario> rellenar (ArrayList<Usuario> usuario){
+	public ArrayList<Usuario> rellenar (ArrayList<Usuario> UsuarioRegistrados){
 		
 		Usuario u1= new Usuario("jesus","12");
 		
-		usuario.add(u1);
+		UsuarioRegistrados.add(u1);
 		
-		return usuario;
+		return UsuarioRegistrados;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [username=" + username + ", password=" + password + ", mail=" + mail + "]";
+	}
+
 
 	//Getters y Setters
 	public String getUsername() {

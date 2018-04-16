@@ -27,6 +27,7 @@ public class VentanaRegistro extends JFrame implements ActionListener {
 	private JTextField textFieldUsername;
 	
 	ArrayList<Usuario> UsuarioRegistrados= new ArrayList<Usuario>();
+	Usuario u= new Usuario();
 
 	
 	public ArrayList<Usuario> getUsuarioRegistrados() {
@@ -103,7 +104,7 @@ public class VentanaRegistro extends JFrame implements ActionListener {
 						//Comprobamos que el usuario introducido introduzca correctamente los datos.
 						Boolean SignUp= ComprobacionSignup();
 						
-						if(!SignUp) { //Si no esta el usuario en el arraylist de Usuarios Registrados que se registre
+						if(SignUp) { 
 							
 						System.out.println("Ha llegado");
 						vInicio.mostrarUsuarios(UsuarioRegistrados);
@@ -118,7 +119,12 @@ public class VentanaRegistro extends JFrame implements ActionListener {
 						//Creo un nuevo usuario con los datos y lo aniado al arrayList de usuarios registrados
 						
 						Usuario nuevo = new Usuario(user, pass,mail);
-						UsuarioRegistrados.add(nuevo);  
+					
+						rellenarArray(nuevo, UsuarioRegistrados);
+						
+						System.out.println(UsuarioRegistrados.toString());
+						
+						//UsuarioRegistrados.add(nuevo);  
 						
 						
 						//Registro completado con exito
@@ -154,6 +160,23 @@ public class VentanaRegistro extends JFrame implements ActionListener {
 		
 	}
 	
+	public static void rellenarArray(Usuario uNuevo, ArrayList<Usuario> uRegistrados) {
+		boolean enc= false;
+		int pos=0;
+	
+		
+		while(!enc && pos< uRegistrados.size()) {
+			if(uRegistrados.get(pos).getUsername().equals(uNuevo.getUsername()) && uRegistrados.get(pos).getPassword().equals(uNuevo.getUsername())){
+				System.out.println("El nuevo usuario ya esta en la lista de registrados");
+
+			}else {
+				uRegistrados.add(uNuevo);
+			}
+			
+		}
+	
+	}
+	
 	//Para comprobar que el usuario se pueda registrar correctamente
 	
 	public boolean ComprobacionSignup() {
@@ -180,15 +203,14 @@ public class VentanaRegistro extends JFrame implements ActionListener {
 			String pass= passwordField.getPassword().toString();
 			//String mail= textFieldMail.getText();
 			
-			registrarse= vInicio.encontrarUsuario(UsuarioRegistrados, user, pass);
-			
+			int registro= vInicio.encontrarUsuario(UsuarioRegistrados, user, pass);
 			System.out.println("PASA A REGISTRARSE");
 			
-			if (!registrarse) {
+			if (registro == -2) { //No esta en la lista de usuarios y tendra que registrarse 
 				System.out.println("ENTRA AL IF");
 				//this.dispose();
 				//JOptionPane.showMessageDialog(this, "El registro se ha realizado con exito");
-				
+				registrarse=true;
 				//Abro la ventana de inicio.
 				
 		}
