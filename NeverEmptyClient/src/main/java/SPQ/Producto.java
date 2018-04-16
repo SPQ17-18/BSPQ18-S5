@@ -3,7 +3,6 @@ package SPQ;
 import java.util.ArrayList;
 
 public class Producto {
-	public static ArrayList<Producto> obtenerListaProductos;
 	private String nombreProducto;
 	private double precioProducto;
 	
@@ -48,11 +47,5 @@ public class Producto {
 		this.precioProducto = precioProducto;
 	}
 
-	public static ArrayList<Producto> getObtenerListaProductos() {
-		return obtenerListaProductos;
-	}
-
-	public void setObtenerListaProductos(ArrayList<Producto> obtenerListaProductos) {
-		Producto.obtenerListaProductos = obtenerListaProductos;
-	}
+	
 }
