@@ -1,7 +1,10 @@
 package GUI;
 
+import java.awt.Dimension;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -17,19 +20,26 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class VentanaRegistro extends JFrame implements ActionListener {
+
 	private JPasswordField passwordField, passwordField_1;
 	private JButton btnBack,btnSignUp;
 	private JTextField textFieldMail;
 	private JTextField textFieldUsername;
 	
-	//ArrayList de usuarios registrados
-	private ArrayList<Usuario> RegistroUsuarios;
+	ArrayList<Usuario> UsuarioRegistrados= new ArrayList<Usuario>();
+
+	
+	public ArrayList<Usuario> getUsuarioRegistrados() {
+		return UsuarioRegistrados;
+	}
+
+	public void setUsuarioRegistrados(ArrayList<Usuario> usuarioRegistrados) {
+		UsuarioRegistrados = usuarioRegistrados;
+	}
+
 	//La ventana de inicio
-	private JFrame VentanaInicio;
-	
-	//ArrayList de usuarios registrados
-	private ArrayList<Usuario> UsuarioRegistrados;
-	
+	VentanaInicio vInicio= new VentanaInicio();
+		
 	public VentanaRegistro() {
 		
 		setBounds(330, 80, 400, 400);
@@ -89,45 +99,40 @@ public class VentanaRegistro extends JFrame implements ActionListener {
 		btnSignUp.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				
-					String pass = passwordField.getText();
-					String pass1 = passwordField_1.getText();
-					
-					//Comprueba que no haya ningun campo libre
-					if(textFieldMail.getText().equals("") || textFieldUsername.getText().equals("") || passwordField.getText().equals("") || passwordField_1.getText().equals("")){
-						JOptionPane.showMessageDialog(null, "ERROR! Falta por rellenar algún campo", "ERROR", JOptionPane.ERROR_MESSAGE);
-			
-					}
-					//Comprueba que la contrasenia coincida
-					if (!passwordField.getText().equals(passwordField_1.getText())){
-						JOptionPane.showMessageDialog(null, "ERROR! La contrasenia ha de coincidir", "ERROR", JOptionPane.ERROR_MESSAGE);
-					}
-					
-					//Comprobar que en el arrayList de UsuariosRegistrados no se introduza el mismo usuario
-					
-					
-					else{
+						//Comprobamos que el usuario introducido introduzca correctamente los datos.
+						Boolean SignUp= ComprobacionSignup();
+						
+						if(!SignUp) { //Si no esta el usuario en el arraylist de Usuarios Registrados que se registre
+							
+						System.out.println("Ha llegado");
+						vInicio.mostrarUsuarios(UsuarioRegistrados);
+						//Obtenemos la contrasenia que ha introducido
+						String pass = passwordField.getPassword().toString();
+						
+						//Obtenemos el usuario y el mail que se ha introducido.
 						String user = textFieldUsername.getText();
 						String mail = textFieldMail.getText();	
 						
+						System.out.println(user);
 						//Creo un nuevo usuario con los datos y lo aniado al arrayList de usuarios registrados
 						
-						Usuario nuevo = new Usuario();
-						nuevo.setMail(mail);
-						nuevo.setPassword(pass);
-						nuevo.setUsername(user);
-						UsuarioRegistrados.add(nuevo);
+						Usuario nuevo = new Usuario(user, pass,mail);
+						UsuarioRegistrados.add(nuevo);  
+						
 						
 						//Registro completado con exito
 						JOptionPane.showMessageDialog(null, "Registro completado con exito", "REGISTRADO", JOptionPane.INFORMATION_MESSAGE);
 						
-						//Como ya se ha realizado el registro con exito, vuelvo a poner los campos vacios
+						//Como ya se ha realizado el registro con exito, vuelvo a la ventana de inicio para poder realizar el registro
+						System.out.println("LLego hasta el final");
+						dispose();
+											
+						VentanaInicio vInicio= new VentanaInicio();
+						vInicio.setVisible(true);
 						
-						textFieldMail.setText("");
-						textFieldUsername.setText("");
-						passwordField.setText("");
-						passwordField_1.setText("");
+						
+
 						
 						
 					}
@@ -147,6 +152,48 @@ public class VentanaRegistro extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	//Para comprobar que el usuario se pueda registrar correctamente
+	
+	public boolean ComprobacionSignup() {
+		
+		boolean registrarse = false;
+		
+		if (textFieldMail.getText().equals("")) {
+			System.out.println("El mail no puede estar vacio");
+			JOptionPane.showMessageDialog(null, "ERROR! Introduce un mail", "ERROR", JOptionPane.ERROR_MESSAGE);
+		} else if (new String(passwordField.getPassword()).isEmpty()) {
+			System.out.println("Introduce una contrasenia");
+			JOptionPane.showMessageDialog(null, "ERROR! Introduce una cotrasenia", "ERROR", JOptionPane.ERROR_MESSAGE);
+		} else if (new String(passwordField_1.getPassword()).isEmpty()) {
+			System.out.println("Confirma la contrasenia");
+			JOptionPane.showMessageDialog(null, "ERROR! Introduce una segunda contrasenia", "ERROR", JOptionPane.ERROR_MESSAGE);
+		} else if (!new String(passwordField.getPassword()).equals(new String(passwordField_1.getPassword()))) {
+			System.out.println("Las contrasenias han de coincidir");
+			JOptionPane.showMessageDialog(null, "ERROR! Las contrasenias han de coincidir", "ERROR", JOptionPane.ERROR_MESSAGE);
+		} else if(textFieldUsername.getText().equals("")) {
+			System.out.println("El usuario no puede estar vacio");
+			JOptionPane.showMessageDialog(null, "ERROR! Introduce un usuario", "ERROR", JOptionPane.ERROR_MESSAGE);
+		}
+			String user= textFieldUsername.getText();
+			String pass= passwordField.getPassword().toString();
+			//String mail= textFieldMail.getText();
+			
+			registrarse= vInicio.encontrarUsuario(UsuarioRegistrados, user, pass);
+			
+			System.out.println("PASA A REGISTRARSE");
+			
+			if (!registrarse) {
+				System.out.println("ENTRA AL IF");
+				//this.dispose();
+				//JOptionPane.showMessageDialog(this, "El registro se ha realizado con exito");
+				
+				//Abro la ventana de inicio.
+				
+		}
+		
+		return registrarse;
 	}
 		
 	
