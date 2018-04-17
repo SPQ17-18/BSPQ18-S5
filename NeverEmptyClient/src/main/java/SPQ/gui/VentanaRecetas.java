@@ -1,10 +1,12 @@
-package GUI;
+package SPQ.gui;
 
 import javax.swing.JFrame;
 
-public class VentanaOfertas extends JFrame{
+public class VentanaRecetas extends JFrame{
 
-	public VentanaOfertas() {
+	
+	
+	public VentanaRecetas() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		this.setSize(400, 375);
@@ -17,30 +19,15 @@ public class VentanaOfertas extends JFrame{
 }
 	
 	
-	
 	private void inicializarComponentes() {
 		// TODO Auto-generated method stub
 		
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public static void main(String[] args) {
-		
-		
-		
+		// TODO Auto-generated method stub
+
 	}
 
 }

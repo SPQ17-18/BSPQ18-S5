@@ -1,4 +1,4 @@
-package GUI;
+package SPQ.gui;
 
 import javax.swing.JFrame;
 
