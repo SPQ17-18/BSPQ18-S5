@@ -1,4 +1,4 @@
-package GUI;
+package SPQ.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -74,7 +74,7 @@ public class VentanaTicket extends JFrame {
 				pr = Double.parseDouble((String) table.getValueAt(i, 1));
 				t+=pr;
 			}
-			lblprecioTotal.setText(t+"€");
+			lblprecioTotal.setText(t+"ï¿½");
 		}
 		
 		JButton jbbotonVolver = new JButton("Volver");
