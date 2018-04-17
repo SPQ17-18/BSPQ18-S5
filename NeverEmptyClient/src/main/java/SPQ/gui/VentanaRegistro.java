@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 
-import SPQ.Usuario;
 import SPQ.controller.NeverEmptyController;
 
 import javax.swing.JPasswordField;

@@ -5,8 +5,6 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 
-import SPQ.Usuario;
-
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -21,8 +19,7 @@ public class VentanaPrincipal extends JFrame {
 	//Ventana de inicio
 	//private JFrame ventanaInicio;
 	
-	//Usuario
-	private Usuario u;
+
 
 	private JTextField textField_usernamelog;
 	
