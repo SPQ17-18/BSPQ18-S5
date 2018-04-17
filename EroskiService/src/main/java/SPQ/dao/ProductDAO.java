@@ -1,52 +1,51 @@
 package SPQ.dao;
 
-import java.util.Arrays;
-
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
-import javax.jdo.Query;
-import SPQ.data.User;
 
-public class UserDAO implements IUserDAO{
+import SPQ.data.Product;
+import javax.jdo.Extent;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProductDAO {
+
 	private PersistenceManagerFactory persistenceManagerFactory;
 
-	public UserDAO() {
+	public ProductDAO() {
 		this.persistenceManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
-
-	//Buscar usuario por email
-	public User getUser(String email) {
+	public List<Product> getProducts() {
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 
 		Transaction tx = pm.currentTransaction();
-		User user = null;
+		List<Product> products = new ArrayList<Product>();
 
 		try {
-			System.out.println("   * Buscando user: " + email);
 
-			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE email == '" + email +"'");
-			query.setUnique(true);
-			user = (User) query.execute();
-			tx.commit();
+			tx.begin();			
+			Extent<Product> extent = pm.getExtent(Product.class, true);
 
+			for (Product product : extent) {
+				products.add(product);
+			}
+
+			tx.commit();			
 		} catch (Exception ex) {
-			System.out.println("   $ Error retreiving an user: " + ex.getMessage());
+			System.out.println("   $ Error retrieving an extent: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
 			}
 
-			pm.close();
+			pm.close();    		
 		}
 
-		return user;
-
-
-
+		return products;
 	}
 }
