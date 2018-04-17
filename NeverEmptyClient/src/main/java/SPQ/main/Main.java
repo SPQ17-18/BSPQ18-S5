@@ -19,7 +19,7 @@ public class Main {
 			rmi.setService(args);
 			NeverEmptyController neverEmptyController = new NeverEmptyController(rmi);
 			//TODO iniciar ventana
-			neverEmptyController.register("enara", "enara.etxaniz@opendeusto.es", "1234");
+			System.out.println("EL SERVER DICE: " + neverEmptyController.register("enara", "enara.etxaniz@opendeusto.es", "123"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
