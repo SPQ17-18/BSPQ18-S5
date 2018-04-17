@@ -1,6 +1,9 @@
 package SPQ.main;
 
+import java.awt.EventQueue;
+
 import SPQ.controller.NeverEmptyController;
+import SPQ.gui.VentanaInicio;
 import SPQ.remote.RMIServiceLocator;
 
 public class Main {
@@ -18,7 +21,17 @@ public class Main {
 			RMIServiceLocator rmi = new RMIServiceLocator();
 			rmi.setService(args);
 			NeverEmptyController neverEmptyController = new NeverEmptyController(rmi);
-			//TODO iniciar ventana
+			//Inicializo la ventana inicio
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						VentanaInicio vInicio = new VentanaInicio(neverEmptyController);
+						vInicio.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 			System.out.println("EL SERVER DICE: " + neverEmptyController.register("enara", "enara.etxaniz@opendeusto.es", "123"));
 		} catch (Exception e) {
 			e.printStackTrace();
