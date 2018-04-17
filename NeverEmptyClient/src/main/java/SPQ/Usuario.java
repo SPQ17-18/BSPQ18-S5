@@ -10,13 +10,6 @@ public class Usuario {
 	private String mail;
 	
 	
-	//Constructor
-	public Usuario() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
 	//Constructor con campos
 	public Usuario(String username, String pass) {
 		super();

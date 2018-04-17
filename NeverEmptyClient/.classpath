@@ -23,6 +23,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/NeverEmptyServer-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/jgoodies-common-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jgoodies-common-1.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jgoodies-forms-1.8.0.jar"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
