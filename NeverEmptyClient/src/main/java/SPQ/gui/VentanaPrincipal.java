@@ -16,18 +16,23 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import SPQ.controller.NeverEmptyController;
+
 public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	JLabel lblTitulo;
-	JButton btnPanel1, btnPanel2, btnPanelInterno2,btnSales, btnFavorites, btnRecipes;
+	JButton btnPanel1, btnPanel2, btnPanelInterno2,btnSales, btnFavorites;
+	//JButton btnRecipes;
+	JButton btnTic;
 	JTextArea textArea, campo;
 	JPanel panel1, panel2;
 	String texto;
-	
+	NeverEmptyController neverEmptyController;
 	Vector vProductos;
 
 	
-	public VentanaPrincipal() {
+	public VentanaPrincipal(NeverEmptyController neverEmptyController) {
+		this.neverEmptyController = neverEmptyController;
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		this.setSize(400, 375);
@@ -70,8 +75,11 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		btnFavorites = new JButton("Favoritos");
 		btnFavorites.setBounds(109, 315, 95, 23);
 		
-		btnRecipes = new JButton("Recetas");
-		btnRecipes.setBounds(208, 315, 95, 23);
+//		btnRecipes = new JButton("Recetas");
+//		btnRecipes.setBounds(208, 315, 95, 23);
+		
+		btnTic = new JButton("Ticket");
+		btnTic.setBounds(208, 315, 95, 23);
 		
 		textArea = new JTextArea();
 		textArea.setBounds(10,117,350,181);
@@ -85,7 +93,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		add(btnPanel2);
 		add(btnSales);
 		add(btnFavorites);
-		add(btnRecipes);
+		//add(btnRecipes);
+		add(btnTic);
 		
 		add(panel2);
 		add(panel1);
@@ -106,7 +115,11 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 	private void cargarComponentesPanel1() {
 		textArea = new JTextArea();
 		textArea.setBounds(10, 10, 350, 181);
-		String texto = "Productos:";
+		try {
+		String texto = this.neverEmptyController.getProducts();
+		}catch (Exception e) {
+			System.out.println(e);
+		}
 		textArea.setText(texto);
 		panel1.add(textArea);
 
@@ -117,7 +130,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		
 		btnSales.addActionListener(this);
 		btnFavorites.addActionListener(this);
-		btnRecipes.addActionListener(this);
+		//btnRecipes.addActionListener(this);
+		btnTic.addActionListener(this);
 		
 
 	}
@@ -155,12 +169,14 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 //	private JButton bFavorites;
 //	private JButton bShoppingList;
 
+	/*
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		VentanaPrincipal v = new VentanaPrincipal();
+		VentanaPrincipal v = new VentanaPrincipal(this);
 		v.setVisible(true);
 	}
+	*/
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==btnPanel1) {
@@ -194,10 +210,18 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			
 		}
 		
-		if (e.getSource()==btnRecipes) {
+//		if (e.getSource()==btnRecipes) {
+//
+//			VentanaRecetas r = new VentanaRecetas();
+//			r.setVisible(true);
+//			
+//		}
+		
+		if (e.getSource()==btnTic) {
 
-			VentanaRecetas r = new VentanaRecetas();
+			VentanaTicket r = new VentanaTicket(this.neverEmptyController);
 			r.setVisible(true);
+			dispose();
 			
 		}
 

@@ -104,12 +104,7 @@ public class VentanaInicio extends JFrame{
 					System.out.println(ex);
 				}
 				if(registered){ 
-					System.out.println("EL USUARIO ESTA REGISTRADO");
-					//Abrimos la ventana principal TODO
-					VentanaPrincipal vPrincipal = new VentanaPrincipal();
-					vPrincipal.setVisible(true);
-					//Y cerramos la ventana de inicio al haber podido iniciar sesion
-					dispose();
+					iniciarAplicacion();
 				}else{
 					System.out.println("Tienes que registrarte antes de iniciar sesion");
 					JOptionPane.showMessageDialog(null, "ERROR! Tienes que registrarte antes de iniciar sesion", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -119,6 +114,15 @@ public class VentanaInicio extends JFrame{
 		botonLogin.setBounds(210, 185, 97, 25);
 		getContentPane().add(botonLogin);
 		
+	}
+	
+	public void iniciarAplicacion() {
+		System.out.println("EL USUARIO ESTA REGISTRADO");
+		//Abrimos la ventana principal TODO
+		VentanaPrincipal vPrincipal = new VentanaPrincipal(this.neverEmptyController);
+		vPrincipal.setVisible(true);
+		//Y cerramos la ventana de inicio al haber podido iniciar sesion
+		dispose();
 	}
 
 	public void registro () {

@@ -9,6 +9,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import SPQ.Producto;
+import SPQ.controller.NeverEmptyController;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -21,11 +22,10 @@ public class VentanaTicket extends JFrame {
 	
 	private JTable table;
 	private double preciototal;
-	/**
-	 * 
-	 */
+	private NeverEmptyController neverEmptyController;
 	private static final long serialVersionUID = 1L;
-	public VentanaTicket() {
+	public VentanaTicket(NeverEmptyController neverEmptyController) {
+		this.neverEmptyController = neverEmptyController;
 		setBounds(200, 300, 423, 328);
 		
 		/*Generar un contenedor donde se introducira todos los elementos de la ventana*/
@@ -80,9 +80,7 @@ public class VentanaTicket extends JFrame {
 		JButton jbbotonVolver = new JButton("Volver");
 		jbbotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				vPrincipal volverVentana = new vPrincipal();
-//				volverVentana.setVisible(true);
-//				dispose();
+				volverAVentanaPrincipal();
 			}
 		});
 		jbbotonVolver.setBounds(168, 255, 89, 23);
@@ -96,10 +94,9 @@ public class VentanaTicket extends JFrame {
 		
 	}
 
-
-
-
-	public static void main(String[] args) {
-		new VentanaTicket();
+	public void volverAVentanaPrincipal() {
+		VentanaPrincipal volverVentana = new VentanaPrincipal(this.neverEmptyController);
+		volverVentana.setVisible(true);
+		dispose();
 	}
 }
