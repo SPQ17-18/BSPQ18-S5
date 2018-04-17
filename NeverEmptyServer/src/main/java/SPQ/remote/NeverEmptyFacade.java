@@ -21,5 +21,9 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 	public boolean login(String username, String password) throws RemoteException {
 		return neverEmptyServer.login(username, password);
 	}
+	
+	public String getProducts() throws RemoteException {
+		return neverEmptyServer.getProducts();
+	}
 
 }

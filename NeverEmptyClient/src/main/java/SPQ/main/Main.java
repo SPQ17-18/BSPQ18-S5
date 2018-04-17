@@ -32,7 +32,6 @@ public class Main {
 					}
 				}
 			});
-			System.out.println("EL SERVER DICE: " + neverEmptyController.register("enara", "enara.etxaniz@opendeusto.es", "123"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		

@@ -16,5 +16,8 @@ public class NeverEmptyController {
 	public boolean login(String usuario, String password) throws RemoteException {
 		return rmi.getNeverEmptyServer().login(usuario, password);
 	}
+	public String getProducts() throws RemoteException{
+		return rmi.getNeverEmptyServer().getProducts();
+	}
 }
 

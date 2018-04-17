@@ -5,6 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 import SPQ.dao.UserDAO;
 import SPQ.data.User;
+import SPQ.gateway.Eroski;
 import SPQ.gateway.Google;
 import SPQ.remote.INeverEmptyFacade;
 
@@ -41,6 +42,21 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		} else {
 			return false;
 		}
+	}
+	
+	public String getProducts() {
+		String eroskiAnswer = "incorrect";
+		try {
+			Eroski eroski = new Eroski("0.0.0.0", "35700");
+			eroskiAnswer = eroski.getProducts();
+			return eroskiAnswer;
+		}catch (Exception e) {
+			System.out.println(e);
+		}
+		return eroskiAnswer;
+		
+		
+		
 	}
 
 
