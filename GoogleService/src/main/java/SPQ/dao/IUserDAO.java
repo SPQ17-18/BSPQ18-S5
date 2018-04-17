@@ -1,6 +1,6 @@
-package dao;
+package SPQ.dao;
 
-import data.User;
+import SPQ.data.User;
 
 public interface IUserDAO {
 	public User getUser (String email);

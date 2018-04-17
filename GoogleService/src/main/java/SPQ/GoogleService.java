@@ -8,8 +8,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.UserDAO;
-import data.User;
+import SPQ.dao.UserDAO;
+import SPQ.data.User;
 
 public class GoogleService extends Thread {
 	private DataInputStream in;

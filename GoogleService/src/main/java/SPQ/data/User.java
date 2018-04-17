@@ -1,4 +1,4 @@
-package data;
+package SPQ.data;
 
 public class User {
 	private String email;
