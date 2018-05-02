@@ -2,7 +2,7 @@ package SPQ.controller;
 
 import java.rmi.RemoteException;
 import SPQ.remote.RMIServiceLocator;
-
+// HOLA
 public class NeverEmptyController {
 	RMIServiceLocator rmi;
 	public NeverEmptyController(RMIServiceLocator rmi) {
