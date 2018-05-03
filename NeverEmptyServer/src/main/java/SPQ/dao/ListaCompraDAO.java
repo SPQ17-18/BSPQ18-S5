@@ -85,8 +85,8 @@ public class ListaCompraDAO {
 		return listaCompra;
 	}
 	
-	//Borra un producto de la listaCompra 
-	public List<String> deleteSongs() {
+	//Borra un producto de la listaCompra y devuelve a la lista de la compra
+	public List<String> deleteProduct() {
 		// TODO Auto-generated method stub
 		List<String> listaCompraEliminados = new ArrayList<String>();
 		PersistenceManager pm = pmf.getPersistenceManager();
