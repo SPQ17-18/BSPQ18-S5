@@ -47,18 +47,22 @@ public class PaypalService extends Thread{
 	
 	public String readData(String data) {
 		String[] arrayData = data.split(",");
+		data = "incorrect";
 		try {
 			String email = arrayData[0];
 			String password = arrayData[1];
 			
+			double price = Double.parseDouble(arrayData[2]);
+			
 			UserDAO userDAO = new UserDAO();
 			User user = userDAO.getUser(email);
 			
-			if (user.getPassword().equals(password)) {
-				data = "correct";
-			}else {
-				data = "incorrect";
+			if (user.getPassword().equals(password) &&
+					user.getBalance() > price &&
+					userDAO.updateUser(user, price)) {
+					data = "correct";		
 			}
+			
 		}catch (RuntimeException e) {
 			System.err.println(" # PaypalService - Wrong data");
 		}
