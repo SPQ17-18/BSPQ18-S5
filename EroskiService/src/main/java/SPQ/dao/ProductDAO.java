@@ -24,6 +24,37 @@ public class ProductDAO {
 		pm.getFetchPlan().setMaxFetchDepth(3);
 
 		Transaction tx = pm.currentTransaction();
+		
+		List<Product> products = new ArrayList<Product>();
+
+		try {
+
+			tx.begin();			
+			Extent<Product> extent = pm.getExtent(Product.class, true);
+
+			for (Product product : extent) {
+				products.add(product);
+			}
+
+			tx.commit();			
+		} catch (Exception ex) {
+			System.out.println("   $ Error retrieving an extent: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();    		
+		}
+
+		return products;
+	}
+	
+	public List<Product> deleteProduct() {
+		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+
+		Transaction tx = pm.currentTransaction();
 		List<Product> products = new ArrayList<Product>();
 
 		try {

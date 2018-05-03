@@ -21,7 +21,7 @@ import SPQ.controller.NeverEmptyController;
 public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	JLabel lblTitulo;
-	JButton btnPanel1, btnPanel2, btnPanelInterno2,btnSales, btnFavorites;
+	JButton btnPanel1, btnPanel2, btnPanelInterno2,btnSales, btnFavorites, btnEliminarProducto;
 	//JButton btnRecipes;
 	JButton btnTic;
 	JTextArea textArea, campo;
@@ -29,6 +29,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 	String texto;
 	NeverEmptyController neverEmptyController;
 	Vector vProductos;
+
 
 	
 	public VentanaPrincipal(NeverEmptyController neverEmptyController) {
@@ -38,7 +39,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		this.setSize(400, 375);
 		this.setTitle("Bienvenido a NeverEmpty!"); 
 		this.setResizable(false);
-		setLayout(null);
+		getContentPane().setLayout(null);
 		
 		this.setLocationRelativeTo(null);
 		inicializarComponentes();   // inicializamos los atributos o componentes                   
@@ -88,16 +89,24 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		cargarComponentesPanel1();
 		cargarComponentesPanel2();
 		
-		add(lblTitulo);
-		add(btnPanel1);
-		add(btnPanel2);
-		add(btnSales);
-		add(btnFavorites);
+		getContentPane().add(lblTitulo);
+		getContentPane().add(btnPanel1);
+		getContentPane().add(btnPanel2);
+		getContentPane().add(btnSales);
+		getContentPane().add(btnFavorites);
 		//add(btnRecipes);
-		add(btnTic);
+		getContentPane().add(btnTic);
 		
-		add(panel2);
-		add(panel1);
+		getContentPane().add(panel2);
+		getContentPane().add(panel1);
+		
+		btnEliminarProducto = new JButton("Eliminar Producto");
+		btnEliminarProducto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnEliminarProducto.setBounds(247, 76, 135, 23);
+		getContentPane().add(btnEliminarProducto);
 		
 	}
 	
@@ -226,6 +235,4 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		}
 
 	}
-
-
 }
