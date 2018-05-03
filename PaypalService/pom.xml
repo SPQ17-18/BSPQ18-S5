@@ -11,7 +11,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<server.IP>127.0.0.1</server.IP>
-		<server.port>35700</server.port>
+		<server.port>35800</server.port>
 		<server.Name>PaypalServer</server.Name>
 		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>

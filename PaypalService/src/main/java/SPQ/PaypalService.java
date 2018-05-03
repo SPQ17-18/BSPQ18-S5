@@ -51,7 +51,6 @@ public class PaypalService extends Thread{
 		try {
 			String email = arrayData[0];
 			String password = arrayData[1];
-			
 			double price = Double.parseDouble(arrayData[2]);
 			
 			UserDAO userDAO = new UserDAO();

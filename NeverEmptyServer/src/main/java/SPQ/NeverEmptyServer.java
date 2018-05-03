@@ -7,6 +7,7 @@ import SPQ.dao.UserDAO;
 import SPQ.data.User;
 import SPQ.gateway.Eroski;
 import SPQ.gateway.Google;
+import SPQ.gateway.PayPal;
 import SPQ.remote.INeverEmptyFacade;
 
 
@@ -55,11 +56,19 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		}
 		return eroskiAnswer;
 		
-		
-		
 	}
 
-
+	public String payWithPaypal(String email, String password, String price) {
+		String paypalAnswer = "incorrect";
+		try {
+			PayPal paypal = new PayPal("0.0.0.0", "35800");
+			paypalAnswer = paypal.pay(email, password, price);
+			return paypalAnswer;
+		}catch (Exception e) {
+			System.out.println(e);
+		}
+		return paypalAnswer;
+	}
 
 
 }
