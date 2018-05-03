@@ -24,11 +24,17 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 	JButton btnPanel1, btnPanel2, btnPanelInterno2,btnSales, btnFavorites;
 	//JButton btnRecipes;
 	JButton btnTic;
-	JTextArea textArea, campo;
+	JTextArea campo;
+	
 	JPanel panel1, panel2;
 	String texto;
+	
 	NeverEmptyController neverEmptyController;
-	Vector vProductos;
+	
+	//Labels de los productos de la BD
+	JButton b1, b2, b3, b4, b5, b6, b7, b8, b9;
+	JLabel textArea, textArea2, textArea3, textArea4, textArea5, textArea6, textArea7, textArea8, textArea9;
+	
 
 	
 	public VentanaPrincipal(NeverEmptyController neverEmptyController) {
@@ -81,9 +87,9 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		btnTic = new JButton("Ticket");
 		btnTic.setBounds(208, 315, 95, 23);
 		
-		textArea = new JTextArea();
-		textArea.setBounds(10,117,350,181);
-		textArea.setText(texto);
+//		textArea = new JTextArea();
+//		textArea.setBounds(10,117,350,181);
+//		textArea.setText(texto);
 		
 		cargarComponentesPanel1();
 		cargarComponentesPanel2();
@@ -107,26 +113,50 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		 * lblListaCompra = new JLabel;
 		 * */
 		campo = new JTextArea();
-		textArea.setBounds(10, 10, 180, 25);
+		//textArea.setBounds(10, 10, 180, 25);
 		//		String campo = "\nAlvaro";
 		//		textArea.setText(campo);
 	}
 
 	private void cargarComponentesPanel1() {
-		textArea = new JTextArea();
-		textArea.setBounds(10, 10, 350, 181);
-		try {
-		String texto = this.neverEmptyController.getProducts();
-		}catch (Exception e) {
-			System.out.println(e);
-		}
-		textArea.setText(texto);
-		panel1.add(textArea);
-
+		
 		btnPanelInterno2 = new JButton("Comprar");
 		btnPanelInterno2.setBounds(200, 10, 90, 25);
 		panel1.add(btnPanelInterno2);
 		btnPanelInterno2.addActionListener(this);
+//		textArea = new JTextArea();
+//		textArea.setBounds(10, 10, 350, 181);
+//		try {
+//		String texto = this.neverEmptyController.getProducts();
+//		}catch (Exception e) {
+//			System.out.println(e);
+//		}
+//		textArea.setText(texto);
+//		panel1.add(textArea);
+
+		b1 = new JButton("Leche");
+		b1.setBounds(10, 10, 90, 25);
+		panel1.add(b1);
+		
+		textArea = new JLabel("Cantidad");
+		textArea.setBounds(105, 10, 90, 25);
+		panel1.add(textArea);
+		
+		b2 = new JButton("Pan");
+		b2.setBounds(10, 40, 90, 25);
+		panel1.add(b2);
+		
+		textArea2 = new JLabel("Cantidad");
+		textArea2.setBounds(105, 40, 90, 25);
+		panel1.add(textArea2);
+		
+		b3 = new JButton("Huevos");
+		b3.setBounds(10, 70, 90, 25);
+		panel1.add(b3);
+		
+		textArea3 = new JLabel("Cantidad");
+		textArea3.setBounds(105, 70, 90, 25);
+		panel1.add(textArea3);
 		
 		btnSales.addActionListener(this);
 		btnFavorites.addActionListener(this);
@@ -135,39 +165,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		
 
 	}
-
-
-
-//ESTO AUN NO SE ESTA UTILIZANDO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//vProductos = new Vector();
-//vProductos = new Vector();
-//vProductos.add("Filetes de pollo");
-//vProductos.add("Dorada");
-//vProductos.add("Aceite");
-//vProductos.add("Lentejas");
-//vProductos.add("Huevos");
-//vProductos.add("Leche");
-//vProductos.add("Sal");
-//vProductos.add("Arroz");
-//vProductos.add("Cafe");
-//vProductos.add("Pan");
-//vProductos.add("Lechuga");
-//vProductos.add("Tomate");
-//vProductos.add("Viangre");
-//vProductos.add("Platanos");
-//vProductos.add("Manzana");
-//ESTO AUN NO SE ESTA UTILIZANDO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//bLogout = new JButton();
-//bRecipes = new JButton();
-//bSales = new JButton();
-//bFavorites = new JButton();
-//bShoppingList = new JButton();
-//	private JButton bProfile;
-//	private JButton bLogout;
-//	private JButton bRecipes;
-//	private JButton bSales;
-//	private JButton bFavorites;
-//	private JButton bShoppingList;
 
 	/*
 	public static void main(String[] args) {
