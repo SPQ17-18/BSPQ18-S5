@@ -27,5 +27,6 @@ public class NeverEmptyController {
 	public ArrayList<Producto> deleteProduct() throws RemoteException{
 		return rmi.getNeverEmptyServer().deleteProduct();
 	}
+	
 }
 

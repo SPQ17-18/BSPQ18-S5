@@ -2,6 +2,7 @@ package SPQ.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JScrollPane;
@@ -18,9 +19,10 @@ import java.awt.event.ActionEvent;
 
 /*clase que contiene el codigo de la ventana de ticket*/
 
-public class VentanaTicket extends JFrame {
+public class VentanaTicket extends JFrame{
 	
 	private JTable table;
+	private JFrame VentanaPago, ventanaTicket;
 	private JButton btnPagarVisa, btnPagarPaypal;
 	private double preciototal;
 	private NeverEmptyController neverEmptyController;
@@ -90,6 +92,19 @@ public class VentanaTicket extends JFrame {
 		JButton btnPagarVisa = new JButton("Pagar con Visa");
 		btnPagarVisa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if(PagarVisa()) {
+					
+					JOptionPane.showMessageDialog(null, "Compra con exito. Su pedido esta en camino!!");
+					dispose();
+					VentanaPrincipal vPrincipal= new VentanaPrincipal(null);
+					vPrincipal.setVisible(true);
+
+				}else {
+					
+					JOptionPane.showMessageDialog(null, "ERROR! No tienes suficiente dinero en la cuenta de Paypal", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
+				
 			}
 		});
 		btnPagarVisa.setBounds(256, 267, 156, 23);
@@ -98,6 +113,18 @@ public class VentanaTicket extends JFrame {
 		JButton btnPagarPaypal = new JButton("Pagar con Paypal");
 		btnPagarPaypal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(PagarPaypal()) {
+					
+					JOptionPane.showMessageDialog(null, "Compra con exito. Su pedido esta en camino!!");
+					dispose();
+					VentanaPrincipal vPrincipal= new VentanaPrincipal(null);
+					vPrincipal.setVisible(true);
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "ERROR! No tienes suficiente dinero en la cuenta de Visa", "ERROR", JOptionPane.ERROR_MESSAGE);
+					dispose();
+				}
+				
 			}
 		});
 		btnPagarPaypal.setBounds(256, 242, 156, 23);
@@ -115,9 +142,28 @@ public class VentanaTicket extends JFrame {
 		
 	}
 
+	public boolean PagarPaypal() {
+		//this.neverEmptyController.deleteProduct();
+		//@todo
+		return true;
+	}
+	
+	public boolean PagarVisa() {
+		//@todo
+		return true;
+	}
+	
 	public void volverAVentanaPrincipal() {
 		VentanaPrincipal volverVentana = new VentanaPrincipal(this.neverEmptyController);
 		volverVentana.setVisible(true);
 		dispose();
 	}
+	
+	
+	public static void main(String[] args) {
+		
+		VentanaTicket vTicket = new VentanaTicket(null);
+		vTicket.setVisible(true);
+	}
+		
 }
