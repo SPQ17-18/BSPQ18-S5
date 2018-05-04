@@ -30,4 +30,24 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 		return neverEmptyServer.getProducts();
 	}
 
+	@Override
+	public boolean updateShoppingList(String username, String productList) throws RemoteException {
+		return neverEmptyServer.updateShoppingList(username, productList);
+	}
+
+	@Override
+	public boolean updateUserPayPalEmail(String username, String payPalEmail) throws RemoteException {
+		return neverEmptyServer.updateUserPayPalEmail(username, payPalEmail);
+	}
+
+	@Override
+	public boolean updateUserPayPalPassword(String username, String payPalPassword) throws RemoteException {
+		return neverEmptyServer.updateUserPayPalPassword(username, payPalPassword);
+	}
+
+	@Override
+	public boolean updateUserCardNumber(String username, String cardNumber) throws RemoteException {
+		return neverEmptyServer.updateUserCardNumber(username, cardNumber);
+	}
+
 }
