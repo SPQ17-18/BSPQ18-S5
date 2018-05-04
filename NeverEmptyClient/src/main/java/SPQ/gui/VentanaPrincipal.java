@@ -38,7 +38,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		this.setSize(400, 375);
 		this.setTitle("Bienvenido a NeverEmpty!"); 
 		this.setResizable(false);
-		setLayout(null);
+		getContentPane().setLayout(null);
 		
 		this.setLocationRelativeTo(null);
 		inicializarComponentes();   // inicializamos los atributos o componentes                   
@@ -88,16 +88,30 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		cargarComponentesPanel1();
 		cargarComponentesPanel2();
 		
-		add(lblTitulo);
-		add(btnPanel1);
-		add(btnPanel2);
-		add(btnSales);
-		add(btnFavorites);
+		getContentPane().add(lblTitulo);
+		getContentPane().add(btnPanel1);
+		getContentPane().add(btnPanel2);
+		getContentPane().add(btnSales);
+		getContentPane().add(btnFavorites);
 		//add(btnRecipes);
-		add(btnTic);
+		getContentPane().add(btnTic);
 		
-		add(panel2);
-		add(panel1);
+		getContentPane().add(panel2);
+		getContentPane().add(panel1);
+		
+		JButton btnPerfil = new JButton("Perfil");
+		btnPerfil.setBounds(269, 76, 89, 23);
+		getContentPane().add(btnPerfil);
+		btnPerfil.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				//la ventana de perfil
+				VentanaPerfil perfil = new VentanaPerfil();
+				
+			}
+		});
 		
 	}
 	
@@ -250,6 +264,4 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		}
 
 	}
-
-
 }
