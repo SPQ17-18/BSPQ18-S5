@@ -13,12 +13,42 @@ import java.util.List;
 
 public class ProductDAO {
 
+//	public static void main(String[] args) {
+//		ProductDAO pdao = new ProductDAO();
+//		List<Product> productos = pdao.getProducts();
+//		for (Product m : productos) {
+//			System.out.println(m.getName());
+//			System.out.println(m.getPrice());
+//		}
+//	}
 	private PersistenceManagerFactory persistenceManagerFactory;
 
 	public ProductDAO() {
 		this.persistenceManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	public boolean setProduct (Product product) {
+		boolean stored = false;
+		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			System.out.println("   * Storing a product: " + product);
+			pm.makePersistent(product);
+			tx.commit();
+			stored = true;
+		} catch (Exception ex) {
+			System.out.println("   $ Error storing a product: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}		
+			pm.close();
+		}
+		return stored;
+	}
+	
 	public List<Product> getProducts() {
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);

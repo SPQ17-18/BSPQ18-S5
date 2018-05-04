@@ -17,14 +17,6 @@ public class UserDAO {
 		this.persistenceManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
-	private User[] tmpUsers = {
-			new User("A", "a", ""),
-			new User("Enara", "enara.etxaniz@opendeusto.es", ""),
-			new User("Jesus", "jesus.delapisa@opendeusto.es", ""),
-			new User("Cristian", "cristian.perez@opendeusto.es", ""),
-			new User("Alvaro", "arosa001@opendeusto.es", "")
-	};
-
 	public boolean storeUser(User user) {
 		boolean stored = false;
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();

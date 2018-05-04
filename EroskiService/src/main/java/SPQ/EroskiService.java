@@ -61,7 +61,7 @@ public class EroskiService extends Thread {
 				
 				for (Product product : products)
 				{
-				    data += product.getName() + "," + product.getPrice() + ";";
+				    data += product.getName() + "," + String.valueOf(product.getPrice()) + ";";
 				}
 				
 				
