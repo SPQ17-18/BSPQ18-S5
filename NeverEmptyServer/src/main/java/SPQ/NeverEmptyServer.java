@@ -7,6 +7,7 @@ import SPQ.dao.UserDAO;
 import SPQ.data.User;
 import SPQ.gateway.Eroski;
 import SPQ.gateway.Google;
+import SPQ.gateway.Facebook;
 import SPQ.gateway.PayPal;
 import SPQ.remote.INeverEmptyFacade;
 
@@ -19,11 +20,25 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 
 	private static final long serialVersionUID = 1L;
 
-	public boolean register(String username, String email, String password) {
+	public boolean registerGoogle(String username, String email, String password) {
 		System.out.println("Registrar en servidor");
 		Google google = new Google("0.0.0.0", "35600");
 		String googleAnswer = google.register(email, password);
 		if (googleAnswer.equals("correct")){
+			User user = new User(username, email, password);
+			UserDAO userDAO = new UserDAO();
+			userDAO.storeUser(user);
+			return true;
+		}
+		return false;
+
+	}
+	
+	public boolean registerFacebook(String username, String email, String password) {
+		System.out.println("Registrar en servidor");
+		Facebook facebook = new Facebook("0.0.0.0", "35600");
+		String facebookAnswer = facebook.register(email, password);
+		if (facebookAnswer.equals("correct")){
 			User user = new User(username, email, password);
 			UserDAO userDAO = new UserDAO();
 			userDAO.storeUser(user);

@@ -14,8 +14,12 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 		this.neverEmptyServer = neverEmptyServer;
 	}
 	
-	public boolean register(String username, String email, String password) throws RemoteException {
-		return neverEmptyServer.register(username, email, password);
+	public boolean registerGoogle(String username, String email, String password) throws RemoteException {
+		return neverEmptyServer.registerGoogle(username, email, password);
+	}
+	
+	public boolean registerFacebook(String username, String email, String password) throws RemoteException {
+		return neverEmptyServer.registerFacebook(username, email, password);
 	}
 
 	public boolean login(String username, String password) throws RemoteException {
