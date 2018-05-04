@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import SPQ.controller.NeverEmptyController;
+import SPQ.remote.INeverEmptyFacade;
 
 public class VentanaPrincipal extends JFrame implements ActionListener{
 
@@ -32,11 +33,11 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 	NeverEmptyController neverEmptyController;
 	
 	//Labels de los productos de la BD
-	JButton b1, b2, b3, b4, b5, b6, b7, b8, b9;
-	JLabel textArea, textArea2, textArea3, textArea4, textArea5, textArea6, textArea7, textArea8, textArea9;
+	JButton b1, b2, b3, b4, b5;
+	JLabel textArea, textArea2, textArea3, textArea4, textArea5;
+	
 	
 
-	
 	public VentanaPrincipal(NeverEmptyController neverEmptyController) {
 		this.neverEmptyController = neverEmptyController;
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -133,37 +134,101 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 //		}
 //		textArea.setText(texto);
 //		panel1.add(textArea);
+		
+		
+		
+		//Pone el nombre del producto a su boton correspondiente
+		String productos = "";
+		try {
+			productos = neverEmptyController.getProducts();
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		String[] parts = productos.split(";");
+		
+		//[producto, nombre/precio]
+		String part11,part12,part21,part22,part31,part32,part41,part42,part51,part52;
+		
+		//Producto1
+		String part1 = parts[0];
+		String[] p1 = part1.split(",");
+		part11 = p1[1]; //Nombre del producto 1
+		part12 = p1[2]; //Precio del producto 1
+		
+		//Producto2
+		String part2 = parts[1]; 
+		String[] p2 = part2.split(",");
+		part21 = p2[1]; //Nombre del producto 2
+		part22 = p2[2]; //Precio del producto 2
+		
+		//Producto3
+		String part3 = parts[2]; 
+		String[] p3 = part3.split(",");
+		part31 = p3[1]; //Nombre del producto 3
+		part32 = p3[2]; //Precio del producto 3
+		
+		//Producto4
+		String part4 = parts[3];
+		String[] p4 = part4.split(",");
+		part41 = p4[1]; //Nombre del producto 4
+		part42 = p4[2]; //Precio del producto 4
+		
+		//Producto5
+		String part5 = parts[4];
+		String[] p5 = part5.split(",");
+		part51 = p5[1]; //Nombre del producto 5
+		part52 = p5[2]; //Precio del porducto 5
 
-		b1 = new JButton("Leche");
+		b1 = new JButton();
 		b1.setBounds(10, 10, 90, 25);
+		b1.setText(part11);
 		panel1.add(b1);
 		
 		textArea = new JLabel("Cantidad");
 		textArea.setBounds(105, 10, 90, 25);
 		panel1.add(textArea);
 		
-		b2 = new JButton("Pan");
+		b2 = new JButton();
 		b2.setBounds(10, 40, 90, 25);
+		b2.setText(part21);
 		panel1.add(b2);
 		
 		textArea2 = new JLabel("Cantidad");
 		textArea2.setBounds(105, 40, 90, 25);
 		panel1.add(textArea2);
 		
-		b3 = new JButton("Huevos");
+		b3 = new JButton();
 		b3.setBounds(10, 70, 90, 25);
+		b3.setText(part31);
 		panel1.add(b3);
 		
 		textArea3 = new JLabel("Cantidad");
 		textArea3.setBounds(105, 70, 90, 25);
 		panel1.add(textArea3);
 		
+		b4 = new JButton();
+		b4.setBounds(10, 70, 90, 25);
+		b4.setText(part41);
+		panel1.add(b4);
+		
+		textArea4 = new JLabel("Cantidad");
+		textArea4.setBounds(105, 70, 90, 25);
+		panel1.add(textArea4);
+		
+		b5 = new JButton();
+		b5.setBounds(10, 70, 90, 25);
+		b5.setText(part51);
+		panel1.add(b5);
+		
+		textArea5 = new JLabel("Cantidad");
+		textArea5.setBounds(105, 70, 90, 25);
+		panel1.add(textArea5);
+		
 		btnSales.addActionListener(this);
 		btnFavorites.addActionListener(this);
 		//btnRecipes.addActionListener(this);
 		btnTic.addActionListener(this);
 		
-
 	}
 
 	/*
@@ -175,6 +240,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 	}
 	*/
 
+	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==btnPanel1) {
 			panel1.setVisible(true);
@@ -197,7 +263,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			o.setVisible(true);
 			dispose();
 			
-
 		}
 		
 		if (e.getSource()==btnFavorites) {
