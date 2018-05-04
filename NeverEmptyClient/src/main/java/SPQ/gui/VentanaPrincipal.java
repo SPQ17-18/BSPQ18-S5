@@ -30,6 +30,25 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 	JPanel panel1, panel2;
 	String texto;
 	
+	/*
+	String que se le pasa a la BD para añadir los productos 
+	a la BD de productos en forma de lista de la compra
+	*/
+	String listaCompra = "";
+	//Contador de cantidad de producto 1
+	int i = 0;
+	//Contador de cantidad de producto 2
+	int i2 = 0;
+	//Contador de cantidad de producto 3
+	int i3 = 0;
+	//Contador de cantidad de producto 4
+	int i4 = 0;
+	//Contador de cantidad de producto 5
+	int i5 = 0;
+	
+	//String de cantidad de cada producto
+	String p1, p2, p3, p4, p5;
+	
 	NeverEmptyController neverEmptyController;
 	
 	//Labels de los productos de la BD
@@ -230,7 +249,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		btnTic.addActionListener(this);
 		
 	}
-
+	
+	
 	/*
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -286,6 +306,60 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			dispose();
 			
 		}
+		
+		/*
+		 * Eventos de boton de producto para aumentar la cantidad de producto que desea añadir
+		 */
+		if (e.getSource()==b1) {
+			i++;
+			p1 ="";
+			p1 = String.valueOf(i);
+			textArea.setText(p1);
+		}
+		if (e.getSource()==b2) {
+			i2++;
+			p2 ="";
+			p2 = String.valueOf(i2);
+		}
+		if (e.getSource()==b3) {
+			i3++;
+			p3 ="";
+			p3 = String.valueOf(i3);
+		}
+		if (e.getSource()==b4) {
+			p4 ="";
+			p4 = String.valueOf(i4);
+			i4++;
+		}
+		if (e.getSource()==b5) {
+			i5++;
+			p5 ="";
+			p5 = String.valueOf(i5);
+		}
+		
+		/*Evento de boton para añadir producto, precio y cantidad al string que le pasaremos a la BD
+		 * Ademas tambien envia el nombre del usuario 
+		 * */
+		if (e.getSource()==btnPanelInterno2) {
+			//Solo se añaden al string aquellos productos cuya cantidad es mayor que 0
+			if (i>0) {
+				String listaCompra = part11 + "," + part12 + "," + p1 + ";";
+			}
+			if (i2>0) {
+				String listaCompra = part21 + "," + part22 + "," + p2 + ";";
+			}
+			if (i3>0) {
+				String listaCompra = part31 + "," + part32 + "," + p3 + ";";
+			}
+			if (i4>0) {
+				String listaCompra = part41 + "," + part42 + "," + p4 + ";";
+			}
+			if (i5>0) {
+				String listaCompra = part51 + "," + part52 + "," + p5 + ";";
+			}
+			String name = NeverEmptyController.username;
+		}
+		
 
 	}
 
