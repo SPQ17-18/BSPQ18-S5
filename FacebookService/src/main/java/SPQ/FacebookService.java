@@ -11,38 +11,38 @@ import java.util.List;
 import SPQ.dao.UserDAO;
 import SPQ.data.User;
 
-public class GoogleService extends Thread {
+public class FacebookService extends Thread {
 	private DataInputStream in;
 	private DataOutputStream out;
 	private Socket tcpSocket;
 	// Se instancia el socket
-	public GoogleService(Socket socket) {
+	public FacebookService(Socket socket) {
 		try {
 			this.tcpSocket = socket;
 		    this.in = new DataInputStream(socket.getInputStream());
 			this.out = new DataOutputStream(socket.getOutputStream());
 			this.start();	//start llama a run()
 		} catch (IOException e) {
-			System.err.println("# GoogleService - TCPConnection IO error:" + e.getMessage());
+			System.err.println("# FacebookService - TCPConnection IO error:" + e.getMessage());
 		}
 	}
 
 	public void run() {
 		try {
 			String data = this.in.readUTF();
-			System.out.println("   - GoogleService - Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data + "'");					
+			System.out.println("   - FacebookService - Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data + "'");					
 			data = this.readData(data);
 			this.out.writeUTF(data);					
-			System.out.println("   - GoogleService - Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data.toUpperCase() + "'");
+			System.out.println("   - FacebookService - Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data.toUpperCase() + "'");
 		} catch (EOFException e) {
-			System.err.println("   # GoogleService - TCPConnection EOF error" + e.getMessage());
+			System.err.println("   # FacebookService - TCPConnection EOF error" + e.getMessage());
 		} catch (IOException e) {
-			System.err.println("   # GoogleService - TCPConnection IO error:" + e.getMessage());
+			System.err.println("   # FacebookService - TCPConnection IO error:" + e.getMessage());
 		} finally {
 			try {
 				tcpSocket.close();
 			} catch (IOException e) {
-				System.err.println("   # GoogleService - TCPConnection IO error:" + e.getMessage());
+				System.err.println("   # FacebookService - TCPConnection IO error:" + e.getMessage());
 			}
 		}
 	}
@@ -62,7 +62,7 @@ public class GoogleService extends Thread {
 				data = "incorrect";
 			}
 		}catch (RuntimeException e) {
-			System.err.println(" # GoogleService - Wrong data");
+			System.err.println(" # FacebookService - Wrong data");
 		}
 		return data;
 	}
