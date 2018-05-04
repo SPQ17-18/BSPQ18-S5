@@ -129,7 +129,31 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		btnPanelInterno2.addActionListener(this);
 		
 		btnSales.addActionListener(this);
-		btnFavorites.addActionListener(this);
+		btnFavorites.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String mailB = "alejandro@gmail.com";
+				//"Cristian", "cristian.perez@opendeusto.es", ""
+				String mailA = "cristian.perez@opendeusto.es";
+				String user = "Cristian";
+				String password = "";
+				boolean modificado=false;
+				try {
+					modificado = neverEmptyController.modifyEmail(user, password, mailA, mailB);
+				} catch (Exception e2) {
+					// TODO: handle exception
+					System.out.println(e2);
+				}
+				if(modificado) {
+					System.out.println("ha funcionado");
+				}else {
+					System.out.println("no ha funcionado");
+				}
+				
+			}
+		});
 		//btnRecipes.addActionListener(this);
 		btnTic.addActionListener(this);
 		

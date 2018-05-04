@@ -29,7 +29,6 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 			return true;
 		}
 		return false;
-
 	}
 
 	public boolean login(String username, String password) {
@@ -55,11 +54,23 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		}
 		return eroskiAnswer;
 		
-		
+	}
+	
+	public boolean modifyEmail (String user,String password, String maila, String mailb) {
+		boolean hecho = false;
+		System.out.println("modificando correo");
+		Google google = new Google("0.0.0.0", "35600");
+		String googleAnswer = google.register(maila, password);
+		if (googleAnswer.equals("correct")) {
+			UserDAO userDAO = new UserDAO();
+			userDAO.setUsermail(maila, mailb);
+			hecho=true;
+			return hecho;
+		}else {
+			return hecho;
+		}
 		
 	}
-
-
 
 
 }

@@ -19,5 +19,8 @@ public class NeverEmptyController {
 	public String getProducts() throws RemoteException{
 		return rmi.getNeverEmptyServer().getProducts();
 	}
+	public boolean modifyEmail(String user,String password, String maila, String mailb) throws RemoteException{
+		return rmi.getNeverEmptyServer().modifyEmail(user, password, maila, mailb);
+	}
 }
 
