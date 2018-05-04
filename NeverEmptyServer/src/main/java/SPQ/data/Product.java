@@ -7,12 +7,14 @@ import javax.jdo.annotations.PersistenceCapable;
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
 public class Product {
-	String name;
-	double price;
+	private String name;
+	private double price;
+	private int quantity;
 	
-	public Product (String name, double price) {
+	public Product (String name, double price, int quantity) {
 		this.name = name;
 		this.price = price;
+		this.quantity = quantity;
 	}
 	
 	public String getName() {
@@ -26,6 +28,14 @@ public class Product {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 }

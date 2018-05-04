@@ -8,6 +8,7 @@ import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
+import SPQ.data.Product;
 
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
@@ -22,9 +23,8 @@ public class User {
 	
 	private int cardNumber = -1;
 	
-	@Persistent(table="USER_PRODUCTS")
-    @Join(column="USER_ID_OID")
-    @Element(column="PRODUCT_ID_EID")
+
+    @Element(column="USER_ID")
 	private List<Product> shoppingList = null;
 	
 	public User(String username, String email, String password, String registerMethod) {
