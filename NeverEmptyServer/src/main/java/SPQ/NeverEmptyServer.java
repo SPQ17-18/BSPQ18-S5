@@ -25,7 +25,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		Google google = new Google("0.0.0.0", "35600");
 		String googleAnswer = google.register(email, password);
 		if (googleAnswer.equals("correct")){
-			User user = new User(username, email, password);
+			User user = new User(username, email, password, "Google");
 			UserDAO userDAO = new UserDAO();
 			userDAO.storeUser(user);
 			return true;
@@ -39,7 +39,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		Facebook facebook = new Facebook("0.0.0.0", "35600");
 		String facebookAnswer = facebook.register(email, password);
 		if (facebookAnswer.equals("correct")){
-			User user = new User(username, email, password);
+			User user = new User(username, email, password, "Facebook");
 			UserDAO userDAO = new UserDAO();
 			userDAO.storeUser(user);
 			return true;
@@ -51,9 +51,14 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	public boolean login(String username, String password) {
 		Google google = new Google("0.0.0.0", "35600");
 		UserDAO userDAO = new UserDAO();
-		User user = userDAO.getUser(new User(username, "", password));
-		String googleAnswer = google.login(user.getEmail(), user.getPassword());
-		if (googleAnswer.equals("correct")){
+		User user = userDAO.getUser(new User(username, "", password, ""));
+		String answer = "incorrect";
+		if (user.getRegisterMethod().equals("Google")) {
+			answer = google.login(user.getEmail(), user.getPassword());
+		}else if (user.getRegisterMethod().equals("Facebook")) {
+			answer = google.login(user.getEmail(), user.getPassword());
+		}
+		if (answer.equals("correct")){
 			return true;
 		} else {
 			return false;
