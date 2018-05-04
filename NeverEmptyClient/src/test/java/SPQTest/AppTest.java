@@ -1,4 +1,4 @@
-package SPQ;
+package SPQTest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
