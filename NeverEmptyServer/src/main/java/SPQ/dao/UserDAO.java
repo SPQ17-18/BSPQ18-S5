@@ -20,7 +20,7 @@ public class UserDAO {
 		UserDAO udao = new UserDAO();
 		User user = new User("Enara", "enara96etxaniz@gmail.com", "123", "Google");
 
-		Product p1 = new Product("Manzana", 1, 5);
+		Product p1 = new Product("Culo", 1, 5);
 		Product p2 = new Product("Pera", 0.5, 10);
 		List<Product> products = new ArrayList<>();
 		products.add(p1);
@@ -37,11 +37,12 @@ public class UserDAO {
 		this.persistenceManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	
 	public boolean updateShoppingList (User user) {
 		boolean updated = false;
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		try {
-			Query<?> query =  pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE email == '" + user.getEmail() +"'");
+			Query<?> query =  pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE username == '" + user.getUsername() +"'");
 			query.setUnique(true);
 			User userFromDb = (User) query.execute();
 			userFromDb.setShoppingList(user.getShoppingList());
