@@ -48,7 +48,6 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 			return true;
 		}
 		return false;
-
 	}
 
 	public boolean login(String username, String password) {
@@ -78,7 +77,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 			System.out.println(e);
 		}
 		return eroskiAnswer;
-		
+
 	}
 
 	public String payWithPaypal(String email, String password, String price) {
@@ -136,5 +135,4 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		UserDAO userDAO = new UserDAO();
 		return userDAO.updateUserCardNumber(user);
 	}
-
 }

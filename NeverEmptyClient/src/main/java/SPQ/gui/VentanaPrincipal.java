@@ -122,17 +122,37 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		getContentPane().add(btnFavorites);
 		//add(btnRecipes);
 		getContentPane().add(btnTic);
+
+		
+//		getContentPane().add(panel2);
+//		getContentPane().add(panel1);
+//		
+//		btnEliminarProducto = new JButton("Eliminar Producto");
+//		btnEliminarProducto.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			}
+//		});
+//		btnEliminarProducto.setBounds(247, 76, 135, 23);
+//		getContentPane().add(btnEliminarProducto);
+
 		
 		getContentPane().add(panel2);
 		getContentPane().add(panel1);
 		
-		btnEliminarProducto = new JButton("Eliminar Producto");
-		btnEliminarProducto.addActionListener(new ActionListener() {
+		JButton btnPerfil = new JButton("Perfil");
+		btnPerfil.setBounds(269, 76, 89, 23);
+		getContentPane().add(btnPerfil);
+		btnPerfil.addActionListener(new ActionListener() {
+			
+			@Override
 			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				//la ventana de perfil
+				VentanaPerfil perfil = new VentanaPerfil();
+				
 			}
 		});
-		btnEliminarProducto.setBounds(247, 76, 135, 23);
-		getContentPane().add(btnEliminarProducto);
+
 		
 	}
 	
@@ -253,7 +273,31 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		panel1.add(textArea5);
 		
 		btnSales.addActionListener(this);
-		btnFavorites.addActionListener(this);
+		btnFavorites.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String mailB = "alejandro@gmail.com";
+				//"Cristian", "cristian.perez@opendeusto.es", ""
+				String mailA = "cristian.perez@opendeusto.es";
+				String user = "Cristian";
+				String password = "";
+				boolean modificado=false;
+				try {
+					modificado = neverEmptyController.modifyEmail(user, password, mailA, mailB);
+				} catch (Exception e2) {
+					// TODO: handle exception
+					System.out.println(e2);
+				}
+				if(modificado) {
+					System.out.println("ha funcionado");
+				}else {
+					System.out.println("no ha funcionado");
+				}
+				
+			}
+		});
 		//btnRecipes.addActionListener(this);
 		btnTic.addActionListener(this);
 		

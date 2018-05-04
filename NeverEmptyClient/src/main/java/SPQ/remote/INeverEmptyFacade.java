@@ -10,7 +10,6 @@ public interface INeverEmptyFacade extends Remote{
 	public boolean register(String username, String email, String password ) throws RemoteException;
 	public boolean login(String username, String password) throws RemoteException;
 	public String getProducts() throws RemoteException;
-	
-	//Metodo que devuelve la lista de la compra con el producto borrado
-	public ArrayList<Producto> deleteProduct() throws RemoteException;
+	public boolean modifyEmail (String user,String password, String maila, String mailb)throws RemoteException;
+
 }

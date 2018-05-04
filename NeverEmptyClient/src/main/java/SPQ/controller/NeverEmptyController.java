@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import SPQ.Producto;
 import SPQ.remote.RMIServiceLocator;
-
+// HOLA
 public class NeverEmptyController {
 	public static String username;
 	RMIServiceLocator rmi;
@@ -28,11 +28,6 @@ public class NeverEmptyController {
 	public String getProducts() throws RemoteException{
 		return rmi.getNeverEmptyServer().getProducts();
 	}
-	
-	//Metodo para eliminar producto de la lista de la compra
-	public ArrayList<Producto> deleteProduct() throws RemoteException{
-		return rmi.getNeverEmptyServer().deleteProduct();
-	}
-	
+
 }
 

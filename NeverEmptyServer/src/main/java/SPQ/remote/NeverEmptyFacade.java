@@ -29,6 +29,10 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 	public String getProducts() throws RemoteException {
 		return neverEmptyServer.getProducts();
 	}
+	//como no devuelve nada no pongo un return no??
+	public boolean modifyEmail (String user,String password, String maila, String mailb)throws RemoteException {
+		return neverEmptyServer.modifyEmail(user, password, maila, mailb);
+	}
 
 	@Override
 	public boolean updateShoppingList(String username, String productList) throws RemoteException {
