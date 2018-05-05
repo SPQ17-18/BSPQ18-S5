@@ -135,4 +135,13 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		UserDAO userDAO = new UserDAO();
 		return userDAO.updateUserCardNumber(user);
 	}
+
+	public boolean modifyEmail(String username, String password, String maila, String mailb) {
+		// TODO Auto-generated method stub
+		User user = new User(username,password,maila,"");
+		user.setEmail(mailb);
+		
+		UserDAO userDAO = new UserDAO();
+		return userDAO.modifyEmail(user);
+	}
 }

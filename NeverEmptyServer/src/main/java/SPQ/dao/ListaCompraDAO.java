@@ -69,7 +69,7 @@ public class ListaCompraDAO {
 			tx.begin();
 			Extent<Product> extent = pm.getExtent(Product.class, true);
 			for (Product p : extent) {
-				String product = p.getNombreProduct() + "#" + p.getPrecioProduct();
+				String product = p.getName() + "#" + p.getPrice();
 				listaCompra.add(product);
 			}
 			tx.commit();
@@ -97,7 +97,7 @@ public class ListaCompraDAO {
 			tx.begin();
 			Extent<Product> extent = pm.getExtent(Product.class, true);
 			for (Product p : extent) {
-				String product = p.getNombreProduct() + "#" + p.getPrecioProduct();
+				String product = p.getName() + "#" + p.getPrice();
 				listaCompraEliminados.remove(p);
 			}
 			tx.commit();

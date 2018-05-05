@@ -1,5 +1,9 @@
 package SPQ.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -12,9 +16,11 @@ import SPQ.data.User;
 public class ProductDAO {
 
 	private PersistenceManagerFactory persistenceManagerFactory;
+	static Logger logger = Logger.getLogger(ProductDAO.class.getName());
 	
 	public ProductDAO() {
 		this.persistenceManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		
 	}
 	
 	public boolean storeProduct(Product p) {
@@ -48,10 +54,10 @@ public class ProductDAO {
 		Product newProduct = null;
 
 		try {
-			System.out.println("   * Buscando producto: " + p.getNombreProduct());
+			System.out.println("   * Buscando producto: " + p.getName());
 
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + Product.class.getName() + " WHERE productname == '" + p.getNombreProduct() +"'");
+			Query<?> query = pm.newQuery("SELECT FROM " + Product.class.getName() + " WHERE productname == '" + p.getName() +"'");
 			query.setUnique(true);
 			newProduct = (Product) query.execute();
 			tx.commit();
@@ -78,10 +84,10 @@ public class ProductDAO {
 		Product productDelete = null;
 
 		try {
-			System.out.println("   * Eliminando producto: " + p.getNombreProduct());
+			System.out.println("   * Eliminando producto: " + p.getName());
 
 			tx.begin();
-			Query<?> query = pm.newQuery("DELETE FROM " + Product.class.getName() + " WHERE productname == '" + p.getNombreProduct() +"'");
+			Query<?> query = pm.newQuery("DELETE FROM " + Product.class.getName() + " WHERE productname == '" + p.getName() +"'");
 			query.setUnique(true);
 			productDelete = (Product) query.execute();
 			tx.commit();
@@ -97,6 +103,60 @@ public class ProductDAO {
 		}
 
 		return productDelete;
+	}
+	
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<Product> getProducts(String nombre,double precio,int cantidad){
+		
+		PersistenceManager pm = persistenceManagerFactory.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		pm.setDetachAllOnCommit(true);
+		Transaction tx = pm.currentTransaction();
+		List<Product> Products = new ArrayList<Product>();
+	    
+		try {
+			logger.info ("   * Querying a Product: " + nombre+precio+cantidad);
+	    	tx.begin();
+	    	Query<Product> query=null;
+    		query = pm.newQuery("SELECT FROM " + Product.class.getName());
+	    	Products= (List<Product>)query.execute();
+	        tx.commit();
+   	    
+	     } catch (Exception ex) {
+	    	 //logger.error("   $ Error retreiving an extent: " + ex.getMessage());
+	    	 System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+	    	 
+	     } finally {
+		   	if (tx != null && tx.isActive()) {
+		   		tx.rollback();
+		 }
+				
+	   		pm.close();
+	     }
+
+	    return Products;
+	}
+	
+	public void updateProduct(Product product) {
+		PersistenceManager pm = persistenceManagerFactory.getPersistenceManager();
+	    Transaction tx = pm.currentTransaction();
+	    
+	    try {
+	    	tx.begin();
+	    	pm.makePersistent(product);
+	    	tx.commit();
+	     } catch (Exception ex) {
+	    	 //logger.error("   $ Error retreiving an extent: " + ex.getMessage());
+	    	 System.out.println("   $ Error retreiving an extent: " + ex.getMessage());
+	     } finally {
+		   	if (tx != null && tx.isActive()) {
+		   		tx.rollback();
+		   	}
+				
+	   		pm.close();
+	     }
 	}
 	
 	

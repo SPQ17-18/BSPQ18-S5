@@ -1,5 +1,6 @@
 package SPQ.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.annotations.Element;
@@ -26,6 +27,10 @@ public class User {
 
     @Element(column="USER_ID")
 	private List<Product> shoppingList = null;
+    
+    @Persistent(defaultFetchGroup="true", mappedBy="user", dependentElement="true")
+	@Join
+	List<Message> messages = new ArrayList<Message>();
 	
 	public User(String username, String email, String password, String registerMethod) {
 		super();
@@ -34,6 +39,16 @@ public class User {
 		this.password = password;
 		this.registerMethod = registerMethod;
 		}
+	
+	public void addMessage(Message message) {
+		messages.add(message);
+	}
+
+	public void removeMessage(Message message) {
+		messages.remove(message);
+	}
+	
+	 public List<Message> getMessages() {return this.messages;}
 
 	public String getUsername() {
 		return username;
