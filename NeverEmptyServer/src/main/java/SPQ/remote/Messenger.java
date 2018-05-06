@@ -15,6 +15,8 @@ public class Messenger extends UnicastRemoteObject implements IMessenger{
 	private int cont =0;
 	IUserDAO dao;
 	
+	
+	
 	public Messenger() throws RemoteException {
 		super();
 		dao = new UserDAO();

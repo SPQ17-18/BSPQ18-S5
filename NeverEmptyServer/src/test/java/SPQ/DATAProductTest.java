@@ -35,11 +35,15 @@ public class DATAProductTest {
 	@Test
 	public void producto2test() {
 		assertEquals("Manzana", producto2.getName());
+		assertEquals("8",String.valueOf(producto2.getQuantity()));
+		assertEquals("2.12",String.valueOf(producto2.getPrice()));
 	}
 	
 	@Test
 	public void producto3test() {
 		assertEquals("Hamburguesas", producto3.getName());
+		assertEquals("5",String.valueOf(producto3.getQuantity()));
+		assertEquals("4.12",String.valueOf(producto2.getPrice()));
 	}
 	
 	

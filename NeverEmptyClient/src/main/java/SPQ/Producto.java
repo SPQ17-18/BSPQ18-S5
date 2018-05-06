@@ -7,7 +7,7 @@ public class Producto {
 	private double precioProducto;
 	private int quantity;
 	
-	public Producto(String nombreProducto, double precioProducto, int quanity) {
+	public Producto(String nombreProducto, double precioProducto, int quantity) {
 		super();
 		this.nombreProducto = nombreProducto;
 		this.precioProducto = precioProducto;

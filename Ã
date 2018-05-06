@@ -1,0 +1,21 @@
+:Falta el cliente controller
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch jesusSprint2
+# Changes to be committed:
+#	modified:   NeverEmptyClient/src/main/java/SPQ/Producto.java
+#	modified:   NeverEmptyClient/src/main/java/SPQ/controller/NeverEmptyController.java
+#	new file:   NeverEmptyClient/src/main/java/SPQ/controller/NeverEmptyControllerTest.java
+#	modified:   NeverEmptyClient/src/main/java/SPQ/remote/INeverEmptyFacade.java
+#	modified:   NeverEmptyClient/src/main/java/SPQ/remote/RMIServiceLocator.java
+#	modified:   NeverEmptyServer/pom.xml
+#	modified:   NeverEmptyServer/src/main/java/SPQ/NeverEmptyServer.java
+#	modified:   NeverEmptyServer/src/main/java/SPQ/dto/ProductDTO.java
+#	modified:   NeverEmptyServer/src/main/java/SPQ/remote/INeverEmptyFacade.java
+#	modified:   NeverEmptyServer/src/main/java/SPQ/remote/Messenger.java
+#	modified:   NeverEmptyServer/src/main/java/SPQ/remote/NeverEmptyFacade.java
+#	modified:   NeverEmptyServer/src/test/java/SPQ/DAOMockTest.java
+#	modified:   NeverEmptyServer/src/test/java/SPQ/DATAProductTest.java
+#	modified:   NeverEmptyServer/src/test/java/SPQ/RMITest.java
+#

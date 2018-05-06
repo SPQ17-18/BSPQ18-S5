@@ -1,16 +1,21 @@
 package SPQ.remote;
+
+import java.util.logging.Logger;
+
 import SPQ.remote.INeverEmptyFacade;
+
 public class RMIServiceLocator {
 	private INeverEmptyFacade iNeverEmptyFacade;
+	
 
+	// final static Logger logger = Logger.getLogger(RMIServiceLocator.class);
 
 	public INeverEmptyFacade getNeverEmptyServer() {
 		return this.iNeverEmptyFacade;
 	}
-	
-	public RMIServiceLocator(){ 
-    }
-	
+
+	public RMIServiceLocator() {
+	}
 
 	public void setService(String[] args) {
 		try {
@@ -21,5 +26,12 @@ public class RMIServiceLocator {
 			System.err.println("- Exception running NeverEmpty: " + e.getMessage());
 			e.printStackTrace();
 		}
-}
+	}
+	
+	public INeverEmptyFacade getService() {
+		return iNeverEmptyFacade;
+	}
+	
+
+
 }

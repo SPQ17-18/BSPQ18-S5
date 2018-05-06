@@ -1,17 +1,22 @@
 package SPQ;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.logging.Logger;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
+
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,8 +25,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import SPQ.data.User;
-import SPQ.remote.IMessenger;
-import SPQ.remote.Messenger;
+import SPQ.remote.INeverEmptyFacade;
 import junit.framework.JUnit4TestAdapter;
 
 public class RMITest {
@@ -30,7 +34,10 @@ public class RMITest {
 	private static Thread rmiRegistryThread = null;
 	private static Thread rmiServerThread = null;
 	
-	private IMessenger messenger;
+	//private IMessenger messenger;
+	private INeverEmptyFacade  NeverEmptyFacade;
+	
+	static Logger logger = Logger.getLogger(RMITest.class.getName());
 
 	public static junit.framework.Test suite() {
 		return new JUnit4TestAdapter(RMITest.class);
@@ -71,15 +78,18 @@ public class RMITest {
 					System.setSecurityManager(new SecurityManager());
 				}
 
-				String name = "//127.0.0.1:1099/MessengerRMIDAO";
+				//String name = "//127.0.0.1:1099/MessengerRMIDAO";
+				String name = "//127.0.0.1:1099/NeverEmptyFacadeServerRMIDAO";
 				System.out.println("BeforeClass - Setting the server ready TestServer name: " + name);
 
 				try {
 					
-					IMessenger messenger = new Messenger();
-					Naming.rebind(name, messenger);
+					INeverEmptyFacade neverEmptyFacade = new NeverEmptyServer();
+					//IMessenger messenger = new Messenger();
+					//Naming.rebind(name, messenger);
+					Naming.rebind(name, neverEmptyFacade);
 				} catch (RemoteException re) {
-					System.err.println(" # Messenger RemoteException: " + re.getMessage());
+					System.err.println(" # neverEmptyFacade RemoteException: " + re.getMessage());
 					re.printStackTrace();
 					System.exit(-1);
 				} catch (MalformedURLException murle) {
@@ -107,9 +117,10 @@ public class RMITest {
 			System.setSecurityManager(new SecurityManager());
 		}
 
-		String name = "//127.0.0.1:1099/MessengerRMIDAO";
+		String name = "//127.0.0.1:1099/NeverEmptyFacadeServerRMIDAO";
 		System.out.println("BeforeTest - Setting the client ready for calling TestServer name: " + name);
-		messenger = (IMessenger) java.rmi.Naming.lookup(name);
+		//messenger = (IMessenger) java.rmi.Naming.lookup(name);
+		NeverEmptyFacade = (INeverEmptyFacade) java.rmi.Naming.lookup(name);
 		}
 		catch (Exception re) {
 			System.err.println(" # Messenger RemoteException: " + re.getMessage());
@@ -119,10 +130,82 @@ public class RMITest {
 		
 	}
 	
-	@Test public void registerNewUserTest() {
+	
+	/*
+	 * Test Login con un usuario no registrado
+	 */	
+	@Test
+	@Required(totalTime = 500)
+	public void loginNewUserTest() {
+		logger.info("loginNewUserTest");
+		boolean resul=false;
 		try{
-			System.out.println("Test 1 - Register new user");
-			messenger.registerUser("jesus", "jesus");
+			logger.info("Test 1 - Loging new user");
+
+			resul= NeverEmptyFacade.login("anonimo", "1234");//username y password
+		}
+		catch (Exception re) {
+			//logger.error(" # CinePlus RemoteException: " + re.getMessage());
+			System.err.println(" # Messenger RemoteException: " + re.getMessage());
+		} 
+		/*
+		 * Very simple test, inserting a valid new user
+		 */
+		logger.info("Si es TRUE, se ha logeado");
+		assertFalse( resul );
+	}
+	
+	
+	
+	//Comprobar login con un usuario registrado 
+	
+	@Test
+	@PerfTest(invocations = 100, threads = 10)
+	@Required(max = 1000, average = 1000)
+	public void loginExistingUserTest() {
+		logger.info("loginExistingUserTest");
+		boolean resul=false;
+		try{
+			logger.info("Test 2 - Login existing user.");
+			resul= NeverEmptyFacade.login("jesus@gmail.com", "1234");
+		}
+		catch (Exception re) {
+			//logger.error(" # CinePlus RemoteException: " + re.getMessage());
+			System.err.println(" # Messenger RemoteException: " + re.getMessage());
+		} 
+		
+		logger.info("Si es TRUE, se ha logeado");
+		assertTrue( resul );
+	}
+	
+	
+	@Test
+	@Required(throughput = 20)
+	public void registerExistingUserTest() {
+		logger.info("registerExistingUserTest");
+		boolean resul=false;
+		try{
+			logger.info("Test 3 - Register existing user. Change password");
+			resul = NeverEmptyFacade.registerUser("jesus", "12342de");
+	
+		}
+		catch (Exception re) {
+			//logger.error(" # CinePlus RemoteException: " + re.getMessage());
+			System.err.println(" # Messenger RemoteException: " + re.getMessage());
+		} 
+		
+		
+		
+		logger.info("Si es TRUE, no se ha podido registar");
+		assertFalse(resul);
+	}
+	
+	
+	@Test 
+	public void registerNewUserTest() {
+		try{
+			System.out.println("Test 4 - Register new user");
+			NeverEmptyFacade.registerUser("jesus", "jesus");
 		}
 		catch (Exception re) {
 			System.err.println(" # Messenger RemoteException: " + re.getMessage());
@@ -133,34 +216,45 @@ public class RMITest {
 		assertTrue( true );
 	}
 	
-	@Test public void registerExistingUserTest() {
+	
+	//Vamos a suponer que no hay ningun usuario registrado con google
+	@Test 
+	public void registerNewUserGoogleTest() {
+		logger.info("registerExistingUserGoogleTest");
+		boolean resul=false;
 		try{
-			System.out.println("Test 2 - Register existing user. Change password");
-			messenger.registerUser("cristian", "cristian");
-			// Silly way of testing the password testing
-			messenger.registerUser("cristian", "1234");
-			
+			System.out.println("Test 5 - Register new user");
+			resul = NeverEmptyFacade.registerGoogle("cristian", "cristian123@gmail.com", "cr2344");
 		}
 		catch (Exception re) {
 			System.err.println(" # Messenger RemoteException: " + re.getMessage());
 		} 
 		/*
-		 * Very simple test 
+		 * Very simple test, inserting a valid new user
 		 */
-		assertTrue( true );
+		assertFalse( resul );
 	}
 	
-	@Test public void sayMessageValidUser() {
-		System.out.println("Test 3 - Sending message - Valid User");
-		String ret = null;
+	//Vamos a suponer que no hay ningun usuario registrado con facebook
+	@Test 
+	public void registerNewUserFacebookTest() {
+		logger.info("registerExistingUserFacebookTest");
+		boolean resul=false;
 		try{
-			messenger.registerUser("alvaro","alvaro");
-			ret = messenger.sayMessage("alvaro", "alvaro", "testing message");
-		} catch (RemoteException e){
-			
+			System.out.println("Test 6 - Register new user");
+			resul = NeverEmptyFacade.registerFacebook("alvaro", "alvaro12@gmail.com", "alv332");
 		}
-		assertEquals("testing message", ret);
+		catch (Exception re) {
+			System.err.println(" # Messenger RemoteException: " + re.getMessage());
+		} 
+		/*
+		 * Very simple test, inserting a valid new user
+		 */
+		assertFalse( resul );
 	}
+	
+
+	
 	
 	@After public  void deleteDatabase() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");

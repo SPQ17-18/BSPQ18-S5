@@ -17,99 +17,105 @@ import SPQ.dao.IUserDAO;
 import SPQ.data.Message;
 import SPQ.data.User;
 import SPQ.remote.Messenger;
+import SPQ.remote.NeverEmptyFacade;
 import junit.framework.JUnit4TestAdapter;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DAOMockTest {
 
-	
-	Messenger m;
-	
+
+	//Messenger m;
+	NeverEmptyFacade neverEmptyFacade;
+
 	@Mock
 	IUserDAO dao;
-	
+
 	public static junit.framework.Test suite() {
 		return new JUnit4TestAdapter(DAOMockTest.class);
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {		
-		m = new Messenger(dao);
+		neverEmptyFacade = new NeverEmptyFacade(dao);
 
 	}
-	
+
 	@Test
 	//@Ignore
 	public void testRegisterUserCorrectly() {
-	
+
 		// Stubbing - return a given value when a specific method is called
 		when( dao.retrieveUser("jesus") ).thenReturn( null );
-		m.registerUser("jesus", "jesus");
-		
+		neverEmptyFacade.registerUser("jesus", "jesus");
+
 		//Use ArgumentCaptor to capture argument values for further assertions.
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
-		
+
 		// Setting expectations -  the method storeUser() is called once and the argument is intercepted
 		verify (dao).storeUser(userCaptor.capture());
 		User newUser = userCaptor.getValue();
 		System.out.println("Registering mock new user: " + newUser.getUsername());
-	
+
 		assertEquals( "jesus", newUser.getUsername());
-		
+
 	}
-	
+
 	@Test
 	public void testRegisterUserAlreadyExists() {
 		User u = new User("jesus","jesus","jesus@mail.com","Yes");
-		
+
 		when( dao.retrieveUser("jesus") ).thenReturn(u);
 		// When the user exist, we update the password
-		m.registerUser("jesus", "1234");
-		
-		
+		neverEmptyFacade.registerUser("jesus", "1234");
+
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
 		verify (dao).updateUser(userCaptor.capture());
 		User newUser = userCaptor.getValue();
 		System.out.println("Changing password of mock user: " + newUser.getPassword());
 		assertEquals( "1234", newUser.getPassword());
-		
+
 	}
+
 	
+	/*
 	@Test(expected=RemoteException.class)
 	public void testSayMessageUserInvalid() throws RemoteException {
-		
+
 		when( dao.retrieveUser("jesus") ).thenReturn( null );
 		System.out.println("Say message and invalid user, testing exception");
-		
+
 		m.sayMessage("jesus", "jesus", "testing message");
-			
+
 	}
+
 	
 	@Test
 	public void testSayMessageUserValid() throws RemoteException {
 		// Setting up the test data
-		User u = new User("jesus","jesus","jesus@mail.com","Yes");
+		User u = new User("jesus","1234","jesus@gmail.com","");
 		Message mes = new Message("testing message");
 		mes.setUser(u);
 		u.addMessage(mes) ;
-		
+
 		//Stubbing
 		when( dao.retrieveUser("cortazar") ).thenReturn(u);
-		
+
 		//Calling the method under test
-		
+
 		m.sayMessage("jesus", "jesus", "testing message");
-		
+
 		// Verifying the outcome
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
 		verify (dao).updateUser(userCaptor.capture());
 		User newUser = userCaptor.getValue();
-		
+
 		assertEquals( "jesus", newUser.getMessages().get(0).getUser().getUsername());
-		
+
 	}
 	
-	
-	
-	
+	*/
+
+
+
+
 }

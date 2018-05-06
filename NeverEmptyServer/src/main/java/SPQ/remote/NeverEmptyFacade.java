@@ -1,13 +1,34 @@
 package SPQ.remote;
 
 import SPQ.NeverEmptyServer;
+import SPQ.dao.IUserDAO;
+import SPQ.dao.UserDAO;
+import SPQ.data.Message;
+import SPQ.data.User;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmptyFacade{
-	private static final long serialVersionUID = 1L;
+
 	private NeverEmptyServer neverEmptyServer;
+	
+	private static final long serialVersionUID = 1L;
+	private int cont =0;
+	IUserDAO dao;
+	
+	
+	
+	public NeverEmptyFacade() throws RemoteException {
+		super();
+		dao = new UserDAO();
+	
+	}
+	public NeverEmptyFacade(IUserDAO udao) throws RemoteException {
+		super();
+		dao = udao;
+	
+	}
 	
 	public NeverEmptyFacade(NeverEmptyServer neverEmptyServer) throws RemoteException {
 		super();
@@ -53,5 +74,63 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 	public boolean updateUserCardNumber(String username, String cardNumber) throws RemoteException {
 		return neverEmptyServer.updateUserCardNumber(username, cardNumber);
 	}
+
+	@Override
+	public boolean registerUser(String username, String password) {
+			
+			System.out.println("Checking whether the user already exits or not: '" + username +"'");
+			UserDAO userDAO = new UserDAO();
+			User user = null;
+			boolean registrar=false;
+			try {
+				user = userDAO.retrieveUser(username);
+			} catch (Exception  e) {
+				System.out.println("Exception launched: " + e.getMessage());
+			}
+			
+			if (user != null) {
+				System.out.println("The user exists. So, setting new password for User: " + username);
+				user.setPassword(password);
+				System.out.println("Password set for User: " + username);
+				userDAO.updateUser(user);
+				registrar=true;
+			} else {
+				String mail= "";
+				String registerMethod= "";
+				System.out.println("Creating user: " + username);
+				user = new User(username, password, mail, registerMethod );
+				userDAO.storeUser(user);				 
+				System.out.println("User created: " + username);
+				registrar=true;
+			}
+			
+			return registrar;
+		}
+	
+	
+	/*
+	@Override
+	public User getUserProducts(String userName) throws RemoteException {
+		
+		System.out.println("Checking whether the user already exits or not: '" + userName +"'");
+		UserDAO userDAO = new UserDAO();
+		User user = null;
+		try {
+			user = userDAO.retrieveUser(userName);
+		} catch (Exception  e) {
+			System.out.println("Exception launched: " + e.getMessage());
+		}
+		
+		if (user != null) {
+			System.out.println("Returning the User and its products to the RMI Client: " + userName);
+			return user;
+		} else {
+			System.out.println("The user does not exist, no possibility of retrieving products ...: " + userName);
+			throw new RemoteException("Login details supplied for product retrieval are not correct");
+		}
+	}
+	
+	*/
+
 
 }

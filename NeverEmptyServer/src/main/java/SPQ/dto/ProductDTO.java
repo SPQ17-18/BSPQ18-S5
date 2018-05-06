@@ -8,10 +8,12 @@ public class ProductDTO implements Serializable {
 	
 	private String nombreProduct;
 	private double precioProduct;
+	private int quantity;
 	
-	public ProductDTO (String nombreProduct,double precioProduct) {
+	public ProductDTO (String nombreProduct,double precioProduct, int quantity) {
 		this.nombreProduct = nombreProduct;
 		this.precioProduct = precioProduct;
+		this.quantity= quantity;
 	}
 
 	public String getNombreProduct() {
@@ -28,6 +30,14 @@ public class ProductDTO implements Serializable {
 
 	public void setPrecioProduct(double precioProduct) {
 		this.precioProduct = precioProduct;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 	
