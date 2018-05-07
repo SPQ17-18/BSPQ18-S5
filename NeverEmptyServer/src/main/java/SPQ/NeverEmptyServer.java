@@ -50,6 +50,14 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		return false;
 	}
 
+	public String getUser(String username) {
+		UserDAO userDAO = new UserDAO();
+		User user = new User(username, "", "", "");
+		user = userDAO.getUser(user);
+		String userString = user.getUsername() + ";" + user.getEmail() + ";" + user.getPayPalEmail() + ";" + user.getPayPalPassword() + ";" + user.getCardNumber();
+		return userString;
+	}
+	
 	public boolean login(String username, String password) {
 		Google google = new Google("0.0.0.0", "35600");
 		UserDAO userDAO = new UserDAO();
@@ -135,4 +143,5 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		UserDAO userDAO = new UserDAO();
 		return userDAO.updateUserCardNumber(user);
 	}
+
 }

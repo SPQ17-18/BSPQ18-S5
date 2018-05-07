@@ -51,8 +51,6 @@ public class EroskiService extends Thread {
 	public String readData(String data) {
 		String[] arrayData = data.split(",");
 		try {
-			String email = arrayData[0];
-			String password = arrayData[1];
 			
 			ProductDAO productDAO = new ProductDAO();
 			List<Product> products = productDAO.getProducts();

@@ -47,13 +47,15 @@ public class VentanaTicket extends JFrame{
 		table = new JTable(new DefaultTableModel());
 		DefaultTableModel dmt = (DefaultTableModel) table.getModel();
 		String titulosColumna [] = {"Nombre Producto","precio unitario"};
+		
 		for (int i = 0; i < titulosColumna.length; i++) {
 			dmt.addColumn(titulosColumna[i]);
 		}
+		
 		ArrayList<Producto>lProducto = new ArrayList<Producto>();
 		ArrayList<Producto>listaProducto = new ArrayList<Producto>();
 		Producto p = new Producto();
-		listaProducto = p.rellenarArrayProduto(lProducto);
+		//listaProducto = p.rellenarArrayProduto(lProducto);
 		
 		for (int i = 0; i < listaProducto.size(); i++) {
 			Producto producto = listaProducto.get(i);

@@ -9,6 +9,7 @@ public interface INeverEmptyFacade extends Remote{
 	public boolean login(String username, String password) throws RemoteException;
 	
 	public String getProducts() throws RemoteException;
+	public String getUser(String username) throws RemoteException;
 	
 	public boolean updateShoppingList (String username, String productList) throws RemoteException;
 	
