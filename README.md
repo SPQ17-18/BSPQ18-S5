@@ -12,9 +12,17 @@ La parte servidora la delimitan las carpetas: NeverEmptyServer, EroskiService, F
 PARA EJECUTAR EL PROYECTO:
 
 1º Para compilar: mvn clean compile
-2º 2.1) Para ejecutar el cliente: mvn exec:java -Pclient
+
+2º 
+
+   2.1) Para ejecutar el cliente: mvn exec:java -Pclient
+
    2.2) Para ejecutar el servidor: mvn exec:java -Pserver
+
 3º Para los test: mvn test
+
    Este comando generará el report Contiperf
+   
 4º Para generar el report Cobertura: mvn cobertura:cobertura
+
    Para consultar el porcentaje testeado: mvn cobertura:check
