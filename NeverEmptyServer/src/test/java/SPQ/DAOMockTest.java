@@ -14,9 +14,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import SPQ.dao.IUserDAO;
-import SPQ.data.Message;
 import SPQ.data.User;
-import SPQ.remote.Messenger;
 import SPQ.remote.NeverEmptyFacade;
 import junit.framework.JUnit4TestAdapter;
 
@@ -45,8 +43,15 @@ public class DAOMockTest {
 	public void testRegisterUserCorrectly() {
 
 		// Stubbing - return a given value when a specific method is called
-		when( dao.retrieveUser("jesus") ).thenReturn( null );
-		neverEmptyFacade.registerUser("jesus", "jesus");
+		when( dao.retrieveUser("alberto") ).thenReturn( null );
+		
+		try {
+			neverEmptyFacade.registerUser("alberto", "albertocontra");
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//neverEmptyFacade.registerFacebook("alberto", "alberto@gmmail.com", "albertcontra");
 
 		//Use ArgumentCaptor to capture argument values for further assertions.
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
@@ -56,17 +61,22 @@ public class DAOMockTest {
 		User newUser = userCaptor.getValue();
 		System.out.println("Registering mock new user: " + newUser.getUsername());
 
-		assertEquals( "jesus", newUser.getUsername());
+		assertEquals( "alberto", newUser.getUsername());
 
 	}
 
 	@Test
 	public void testRegisterUserAlreadyExists() {
-		User u = new User("jesus","jesus","jesus@mail.com","Yes");
+		User u = new User("jesus","jesus","jesus@gmail.com","Google");
 
 		when( dao.retrieveUser("jesus") ).thenReturn(u);
 		// When the user exist, we update the password
-		neverEmptyFacade.registerUser("jesus", "1234");
+		try {
+			neverEmptyFacade.registerUser("jesus", "1234");
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
 		verify (dao).updateUser(userCaptor.capture());
@@ -77,18 +87,20 @@ public class DAOMockTest {
 	}
 
 	
-	/*
+	
 	@Test(expected=RemoteException.class)
 	public void testSayMessageUserInvalid() throws RemoteException {
 
-		when( dao.retrieveUser("jesus") ).thenReturn( null );
+		when( dao.retrieveUser("alberto") ).thenReturn( null );
 		System.out.println("Say message and invalid user, testing exception");
 
-		m.sayMessage("jesus", "jesus", "testing message");
+		neverEmptyFacade.sayMessage("alberto", "albertcontra", "testing message");
 
 	}
 
 	
+	
+	/*
 	@Test
 	public void testSayMessageUserValid() throws RemoteException {
 		// Setting up the test data

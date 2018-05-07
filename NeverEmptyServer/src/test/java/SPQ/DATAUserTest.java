@@ -17,20 +17,22 @@ public class DATAUserTest {
 	private User alvaro;
 	private User enara;
 	private User cristian;
+	private User ekaitz;
 	
 	@Before
 	public void setUp() throws Exception {
-		jesus = new User("jesus", "jesus@gmail.com", "1234", "");
+		jesus = new User("jesus", "jesus@gmail.com", "1234", "Google");
 		jesus.setCardNumber(1245);
 		
-		alvaro = new User("alvaro", "alvaro@gmail.com", "alv12", "");
+		alvaro = new User("alvaro", "alvaro@gmail.com", "alv12", "Facebook");
 		alvaro.setEmail("alvaro@opendeusto.es");
 		
-		enara = new User("enara", "enara@gmail.com", "enr23", "");
+		enara = new User("enara", "enara@gmail.com", "enr23", "Facebook");
 		
-		cristian = new User("cristian", "cristian@gmail.com", "12cr", "");
+		cristian = new User("cristian", "cristian@gmail.com", "12cr", "Google");
 		cristian.setPayPalEmail("cristianPaypal@paypal.com");
 
+		ekaitz= new User("ekaitz", "ekaitz@gmail.com", "we3", "Google");
 				
 	}
 	
@@ -63,6 +65,14 @@ public class DATAUserTest {
 		assertEquals("cristian@gmail.com", cristian.getEmail());
 		assertEquals("12cr", cristian.getPassword());
 		assertEquals("cristianPaypal@paypal.com",cristian.getPayPalEmail());
+	}
+	
+	@Test
+	public void Ekaitztest() {
+		assertEquals("ekaitz", ekaitz.getUsername());
+		assertEquals("ekaitz@gmail.com", ekaitz.getEmail());
+		assertEquals("we3", ekaitz.getPassword());
+		
 	}
 	
 	

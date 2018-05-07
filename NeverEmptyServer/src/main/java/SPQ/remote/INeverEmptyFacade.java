@@ -19,6 +19,6 @@ public interface INeverEmptyFacade extends Remote{
 	public boolean updateUserCardNumber (String username, String cardNumber) throws RemoteException;
 	
 	public boolean registerUser(String username, String password) throws RemoteException;
-	
+	public String sayMessage(String login, String password, String message) throws RemoteException;
 	//public User getUserProducts(String login) throws RemoteException;
 }

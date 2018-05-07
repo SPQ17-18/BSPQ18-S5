@@ -76,36 +76,35 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 	}
 
 	@Override
-	public boolean registerUser(String username, String password) {
-			
-			System.out.println("Checking whether the user already exits or not: '" + username +"'");
-			UserDAO userDAO = new UserDAO();
-			User user = null;
-			boolean registrar=false;
-			try {
-				user = userDAO.retrieveUser(username);
-			} catch (Exception  e) {
-				System.out.println("Exception launched: " + e.getMessage());
-			}
-			
-			if (user != null) {
-				System.out.println("The user exists. So, setting new password for User: " + username);
-				user.setPassword(password);
-				System.out.println("Password set for User: " + username);
-				userDAO.updateUser(user);
-				registrar=true;
-			} else {
-				String mail= "";
-				String registerMethod= "";
-				System.out.println("Creating user: " + username);
-				user = new User(username, password, mail, registerMethod );
-				userDAO.storeUser(user);				 
-				System.out.println("User created: " + username);
-				registrar=true;
-			}
-			
-			return registrar;
+	public boolean registerUser(String username, String password) throws RemoteException {
+		return neverEmptyServer.registerUser(username, password);
+	}
+	
+	public String sayMessage(String login, String password, String message) throws RemoteException {
+
+		System.out.println("Retrieving the user: '" + login +"'");
+		User user = null;
+		try {
+			user = dao.retrieveUser(login);
+		} catch (Exception  e) {
+			System.out.println("Exception launched: " + e.getMessage());
 		}
+		
+		System.out.println("User retrieved: " + user);
+		if (user != null)  {
+			Message message1 = new Message(message);
+			message1.setUser(user);
+			user.getMessages().add(message1);
+			dao.updateUser(user);	
+			cont++;
+			System.out.println(" * Client number: " + cont);
+			return message;
+		}
+		else {
+			System.out.println("Login details supplied for message delivery are not correct");
+			throw new RemoteException("Login details supplied for message delivery are not correct");
+		} 
+	}
 	
 	
 	/*

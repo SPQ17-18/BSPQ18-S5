@@ -1,4 +1,4 @@
-package SPQmain;
+/*package SPQmain;
 
 import static org.junit.Assert.*;
 
@@ -39,3 +39,5 @@ public class MiPruebaTest {
 
 
 }
+
+*/

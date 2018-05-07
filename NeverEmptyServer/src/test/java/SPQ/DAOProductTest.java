@@ -39,7 +39,7 @@ public class DAOProductTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		logger.info("Almacenando peliculas");
+		logger.info("Almacenando productos");
 		product1= new Product("Lubina", 25, 6);
 		product2= new Product("Lomo", 9, 7);
 

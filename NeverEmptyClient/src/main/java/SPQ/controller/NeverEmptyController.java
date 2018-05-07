@@ -15,7 +15,7 @@ public class NeverEmptyController {
 		rmi = new RMIServiceLocator();
 		//cmsl.setServices(args[0], args[1], args[2]);
 		
-		UserDTO userDTO= new UserDTO();
+		//UserDTO userDTO= new UserDTO();
 	}
 	
 	public NeverEmptyController(RMIServiceLocator rmi) {
@@ -38,6 +38,13 @@ public class NeverEmptyController {
 		return rmi.getNeverEmptyServer().getProducts();
 	}
 	
+	/*
+	public String getUsers() throws RemoteException{
+		return rmi.getNeverEmptyServer().
+	}
+	*/
+	
+	/*
 	//Registrar un usuario pasando un usuario 
 	public boolean registerUser(UserDTO userDTO) {
 		boolean registered = false;
@@ -97,7 +104,31 @@ public class NeverEmptyController {
 		return products;
 	}
 	
+	//Metodo para borrar usuario
+	public boolean deleteUser(UserDTO userDTO) {
+		boolean deleted = false;
+		try {
+			deleted = rmi.getService().deleteUser(userDTO);
+		} catch (RemoteException e) {
+			//logger.error("Error deleting a member.");
+			System.err.println(" # Messenger RemoteException: " + e.getMessage());
+		}
+		return deleted;
+	}
 	
+	//Obtener todos los usuarios
+	public List<UserDTO> getAllUsers() {
+		List<UserDTO> users = null;
+		try {
+			users = rmi.getService().getUsers();
+		} catch (RemoteException e) {
+			//logger.error("Error getting members from server.");
+			System.err.println(" # Messenger RemoteException: " + e.getMessage());
+		}
+		return members;
+	}
+	
+	*/
 
 }
 

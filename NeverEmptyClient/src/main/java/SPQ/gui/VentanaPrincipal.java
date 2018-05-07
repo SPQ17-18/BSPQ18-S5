@@ -284,12 +284,14 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 				String user = "Cristian";
 				String password = "";
 				boolean modificado=false;
+				/*
 				try {
-					modificado = neverEmptyController.modifyEmail(user, password, mailA, mailB);
+					//modificado = neverEmptyController.modifyEmail(user, password, mailA, mailB);
 				} catch (Exception e2) {
 					// TODO: handle exception
 					System.out.println(e2);
 				}
+				*/
 				if(modificado) {
 					System.out.println("ha funcionado");
 				}else {
@@ -393,6 +395,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		/*Evento de boton para añadir producto, precio y cantidad al string que le pasaremos a la BD
 		 * Ademas tambien envia el nombre del usuario 
 		 * */
+		
+		/*
 		if (e.getSource()==btnPanelInterno2) {
 			//Solo se añaden al string aquellos productos cuya cantidad es mayor que 0
 			if (i>0) {
@@ -412,6 +416,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			}
 			String name = NeverEmptyController.username;
 		}
+		*/
 		
 
 	}

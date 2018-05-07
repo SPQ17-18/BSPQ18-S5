@@ -5,6 +5,9 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import SPQ.dto.ProductDTO;
+import SPQ.dto.UserDTO;
+import SPQ.dao.ProductDAO;
 import SPQ.dao.UserDAO;
 import SPQ.data.Product;
 import SPQ.data.User;
@@ -67,32 +70,37 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		}
 	}
 	
-/*	public void registerUser(String username, String password) {
-		
-		System.out.println("Checking whether the user already exits or not: '" + username +"'");
-		UserDAO userDAO = new UserDAO();
-		User user = null;
-		try {
-			user = userDAO.retrieveUser(username);
-		} catch (Exception  e) {
-			System.out.println("Exception launched: " + e.getMessage());
+	@Override
+	public boolean registerUser(String username, String password) {
+			
+			System.out.println("Checking whether the user already exits or not: '" + username +"'");
+			UserDAO userDAO = new UserDAO();
+			User user = null;
+			boolean registrar=false;
+			try {
+				user = userDAO.retrieveUser(username);
+			} catch (Exception  e) {
+				System.out.println("Exception launched: " + e.getMessage());
+			}
+			
+			if (user != null) {
+				System.out.println("The user exists. So, setting new password for User: " + username);
+				user.setPassword(password);
+				System.out.println("Password set for User: " + username);
+				userDAO.updateUser(user);
+				registrar=true;
+			} else {
+				String mail= "";
+				String registerMethod= "";
+				System.out.println("Creating user: " + username);
+				user = new User(username, password, mail, registerMethod );
+				userDAO.storeUser(user);				 
+				System.out.println("User created: " + username);
+				registrar=true;
+			}
+			
+			return registrar;
 		}
-		
-		if (user != null) {
-			System.out.println("The user exists. So, setting new password for User: " + username);
-			user.setPassword(password);
-			System.out.println("Password set for User: " + username);
-			userDAO.updateUser(user);
-		} else {
-			String mail= "";
-			String registerMethod= "";
-			System.out.println("Creating user: " + username);
-			user = new User(username, password, mail, registerMethod );
-			userDAO.storeUser(user);				 
-			System.out.println("User created: " + username);
-		}
-	}
-	*/
 
 	
 	public String getProducts() {
@@ -173,10 +181,12 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		return userDAO.modifyEmail(user);
 	}
 
+
+
 	@Override
-	public boolean registerUser(String username, String password) throws RemoteException {
+	public String sayMessage(String login, String password, String message) throws RemoteException {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 
 
