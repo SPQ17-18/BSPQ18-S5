@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +31,6 @@ public class DATAProductTest {
         
 	}
 	
-
 	@Test
 	public void producto2test() {
 		assertEquals("Manzana", producto2.getName());

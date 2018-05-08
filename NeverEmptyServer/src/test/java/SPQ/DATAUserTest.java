@@ -2,7 +2,7 @@ package SPQ;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -38,6 +38,7 @@ public class DATAUserTest {
 	
 	@Test
 	public void Jesustest() {
+		logger.info("Comprobadno el usuario de Jesus");
 		assertEquals("jesus", jesus.getUsername());
 		assertEquals("jesus@gmail.com", jesus.getEmail());
 		assertEquals("1234", jesus.getPassword());
@@ -47,6 +48,7 @@ public class DATAUserTest {
 	
 	@Test
 	public void Alvarotest() {
+		logger.info("Comprobando el usuario de Alvaro");
 		assertEquals("alvaro", alvaro.getUsername());
 		assertEquals("alvaro@gmail.com", alvaro.getEmail());
 		assertEquals("alv12", alvaro.getPassword());	
@@ -54,6 +56,7 @@ public class DATAUserTest {
 	
 	@Test
 	public void Enaratest() {
+		logger.info("Comprobando el usuario de Enara");
 		assertEquals("enara", enara.getUsername());
 		assertEquals("enara@gmail.com", enara.getEmail());
 		assertEquals("enr23", enara.getPassword());	
@@ -61,6 +64,7 @@ public class DATAUserTest {
 	
 	@Test
 	public void Cristiantest() {
+		logger.info("Comprobando el usuario de Cristian");
 		assertEquals("cristian", cristian.getUsername());
 		assertEquals("cristian@gmail.com", cristian.getEmail());
 		assertEquals("12cr", cristian.getPassword());
@@ -69,6 +73,7 @@ public class DATAUserTest {
 	
 	@Test
 	public void Ekaitztest() {
+		logger.info("Comprobando el usuario de Ekaitz");
 		assertEquals("ekaitz", ekaitz.getUsername());
 		assertEquals("ekaitz@gmail.com", ekaitz.getEmail());
 		assertEquals("we3", ekaitz.getPassword());

@@ -37,7 +37,7 @@
        <dependency>     
             <groupId>org.datanucleus</groupId>
             <artifactId>javax.jdo</artifactId>
-            <version>[3.2.0-m8, )</version>
+            <version>[3.2.0-m5, )</version>
         </dependency>
 		<dependency>
             <groupId>mysql</groupId>
@@ -200,6 +200,7 @@
 						<directory>${config.files.dir}</directory>
 						<includes>
 							<include>**/*.jdo</include>
+							<include>*.log</include>
 							<include>**/*.orm</include>
 							<include>**/*.properties</include>
 						</includes>
