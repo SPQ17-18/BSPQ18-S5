@@ -114,9 +114,7 @@ public class UserDAO {
 		}
 		return updated;
 	}
-	
-	
-	
+
 	public boolean storeUser(User user) {
 		boolean stored = false;
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
@@ -139,23 +137,21 @@ public class UserDAO {
 		return stored;
 	}
 	
-	
-
 	//Buscar usuario por nombre
-	public User getUser(User user) {
+	public User getUser(String username) {
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 
 		Transaction tx = pm.currentTransaction();
-		User newUser = null;
+		User user = null;
 
 		try {
-			System.out.println("   * Buscando user: " + user.getUsername());
+			System.out.println("   * Buscando user: " + username);
 
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE username == '" + user.getUsername() +"'");
+			Query<?> query = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE username == '" + username +"'");
 			query.setUnique(true);
-			newUser = (User) query.execute();
+			user = (User) query.execute();
 			tx.commit();
 
 		} catch (Exception ex) {
@@ -168,8 +164,9 @@ public class UserDAO {
 			pm.close();
 		}
 
-		return newUser;
+		return user;
 	}
+	
 	public void setUsermail(String email, String email2) {
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
@@ -200,30 +197,5 @@ public class UserDAO {
 		
 	}
 	
-	public void setUser(String user, String user2) {
-		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
-		pm.getFetchPlan().setMaxFetchDepth(3);
 
-		Transaction tx = pm.currentTransaction();
-		User usuario = null;
-		try {
-			System.out.println("* modificando user" + user);
-			tx.begin();	
-			//no estoy muy seguro de si en la tabla es user o User (con u mayuscula)
-			Query<?> query = pm.newQuery("UPDATE " + User.class.getName() +"SET user= '"+ user2 + "'" + " WHERE user == '" + user +"'");
-			query.setUnique(true);
-			usuario = (User) query.execute();
-			tx.commit();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-	
-	}
 }

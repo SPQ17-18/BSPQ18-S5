@@ -22,7 +22,10 @@ public class NeverEmptyController {
 	}
 
 	public boolean login(String username, String password) throws RemoteException {
+		System.out.println("ANTES DEL LOGIN");
+		System.out.println("USERNAME: " +username + " PASSWORD"+ password);
 		if(rmi.getNeverEmptyServer().login(username, password)) {
+			System.out.println("HACE EL LOGIN");
 			String user = this.getUser(username);
 			String [] userArray = user.split(";");
 			if(!userArray[1].equals("")) {

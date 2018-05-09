@@ -52,21 +52,21 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 
 	public String getUser(String username) {
 		UserDAO userDAO = new UserDAO();
-		User user = new User(username, "", "", "");
-		user = userDAO.getUser(user);
+		User user = userDAO.getUser(username);
 		String userString = user.getUsername() + ";" + user.getEmail() + ";" + user.getPayPalEmail() + ";" + user.getPayPalPassword() + ";" + user.getCardNumber();
 		return userString;
 	}
 	
 	public boolean login(String username, String password) {
 		Google google = new Google("0.0.0.0", "35600");
+		Facebook facebook = new Facebook("0.0.0.0", "35900");
 		UserDAO userDAO = new UserDAO();
-		User user = userDAO.getUser(new User(username, "", password, ""));
+		User user = userDAO.getUser(username);
 		String answer = "incorrect";
 		if (user.getRegisterMethod().equals("Google")) {
-			answer = google.login(user.getEmail(), user.getPassword());
+			answer = google.login(user.getEmail(), password);
 		}else if (user.getRegisterMethod().equals("Facebook")) {
-			answer = google.login(user.getEmail(), user.getPassword());
+			answer = facebook.login(user.getEmail(), password);
 		}
 		if (answer.equals("correct")){
 			return true;
