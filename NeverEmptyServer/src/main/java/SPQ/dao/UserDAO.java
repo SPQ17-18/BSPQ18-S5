@@ -15,6 +15,10 @@ import org.apache.log4j.Logger;
 
 import SPQ.data.User;
 
+/**
+ * Clase UserDAO. Permite la conexion con la bd.
+ *
+ */
 public class UserDAO implements IUserDAO {
 	
 //	public static void main(String[] args) {
@@ -37,10 +41,14 @@ public class UserDAO implements IUserDAO {
 	
 	static Logger logger = Logger.getLogger(UserDAO.class.getName());
 
+	/**
+	 * Crea un objeto UserDAO
+	 */
 	public UserDAO() {
 		this.persistenceManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	
 	public boolean updateUserPayPalPassword (User user) {
 		boolean updated = false;
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();

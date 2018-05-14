@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 import SPQ.dto.ProductDTO;
 import SPQ.dto.UserDTO;
@@ -20,19 +21,68 @@ import SPQ.remote.INeverEmptyFacade;
 
 public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmptyFacade{
 
-	protected NeverEmptyServer() throws RemoteException {
+	private UserDAO userDAO;
+	private ProductDAO productDAO;
+	static Logger logger= Logger.getLogger(NeverEmptyServer.class.getName());
+	private static final long serialVersionUID = 1L;
+	
+	public NeverEmptyServer() throws RemoteException{
+		super();
+		
+		List<User> listUsuarios = new ArrayList<>();
+		List<Product> listProducts = new ArrayList<>();
+		
+		//Usuarios
+		userDAO = new UserDAO();
+		User jesus= new User("jesus", "jesus@gmail.com", "1234", "Google");
+		User cristian = new User("cristian", "cristian@gmail.com", "2345", "Google");
+		User alvaro = new User("alvaro", "alvaro@gmail.com", "3456", "Facebook");
+		User enara = new User("enara", "enara@gmail.com", "4567", "Facebook");
+		
+		userDAO.storeUser(jesus);
+		userDAO.storeUser(cristian);
+		userDAO.storeUser(alvaro);
+		userDAO.storeUser(enara);
+		
+		listUsuarios.add(jesus);
+		listUsuarios.add(cristian);
+		listUsuarios.add(alvaro);
+		listUsuarios.add(enara);
+		
+		//Productos
+		
+		productDAO = new ProductDAO();
+		Product pizza = new Product("pizza de barbacoa", 5, 1);
+		Product queso = new Product("queso", 7, 1);
+		Product manzana = new Product("manzana", 3, 7);
+		
+		listProducts.add(queso);
+		listProducts.add(manzana);
+		listProducts.add(pizza);
+		
+		productDAO.storeProduct(pizza);
+		productDAO.storeProduct(manzana);
+		productDAO.storeProduct(queso);
+		
+		
+		
+		
+	}
+	
+	/*protected NeverEmptyServer() throws RemoteException {
 		super();
 	}
-
-	private static final long serialVersionUID = 1L;
+	*/
+	
+	
 
 	public boolean registerGoogle(String username, String email, String password) {
-		System.out.println("Registrar en servidor");
+		logger.info("Registrar en servidor");
 		Google google = new Google("0.0.0.0", "35600");
 		String googleAnswer = google.register(email, password);
 		if (googleAnswer.equals("correct")){
 			User user = new User(username, email, password, "Google");
-			UserDAO userDAO = new UserDAO();
+			//UserDAO userDAO = new UserDAO(); Ya esta creado en el constructor
 			userDAO.storeUser(user);
 			return true;
 		}
@@ -41,21 +91,24 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	}
 	
 	public boolean registerFacebook(String username, String email, String password) {
-		System.out.println("Registrar en servidor");
+		logger.info("Registrar en servidor");
 		Facebook facebook = new Facebook("0.0.0.0", "35600");
 		String facebookAnswer = facebook.register(email, password);
 		if (facebookAnswer.equals("correct")){
 			User user = new User(username, email, password, "Facebook");
-			UserDAO userDAO = new UserDAO();
+			//UserDAO userDAO = new UserDAO(); Ya esta creado en el constructor
 			userDAO.storeUser(user);
 			return true;
 		}
 		return false;
 	}
 
+	
+	
+	
 	public boolean login(String username, String password) {
 		Google google = new Google("0.0.0.0", "35600");
-		UserDAO userDAO = new UserDAO();
+		//UserDAO userDAO = new UserDAO();Creado en el constructor
 		User user = userDAO.getUser(new User(username, "", password, ""));
 		String answer = "incorrect";
 		if (user.getRegisterMethod().equals("Google")) {
@@ -73,29 +126,29 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	@Override
 	public boolean registerUser(String username, String password) {
 			
-			System.out.println("Checking whether the user already exits or not: '" + username +"'");
-			UserDAO userDAO = new UserDAO();
+			logger.info("Checking whether the user already exits or not: '" + username +"'");
+			//UserDAO userDAO = new UserDAO(); Ya esta creado en el constructor
 			User user = null;
 			boolean registrar=false;
 			try {
 				user = userDAO.retrieveUser(username);
 			} catch (Exception  e) {
-				System.out.println("Exception launched: " + e.getMessage());
+				logger.error("Exception launched: " + e.getMessage());
 			}
 			
 			if (user != null) {
-				System.out.println("The user exists. So, setting new password for User: " + username);
+				logger.error("The user exists. So, setting new password for User: " + username);
 				user.setPassword(password);
-				System.out.println("Password set for User: " + username);
+				logger.info("Password set for User: " + username);
 				userDAO.updateUser(user);
 				registrar=true;
 			} else {
 				String mail= "";
 				String registerMethod= "";
-				System.out.println("Creating user: " + username);
+				logger.info("Creating user: " + username);
 				user = new User(username, password, mail, registerMethod );
 				userDAO.storeUser(user);				 
-				System.out.println("User created: " + username);
+				logger.info("User created: " + username);
 				registrar=true;
 			}
 			
@@ -110,7 +163,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 			eroskiAnswer = eroski.getProducts();
 			return eroskiAnswer;
 		}catch (Exception e) {
-			System.out.println(e);
+			logger.error(e);
 		}
 		return eroskiAnswer;
 
@@ -123,7 +176,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 			paypalAnswer = paypal.pay(email, password, price);
 			return paypalAnswer;
 		}catch (Exception e) {
-			System.out.println(e);
+			logger.error(e);
 		}
 		return paypalAnswer;
 	}
@@ -140,10 +193,10 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 			products.add(p);
 		}
 		user.setShoppingList(products);
-		UserDAO userDAO = new UserDAO();
+		//UserDAO userDAO = new UserDAO();
 		return userDAO.updateShoppingList(user);
 		}catch (Exception ex) {
-			System.out.println("Update shopping list, datos incorrectos: " + ex.getMessage());
+			logger.error("Update shopping list, datos incorrectos: " + ex.getMessage());
 			return false;
 		}
 	}
@@ -152,14 +205,14 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		User user = new User(username, "", "", "");
 		user.setPayPalEmail(payPalEmail);
 		
-		UserDAO userDAO = new UserDAO();
+		//UserDAO userDAO = new UserDAO();
 		return userDAO.updateUserPayPalEmail(user);
 	}
 	public boolean updateUserPayPalPassword (String username, String payPalPassword) {
 		User user = new User(username, "", "", "");
 		user.setPayPalPassword(payPalPassword);
 		
-		UserDAO userDAO = new UserDAO();
+		//UserDAO userDAO = new UserDAO();
 		return userDAO.updateUserPayPalPassword(user);
 	}
 
@@ -168,7 +221,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		User user = new User(username, "", "", "");
 		user.setCardNumber(Integer.parseInt(cardNumber));
 		
-		UserDAO userDAO = new UserDAO();
+		//UserDAO userDAO = new UserDAO();
 		return userDAO.updateUserCardNumber(user);
 	}
 
@@ -177,17 +230,10 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		User user = new User(username,password,maila,"");
 		user.setEmail(mailb);
 		
-		UserDAO userDAO = new UserDAO();
+		//UserDAO userDAO = new UserDAO();
 		return userDAO.modifyEmail(user);
 	}
 
-
-
-	@Override
-	public String sayMessage(String login, String password, String message) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 }

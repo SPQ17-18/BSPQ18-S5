@@ -24,7 +24,7 @@ public class DAOMockTest {
 	static Logger logger = Logger.getLogger(RMITest.class.getName());
 	
 	NeverEmptyFacade neverEmptyFacade;
-
+	NeverEmptyServer neverEmptyServer;
 	@Mock
 	IUserDAO dao;
 
@@ -34,7 +34,8 @@ public class DAOMockTest {
 
 	@Before
 	public void setUp() throws Exception {		
-		neverEmptyFacade = new NeverEmptyFacade(dao);
+		
+		neverEmptyFacade = new NeverEmptyFacade(neverEmptyServer);
 
 	}
 
@@ -135,7 +136,7 @@ public class DAOMockTest {
 		try {
 			logger.info("Test 4 - Probando si el usuario ya esta registrado");
 			//neverEmptyFacade.registerUser("jesus", "1234");
-			neverEmptyFacade.registerGoogle("cristian", "cristian@gmail.com", "123");
+			neverEmptyFacade.registerFacebook("cristian", "cristian@gmail.com", "123");
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			logger.error(" # Messenger RemoteException: " + e.getMessage());
