@@ -25,13 +25,15 @@ import SPQ.data.User;
  * @author cortazar
  * Testing of the Service Layer, mocking the DAO layer
  */
-@RunWith(MockitoJUnitRunner.class)  
+@RunWith(MockitoJUnitRunner.Silent.class) 
 public class DAOMockTest {
 
 	
 	@Mock
 	UserDAO dao;
-		
+	@Mock
+	User user;
+
 	public static junit.framework.Test suite() {
 		return new JUnit4TestAdapter(DAOMockTest.class);
 	}
@@ -39,23 +41,24 @@ public class DAOMockTest {
 	@Before
 	public void setUp() throws Exception {		
 		dao = new UserDAO();
+		user = new User("cortazar", "cortazar@opendeusto.es", "cortazar", "Google");
+
 
 	}
 
 	@Test
 	//@Ignore
 	public void testRegisterUserCorrectly() {
-	
+		UserDAO mock = org.mockito.Mockito.mock(UserDAO.class);
 		// Stubbing - return a given value when a specific method is called
-		when( dao.getUser("cortazar") ).thenReturn( null );
-		User user = new User("cortazar", "cortazar@opendeusto.es", "cortazar", "Google");
-		dao.storeUser(user);
+		when( mock.getUser("cortazar") ).thenReturn( null );
+		mock.storeUser(user);
 		
 		//Use ArgumentCaptor to capture argument values for further assertions.
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
 		
 		// Setting expectations -  the method storeUser() is called once and the argument is intercepted
-		verify (dao).storeUser(userCaptor.capture());
+		verify (mock).storeUser(userCaptor.capture());
 		User newUser = userCaptor.getValue();
 		System.out.println("Registering mock new user: " + newUser.getUsername());
 	
@@ -65,11 +68,11 @@ public class DAOMockTest {
 	
 	@Test
 	public void testRegisterUserAlreadyExists() {
-		User user = new User("cortazar", "cortazar@opendeusto.es", "cortazar", "Google");
-		dao.storeUser(user);
-		when( dao.getUser("cortazar") ).thenReturn(user);
+		UserDAO mock = org.mockito.Mockito.mock(UserDAO.class);
+		mock.storeUser(user);
+		when( mock.getUser("cortazar") ).thenReturn(user);
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
-		verify (dao).getUser(userCaptor.capture().getUsername());
+		verify (mock).storeUser(userCaptor.capture());
 		User newUser = userCaptor.getValue();
 		System.out.println("Checking if the users exists: " + newUser.getPassword());
 		assertEquals( "cortazar", newUser.getUsername());
@@ -89,8 +92,7 @@ public class DAOMockTest {
 	@Test
 	public void testUpdateShoppingList() throws RemoteException {
 		// Setting up the test data
-		User u = new User("cortazar", "cortazar@opendeusto.es", "cortazar", "Google");
-		UserDAO dao = new UserDAO();
+		UserDAO mock = org.mockito.Mockito.mock(UserDAO.class);
 		Product p = new Product("MockTest1", 0.8, 25);
 		Product p1 = new Product("MockTest2", 0.9, 20);
 		Product p2 = new Product("MockTest3", 1, 19);
@@ -101,14 +103,14 @@ public class DAOMockTest {
 		pl.add(p2);
 		
 		//Stubbing
-		when( dao.getUser("cortazar") ).thenReturn(u);
-		
+		when( mock.getUser("cortazar") ).thenReturn(user);
+		user.setShoppingList(pl);
 		//Calling the method under test
-		dao.updateShoppingList(u);
+		mock.updateShoppingList(user);
 		
 		// Verifying the outcome
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
-		verify (dao).getUser(userCaptor.capture().getUsername());
+		verify (mock).updateShoppingList(userCaptor.capture());
 		User newUser = userCaptor.getValue();
 		
 		assertEquals( "MockTest1", newUser.getShoppingList().get(0).getName());
