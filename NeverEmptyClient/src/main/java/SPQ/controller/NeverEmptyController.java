@@ -3,7 +3,6 @@ package SPQ.controller;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-import SPQ.Producto;
 import SPQ.remote.RMIServiceLocator;
 
 public class NeverEmptyController {
