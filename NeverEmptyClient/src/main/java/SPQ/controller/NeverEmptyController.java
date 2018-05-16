@@ -4,9 +4,11 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 
+
 import org.apache.log4j.Logger;
 //import SPQ.NeverEmptyServer;
-import SPQ.Producto;
+
+
 import SPQ.remote.RMIServiceLocator;
 
 

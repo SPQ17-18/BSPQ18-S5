@@ -10,6 +10,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.RenderingHints;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -34,7 +35,7 @@ public class ProductLabel extends JPanel  implements ActionListener{
 	private JButton bAdd = new JButton();
 	private JButton bSub = new JButton();
 
-	
+
 	public ProductLabel(String productName, double price) {
 		this.productName = new JLabel(productName);
 		this.price = new JLabel(Double.toString(price));
@@ -44,12 +45,12 @@ public class ProductLabel extends JPanel  implements ActionListener{
 		this.productName = new JLabel(productName);
 		this.price = new JLabel(price);
 		this.quantity = new JLabel(quantity);
-		
+
 		FlowLayout flowLayout = new FlowLayout(SwingConstants.LEFT, 0, 0);
 		this.setLayout(flowLayout);
 		this.setBounds(0, 0, 350, 25);
-        this.setBackground(new Color(255, 255, 255));
-	
+		this.setBackground(new Color(255, 255, 255));
+
 		inicializarComponentes();
 	}
 	private void inicializarComponentes() {
@@ -58,40 +59,38 @@ public class ProductLabel extends JPanel  implements ActionListener{
 		this.productName.setOpaque(true);
 		this.productName.setForeground(new Color(255, 255, 255));
 		this.productName.setBackground(new Color(100, 100, 100));
-		
+
 		this.add(this.productName);
-		
+
 		this.price.setPreferredSize(new Dimension(100, 25));
 		this.price.setHorizontalAlignment(SwingConstants.CENTER);
 		this.price.setOpaque(true);
 		this.price.setForeground(new Color(255, 255, 255));
 		this.price.setBackground(new Color(150, 150, 150));
 		this.add(this.price);
-		
+
 		this.quantity.setPreferredSize(new Dimension(100, 25));
 		this.quantity.setHorizontalAlignment(SwingConstants.CENTER);
 		this.quantity.setOpaque(true);
 		this.quantity.setForeground(new Color(255, 255, 255));
 		this.quantity.setBackground(new Color(100, 100, 100));
-	    this.add(this.quantity);
-	    
-	    ImageIcon plusIcon = new ImageIcon("src/main/java/SPQ/gui/component/plus-green.png");
-        plusIcon = new ImageIcon(this.getScaledImage(plusIcon.getImage(), 20, 20));
-        this.bAdd.setIcon(plusIcon);
-        this.bAdd.setSize(50, 50);
-        this.bAdd.setPreferredSize(new Dimension(25, 25));
+		this.add(this.quantity);
+
+		ImageIcon plusIcon = getImageFromResources("plus-green.png", 20, 20);
+		this.bAdd.setIcon(plusIcon);
+		this.bAdd.setSize(50, 50);
+		this.bAdd.setPreferredSize(new Dimension(25, 25));
 		this.bAdd.setHorizontalAlignment(SwingConstants.CENTER);
 		this.bAdd.setOpaque(true);
 		this.bAdd.setBackground(new Color(150, 150, 150));
 		this.bAdd.setBorder(null);
 		this.bAdd.addActionListener(this);
 		this.add(this.bAdd);
-		
-		ImageIcon subIcon = new ImageIcon("src/main/java/SPQ/gui/component/minus-red.png");
-        subIcon = new ImageIcon(this.getScaledImage(subIcon.getImage(), 20, 20));
-        this.bSub.setIcon(subIcon);
-        this.bSub.setSize(50, 50);
-        this.bSub.setPreferredSize(new Dimension(25, 25));
+
+		ImageIcon subIcon = getImageFromResources("minus-red.png", 20, 20);
+		this.bSub.setIcon(subIcon);
+		this.bSub.setSize(50, 50);
+		this.bSub.setPreferredSize(new Dimension(25, 25));
 		this.bSub.setHorizontalAlignment(SwingConstants.CENTER);
 		this.bSub.setOpaque(true);
 		this.bSub.setBackground(new Color(150, 150, 150));
@@ -99,8 +98,21 @@ public class ProductLabel extends JPanel  implements ActionListener{
 		this.bSub.addActionListener(this);
 		this.add(this.bSub);
 
+
 	}
-	
+
+	private ImageIcon getImageFromResources(String filename, int w, int h) {
+		try {
+			Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/" + filename));
+			ImageIcon icon = new ImageIcon(image);
+			return icon;
+		}catch (Exception e) {
+			System.out.println("No se ha podido cargar la imagen " + filename + " : " + e);
+			return null;
+		}
+
+	}
+
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("ActionPerformed");
 		if (e.getSource() == this.bAdd) {
@@ -115,7 +127,7 @@ public class ProductLabel extends JPanel  implements ActionListener{
 			if (quantity > 0) {
 				quantity = quantity -1;
 			}
-			
+
 			this.quantity.setText(
 					Integer.toString(
 							quantity
@@ -160,16 +172,5 @@ public class ProductLabel extends JPanel  implements ActionListener{
 
 	public void setbSub(JButton bSub) {
 		this.bSub = bSub;
-	}
-
-	public Image getScaledImage(Image srcImg, int w, int h){
-	    BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-	    Graphics2D g2 = resizedImg.createGraphics();
-
-	    g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-	    g2.drawImage(srcImg, 0, 0, w, h, null);
-	    g2.dispose();
-
-	    return resizedImg;
 	}
 }

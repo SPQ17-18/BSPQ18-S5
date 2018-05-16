@@ -9,8 +9,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import SPQ.Producto;
 import SPQ.controller.NeverEmptyController;
+import SPQ.data.Product;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -52,14 +52,14 @@ public class VentanaTicket extends JFrame{
 			dmt.addColumn(titulosColumna[i]);
 		}
 		
-		ArrayList<Producto>lProducto = new ArrayList<Producto>();
-		ArrayList<Producto>listaProducto = new ArrayList<Producto>();
-		Producto p = new Producto();
+		ArrayList<Product>lProducto = new ArrayList<Product>();
+		ArrayList<Product>listaProducto = new ArrayList<Product>();
+
 		//listaProducto = p.rellenarArrayProduto(lProducto);
 		
 		for (int i = 0; i < listaProducto.size(); i++) {
-			Producto producto = listaProducto.get(i);
-			String fila[] = {producto.getNombreProducto(),String.valueOf(producto.getPrecioProducto())};
+			Product producto = listaProducto.get(i);
+			String fila[] = {producto.getName(),String.valueOf(producto.getPrice())};
 			dmt.addRow(fila);
 		}
 		table.setModel(dmt);

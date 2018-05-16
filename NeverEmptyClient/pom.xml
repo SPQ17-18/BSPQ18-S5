@@ -18,7 +18,13 @@
 	</properties>
 	
   <dependencies>
-    <dependency>
+  	<dependency>
+  		<groupId>SPQ</groupId>
+  		<artifactId>NeverEmptyServer</artifactId>
+  		<version>1.0-SNAPSHOT</version>
+  	</dependency>
+
+  	<dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
