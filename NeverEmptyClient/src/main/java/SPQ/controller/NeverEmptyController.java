@@ -3,8 +3,12 @@ package SPQ.controller;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
+
+import org.apache.log4j.Logger;
+//import SPQ.NeverEmptyServer;
 import SPQ.Producto;
 import SPQ.remote.RMIServiceLocator;
+
 
 public class NeverEmptyController {
 	public static String username = "";
@@ -13,6 +17,9 @@ public class NeverEmptyController {
 	public static String payPalPassword = "";
 	public static String cardNumber = "";
 	RMIServiceLocator rmi;
+	
+	static Logger logger = Logger.getLogger(NeverEmptyController.class.getName());
+	
 	public NeverEmptyController(RMIServiceLocator rmi) {
 		this.rmi = rmi;
 	}
@@ -22,33 +29,33 @@ public class NeverEmptyController {
 	}
 
 	public boolean login(String username, String password) throws RemoteException {
-		System.out.println("ANTES DEL LOGIN");
-		System.out.println("USERNAME: " +username + " PASSWORD"+ password);
+		logger.info("ANTES DEL LOGIN");
+		logger.info("USERNAME: " +username + " PASSWORD"+ password);
 		if(rmi.getNeverEmptyServer().login(username, password)) {
-			System.out.println("HACE EL LOGIN");
+			logger.info("HACE EL LOGIN");
 			String user = this.getUser(username);
 			String [] userArray = user.split(";");
 			if(!userArray[1].equals("")) {
 			
 				this.username = userArray[0];
-				System.out.println(this.username);
+				logger.info(this.username);
 			}
 			if(!userArray[1].equals("")) {
 				email = userArray[1];
 				
-				System.out.println(email);
+				logger.info(email);
 			}
 			if(!userArray[2].equals("null")) {
 				payPalEmail = userArray[2];
-				System.out.println(payPalEmail);
+				logger.info(payPalEmail);
 			}
 			if(!userArray[3].equals("null")) {
 				payPalPassword = userArray[3];
-				System.out.println(payPalPassword);
+				logger.info(payPalPassword);
 			}
 			if(!userArray[3].equals("-1")) {
 				cardNumber = userArray[4];
-				System.out.println(cardNumber);
+				logger.info(cardNumber);
 			}
 			return true;
 		}else {

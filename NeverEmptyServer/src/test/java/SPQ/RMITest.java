@@ -192,7 +192,7 @@ public class RMITest {
 		}
 		catch (Exception re) {
 			logger.error(" # NeverEmptyServer RemoteException: " + re.getMessage());
-			System.err.println(" # Messenger RemoteException: " + re.getMessage());
+			//System.err.println(" # Messenger RemoteException: " + re.getMessage());
 		} 
 		
 		

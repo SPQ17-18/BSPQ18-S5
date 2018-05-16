@@ -6,6 +6,9 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import org.apache.log4j.Logger;
+
+import SPQ.DATAUserTest;
 import SPQ.data.User;
 
 public class UserDAO {
@@ -25,6 +28,8 @@ public class UserDAO {
 //		udao.updateShoppingList(user);
 //	}
 	
+	static Logger logger = Logger.getLogger(UserDAO.class.getName());
+	
 	private PersistenceManagerFactory persistenceManagerFactory;
 
 	public UserDAO() {
@@ -40,9 +45,9 @@ public class UserDAO {
 			User userFromDb = (User) query.execute();
 			userFromDb.setPayPalPassword(user.getPayPalPassword());
 		    updated = true;
-		    System.out.println("   $ Updated paypal password! ");
+		    logger.info("   $ Updated paypal password! ");
 		}catch (Exception ex) {
-			System.out.println("   $ Error updating paypal password: " + ex.getMessage());
+			logger.error("   $ Error updating paypal password: " + ex.getMessage());
 			
 		}
 		finally {
@@ -61,9 +66,9 @@ public class UserDAO {
 			User userFromDb = (User) query.execute();
 			userFromDb.setCardNumber(user.getCardNumber());
 		    updated = true;
-		    System.out.println("   $ Updated card number! ");
+		    logger.info("   $ Updated card number! ");
 		}catch (Exception ex) {
-			System.out.println("   $ Error updating card number: " + ex.getMessage());
+			logger.error("   $ Error updating card number: " + ex.getMessage());
 			
 		}
 		finally {
@@ -82,9 +87,9 @@ public class UserDAO {
 			User userFromDb = (User) query.execute();
 			userFromDb.setPayPalEmail(user.getPayPalEmail());
 		    updated = true;
-		    System.out.println("   $ Updated paypal email! ");
+		    logger.info("   $ Updated paypal email! ");
 		}catch (Exception ex) {
-			System.out.println("   $ Error updating paypal email: " + ex.getMessage());
+			logger.error("   $ Error updating paypal email: " + ex.getMessage());
 			
 		}
 		finally {
@@ -103,9 +108,9 @@ public class UserDAO {
 			User userFromDb = (User) query.execute();
 			userFromDb.setShoppingList(user.getShoppingList());
 		    updated = true;
-		    System.out.println("   $ Updated shopping list! ");
+		    logger.info("   $ Updated shopping list! ");
 		}catch (Exception ex) {
-			System.out.println("   $ Error updating shopping list: " + ex.getMessage());
+			logger.error("   $ Error updating shopping list: " + ex.getMessage());
 			
 		}
 		finally {
@@ -122,12 +127,12 @@ public class UserDAO {
 
 		try {
 			tx.begin();
-			System.out.println("   * Storing a user: " + user);
+			logger.info("   * Storing a user: " + user);
 			pm.makePersistent(user);
 			tx.commit();
 			stored = true;
 		} catch (Exception ex) {
-			System.out.println("   $ Error storing a user: " + ex.getMessage());
+			logger.error("   $ Error storing a user: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -146,7 +151,7 @@ public class UserDAO {
 		User user = null;
 
 		try {
-			System.out.println("   * Buscando user: " + username);
+			logger.info("   * Buscando user: " + username);
 
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE username == '" + username +"'");
@@ -155,7 +160,7 @@ public class UserDAO {
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error retreiving an user: " + ex.getMessage());
+			logger.error("   $ Error retreiving an user: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -174,7 +179,7 @@ public class UserDAO {
 		Transaction tx = pm.currentTransaction();
 		User user = null;
 		try {
-			System.out.println("* modificando mail user" + email);
+			logger.info("* modificando mail user" + email);
 			tx.begin();
 			
 			//UPDATE alumnos SET curso='secundaria' WHERE curso='primaria'
@@ -186,7 +191,8 @@ public class UserDAO {
 			tx.commit();
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			
+			logger.error("   $ Error retreiving an user: " + e.getMessage());
 		}finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

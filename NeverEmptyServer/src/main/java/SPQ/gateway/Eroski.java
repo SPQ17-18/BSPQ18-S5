@@ -9,6 +9,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 public class Eroski implements IEroskiGateway{
 
+	
 	private String serverIP;
 	private int serverPort;
 	private String message;

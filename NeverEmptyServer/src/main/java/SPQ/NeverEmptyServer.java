@@ -5,6 +5,8 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import SPQ.dao.UserDAO;
 import SPQ.data.Product;
 import SPQ.data.User;
@@ -20,11 +22,13 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	protected NeverEmptyServer() throws RemoteException {
 		super();
 	}
+	
+	static Logger logger = Logger.getLogger(NeverEmptyServer.class.getName());
 
 	private static final long serialVersionUID = 1L;
 
 	public boolean registerGoogle(String username, String email, String password) {
-		System.out.println("Registrar en servidor");
+		logger.info("Registrar en servidor");
 		Google google = new Google("0.0.0.0", "35600");
 		String googleAnswer = google.register(email, password);
 		if (googleAnswer.equals("correct")){
@@ -38,7 +42,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	}
 	
 	public boolean registerFacebook(String username, String email, String password) {
-		System.out.println("Registrar en servidor");
+		logger.info("Registrar en servidor");
 		Facebook facebook = new Facebook("0.0.0.0", "35600");
 		String facebookAnswer = facebook.register(email, password);
 		if (facebookAnswer.equals("correct")){
@@ -82,7 +86,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 			eroskiAnswer = eroski.getProducts();
 			return eroskiAnswer;
 		}catch (Exception e) {
-			System.out.println(e);
+			logger.error(e);
 		}
 		return eroskiAnswer;
 
@@ -95,7 +99,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 			paypalAnswer = paypal.pay(email, password, price);
 			return paypalAnswer;
 		}catch (Exception e) {
-			System.out.println(e);
+			logger.error(e);
 		}
 		return paypalAnswer;
 	}
@@ -115,7 +119,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		UserDAO userDAO = new UserDAO();
 		return userDAO.updateShoppingList(user);
 		}catch (Exception ex) {
-			System.out.println("Update shopping list, datos incorrectos: " + ex.getMessage());
+			logger.error("Update shopping list, datos incorrectos: " + ex.getMessage());
 			return false;
 		}
 	}

@@ -2,14 +2,19 @@ package SPQ.main;
 
 import java.awt.EventQueue;
 
+import org.apache.log4j.Logger;
+
 import SPQ.controller.NeverEmptyController;
 import SPQ.gui.VentanaInicio;
 import SPQ.remote.RMIServiceLocator;
 
 public class Main {
+	
+	static Logger logger = Logger.getLogger(Main.class.getName());
+	
 	public static void main(String[] args) {
 		if (args.length != 3) {
-			System.out.println("- NeverEmptyCLient: Wrong number of arguments");
+			logger.error("- NeverEmptyCLient: Wrong number of arguments");
 			System.exit(0);
 		}
 		
@@ -28,11 +33,13 @@ public class Main {
 						VentanaInicio vInicio = new VentanaInicio(neverEmptyController);
 						vInicio.setVisible(true);
 					} catch (Exception e) {
-						e.printStackTrace();
+						logger.error(e);
+//						e.printStackTrace();
 					}
 				}
 			});
 		} catch (Exception e) {
+			logger.error(e);
 			e.printStackTrace();
 		}		
 	}

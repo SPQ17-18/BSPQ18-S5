@@ -12,8 +12,8 @@ import junit.framework.JUnit4TestAdapter;
 import org.junit.runner.RunWith;  
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;  
-import org.mockito.junit.MockitoJUnitRunner; 
-
+import org.mockito.junit.MockitoJUnitRunner;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 //import org.junit.Ignore;
@@ -28,6 +28,7 @@ import SPQ.data.User;
 @RunWith(MockitoJUnitRunner.Silent.class) 
 public class DAOMockTest {
 
+	static Logger logger = Logger.getLogger(DAOMockTest.class.getName());
 	
 	@Mock
 	UserDAO dao;
@@ -60,7 +61,7 @@ public class DAOMockTest {
 		// Setting expectations -  the method storeUser() is called once and the argument is intercepted
 		verify (mock).storeUser(userCaptor.capture());
 		User newUser = userCaptor.getValue();
-		System.out.println("Registering mock new user: " + newUser.getUsername());
+		logger.info("Registering mock new user: " + newUser.getUsername());
 	
 		assertEquals( "cortazar", newUser.getUsername());
 		
@@ -74,7 +75,7 @@ public class DAOMockTest {
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
 		verify (mock).storeUser(userCaptor.capture());
 		User newUser = userCaptor.getValue();
-		System.out.println("Checking if the users exists: " + newUser.getPassword());
+		logger.info("Checking if the users exists: " + newUser.getPassword());
 		assertEquals( "cortazar", newUser.getUsername());
 		
 	}
