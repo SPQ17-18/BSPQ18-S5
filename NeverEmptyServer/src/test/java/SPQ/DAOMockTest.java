@@ -15,6 +15,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.apache.log4j.Logger;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 //import org.junit.Ignore;
 
@@ -25,6 +26,7 @@ import SPQ.data.User;
  * @author cortazar
  * Testing of the Service Layer, mocking the DAO layer
  */
+
 @RunWith(MockitoJUnitRunner.Silent.class) 
 public class DAOMockTest {
 

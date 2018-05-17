@@ -2,13 +2,12 @@ package SPQ.controller;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
-
-
+import java.util.List;
 
 import org.apache.log4j.Logger;
 //import SPQ.NeverEmptyServer;
 
-
+import SPQ.data.Product;
 import SPQ.remote.RMIServiceLocator;
 
 
@@ -31,8 +30,8 @@ public class NeverEmptyController {
 	}
 
 	public boolean login(String username, String password) throws RemoteException {
-		logger.info("ANTES DEL LOGIN");
-		logger.info("USERNAME: " +username + " PASSWORD"+ password);
+		logger.debug("ANTES DEL LOGIN");
+		logger.debug("USERNAME: " +username + " PASSWORD"+ password);
 		if(rmi.getNeverEmptyServer().login(username, password)) {
 			logger.info("HACE EL LOGIN");
 			String user = this.getUser(username);

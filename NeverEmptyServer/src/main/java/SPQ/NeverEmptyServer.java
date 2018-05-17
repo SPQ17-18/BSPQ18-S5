@@ -80,7 +80,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	}
 	
 	public String getProducts() {
-		String eroskiAnswer = "incorrect";
+		String eroskiAnswer = null;
 		try {
 			Eroski eroski = new Eroski("0.0.0.0", "35700");
 			eroskiAnswer = eroski.getProducts();
@@ -91,7 +91,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		return eroskiAnswer;
 
 	}
-
+	
 	public String payWithPaypal(String email, String password, String price) {
 		String paypalAnswer = "incorrect";
 		try {

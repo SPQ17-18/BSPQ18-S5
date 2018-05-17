@@ -7,6 +7,9 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.List;
+
+import SPQ.data.Product;
 public class Eroski implements IEroskiGateway{
 
 	

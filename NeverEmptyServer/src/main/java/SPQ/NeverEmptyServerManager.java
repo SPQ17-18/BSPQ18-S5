@@ -34,7 +34,7 @@ public class NeverEmptyServerManager  {
 
 			public void run() {
 				try {
-					java.rmi.registry.LocateRegistry.createRegistry(55200);
+					java.rmi.registry.LocateRegistry.createRegistry(1099);
 					logger.info("RMI registry ready.");
 				} catch (Exception e) {
 					logger.error("Exception starting RMI registry:"+e);

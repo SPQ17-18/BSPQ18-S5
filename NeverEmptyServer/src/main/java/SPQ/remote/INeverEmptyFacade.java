@@ -1,6 +1,9 @@
 package SPQ.remote;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.List;
+
+
 
 public interface INeverEmptyFacade extends Remote{
 	

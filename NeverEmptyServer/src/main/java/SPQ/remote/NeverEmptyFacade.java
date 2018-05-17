@@ -1,9 +1,12 @@
 package SPQ.remote;
 
 import SPQ.NeverEmptyServer;
+import SPQ.data.Product;
+
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmptyFacade{
 	private static final long serialVersionUID = 1L;
