@@ -49,7 +49,8 @@ public class RMITest {
 
 			public void run() {
 				try {
-					java.rmi.registry.LocateRegistry.createRegistry(1099);
+					java.rmi.registry.LocateRegistry.createRegistry(1099);// de manera oculta, para que lo haga automaticamente con jenkins
+					//lo hacemos de manera autonoma
 					logger.info("BeforeClass: RMI registry ready.");
 				} catch (Exception e) {
 					logger.info("Exception starting RMI registry:");

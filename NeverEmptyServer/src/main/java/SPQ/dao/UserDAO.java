@@ -8,7 +8,6 @@ import javax.jdo.Transaction;
 
 import org.apache.log4j.Logger;
 
-import SPQ.DATAUserTest;
 import SPQ.data.User;
 
 public class UserDAO {
