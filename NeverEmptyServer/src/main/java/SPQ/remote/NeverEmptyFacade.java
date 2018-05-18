@@ -2,6 +2,7 @@ package SPQ.remote;
 
 import SPQ.NeverEmptyServer;
 import SPQ.data.Product;
+import SPQ.dto.ProductDTO;
 import SPQ.dto.UserDTO;
 
 import java.rmi.RemoteException;
@@ -29,7 +30,7 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 		return neverEmptyServer.login(user);
 	}
 	
-	public String getProducts() throws RemoteException {
+	public ProductDTO getProducts() throws RemoteException {
 		return neverEmptyServer.getProducts();
 	}
 

@@ -1,4 +1,6 @@
 package SPQ.data;
+import java.io.Serializable;
+
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
@@ -6,7 +8,9 @@ import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
-public class Product {
+public class Product implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private double price;
 	private int quantity;

@@ -22,11 +22,11 @@ public class ProductDAO {
 //		}
 //	}
 	
-	public static void main(String[] args) {
-		Product p = new Product("Pera", 2);
-		ProductDAO pd = new ProductDAO();
-		pd.setProduct(p);
-	}
+//	public static void main(String[] args) {
+//		Product p = new Product("Pera", 2);
+//		ProductDAO pd = new ProductDAO();
+//		pd.setProduct(p);
+//	}
 	private PersistenceManagerFactory persistenceManagerFactory;
 
 	public ProductDAO() {
@@ -55,13 +55,13 @@ public class ProductDAO {
 		return stored;
 	}
 	
-	public List<Product> getProducts() {
+	public ArrayList<Product> getProducts() {
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 
 		Transaction tx = pm.currentTransaction();
 		
-		List<Product> products = new ArrayList<Product>();
+		ArrayList<Product> products = new ArrayList<Product>();
 
 		try {
 

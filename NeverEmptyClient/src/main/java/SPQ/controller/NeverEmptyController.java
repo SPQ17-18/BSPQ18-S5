@@ -3,6 +3,8 @@ package SPQ.controller;
 import java.rmi.RemoteException;
 
 import org.apache.log4j.Logger;
+
+import SPQ.dto.ProductDTO;
 import SPQ.dto.UserDTO;
 import SPQ.remote.RMIServiceLocator;
 
@@ -39,7 +41,7 @@ public class NeverEmptyController {
 			return false;
 		}
 	}
-	public String getProducts() throws RemoteException{
+	public ProductDTO getProducts() throws RemoteException{
 		return rmi.getNeverEmptyServer().getProducts();
 	}
 	public UserDTO getUser(UserDTO userDTO) throws RemoteException {

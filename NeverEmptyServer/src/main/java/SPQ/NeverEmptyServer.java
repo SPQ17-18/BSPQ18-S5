@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import SPQ.dao.UserDAO;
 import SPQ.data.Product;
 import SPQ.data.User;
+import SPQ.dto.ProductDTO;
 import SPQ.dto.UserDTO;
 import SPQ.gateway.Eroski;
 import SPQ.gateway.Google;
@@ -74,8 +75,8 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		
 	}
 	
-	public String getProducts() {
-		String eroskiAnswer = null;
+	public ProductDTO getProducts() {
+		ProductDTO eroskiAnswer = null;
 		try {
 			Eroski eroski = new Eroski("0.0.0.0", "35700");
 			eroskiAnswer = eroski.getProducts();

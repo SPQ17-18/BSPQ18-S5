@@ -24,6 +24,7 @@ import javax.swing.JTextField;
 
 import SPQ.controller.NeverEmptyController;
 import SPQ.data.Product;
+import SPQ.dto.ProductDTO;
 import SPQ.gui.component.ProductLabel;
 import SPQ.remote.INeverEmptyFacade;
 
@@ -190,20 +191,16 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	private void getProducts() {
 
-		String productos = "";
+		ProductDTO productDTO = null;
 		try {
-			productos = neverEmptyController.getProducts();
-			System.out.println("Productos: " + productos.toString());
+			productDTO = neverEmptyController.getProducts();
+			System.out.println("Productos: " + productDTO.getProductList().toString());
+			for (Product product : productDTO.getProductList()) {
+				ProductLabel pl = new ProductLabel(product.getName(), product.getPrice());
+				this.productList.add(pl);
+			}
 		}catch(Exception e) {
 			System.out.println(e);
-		}
-		String[] parts = productos.split(";");
-		
-		for(String product : parts) {
-			String [] productSplit = product.split(",");
-			System.out.println("Producto: " + product);
-			ProductLabel p = new ProductLabel(productSplit[0], productSplit[1], "0");
-			this.productList.add(p);
 		}
 	}
 	
