@@ -26,7 +26,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import SPQ.data.User;
-
+import SPQ.dto.UserDTO;
 import SPQ.remote.INeverEmptyFacade;
 import junit.framework.JUnit4TestAdapter;
 
@@ -143,8 +143,8 @@ public class RMITest {
 		boolean resul=false;
 		try{
 			logger.info("Test 1 - Loging new user");
-
-			resul= NeverEmptyFacade.login("anonimo", "1234");//username y password
+			UserDTO userDTO = new UserDTO("cortazar", "1234");
+			resul= NeverEmptyFacade.login(userDTO);//username y password
 		}
 		catch (Exception re) {
 			logger.error(" # NeverEmptyServer RemoteException: " + re.getMessage());
@@ -169,7 +169,8 @@ public class RMITest {
 		boolean resul = false;
 		try{
 			logger.info("Test 2 - Login existing user.");
-			resul = NeverEmptyFacade.login("Enara", "1234");
+			UserDTO userDTO = new UserDTO("cortazar", "1234");
+			resul = NeverEmptyFacade.login(userDTO);
 		}
 		catch (Exception re) {
 			logger.error(" # NeverEmptyServer RemoteException: " + re.getMessage());

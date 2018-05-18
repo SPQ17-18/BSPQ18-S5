@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import SPQ.dao.UserDAO;
 import SPQ.data.Product;
 import SPQ.data.User;
+import SPQ.dto.UserDTO;
 import SPQ.gateway.Eroski;
 import SPQ.gateway.Google;
 import SPQ.gateway.Facebook;
@@ -54,29 +55,23 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		return false;
 	}
 
-	public String getUser(String username) {
+	public UserDTO getUser(UserDTO user) {
 		UserDAO userDAO = new UserDAO();
-		User user = userDAO.getUser(username);
-		String userString = user.getUsername() + ";" + user.getEmail() + ";" + user.getPayPalEmail() + ";" + user.getPayPalPassword() + ";" + user.getCardNumber();
-		return userString;
+		User userFetched = userDAO.getUser(user.getUsername(), user.getPassword());
+		UserDTO userDTO = new UserDTO(userFetched);
+		return userDTO;
 	}
 	
-	public boolean login(String username, String password) {
-		Google google = new Google("0.0.0.0", "35600");
-		Facebook facebook = new Facebook("0.0.0.0", "35900");
+	public boolean login(UserDTO user) {
+
 		UserDAO userDAO = new UserDAO();
-		User user = userDAO.getUser(username);
-		String answer = "incorrect";
-		if (user.getRegisterMethod().equals("Google")) {
-			answer = google.login(user.getEmail(), password);
-		}else if (user.getRegisterMethod().equals("Facebook")) {
-			answer = facebook.login(user.getEmail(), password);
-		}
-		if (answer.equals("correct")){
+		User userFetched = userDAO.getUser(user.getUsername(), user.getPassword());
+		if(userFetched != null) {
 			return true;
-		} else {
+		}else {
 			return false;
 		}
+		
 	}
 	
 	public String getProducts() {

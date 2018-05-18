@@ -18,7 +18,7 @@ public class VentanaPerfil extends JFrame {
 
 
 	private JTextField textFieldEmailPaypal;
-	private JTextField textFieldPass;
+	private JTextField textFieldPayPalPass;
 	private JTextField textField_1;
 	public VentanaPerfil(NeverEmptyController neverEmptyController) {
 		getContentPane().setLayout(null);
@@ -40,11 +40,11 @@ public class VentanaPerfil extends JFrame {
 		lblEmail.setBounds(24, 36, 46, 14);
 		getContentPane().add(lblEmail);
 
-		JLabel lblUserbd = new JLabel(neverEmptyController.username);
+		JLabel lblUserbd = new JLabel(neverEmptyController.getUserDTO().getUsername());
 		lblUserbd.setBounds(80, 11, 46, 14);
 		getContentPane().add(lblUserbd);
 
-		JLabel lblEmailbd = new JLabel(neverEmptyController.email);
+		JLabel lblEmailbd = new JLabel(neverEmptyController.getUserDTO().getEmail());
 		lblEmailbd.setBounds(80, 36, 46, 14);
 		getContentPane().add(lblEmailbd);
 
@@ -92,18 +92,18 @@ public class VentanaPerfil extends JFrame {
 		getContentPane().add(lblPasswordPaypal);
 
 		textFieldEmailPaypal = new JTextField();
-		textFieldPass.setText(neverEmptyController.payPalEmail);
+		textFieldPayPalPass.setText(neverEmptyController.getUserDTO().getPayPalEmail());
 		textFieldEmailPaypal.setEditable(false);
 		textFieldEmailPaypal.setBounds(135, 93, 86, 20);
 		getContentPane().add(textFieldEmailPaypal);
 		textFieldEmailPaypal.setColumns(10);
 
-		textFieldPass = new JTextField();
-		textFieldPass.setText(neverEmptyController.payPalPassword);
-		textFieldPass.setEditable(false);
-		textFieldPass.setBounds(135, 127, 86, 20);
-		getContentPane().add(textFieldPass);
-		textFieldPass.setColumns(10);
+		textFieldPayPalPass = new JTextField();
+		textFieldPayPalPass.setText(neverEmptyController.getUserDTO().getPayPalPassword());
+		textFieldPayPalPass.setEditable(false);
+		textFieldPayPalPass.setBounds(135, 127, 86, 20);
+		getContentPane().add(textFieldPayPalPass);
+		textFieldPayPalPass.setColumns(10);
 
 		JLabel lblDatosVisa = new JLabel("Datos Visa:");
 		lblDatosVisa.setBounds(10, 155, 75, 14);
@@ -114,7 +114,7 @@ public class VentanaPerfil extends JFrame {
 		getContentPane().add(lblCardNumber);
 
 		textField_1 = new JTextField();
-		textField_1.setText(neverEmptyController.cardNumber);
+		textField_1.setText(Integer.toString(neverEmptyController.getUserDTO().getCardNumber()));
 		textField_1.setBounds(135, 177, 86, 20);
 		getContentPane().add(textField_1);
 		textField_1.setColumns(10);
@@ -131,8 +131,8 @@ public class VentanaPerfil extends JFrame {
 				String nuevopass;
 				if (btnModificarPassword.getText().equals("modificar")) {
 					btnModificarPassword.setText("guardar");
-					textFieldPass.setEditable(true);
-					nuevopass = textFieldPass.getText();
+					textFieldPayPalPass.setEditable(true);
+					nuevopass = textFieldPayPalPass.getText();
 
 				}else if (btnModificarPassword.getText().equals("guardar")) {
 

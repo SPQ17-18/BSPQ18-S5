@@ -54,7 +54,7 @@ public class DAOMockTest {
 	public void testRegisterUserCorrectly() {
 		UserDAO mock = org.mockito.Mockito.mock(UserDAO.class);
 		// Stubbing - return a given value when a specific method is called
-		when( mock.getUser("cortazar") ).thenReturn( null );
+		when( mock.getUser("cortazar", "1234")).thenReturn( null );
 		mock.storeUser(user);
 		
 		//Use ArgumentCaptor to capture argument values for further assertions.
@@ -73,7 +73,7 @@ public class DAOMockTest {
 	public void testRegisterUserAlreadyExists() {
 		UserDAO mock = org.mockito.Mockito.mock(UserDAO.class);
 		mock.storeUser(user);
-		when( mock.getUser("cortazar") ).thenReturn(user);
+		when( mock.getUser("cortazar", "1234") ).thenReturn(user);
 		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
 		verify (mock).storeUser(userCaptor.capture());
 		User newUser = userCaptor.getValue();
@@ -106,7 +106,7 @@ public class DAOMockTest {
 		pl.add(p2);
 		
 		//Stubbing
-		when( mock.getUser("cortazar") ).thenReturn(user);
+		when( mock.getUser("cortazar", "1234") ).thenReturn(user);
 		user.setShoppingList(pl);
 		//Calling the method under test
 		mock.updateShoppingList(user);

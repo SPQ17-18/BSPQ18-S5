@@ -2,7 +2,7 @@ package SPQ.remote;
 
 import SPQ.NeverEmptyServer;
 import SPQ.data.Product;
-
+import SPQ.dto.UserDTO;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -25,8 +25,8 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 		return neverEmptyServer.registerFacebook(username, email, password);
 	}
 
-	public boolean login(String username, String password) throws RemoteException {
-		return neverEmptyServer.login(username, password);
+	public boolean login(UserDTO user) throws RemoteException {
+		return neverEmptyServer.login(user);
 	}
 	
 	public String getProducts() throws RemoteException {
@@ -53,8 +53,8 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 		return neverEmptyServer.updateUserCardNumber(username, cardNumber);
 	}
 	
-	public String getUser(String username) throws RemoteException {
-		return neverEmptyServer.getUser(username);
+	public UserDTO getUser(UserDTO user) throws RemoteException {
+		return neverEmptyServer.getUser(user);
 	}
 
 }

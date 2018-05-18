@@ -21,6 +21,12 @@ public class ProductDAO {
 //			System.out.println(m.getPrice());
 //		}
 //	}
+	
+	public static void main(String[] args) {
+		Product p = new Product("Pera", 2);
+		ProductDAO pd = new ProductDAO();
+		pd.setProduct(p);
+	}
 	private PersistenceManagerFactory persistenceManagerFactory;
 
 	public ProductDAO() {

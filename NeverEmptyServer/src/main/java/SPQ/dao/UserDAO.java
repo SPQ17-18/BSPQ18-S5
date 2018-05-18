@@ -143,20 +143,19 @@ public class UserDAO {
 	}
 	
 	//Buscar usuario por nombre
-	public User getUser(String username) {
+	public User getUser(String username, String password) {
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 
 		Transaction tx = pm.currentTransaction();
-		User user = null;
+		User userFetched = null;
 
 		try {
 			logger.info("   * Buscando user: " + username);
-
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE username == '" + username +"'");
+			Query<?> query = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE username == '" + username +"' && password == '" + password + "'");
 			query.setUnique(true);
-			user = (User) query.execute();
+			userFetched = (User) query.execute();
 			tx.commit();
 
 		} catch (Exception ex) {
@@ -169,7 +168,7 @@ public class UserDAO {
 			pm.close();
 		}
 
-		return user;
+		return userFetched;
 	}
 	
 	public void setUsermail(String email, String email2) {
