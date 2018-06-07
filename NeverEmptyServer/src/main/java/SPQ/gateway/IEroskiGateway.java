@@ -1,5 +1,8 @@
 package SPQ.gateway;
 
+import SPQ.dto.ProductDTO;
+
 public interface IEroskiGateway {
-	public String getProducts();
+	public ProductDTO getProducts();
+
 }

@@ -2,14 +2,15 @@ package SPQ.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import SPQ.Producto;
 import SPQ.controller.NeverEmptyController;
+import SPQ.data.Product;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -18,9 +19,11 @@ import java.awt.event.ActionEvent;
 
 /*clase que contiene el codigo de la ventana de ticket*/
 
-public class VentanaTicket extends JFrame {
+public class VentanaTicket extends JFrame{
 	
 	private JTable table;
+	private JFrame VentanaPago, ventanaTicket;
+	private JButton btnPagarVisa, btnPagarPaypal;
 	private double preciototal;
 	private NeverEmptyController neverEmptyController;
 	private static final long serialVersionUID = 1L;
@@ -38,34 +41,36 @@ public class VentanaTicket extends JFrame {
 		getContentPane().add(lblTicketCompra);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(54, 47, 312, 182);
+		scrollPane.setBounds(54, 27, 312, 182);
 		getContentPane().add(scrollPane);
 		
 		table = new JTable(new DefaultTableModel());
 		DefaultTableModel dmt = (DefaultTableModel) table.getModel();
 		String titulosColumna [] = {"Nombre Producto","precio unitario"};
+		
 		for (int i = 0; i < titulosColumna.length; i++) {
 			dmt.addColumn(titulosColumna[i]);
 		}
-		ArrayList<Producto>lProducto = new ArrayList<Producto>();
-		ArrayList<Producto>listaProducto = new ArrayList<Producto>();
-		Producto p = new Producto();
-		listaProducto = p.rellenarArrayProduto(lProducto);
+		
+		ArrayList<Product>lProducto = new ArrayList<Product>();
+		ArrayList<Product>listaProducto = new ArrayList<Product>();
+
+		//listaProducto = p.rellenarArrayProduto(lProducto);
 		
 		for (int i = 0; i < listaProducto.size(); i++) {
-			Producto producto = listaProducto.get(i);
-			String fila[] = {producto.getNombreProducto(),String.valueOf(producto.getPrecioProducto())};
+			Product producto = listaProducto.get(i);
+			String fila[] = {producto.getName(),String.valueOf(producto.getPrice())};
 			dmt.addRow(fila);
 		}
 		table.setModel(dmt);
 		scrollPane.setViewportView(table);
 		
 		JLabel lblTotal = new JLabel("TOTAL ");
-		lblTotal.setBounds(54, 240, 46, 14);
+		lblTotal.setBounds(12, 240, 46, 14);
 		getContentPane().add(lblTotal);
 		
 		JLabel lblprecioTotal = new JLabel();
-		lblprecioTotal.setBounds(320, 240, 46, 14);
+		lblprecioTotal.setBounds(70, 240, 46, 14);
 		getContentPane().add(lblprecioTotal);
 		double t = 0;
 		double pr = 0;
@@ -83,8 +88,53 @@ public class VentanaTicket extends JFrame {
 				volverAVentanaPrincipal();
 			}
 		});
-		jbbotonVolver.setBounds(168, 255, 89, 23);
+		jbbotonVolver.setBounds(12, 267, 89, 23);
 		getContentPane().add(jbbotonVolver);
+		
+		JButton btnPagarVisa = new JButton("Pagar con Visa");
+		btnPagarVisa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if(PagarVisa()) {
+					
+					JOptionPane.showMessageDialog(null, "Compra con exito. Su pedido esta en camino!!");
+					dispose();
+					VentanaPrincipal vPrincipal= new VentanaPrincipal(null);
+					vPrincipal.setVisible(true);
+
+				}else {
+					
+					JOptionPane.showMessageDialog(null, "ERROR! No tienes suficiente dinero en la cuenta de Paypal", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
+				
+			}
+		});
+		btnPagarVisa.setBounds(256, 267, 156, 23);
+		getContentPane().add(btnPagarVisa);
+		
+		JButton btnPagarPaypal = new JButton("Pagar con Paypal");
+		btnPagarPaypal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(PagarPaypal()) {
+					
+					JOptionPane.showMessageDialog(null, "Compra con exito. Su pedido esta en camino!!");
+					dispose();
+					VentanaPrincipal vPrincipal= new VentanaPrincipal(null);
+					vPrincipal.setVisible(true);
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "ERROR! No tienes suficiente dinero en la cuenta de Visa", "ERROR", JOptionPane.ERROR_MESSAGE);
+					dispose();
+				}
+				
+			}
+		});
+		btnPagarPaypal.setBounds(256, 242, 156, 23);
+		getContentPane().add(btnPagarPaypal);
+		
+		JLabel lblSeleccionarPago = new JLabel("Seleccionar metodo de pago: ");
+		lblSeleccionarPago.setBounds(135, 203, 190, 48);
+		getContentPane().add(lblSeleccionarPago);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//this.setSize(1200,800);
@@ -94,9 +144,28 @@ public class VentanaTicket extends JFrame {
 		
 	}
 
+	public boolean PagarPaypal() {
+		//this.neverEmptyController.deleteProduct();
+		//@todo
+		return true;
+	}
+	
+	public boolean PagarVisa() {
+		//@todo
+		return true;
+	}
+	
 	public void volverAVentanaPrincipal() {
 		VentanaPrincipal volverVentana = new VentanaPrincipal(this.neverEmptyController);
 		volverVentana.setVisible(true);
 		dispose();
 	}
+	
+	
+	public static void main(String[] args) {
+		
+		VentanaTicket vTicket = new VentanaTicket(null);
+		vTicket.setVisible(true);
+	}
+		
 }

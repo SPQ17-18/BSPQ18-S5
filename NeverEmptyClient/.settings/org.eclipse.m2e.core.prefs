@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-activeProfiles=
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=b69ad02f550f626727ff97ec1b181042a9539151
+activeProfiles=client
 eclipse.preferences.version=1
 resolveWorkspaceProjects=true
 version=1
-=======
-activeProfiles=
-eclipse.preferences.version=1
-resolveWorkspaceProjects=true
-version=1
->>>>>>> b69ad02f550f626727ff97ec1b181042a9539151

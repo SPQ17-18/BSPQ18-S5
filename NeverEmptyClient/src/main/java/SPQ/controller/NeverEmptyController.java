@@ -1,26 +1,60 @@
 package SPQ.controller;
 
 import java.rmi.RemoteException;
+
+import org.apache.log4j.Logger;
+
+import SPQ.dto.ProductDTO;
+import SPQ.dto.UserDTO;
 import SPQ.remote.RMIServiceLocator;
-// HOLA
+
+
 public class NeverEmptyController {
+	private UserDTO userDTO;
+	public UserDTO getUserDTO() {
+		return userDTO;
+	}
+
+	public void setUserDTO(UserDTO userDTO) {
+		this.userDTO = userDTO;
+	}
 	RMIServiceLocator rmi;
+	
+	static Logger logger = Logger.getLogger(NeverEmptyController.class.getName());
+	
 	public NeverEmptyController(RMIServiceLocator rmi) {
 		this.rmi = rmi;
 	}
 
-	public boolean register(String username, String email, String password) throws RemoteException {
-		return rmi.getNeverEmptyServer().register(username, email, password);
+	public boolean registerGoogle(String username, String email, String password) throws RemoteException { 
+		return rmi.getNeverEmptyServer().registerGoogle(new UserDTO(username, password, email));
+	}
+	
+	public boolean registerFacebook(String username, String email, String password) throws RemoteException { 
+		return rmi.getNeverEmptyServer().registerFacebook(new UserDTO(username, password, email));
+	}
+	
+	public boolean registerNeverEmpty(String username, String email, String password) throws RemoteException { 
+		return rmi.getNeverEmptyServer().registerNeverEmpty(new UserDTO(username, password, email));
 	}
 
-	public boolean login(String usuario, String password) throws RemoteException {
-		return rmi.getNeverEmptyServer().login(usuario, password);
+	public boolean login(String username, String password) throws RemoteException {
+		logger.debug("Username: " +username + " , Password"+ password);
+		if(rmi.getNeverEmptyServer().login(new UserDTO(username, password))) {
+			logger.info("User " + username + " logged successfully.");
+			UserDTO userFetched = this.getUser(new UserDTO(username, password));
+			this.userDTO = userFetched;
+			return true;
+		}else {
+			return false;
+		}
 	}
-	public String getProducts() throws RemoteException{
+	public ProductDTO getProducts() throws RemoteException{
 		return rmi.getNeverEmptyServer().getProducts();
 	}
-	public boolean modifyEmail(String user,String password, String maila, String mailb) throws RemoteException{
-		return rmi.getNeverEmptyServer().modifyEmail(user, password, maila, mailb);
+	public UserDTO getUser(UserDTO userDTO) throws RemoteException {
+		return rmi.getNeverEmptyServer().getUser(userDTO);
 	}
+
 }
 

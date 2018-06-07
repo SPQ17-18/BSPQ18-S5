@@ -13,13 +13,80 @@ import java.util.List;
 
 public class ProductDAO {
 
+//	public static void main(String[] args) {
+//		ProductDAO pdao = new ProductDAO();
+//		List<Product> productos = pdao.getProducts();
+//		for (Product m : productos) {
+//			System.out.println(m.getName());
+//			System.out.println(m.getPrice());
+//		}
+//	}
+	
+//	public static void main(String[] args) {
+//		Product p = new Product("Pera", 2);
+//		ProductDAO pd = new ProductDAO();
+//		pd.setProduct(p);
+//	}
 	private PersistenceManagerFactory persistenceManagerFactory;
 
 	public ProductDAO() {
 		this.persistenceManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
-	public List<Product> getProducts() {
+	public boolean setProduct (Product product) {
+		boolean stored = false;
+		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			System.out.println("   * Storing a product: " + product);
+			pm.makePersistent(product);
+			tx.commit();
+			stored = true;
+		} catch (Exception ex) {
+			System.out.println("   $ Error storing a product: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}		
+			pm.close();
+		}
+		return stored;
+	}
+	
+	public ArrayList<Product> getProducts() {
+		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+
+		Transaction tx = pm.currentTransaction();
+		
+		ArrayList<Product> products = new ArrayList<Product>();
+
+		try {
+
+			tx.begin();			
+			Extent<Product> extent = pm.getExtent(Product.class, true);
+
+			for (Product product : extent) {
+				products.add(product);
+			}
+
+			tx.commit();			
+		} catch (Exception ex) {
+			System.out.println("   $ Error retrieving an extent: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();    		
+		}
+
+		return products;
+	}
+	
+	public List<Product> deleteProduct() {
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 
