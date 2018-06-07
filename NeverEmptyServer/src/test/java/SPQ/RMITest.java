@@ -189,8 +189,7 @@ public class RMITest {
 		boolean resul=false;
 		try{
 			logger.info("Test 3 - Register existing user. Change password");
-			//resul = NeverEmptyFacade.registerUser("jesus", "12342de");
-			resul = NeverEmptyFacade.registerGoogle("jesus", "jesus@gmail.com", "12342de");
+			resul = NeverEmptyFacade.registerGoogle(new UserDTO("jesus", "jesus@gmail.com", "12342de"));
 	
 		}
 		catch (Exception re) {
@@ -212,7 +211,7 @@ public class RMITest {
 		try{
 			logger.info("Test 3 - Register existing user. Change password");
 			//resul = NeverEmptyFacade.registerUser("jesus", "12342de");
-			resul = NeverEmptyFacade.registerGoogle("jesus", "jesus@gmail.com", "12342de");
+			resul = NeverEmptyFacade.registerGoogle(new UserDTO("jesus", "jesus@gmail.com", "12342de"));
 	
 		}
 		catch (Exception re) {
@@ -252,7 +251,7 @@ public class RMITest {
 		boolean resul=false;
 		try{
 			logger.info("Test 5 - Register new user");
-			resul = NeverEmptyFacade.registerGoogle("cristian", "cristian123@gmail.com", "cr2344");
+			resul = NeverEmptyFacade.registerGoogle(new UserDTO("cristian", "cristian123@gmail.com", "cr2344"));
 		}
 		catch (Exception re) {
 			logger.error(" # Messenger RemoteException: " + re.getMessage());
@@ -272,7 +271,7 @@ public class RMITest {
 		boolean resul=false;
 		try{
 			logger.info("Test 6 - Register new user");
-			resul = NeverEmptyFacade.registerFacebook("alvaro", "alvaro12@gmail.com", "alv332");
+			resul = NeverEmptyFacade.registerFacebook(new UserDTO("alvaro", "alvaro12@gmail.com", "alv332"));
 		}
 		catch (Exception re) {
 			logger.error(" # Messenger RemoteException: " + re.getMessage());

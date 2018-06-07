@@ -26,8 +26,16 @@ public class NeverEmptyController {
 		this.rmi = rmi;
 	}
 
-	public boolean register(String username, String email, String password) throws RemoteException {
-		return rmi.getNeverEmptyServer().registerGoogle(username, email, password);
+	public boolean registerGoogle(String username, String email, String password) throws RemoteException { 
+		return rmi.getNeverEmptyServer().registerGoogle(new UserDTO(username, password, email));
+	}
+	
+	public boolean registerFacebook(String username, String email, String password) throws RemoteException { 
+		return rmi.getNeverEmptyServer().registerFacebook(new UserDTO(username, password, email));
+	}
+	
+	public boolean registerNeverEmpty(String username, String email, String password) throws RemoteException { 
+		return rmi.getNeverEmptyServer().registerNeverEmpty(new UserDTO(username, password, email));
 	}
 
 	public boolean login(String username, String password) throws RemoteException {

@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
+import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
 import SPQ.gui.VentanaFavoritos;
 import SPQ.gui.VentanaOfertas;
@@ -75,8 +76,10 @@ public class ProductLabel extends JPanel  implements ActionListener{
 		this.quantity.setForeground(new Color(255, 255, 255));
 		this.quantity.setBackground(new Color(100, 100, 100));
 		this.add(this.quantity);
+		
 
-		ImageIcon plusIcon = getImageFromResources("plus-green.png", 20, 20);
+		Utilities util = new Utilities();
+		ImageIcon plusIcon = util.getImageFromResources("plus-green.png");
 		this.bAdd.setIcon(plusIcon);
 		this.bAdd.setSize(50, 50);
 		this.bAdd.setPreferredSize(new Dimension(25, 25));
@@ -87,7 +90,7 @@ public class ProductLabel extends JPanel  implements ActionListener{
 		this.bAdd.addActionListener(this);
 		this.add(this.bAdd);
 
-		ImageIcon subIcon = getImageFromResources("minus-red.png", 20, 20);
+		ImageIcon subIcon = util.getImageFromResources("minus-red.png");
 		this.bSub.setIcon(subIcon);
 		this.bSub.setSize(50, 50);
 		this.bSub.setPreferredSize(new Dimension(25, 25));
@@ -101,17 +104,7 @@ public class ProductLabel extends JPanel  implements ActionListener{
 
 	}
 
-	private ImageIcon getImageFromResources(String filename, int w, int h) {
-		try {
-			Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/" + filename));
-			ImageIcon icon = new ImageIcon(image);
-			return icon;
-		}catch (Exception e) {
-			System.out.println("No se ha podido cargar la imagen " + filename + " : " + e);
-			return null;
-		}
 
-	}
 
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("ActionPerformed");

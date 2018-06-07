@@ -29,12 +29,12 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 
 	private static final long serialVersionUID = 1L;
 
-	public boolean registerGoogle(String username, String email, String password) {
+	public boolean registerGoogle(UserDTO userDTO) {
 		logger.info("Registrar en servidor");
 		Google google = new Google("0.0.0.0", "35600");
-		String googleAnswer = google.register(email, password);
+		String googleAnswer = google.register(userDTO);
 		if (googleAnswer.equals("correct")){
-			User user = new User(username, email, password, "Google");
+			User user = new User(userDTO.getUsername(), userDTO.getEmail(), userDTO.getPassword(), "Google");
 			UserDAO userDAO = new UserDAO();
 			userDAO.storeUser(user);
 			return true;
@@ -43,15 +43,27 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 
 	}
 	
-	public boolean registerFacebook(String username, String email, String password) {
+	public boolean registerFacebook(UserDTO userDTO) {
 		logger.info("Registrar en servidor");
-		Facebook facebook = new Facebook("0.0.0.0", "35600");
-		String facebookAnswer = facebook.register(email, password);
+		Facebook facebook = new Facebook("0.0.0.0", "35900");
+		String facebookAnswer = facebook.register(userDTO);
 		if (facebookAnswer.equals("correct")){
-			User user = new User(username, email, password, "Facebook");
+			User user = new User(userDTO.getUsername(), userDTO.getEmail(), userDTO.getPassword(), "Facebook");
 			UserDAO userDAO = new UserDAO();
 			userDAO.storeUser(user);
 			return true;
+		}
+		return false;
+	}
+	
+	public boolean registerNeverEmpty(UserDTO userDTO) throws RemoteException {
+		try {
+			User user = new User(userDTO.getUsername(), userDTO.getEmail(), userDTO.getPassword(), "NeverEmpty");
+			UserDAO userDAO = new UserDAO();
+			userDAO.storeUser(user);
+			return true;
+		}catch(Exception e) {
+			System.err.println("NeverEmptyServer - Error: "+ e.getMessage());
 		}
 		return false;
 	}
@@ -143,5 +155,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		UserDAO userDAO = new UserDAO();
 		return userDAO.updateUserCardNumber(user);
 	}
+
+	
 
 }

@@ -1,6 +1,7 @@
 package SPQ.gateway;
 
+import SPQ.dto.UserDTO;
+
 public interface IFacebookGateway {
-	public String register(String email, String password);
-	public String login(String email, String password);
+	public String register(UserDTO userDTO);
 }

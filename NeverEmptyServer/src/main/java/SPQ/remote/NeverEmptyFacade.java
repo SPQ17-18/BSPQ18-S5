@@ -1,13 +1,11 @@
 package SPQ.remote;
 
 import SPQ.NeverEmptyServer;
-import SPQ.data.Product;
 import SPQ.dto.ProductDTO;
 import SPQ.dto.UserDTO;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.List;
 
 public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmptyFacade{
 	private static final long serialVersionUID = 1L;
@@ -18,12 +16,16 @@ public class NeverEmptyFacade extends UnicastRemoteObject implements INeverEmpty
 		this.neverEmptyServer = neverEmptyServer;
 	}
 	
-	public boolean registerGoogle(String username, String email, String password) throws RemoteException {
-		return neverEmptyServer.registerGoogle(username, email, password);
+	public boolean registerGoogle(UserDTO userDTO) throws RemoteException {
+		return neverEmptyServer.registerGoogle(userDTO);
 	}
 	
-	public boolean registerFacebook(String username, String email, String password) throws RemoteException {
-		return neverEmptyServer.registerFacebook(username, email, password);
+	public boolean registerFacebook(UserDTO userDTO) throws RemoteException {
+		return neverEmptyServer.registerFacebook(userDTO);
+	}
+	
+	public boolean registerNeverEmpty(UserDTO userDTO) throws RemoteException {
+		return neverEmptyServer.registerNeverEmpty(userDTO);
 	}
 
 	public boolean login(UserDTO user) throws RemoteException {

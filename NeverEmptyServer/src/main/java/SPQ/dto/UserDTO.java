@@ -5,6 +5,8 @@ import java.io.Serializable;
 import SPQ.data.User;
 
 public class UserDTO implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private String email = null;
 	private String password;
@@ -32,6 +34,13 @@ public class UserDTO implements Serializable{
 		this.password = password;
 	}
 
+	public UserDTO(String username, String password, String email) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
+	
 	public UserDTO(String username, String email, String password, String registerMethod, String payPalEmail,
 			String payPalPassword, int cardNumber) {
 		super();

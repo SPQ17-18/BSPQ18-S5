@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
 
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 
+import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
 import SPQ.remote.RMIServiceLocator;
 
@@ -42,6 +43,7 @@ public class VentanaInicio extends JFrame{
 	private JPasswordField passwordFieldFinal;
 	private JButton botonLogin;
 	private NeverEmptyController neverEmptyController;
+	private VentanaInicio ventanaInicio;
 
 	public static void main(String[] args) {
 		VentanaInicio vi = new VentanaInicio(null);
@@ -49,13 +51,9 @@ public class VentanaInicio extends JFrame{
 	}
 
 	public VentanaInicio(NeverEmptyController neverEmptyController) {
+		this.ventanaInicio = this;
 		this.neverEmptyController = neverEmptyController;
-
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		double screenWidth = screenSize.getWidth();
-		double screenHeight = screenSize.getHeight();
-		int width = (int)screenWidth/3;
-		int height = (int)screenHeight/3;
+		
 		setSize(800, 400);
 		setLocationRelativeTo(null);
 
@@ -65,7 +63,8 @@ public class VentanaInicio extends JFrame{
 		setUndecorated(true);
 
 		getContentPane().setLayout(null);
-		setContentPane(new JLabel(getImageFromResources("bg-metalic.jpg")));
+		Utilities util = new Utilities();
+		setContentPane(new JLabel(util.getImageFromResources("bg-metalic.jpg")));
 
 		Font titleBold = new Font("Arial", Font.BOLD, 55);
 		Font textPlain = new Font("Arial", Font.PLAIN, 16);
@@ -80,7 +79,10 @@ public class VentanaInicio extends JFrame{
 		JButton btnSignUp = new JButton("Registro");
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				registro();
+				
+				VentanaSeleccionarRegistro vsr = new VentanaSeleccionarRegistro(neverEmptyController, ventanaInicio);
+				vsr.setVisible(true);
+
 			}
 		});
 		btnSignUp.setContentAreaFilled(false);
@@ -97,7 +99,7 @@ public class VentanaInicio extends JFrame{
 			}
 		});
 		btnSalir.setBounds(750, 20, 30, 30);
-		ImageIcon closeIcon = getImageFromResources("close-white.png");
+		ImageIcon closeIcon = util.getImageFromResources("close-white.png");
 		btnSalir.setIcon(closeIcon);
 		btnSalir.setSize(30, 30);
 		btnSalir.setPreferredSize(new Dimension(30, 30));
@@ -150,7 +152,6 @@ public class VentanaInicio extends JFrame{
 
 				//Comprobar que esos datos estan en un la lista de usuario registrados
 
-				VentanaRegistro vRegistro= new VentanaRegistro();
 				boolean registered = false;
 				try{
 					registered = neverEmptyController.login(user, String.valueOf(password));
@@ -161,7 +162,7 @@ public class VentanaInicio extends JFrame{
 					iniciarAplicacion();
 				}else{
 					System.out.println("Tienes que registrarte antes de iniciar sesion");
-					JOptionPane.showMessageDialog(null, "ERROR! Tienes que registrarte antes de iniciar sesion", "ERROR", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Error, los datos introducidos son incorrectos.", "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -183,25 +184,5 @@ public class VentanaInicio extends JFrame{
 		dispose();
 	}
 
-	public void registro () {
-		VentanaRegistro vRegistro = new VentanaRegistro(this.neverEmptyController);
-		vRegistro.setVisible(true);
-		dispose();
-	}
-	public VentanaInicio() {
-
-	}
-
-	private ImageIcon getImageFromResources(String filename) {
-		try {
-			Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/" + filename));
-			ImageIcon icon = new ImageIcon(image);
-			return icon;
-		}catch (Exception e) {
-			System.out.println("No se ha podido cargar la imagen " + filename + " : " + e);
-			return null;
-		}
-
-	}
 
 }

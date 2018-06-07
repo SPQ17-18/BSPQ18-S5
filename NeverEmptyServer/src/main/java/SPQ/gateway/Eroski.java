@@ -1,17 +1,15 @@
 package SPQ.gateway;
 
 
-import java.io.DataInputStream;
+
 import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.List;
 
-import SPQ.data.Product;
 import SPQ.dto.ProductDTO;
 public class Eroski implements IEroskiGateway{
 
@@ -50,6 +48,7 @@ public class Eroski implements IEroskiGateway{
 		} catch (ClassNotFoundException e) {
 			System.err.println("# TCPSocketClient: ClassNotFound error: " + e.getMessage());
 		}
+		
 		return products;
 	}
 	

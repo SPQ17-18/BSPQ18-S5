@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import SPQ.controller.NeverEmptyController;
 import SPQ.data.Product;
@@ -32,16 +33,14 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 	
 
 	JLabel lblTitulo;
-	JButton bPanel1, bPanel2, btnPanelInterno2, btnSales, btnFavorites, btnEliminarProducto, bRecetas , bPerfil;
-	//JButton btnRecipes;
-	JButton bTicket;
+	JButton bPanel1, bPanel2, btnPanelInterno2, btnSales, btnFavorites, btnEliminarProducto, bRecetas , bPerfil, bTicket, bCompra;
+
 	JTextArea campo;
 
-	JPanel panel1, panel2;
+	JPanel panelCatalogo, panelListaCompra;
 	String texto;
 
 	NeverEmptyController neverEmptyController;
-
 
 	//Labels de los productos de la BD
 	JButton b1, b2, b3, b4, b5;
@@ -50,6 +49,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 	List<ProductLabel> productList = new ArrayList<ProductLabel>();
 	List<ProductLabel> shoppingList = new ArrayList<ProductLabel>();
 
+	
 	public VentanaPrincipal(NeverEmptyController neverEmptyController) {
 		this.neverEmptyController = neverEmptyController;
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -66,19 +66,19 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	private void inicializarComponentes() {
 
-		panel1 = new JPanel();
-		panel1.setBackground(Color.WHITE);
-		panel1.setBounds(5,112, 350, 200);
+		panelCatalogo = new JPanel();
+		panelCatalogo.setBackground(Color.WHITE);
+		panelCatalogo.setBounds(5,112, 350, 200);
 		this.getProducts();
 		for(ProductLabel p :this.productList) {
-			panel1.add(new ProductLabel(p.getproductName().getText(), p.getPrice().getText(), p.getQuantity().getText()));
+			panelCatalogo.add(new ProductLabel(p.getproductName().getText(), p.getPrice().getText(), p.getQuantity().getText()));
 		}
-		panel1.setVisible(true);
-
-		panel2 = new JPanel();
-		panel2.setBackground(Color.RED);
-		panel2.setBounds(5,112, 370, 200);
-		panel2.setVisible(false);
+		panelCatalogo.setVisible(true);
+	
+		panelListaCompra = new JPanel();
+		panelListaCompra.setBackground(Color.RED);
+		panelListaCompra.setBounds(5,112, 370, 170);
+		panelListaCompra.setVisible(false);
 
 		lblTitulo = new JLabel ("Seleccione los productos que desea comprar");
 		lblTitulo.setBounds(10,14,275,51);
@@ -111,8 +111,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		//add(btnRecipes);
 		getContentPane().add(bRecetas);
 
-		getContentPane().add(panel2);
-		getContentPane().add(panel1);
+		getContentPane().add(panelListaCompra);
+		getContentPane().add(panelCatalogo);
 
 //		bPerfil = new JButton("Perfil");
 //		bPerfil.setBounds(269, 76, 89, 23);
@@ -138,25 +138,25 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == bPanel1) {
-			panel1.removeAll();
+			panelCatalogo.removeAll();
 			for(ProductLabel p : productList) {
 				
 				System.out.println(p.getproductName().getText());
-				panel1.add(p);
+				panelCatalogo.add(p);
 			}
 			
-			panel1.setVisible(true);
-			panel2.setVisible(false);
+			panelCatalogo.setVisible(true);
+			panelListaCompra.setVisible(false);
 		}
 
 		if (e.getSource() == bPanel2) {
 			System.out.println("Lista de la compra");
-			panel1.setVisible(false);
+			panelCatalogo.setVisible(false);
 			getShoppingList();
 			for(ProductLabel p : this.shoppingList) {
-				panel2.add(p);
+				panelListaCompra.add(p);
 			}
-			panel2.setVisible(true);
+			panelListaCompra.setVisible(true);
 		}
 
 		if (e.getSource() == btnPanelInterno2) {
@@ -206,7 +206,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 	
 	private void getShoppingList() {
 		this.shoppingList = new ArrayList<ProductLabel>();
-		for(Component c: this.panel1.getComponents()) {
+		for(Component c: this.panelCatalogo.getComponents()) {
 			ProductLabel p = (ProductLabel) c;
 			if(Integer.parseInt(p.getQuantity().getText()) > 0) {
 				this.shoppingList.add(p);

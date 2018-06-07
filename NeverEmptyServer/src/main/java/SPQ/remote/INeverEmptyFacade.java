@@ -1,17 +1,16 @@
 package SPQ.remote;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.List;
-
 import SPQ.dto.ProductDTO;
 import SPQ.dto.UserDTO;
 
 
-
 public interface INeverEmptyFacade extends Remote{
 	
-	public boolean registerGoogle(String username, String email, String password ) throws RemoteException;
-	public boolean registerFacebook(String username, String email, String password ) throws RemoteException;
+	public boolean registerGoogle(UserDTO userDTO) throws RemoteException;
+	public boolean registerFacebook(UserDTO userDTO) throws RemoteException;
+	public boolean registerNeverEmpty(UserDTO userDTO) throws RemoteException;
 	public boolean login(UserDTO user) throws RemoteException;
 	
 	public ProductDTO getProducts() throws RemoteException;
