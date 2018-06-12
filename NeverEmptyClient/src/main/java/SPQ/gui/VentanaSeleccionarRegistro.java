@@ -28,8 +28,6 @@ public class VentanaSeleccionarRegistro extends JFrame implements ActionListener
 	JButton bOther;
 	JButton bBack;
 	
-	String selected = "back";
-	
 	private NeverEmptyController neverEmptyController;
 	
 	private VentanaInicio ventanaInicio;
@@ -55,7 +53,6 @@ public class VentanaSeleccionarRegistro extends JFrame implements ActionListener
 		Font fBack = new Font("Arial", Font.BOLD, 12);
 		this.bBack.setFont(fBack);
 		this.bBack.setLocation(10,10);
-		
 		
 		
 		this.lTitle = new JLabel("Seleccione método de registro: ");
@@ -120,42 +117,27 @@ public class VentanaSeleccionarRegistro extends JFrame implements ActionListener
 	}
 	
 	
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-	
-		switch(((JButton)e.getSource()).getName()){
-		case "bBack":
-			this.selected = "back";
-			break;
-		case "bGoogle":
-			this.selected = "Google";
-			break;
-		case "bFacebook":
-			this.selected = "Facebook";
-			break;
-		case "bOther":
-			this.selected = "NeverEmpty";
-			break;
-		default:
-			this.selected = "back";
-			break;
-			
-		}
-		this.registro(this.selected);
-	}
-	
-	
-	public void registro (String selected) {
-		System.out.println(selected);
-		if(!selected.equals("back")) {
-			System.out.println(selected);
+		String selected = "back";
+		if(e.getSource() != bBack) {
+			if(e.getSource() == bOther) {
+				selected = "NeverEmpty";
+				
+			}else if (e.getSource() == bGoogle) {
+				selected = "Google";
+				
+			}else if (e.getSource() == bFacebook) {
+				selected ="Facebook";	
+				
+			}
 			VentanaRegistro vRegistro = new VentanaRegistro(this.neverEmptyController, selected);
 			vRegistro.setVisible(true);
 			this.ventanaInicio.dispose();
+			
+		}else {
+			dispose();
 		}
-		dispose();
-		System.out.println("seleccionado: " + selected);
 		
 	}
 }

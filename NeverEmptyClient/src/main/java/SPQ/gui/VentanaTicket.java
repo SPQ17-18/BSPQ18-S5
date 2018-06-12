@@ -50,8 +50,6 @@ public class VentanaTicket extends JFrame{
 		dmt.addColumn("Cantidad");
 		dmt.addColumn("Precio/Unidad");
 		dmt.addColumn("Precio");
-
-		//listaProducto = p.rellenarArrayProduto(lProducto);
 		
 		for (ProductLabel p : shoppingList) {
 			double productsPrice = Double.parseDouble(p.getPrice().getText()) * Double.parseDouble(p.getQuantity().getText());
@@ -79,11 +77,7 @@ public class VentanaTicket extends JFrame{
 		total.setBounds(70, 240, 46, 14);
 		getContentPane().add(total);
 
-	
-		
-		
-		
-		
+
 		JButton jbbotonVolver = new JButton("Volver");
 		jbbotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -94,7 +88,6 @@ public class VentanaTicket extends JFrame{
 		getContentPane().add(jbbotonVolver);
 		
 
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setVisible(true);
