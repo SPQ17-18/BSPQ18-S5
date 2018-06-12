@@ -78,6 +78,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 
 		bBuy = new JButton("Comprar");
 		bBuy.setBounds(10,  290, 350, 23);
+		bBuy.addActionListener(this);
 
 
 		this.getContentPane().add(lblTitulo);
@@ -139,7 +140,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		}
 
 		if (e.getSource() == bBuy) {
-			System.out.println("bBuy");
 			List<ProductLabel> shoppingCart = new ArrayList<ProductLabel>();
 			for(Component c : this.pShoppingCart.getComponents()) {
 				ProductLabel p = (ProductLabel) c;
@@ -147,7 +147,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			}
 			VentanaTicket r = new VentanaTicket(this.neverEmptyController, shoppingCart);
 			r.setVisible(true);
-			dispose();
 		}
 
 		if (e.getSource() == bPerfil) {

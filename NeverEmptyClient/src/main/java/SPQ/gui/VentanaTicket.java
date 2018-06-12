@@ -24,17 +24,15 @@ import java.awt.event.ActionEvent;
 public class VentanaTicket extends JFrame{
 	
 	private JTable table;
-	private JFrame VentanaPago, ventanaTicket;
-	private JButton btnPagarVisa, btnPagarPaypal;
-	private double preciototal;
+	private JLabel total;
 	private NeverEmptyController neverEmptyController;
 	private static final long serialVersionUID = 1L;
 	public VentanaTicket(NeverEmptyController neverEmptyController, List<ProductLabel> shoppingList) {
 		this.neverEmptyController = neverEmptyController;
-		setBounds(200, 300, 423, 328);
+		this.setBounds(200, 300, 423, 328);
 		
 		/*Generar un contenedor donde se introducira todos los elementos de la ventana*/
-		getContentPane().setLayout(null);
+		this.getContentPane().setLayout(null);
 		
 		/*Label para contener el texto ticket compra*/
 		JLabel lblTicketCompra = new JLabel("Ticket compra");
@@ -46,123 +44,64 @@ public class VentanaTicket extends JFrame{
 		scrollPane.setBounds(54, 27, 312, 182);
 		getContentPane().add(scrollPane);
 		
-		table = new JTable(new DefaultTableModel());
+		this.table = new JTable(new DefaultTableModel());
 		DefaultTableModel dmt = (DefaultTableModel) table.getModel();
-		String titulosColumna [] = {"Nombre Producto","precio unitario"};
-		
-		for (int i = 0; i < titulosColumna.length; i++) {
-			dmt.addColumn(titulosColumna[i]);
-		}
-		
-		ArrayList<Product>lProducto = new ArrayList<Product>();
-		ArrayList<Product>listaProducto = new ArrayList<Product>();
+		dmt.addColumn("Nombre Producto");
+		dmt.addColumn("Cantidad");
+		dmt.addColumn("Precio/Unidad");
+		dmt.addColumn("Precio");
 
 		//listaProducto = p.rellenarArrayProduto(lProducto);
 		
-		for (int i = 0; i < listaProducto.size(); i++) {
-			Product producto = listaProducto.get(i);
-			String fila[] = {producto.getName(),String.valueOf(producto.getPrice())};
+		for (ProductLabel p : shoppingList) {
+			double productsPrice = Double.parseDouble(p.getPrice().getText()) * Double.parseDouble(p.getQuantity().getText());
+			String fila[] = {
+					p.getproductName().getText(),
+					p.getQuantity().getText(),
+					p.getPrice().getText(),
+					Double.toString(productsPrice)
+					};
 			dmt.addRow(fila);
 		}
-		table.setModel(dmt);
+		this.table.setModel(dmt);
 		scrollPane.setViewportView(table);
 		
 		JLabel lblTotal = new JLabel("TOTAL ");
 		lblTotal.setBounds(12, 240, 46, 14);
 		getContentPane().add(lblTotal);
 		
-		JLabel lblprecioTotal = new JLabel();
-		lblprecioTotal.setBounds(70, 240, 46, 14);
-		getContentPane().add(lblprecioTotal);
-		double t = 0;
-		double pr = 0;
-		if (table.getRowCount()>0) {
-			for (int i = 0; i < table.getRowCount(); i++) {
-				pr = Double.parseDouble((String) table.getValueAt(i, 1));
-				t+=pr;
-			}
-			lblprecioTotal.setText(t+"�");
+		double d = 0;
+		for(int i = 0; i < this.table.getRowCount(); i++) {
+			 d = d + Double.parseDouble(this.table.getValueAt(i, 3)+""); 
 		}
+		
+		this.total = new JLabel(Double.toString(d));
+		total.setBounds(70, 240, 46, 14);
+		getContentPane().add(total);
+
+	
+		
+		
+		
 		
 		JButton jbbotonVolver = new JButton("Volver");
 		jbbotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				volverAVentanaPrincipal();
+				dispose();
 			}
 		});
 		jbbotonVolver.setBounds(12, 267, 89, 23);
 		getContentPane().add(jbbotonVolver);
 		
-		JButton btnPagarVisa = new JButton("Pagar con Visa");
-		btnPagarVisa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if(PagarVisa()) {
-					
-					JOptionPane.showMessageDialog(null, "Compra con exito. Su pedido esta en camino!!");
-					dispose();
-					VentanaPrincipal vPrincipal= new VentanaPrincipal(null);
-					vPrincipal.setVisible(true);
 
-				}else {
-					
-					JOptionPane.showMessageDialog(null, "ERROR! No tienes suficiente dinero en la cuenta de Paypal", "ERROR", JOptionPane.ERROR_MESSAGE);
-				}
-				
-			}
-		});
-		btnPagarVisa.setBounds(256, 267, 156, 23);
-		getContentPane().add(btnPagarVisa);
-		
-		JButton btnPagarPaypal = new JButton("Pagar con Paypal");
-		btnPagarPaypal.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(PagarPaypal()) {
-					
-					JOptionPane.showMessageDialog(null, "Compra con exito. Su pedido esta en camino!!");
-					dispose();
-					VentanaPrincipal vPrincipal= new VentanaPrincipal(null);
-					vPrincipal.setVisible(true);
-					
-				}else {
-					JOptionPane.showMessageDialog(null, "ERROR! No tienes suficiente dinero en la cuenta de Visa", "ERROR", JOptionPane.ERROR_MESSAGE);
-					dispose();
-				}
-				
-			}
-		});
-		btnPagarPaypal.setBounds(256, 242, 156, 23);
-		getContentPane().add(btnPagarPaypal);
-		
-		JLabel lblSeleccionarPago = new JLabel("Seleccionar metodo de pago: ");
-		lblSeleccionarPago.setBounds(135, 203, 190, 48);
-		getContentPane().add(lblSeleccionarPago);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//this.setSize(1200,800);
 		this.setResizable(false);
 		this.setVisible(true);
 		
 		
 	}
 
-	public boolean PagarPaypal() {
-		//this.neverEmptyController.deleteProduct();
-		//@todo
-		return true;
-	}
-	
-	public boolean PagarVisa() {
-		//@todo
-		return true;
-	}
-	
-	public void volverAVentanaPrincipal() {
-		VentanaPrincipal volverVentana = new VentanaPrincipal(this.neverEmptyController);
-		volverVentana.setVisible(true);
-		dispose();
-	}
-	
 	
 	public static void main(String[] args) {
 		
