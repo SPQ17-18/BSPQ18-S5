@@ -23,7 +23,7 @@ public class VentanaMetodoPago extends JFrame implements ActionListener{
 	
 	public VentanaMetodoPago (NeverEmptyController neverEmptyController, List<ProductLabel> shoppingList, double total) {
 		this.neverEmptyController = neverEmptyController;
-		this.setTitle("Seleccionar método de registro");
+		this.setTitle("Seleccionar método de pago");
 		this.setSize(400, 300);
 		this.setLocationRelativeTo(null);
 		this.setUndecorated(true);
