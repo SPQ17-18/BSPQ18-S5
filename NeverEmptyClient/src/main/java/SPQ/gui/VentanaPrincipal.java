@@ -1,165 +1,135 @@
 package SPQ.gui;
 
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Container;
-import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 
 import SPQ.controller.NeverEmptyController;
 import SPQ.data.Product;
 import SPQ.dto.ProductDTO;
+
 import SPQ.gui.component.ProductLabel;
-import SPQ.remote.INeverEmptyFacade;
+
 
 public class VentanaPrincipal extends JFrame implements ActionListener{
-	
 
 	JLabel lblTitulo;
-	JButton bPanel1, bPanel2, btnPanelInterno2, btnSales, btnFavorites, btnEliminarProducto, bRecetas , bPerfil, bTicket, bCompra;
+	JButton bCatalogue, bShoppingCart, btnSales, bPerfil, bBuy;
 
-	JTextArea campo;
-
-	JPanel panelCatalogo, panelListaCompra;
-	String texto;
+	JPanel pCatalogue, pShoppingCart;
 
 	NeverEmptyController neverEmptyController;
 
-	//Labels de los productos de la BD
-	JButton b1, b2, b3, b4, b5;
-	JLabel textArea, textArea2, textArea3, textArea4, textArea5;
-
 	List<ProductLabel> productList = new ArrayList<ProductLabel>();
-	List<ProductLabel> shoppingList = new ArrayList<ProductLabel>();
 
-	
 	public VentanaPrincipal(NeverEmptyController neverEmptyController) {
 		this.neverEmptyController = neverEmptyController;
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		this.setSize(400, 375);
 		this.setTitle("Bienvenido a NeverEmpty!"); 
 		this.setResizable(false);
-		getContentPane().setLayout(null);
-
+		this.getContentPane().setLayout(null);
 		this.setLocationRelativeTo(null);
-		inicializarComponentes();   // inicializamos los atributos o componentes                   
+		
+		this.inicializarComponentes();                
 	}
 
 
 	private void inicializarComponentes() {
 
-		panelCatalogo = new JPanel();
-		panelCatalogo.setBackground(Color.WHITE);
-		panelCatalogo.setBounds(5,112, 350, 200);
+		pCatalogue = new JPanel();
+		pCatalogue.setBackground(Color.WHITE);
+		pCatalogue.setBounds(5,112, 350, 200);
 		this.getProducts();
 		for(ProductLabel p :this.productList) {
-			panelCatalogo.add(new ProductLabel(p.getproductName().getText(), p.getPrice().getText(), p.getQuantity().getText()));
+			pCatalogue.add(new ProductLabel(p.getproductName().getText(), p.getPrice().getText(), p.getQuantity().getText()));
 		}
-		panelCatalogo.setVisible(true);
-	
-		panelListaCompra = new JPanel();
-		panelListaCompra.setBackground(Color.RED);
-		panelListaCompra.setBounds(5,112, 370, 170);
-		panelListaCompra.setVisible(false);
+		pCatalogue.setVisible(true);
+
+		pShoppingCart = new JPanel();
+		pShoppingCart.setBackground(Color.RED);
+		pShoppingCart.setBounds(5,112, 370, 170);
+		pShoppingCart.setVisible(false);
 
 		lblTitulo = new JLabel ("Seleccione los productos que desea comprar");
 		lblTitulo.setBounds(10,14,275,51);
 
-		bPanel1 = new JButton("Catalogo");
-		bPanel1.setBounds(10, 76, 95, 23);
-		bPanel1.addActionListener(this);
+		bCatalogue = new JButton("Catalogo");
+		bCatalogue.setBounds(10, 76, 95, 23);
+		bCatalogue.addActionListener(this);
 
-		bPanel2 = new JButton("Lista de Compra");
-		bPanel2.setBounds(109, 76, 135, 23);
-		bPanel2.addActionListener(this);
+		bShoppingCart = new JButton("Lista de Compra");
+		bShoppingCart.setBounds(109, 76, 135, 23);
+		bShoppingCart.addActionListener(this);
 
 		btnSales = new JButton("Ofertas");
 		btnSales.setBounds(10, 315, 95, 23);
 
-		btnFavorites = new JButton("Favoritos");
-		btnFavorites.setBounds(109, 315, 95, 23);
+		bBuy = new JButton("Comprar");
+		bBuy.setBounds(10,  290, 350, 23);
 
 
-		bRecetas = new JButton("Recetas");
-		bRecetas.setBounds(208, 315, 95, 23);
+		this.getContentPane().add(lblTitulo);
+		this.getContentPane().add(bCatalogue);
+		this.getContentPane().add(bShoppingCart);
+		this.getContentPane().add(btnSales);
+		this.getContentPane().add(bBuy);
 
-		cargarComponentesPanel2();
+		this.getContentPane().add(pShoppingCart);
+		this.getContentPane().add(pCatalogue);
 
-		getContentPane().add(lblTitulo);
-		getContentPane().add(bPanel1);
-		getContentPane().add(bPanel2);
-		getContentPane().add(btnSales);
-		getContentPane().add(btnFavorites);
-		//add(btnRecipes);
-		getContentPane().add(bRecetas);
-
-		getContentPane().add(panelListaCompra);
-		getContentPane().add(panelCatalogo);
-
-//		bPerfil = new JButton("Perfil");
-//		bPerfil.setBounds(269, 76, 89, 23);
-//		getContentPane().add(bPerfil);
-//		bPerfil.addActionListener(this);
+		bPerfil = new JButton("Perfil");
+		bPerfil.setBounds(269, 76, 89, 23);
+		getContentPane().add(bPerfil);
+		bPerfil.addActionListener(this);
 
 	}
-
-	private void cargarComponentesPanel2() {
-
-		campo = new JTextArea();
-
-	}
-
 
 	public static void main(String[] args) {
-		
+
 		VentanaPrincipal v = new VentanaPrincipal(null);
 		v.setVisible(true);
 	}
 
-
-
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == bPanel1) {
-			panelCatalogo.removeAll();
-			for(ProductLabel p : productList) {
-				
-				System.out.println(p.getproductName().getText());
-				panelCatalogo.add(p);
+
+		if (e.getSource() == bCatalogue) {
+			for(Component c : this.pShoppingCart.getComponents()) {
+				ProductLabel p = (ProductLabel) c;
+				if(p.getQuantity().getText().equals("0")) {
+					this.pShoppingCart.remove(c);
+					this.pCatalogue.add(p);
+				}
 			}
-			
-			panelCatalogo.setVisible(true);
-			panelListaCompra.setVisible(false);
+			this.pCatalogue.setVisible(true);
+			this.pShoppingCart.setVisible(false);
 		}
 
-		if (e.getSource() == bPanel2) {
+		if (e.getSource() == bShoppingCart) {
 			System.out.println("Lista de la compra");
-			panelCatalogo.setVisible(false);
-			getShoppingList();
-			for(ProductLabel p : this.shoppingList) {
-				panelListaCompra.add(p);
+			this.pCatalogue.setVisible(false);
+			
+			for(Component c: this.pCatalogue.getComponents()) {
+				ProductLabel p = (ProductLabel) c;
+				if(!p.getQuantity().getText().equals("0")) {
+					this.pCatalogue.remove(c);
+					this.pShoppingCart.add(p);
+					System.out.println("Añadido a shoppingList: "+ p.getproductName().getText());
+				}
 			}
-			panelListaCompra.setVisible(true);
-		}
-
-		if (e.getSource() == btnPanelInterno2) {
+		
+			pShoppingCart.setVisible(true);
 		}
 
 		if (e.getSource() == btnSales) {
@@ -168,18 +138,18 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			dispose();
 		}
 
-		if (e.getSource() == btnFavorites) {
-			VentanaFavoritos f = new VentanaFavoritos();
-			f.setVisible(true);
-		}
-
-		if (e.getSource() == bTicket) {
-			VentanaTicket r = new VentanaTicket(this.neverEmptyController);
+		if (e.getSource() == bBuy) {
+			System.out.println("bBuy");
+			List<ProductLabel> shoppingCart = new ArrayList<ProductLabel>();
+			for(Component c : this.pShoppingCart.getComponents()) {
+				ProductLabel p = (ProductLabel) c;
+				shoppingCart.add(p);
+			}
+			VentanaTicket r = new VentanaTicket(this.neverEmptyController, shoppingCart);
 			r.setVisible(true);
 			dispose();
 		}
-		
-		
+
 		if (e.getSource() == bPerfil) {
 			VentanaPerfil r = new VentanaPerfil(this.neverEmptyController);
 			r.setVisible(true);
@@ -187,10 +157,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		}
 	}
 
-
-
 	private void getProducts() {
-
 		ProductDTO productDTO = null;
 		try {
 			productDTO = neverEmptyController.getProducts();
@@ -203,18 +170,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			System.out.println(e);
 		}
 	}
-	
-	private void getShoppingList() {
-		this.shoppingList = new ArrayList<ProductLabel>();
-		for(Component c: this.panelCatalogo.getComponents()) {
-			ProductLabel p = (ProductLabel) c;
-			if(Integer.parseInt(p.getQuantity().getText()) > 0) {
-				this.shoppingList.add(p);
-				System.out.println("Añadido a shoppingList: "+ p.getproductName().getText());
-			}
-		}
-		
-	}
-	
+
 }
 

@@ -11,10 +11,12 @@ import javax.swing.table.DefaultTableModel;
 
 import SPQ.controller.NeverEmptyController;
 import SPQ.data.Product;
+import SPQ.gui.component.ProductLabel;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 /*clase que contiene el codigo de la ventana de ticket*/
@@ -27,7 +29,7 @@ public class VentanaTicket extends JFrame{
 	private double preciototal;
 	private NeverEmptyController neverEmptyController;
 	private static final long serialVersionUID = 1L;
-	public VentanaTicket(NeverEmptyController neverEmptyController) {
+	public VentanaTicket(NeverEmptyController neverEmptyController, List<ProductLabel> shoppingList) {
 		this.neverEmptyController = neverEmptyController;
 		setBounds(200, 300, 423, 328);
 		
@@ -164,7 +166,7 @@ public class VentanaTicket extends JFrame{
 	
 	public static void main(String[] args) {
 		
-		VentanaTicket vTicket = new VentanaTicket(null);
+		VentanaTicket vTicket = new VentanaTicket(null, null);
 		vTicket.setVisible(true);
 	}
 		
