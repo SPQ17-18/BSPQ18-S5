@@ -10,12 +10,14 @@ import org.apache.log4j.Logger;
 import SPQ.dao.UserDAO;
 import SPQ.data.Product;
 import SPQ.data.User;
+import SPQ.dto.PaymentDTO;
 import SPQ.dto.ProductDTO;
 import SPQ.dto.UserDTO;
 import SPQ.gateway.Eroski;
 import SPQ.gateway.Google;
 import SPQ.gateway.Facebook;
 import SPQ.gateway.PayPal;
+import SPQ.gateway.Visa;
 import SPQ.remote.INeverEmptyFacade;
 
 
@@ -100,16 +102,28 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 
 	}
 	
-	public String payWithPaypal(String email, String password, String price) {
-		String paypalAnswer = "incorrect";
+	public boolean payWithPaypal(PaymentDTO paymentDTO) {
+		boolean paypalAnswer = false;
 		try {
 			PayPal paypal = new PayPal("0.0.0.0", "35800");
-			paypalAnswer = paypal.pay(email, password, price);
+			paypalAnswer = paypal.pay(paymentDTO);
 			return paypalAnswer;
 		}catch (Exception e) {
 			logger.error(e);
 		}
 		return paypalAnswer;
+	}
+	
+	public boolean payWithVisa(PaymentDTO paymentDTO) {
+		boolean visaAnswer = false;
+		try {
+			Visa visa = new Visa("0.0.0.0", "36000");
+			visaAnswer = visa.pay(paymentDTO);
+			return visaAnswer;
+		}catch (Exception e) {
+			logger.error(e);
+		}
+		return visaAnswer;
 	}
 
 	public boolean updateShoppingList (String username, String productList){

@@ -114,7 +114,7 @@ public class VentanaPerfil extends JFrame {
 		getContentPane().add(lblCardNumber);
 
 		textField_1 = new JTextField();
-		textField_1.setText(Integer.toString(neverEmptyController.getUserDTO().getCardNumber()));
+		textField_1.setText(Long.toString(neverEmptyController.getUserDTO().getCardNumber()));
 		textField_1.setBounds(135, 177, 86, 20);
 		getContentPane().add(textField_1);
 		textField_1.setColumns(10);

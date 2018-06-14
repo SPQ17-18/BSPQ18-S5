@@ -1,13 +1,13 @@
 package SPQ.gateway;
 
-
 import java.io.DataInputStream;
-import java.io.DataOutputStream;
+import java.io.ObjectOutputStream;
+
 import java.io.EOFException;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
 import java.net.UnknownHostException;
+
+import java.net.Socket;
 
 import SPQ.dto.UserDTO;
 public class Google implements IGoogleGateway{
@@ -32,7 +32,6 @@ public class Google implements IGoogleGateway{
 			//Streams to send and receive information are created from the Socket
 			DataInputStream in = new DataInputStream(tcpSocket.getInputStream());
 
-
 			//Send request (a UserDTO) to the server
 			out.writeObject(userDTO);
 			System.out.println(" - TCPSocketClient: Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + userDTO.toString()+ "'");
@@ -41,6 +40,8 @@ public class Google implements IGoogleGateway{
 			String receivedData = in.readUTF();	
 			System.out.println(" - TCPSocketClient: Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + receivedData + "'");
 			message = receivedData;
+			tcpSocket.close();
+			
 		} catch (UnknownHostException e) {
 			System.err.println("# TCPSocketClient: Socket error: " + e.getMessage());
 		} catch (EOFException e) {
@@ -48,8 +49,9 @@ public class Google implements IGoogleGateway{
 		} catch (IOException e) {
 			System.err.println("# TCPSocketClient: IO error: " + e.getMessage());
 		}
+		
 		System.out.println(message);
 		return message;
 	}
-
+	
 }

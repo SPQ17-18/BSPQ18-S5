@@ -21,7 +21,7 @@ public class User {
 	private String payPalEmail = null;
 	private String payPalPassword = null;
 	
-	private int cardNumber = -1;
+	private long cardNumber = -1;
 	
 
     @Element(column="USER_ID")
@@ -83,11 +83,11 @@ public class User {
 		this.payPalPassword = payPalPassword;
 	}
 
-	public int getCardNumber() {
+	public long getCardNumber() {
 		return cardNumber;
 	}
 
-	public void setCardNumber(int cardNumber) {
+	public void setCardNumber(long cardNumber) {
 		this.cardNumber = cardNumber;
 	}
 

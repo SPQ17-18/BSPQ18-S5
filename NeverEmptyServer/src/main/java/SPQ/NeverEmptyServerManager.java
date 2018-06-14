@@ -9,7 +9,6 @@ import java.rmi.RemoteException;
 
 import org.apache.log4j.Logger;
 
-import SPQ.dao.UserDAO;
 import SPQ.remote.INeverEmptyFacade;
 
 public class NeverEmptyServerManager  {
@@ -57,7 +56,6 @@ public class NeverEmptyServerManager  {
 
 		
 			public void run() {
-				logger.info("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
 				System.setProperty("java.security.policy", "target\\classes\\security\\java.policy");
 
 

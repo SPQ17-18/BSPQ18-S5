@@ -16,13 +16,16 @@ import SPQ.controller.NeverEmptyController;
 import SPQ.gui.component.ProductLabel;
 public class VentanaMetodoPago extends JFrame implements ActionListener{
 	
-	NeverEmptyController neverEmptyController;
-	JButton bVisa, bPaypal, bBack;
+	private NeverEmptyController neverEmptyController;
+	private JButton bVisa, bPaypal, bBack;
+	private double total;
+	private String selected;
+	public VentanaTicket vt;
 	
-	String selected = "back";
-	
-	public VentanaMetodoPago (NeverEmptyController neverEmptyController, List<ProductLabel> shoppingList, double total) {
+	public VentanaMetodoPago (NeverEmptyController neverEmptyController, double total, VentanaTicket ventanaTicket) {
 		this.neverEmptyController = neverEmptyController;
+		vt = ventanaTicket;
+		this.total = total;
 		this.setTitle("Seleccionar método de pago");
 		this.setSize(400, 300);
 		this.setLocationRelativeTo(null);
@@ -83,15 +86,19 @@ public class VentanaMetodoPago extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 
 		if(!(e.getSource() == bBack)) {
-			// Abrir ventana de pago
-			dispose();
+			selected = (e.getSource() == bVisa) ? "visa" : "paypal";
+			VentanaPago vp = new VentanaPago(neverEmptyController, selected, total, this);
+			vp.setVisible(true);
+			this.setVisible(false);
 		}else {
+			vt.setVisible(true);
 			dispose();
 		}
+		
 	}
 
 	public static void main(String[] args) {
-		VentanaMetodoPago vmp = new VentanaMetodoPago(null, null, 0);
-		vmp.setVisible(true);
+		// VentanaMetodoPago vmp = new VentanaMetodoPago(null, 0);
+		// vmp.setVisible(true);
 	}
 }

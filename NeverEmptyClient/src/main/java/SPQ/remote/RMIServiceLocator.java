@@ -25,7 +25,6 @@ public class RMIServiceLocator {
 
 		} catch (Exception e) {
 			logger.error("- Exception running NeverEmpty: " + e.getMessage());
-//			e.printStackTrace();
 		}
 }
 }

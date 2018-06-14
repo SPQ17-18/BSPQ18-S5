@@ -1,47 +1,32 @@
 package SPQ.gui;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Insets;
-import java.awt.Toolkit;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import com.jgoodies.forms.factories.DefaultComponentFactory;
+import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
 
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
-import SPQ.remote.RMIServiceLocator;
 
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.JPasswordField;
-import javax.swing.JTextPane;
-import javax.swing.SwingConstants;
-import javax.swing.border.Border;
-import javax.swing.JTable;
+import java.util.logging.Logger;
 
 public class VentanaInicio extends JFrame{
-
+	static Logger logger = Logger.getLogger(VentanaInicio.class.getName());
 	private static final long serialVersionUID = 1L;
 	private JTextField textFieldUserFinal;
 	private JPasswordField passwordFieldFinal;
-	private JButton botonLogin;
+	private JButton bLogin;
 	private NeverEmptyController neverEmptyController;
 	private VentanaInicio ventanaInicio;
 
@@ -121,11 +106,11 @@ public class VentanaInicio extends JFrame{
 		passwordFieldFinal.setBounds(350, 200, 200, 30);
 		getContentPane().add(passwordFieldFinal);
 
-		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setFont(textPlain);
-		lblUsuario.setForeground(new Color(253, 253, 253));
-		lblUsuario.setBounds(250, 155, 100, 16);
-		getContentPane().add(lblUsuario);
+		JLabel lUser = new JLabel("Usuario");
+		lUser.setFont(textPlain);
+		lUser.setForeground(new Color(253, 253, 253));
+		lUser.setBounds(250, 155, 100, 16);
+		getContentPane().add(lUser);
 
 		JLabel lblPassword = new JLabel("Contraseña");
 		lblPassword.setFont(textPlain);
@@ -133,8 +118,8 @@ public class VentanaInicio extends JFrame{
 		lblPassword.setBounds(250, 205, 100, 16);
 		getContentPane().add(lblPassword);
 
-		JButton botonLogin = new JButton("Entrar");
-		botonLogin.addActionListener(new ActionListener() {
+		bLogin = new JButton("Entrar");
+		bLogin.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -148,7 +133,6 @@ public class VentanaInicio extends JFrame{
 					pass += password[x];
 				}
 
-				System.out.println("La password introducida es"+ password);
 
 				//Comprobar que esos datos estan en un la lista de usuario registrados
 
@@ -161,26 +145,24 @@ public class VentanaInicio extends JFrame{
 				if(registered){ 
 					iniciarAplicacion();
 				}else{
-					System.out.println("Tienes que registrarte antes de iniciar sesion");
+					logger.info("Tienes que registrarte antes de iniciar sesion");
 					JOptionPane.showMessageDialog(null, "Error, los datos introducidos son incorrectos.", "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
-		botonLogin.setContentAreaFilled(false);
-		botonLogin.setBorder(BorderFactory.createLineBorder(Color.white,2));
-		botonLogin.setForeground(Color.white);
-		botonLogin.setBounds(225, 300, 150, 30);
-		botonLogin.setFont(textPlain);
-		getContentPane().add(botonLogin);
+		bLogin.setContentAreaFilled(false);
+		bLogin.setBorder(BorderFactory.createLineBorder(Color.white,2));
+		bLogin.setForeground(Color.white);
+		bLogin.setBounds(225, 300, 150, 30);
+		bLogin.setFont(textPlain);
+		getContentPane().add(bLogin);
 
 	}
 
 	public void iniciarAplicacion() {
-		System.out.println("EL USUARIO ESTA REGISTRADO");
-		//Abrimos la ventana principal TODO
+		logger.info("Entrando...");
 		VentanaPrincipal vPrincipal = new VentanaPrincipal(this.neverEmptyController);
 		vPrincipal.setVisible(true);
-		//Y cerramos la ventana de inicio al haber podido iniciar sesion
 		dispose();
 	}
 

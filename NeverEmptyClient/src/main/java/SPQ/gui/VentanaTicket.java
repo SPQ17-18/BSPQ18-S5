@@ -21,14 +21,17 @@ import java.awt.event.ActionEvent;
 
 /*clase que contiene el codigo de la ventana de ticket*/
 
-public class VentanaTicket extends JFrame{
+public class VentanaTicket extends JFrame implements ActionListener{
 	
 	private JTable table;
 	private JLabel total;
+	private JButton bPay, bBack;
 	private NeverEmptyController neverEmptyController;
 	private static final long serialVersionUID = 1L;
-	public VentanaTicket(NeverEmptyController neverEmptyController, List<ProductLabel> shoppingList) {
+    public VentanaPrincipal vp;
+	public VentanaTicket(NeverEmptyController neverEmptyController, List<ProductLabel> shoppingList, VentanaPrincipal ventanaPrincipal) {
 		this.neverEmptyController = neverEmptyController;
+		vp = ventanaPrincipal;
 		this.setBounds(200, 300, 423, 328);
 		
 		/*Generar un contenedor donde se introducira todos los elementos de la ventana*/
@@ -78,27 +81,39 @@ public class VentanaTicket extends JFrame{
 		getContentPane().add(total);
 
 
-		JButton jbbotonVolver = new JButton("Volver");
-		jbbotonVolver.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-			}
-		});
-		jbbotonVolver.setBounds(12, 267, 89, 23);
-		getContentPane().add(jbbotonVolver);
+		bBack = new JButton("Volver");
+		bBack.addActionListener(this);
+		bBack.setBounds(12, 267, 89, 23);
+		getContentPane().add(bBack);
 		
+		bPay = new JButton("Comprar");
+		bPay.setBounds(200, 260, 100, 14);
+		getContentPane().add(bPay);
+		bPay.addActionListener(this);
 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setVisible(true);
-		
+
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == bPay) {
+			VentanaMetodoPago vmp = new VentanaMetodoPago(neverEmptyController, Double.parseDouble(total.getText()), this);
+			vmp.setVisible(true);
+			this.setVisible(false);
+		}
+		if(e.getSource() == bBack) {
+			vp.setVisible(true);
+			dispose();
+		}
 		
 	}
 
 	
 	public static void main(String[] args) {
 		
-		VentanaTicket vTicket = new VentanaTicket(null, null);
+		VentanaTicket vTicket = new VentanaTicket(null, null,null);
 		vTicket.setVisible(true);
 	}
 		
