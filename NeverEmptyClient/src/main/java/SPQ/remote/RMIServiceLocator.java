@@ -13,10 +13,6 @@ public class RMIServiceLocator {
 	public INeverEmptyFacade getNeverEmptyServer() {
 		return this.iNeverEmptyFacade;
 	}
-	
-	public RMIServiceLocator(){ 
-    }
-	
 
 	public void setService(String[] args) {
 		try {

@@ -373,17 +373,6 @@ public class VentanaPago extends JFrame implements ActionListener{
 
 	}
 
-
-	public static void main(String[] args) {
-		UserDTO testUser = new UserDTO("Enara", "enara96etxaniz@gmail.com", "1234", "Google", "enara96etxaniz@paypal.es", "1234", 11112222);
-		NeverEmptyController nec = new NeverEmptyController(new RMIServiceLocator());
-		nec.setUserDTO(testUser);
-		// VentanaPago vp = new VentanaPago(nec, "visa", 10);
-		// vp.setVisible(true);
-	}
-
-
-
 	public static class Animate {
 
 		public static final int RUN_TIME = 500;

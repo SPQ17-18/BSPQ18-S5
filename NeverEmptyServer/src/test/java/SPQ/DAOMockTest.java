@@ -92,32 +92,32 @@ public class DAOMockTest {
 //			
 //	}
 	
-	@Test
-	public void testUpdateShoppingList() throws RemoteException {
-		// Setting up the test data
-		UserDAO mock = org.mockito.Mockito.mock(UserDAO.class);
-		Product p = new Product("MockTest1", 0.8, 25);
-		Product p1 = new Product("MockTest2", 0.9, 20);
-		Product p2 = new Product("MockTest3", 1, 19);
-		List<Product> pl = new ArrayList<Product>();
-		
-		pl.add(p);
-		pl.add(p1);
-		pl.add(p2);
-		
-		//Stubbing
-		when( mock.getUser("cortazar", "1234") ).thenReturn(user);
-		user.setShoppingList(pl);
-		//Calling the method under test
-		mock.updateShoppingList(user);
-		
-		// Verifying the outcome
-		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
-		verify (mock).updateShoppingList(userCaptor.capture());
-		User newUser = userCaptor.getValue();
-		
-		assertEquals( "MockTest1", newUser.getShoppingList().get(0).getName());
-		
-	}
+//	@Test
+//	public void testUpdateShoppingList() throws RemoteException {
+//		// Setting up the test data
+//		UserDAO mock = org.mockito.Mockito.mock(UserDAO.class);
+//		Product p = new Product("MockTest1", 0.8, 25);
+//		Product p1 = new Product("MockTest2", 0.9, 20);
+//		Product p2 = new Product("MockTest3", 1, 19);
+//		List<Product> pl = new ArrayList<Product>();
+//		
+//		pl.add(p);
+//		pl.add(p1);
+//		pl.add(p2);
+//		
+//		//Stubbing
+//		when( mock.getUser("cortazar", "1234") ).thenReturn(user);
+//		user.setShoppingList(pl);
+//		//Calling the method under test
+//		mock.updateShoppingList(user);
+//		
+//		// Verifying the outcome
+//		ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass( User.class );
+//		verify (mock).updateShoppingList(userCaptor.capture());
+//		User newUser = userCaptor.getValue();
+//		
+//		assertEquals( "MockTest1", newUser.getShoppingList().get(0).getName());
+//		
+//	}
 
 }

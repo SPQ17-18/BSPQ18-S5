@@ -13,6 +13,7 @@ import SPQ.remote.RMIServiceLocator;
 public class NeverEmptyController {
 	RMIServiceLocator rmi;
 	private UserDTO userDTO;
+	static Logger logger = Logger.getLogger(NeverEmptyController.class.getName());
 	
 	
 	public UserDTO getUserDTO() {
@@ -23,7 +24,7 @@ public class NeverEmptyController {
 		this.userDTO = userDTO;
 	}
 	
-	static Logger logger = Logger.getLogger(NeverEmptyController.class.getName());
+	
 	
 	public NeverEmptyController(RMIServiceLocator rmi) {
 		this.rmi = rmi;
@@ -65,6 +66,10 @@ public class NeverEmptyController {
 	
 	public boolean payWithVisa (PaymentDTO paymentDTO) throws RemoteException {
 		return rmi.getNeverEmptyServer().payWithVisa(paymentDTO);
+	}
+	
+	public boolean updateUser (UserDTO userDTO) throws RemoteException {
+		return rmi.getNeverEmptyServer().updateUser(userDTO);
 	}
 
 }

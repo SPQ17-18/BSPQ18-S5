@@ -11,23 +11,43 @@ public class UserDTO implements Serializable{
 	private String email = null;
 	private String password;
 	private String registerMethod = null;
+	private String address;
 	
 	private String payPalEmail = null;
 	private String payPalPassword = null;
 	
 	private long cardNumber = -1;
+	private String cardholder;
 
 	public UserDTO (User user) {
 		super();
 		this.username = user.getUsername();
 		this.email = user.getEmail();
 		this.password = user.getPassword();
+		this.address = user.getAddress();
 		this.registerMethod = user.getRegisterMethod();
 		this.payPalEmail = user.getPayPalEmail();
 		this.payPalPassword = user.getPayPalPassword();
 		this.cardNumber = user.getCardNumber();
+		this.cardholder = user.getCardholder();
 	}
 	
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCardholder() {
+		return cardholder;
+	}
+
+	public void setCardholder(String cardholder) {
+		this.cardholder = cardholder;
+	}
+
 	public UserDTO(String username, String password) {
 		super();
 		this.username = username;
@@ -41,16 +61,18 @@ public class UserDTO implements Serializable{
 		this.email = email;
 	}
 	
-	public UserDTO(String username, String email, String password, String registerMethod, String payPalEmail,
-			String payPalPassword, long cardNumber) {
+	public UserDTO(String username, String email, String password, String registerMethod, String address, String payPalEmail,
+			String payPalPassword, long cardNumber, String cardholder) {
 		super();
 		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.registerMethod = registerMethod;
+		this.address = address;
 		this.payPalEmail = payPalEmail;
 		this.payPalPassword = payPalPassword;
 		this.cardNumber = cardNumber;
+		this.cardholder = cardholder;
 	}
 
 	public UserDTO(String username, String email, String password, String registerMethod) {

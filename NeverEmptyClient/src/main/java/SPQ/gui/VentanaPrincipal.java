@@ -145,15 +145,15 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 				ProductLabel p = (ProductLabel) c;
 				shoppingCart.add(p);
 			}
-			VentanaTicket r = new VentanaTicket(this.neverEmptyController, shoppingCart, this);
-			r.setVisible(true);
+			VentanaTicket vt = new VentanaTicket(this.neverEmptyController, shoppingCart, this);
+			vt.setVisible(true);
 			this.setVisible(false);
 		}
 
 		if (e.getSource() == bPerfil) {
-			VentanaPerfil r = new VentanaPerfil(this.neverEmptyController);
-			r.setVisible(true);
-			dispose();
+			VentanaPerfil vp = new VentanaPerfil(this.neverEmptyController, this);
+			vp.setVisible(true);
+			this.setVisible(false);
 		}
 	}
 

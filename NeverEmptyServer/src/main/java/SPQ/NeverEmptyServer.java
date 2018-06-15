@@ -126,49 +126,32 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		return visaAnswer;
 	}
 
-	public boolean updateShoppingList (String username, String productList){
-		try {
-		User user = new User(username, "", "", "");
-		//nombre, precio, cantidad
-		String[] productsString = productList.split(";");
-		List<Product> products = new ArrayList<>();
-		for (String product : productsString) {
-			String[] productSplit = product.split(",");
-			Product p = new Product(productSplit[0], Double.parseDouble(productSplit[1]), Integer.parseInt(productSplit[2]));
-			products.add(p);
-		}
-		user.setShoppingList(products);
-		UserDAO userDAO = new UserDAO();
-		return userDAO.updateShoppingList(user);
-		}catch (Exception ex) {
-			logger.error("Update shopping list, datos incorrectos: " + ex.getMessage());
-			return false;
-		}
-	}
+//public boolean updateShoppingList (String username, String productList){
+//		try {
+//		User user = new User(username, "", "", "");
+//		//nombre, precio, cantidad
+//		String[] productsString = productList.split(";");
+//		List<Product> products = new ArrayList<>();
+//		for (String product : productsString) {
+//			String[] productSplit = product.split(",");
+//			Product p = new Product(productSplit[0], Double.parseDouble(productSplit[1]), Integer.parseInt(productSplit[2]));
+//			products.add(p);
+//		}
+//		user.setShoppingList(products);
+//		UserDAO userDAO = new UserDAO();
+//		return userDAO.updateShoppingList(user);
+//		}catch (Exception ex) {
+//			logger.error("Update shopping list, datos incorrectos: " + ex.getMessage());
+//			return false;
+//		}
+//	}
 	
-	public boolean updateUserPayPalEmail (String username, String payPalEmail) {
-		User user = new User(username, "", "", "");
-		user.setPayPalEmail(payPalEmail);
-		
-		UserDAO userDAO = new UserDAO();
-		return userDAO.updateUserPayPalEmail(user);
-	}
-	public boolean updateUserPayPalPassword (String username, String payPalPassword) {
-		User user = new User(username, "", "", "");
-		user.setPayPalPassword(payPalPassword);
-		
-		UserDAO userDAO = new UserDAO();
-		return userDAO.updateUserPayPalPassword(user);
+	public boolean updateUser (UserDTO userDTO) {
+		User user = new User(userDTO);
+		UserDAO udao = new UserDAO();
+		return udao.updateUser(user);
 	}
 
-	@Override
-	public boolean updateUserCardNumber(String username, String cardNumber) throws RemoteException {
-		User user = new User(username, "", "", "");
-		user.setCardNumber(Integer.parseInt(cardNumber));
-		
-		UserDAO userDAO = new UserDAO();
-		return userDAO.updateUserCardNumber(user);
-	}
 
 	
 
