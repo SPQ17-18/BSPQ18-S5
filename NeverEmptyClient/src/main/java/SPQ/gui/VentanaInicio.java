@@ -1,47 +1,37 @@
 package SPQ.gui;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Insets;
-import java.awt.Toolkit;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import com.jgoodies.forms.factories.DefaultComponentFactory;
+import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
 
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
-import SPQ.remote.RMIServiceLocator;
 
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.JPasswordField;
-import javax.swing.JTextPane;
-import javax.swing.SwingConstants;
-import javax.swing.border.Border;
-import javax.swing.JTable;
+import org.apache.log4j.Logger;
 
 public class VentanaInicio extends JFrame{
-
+	static Logger logger = Logger.getLogger(VentanaInicio.class.getName());
 	private static final long serialVersionUID = 1L;
 	private JTextField textFieldUserFinal;
 	private JPasswordField passwordFieldFinal;
-	private JButton botonLogin;
+	private JButton bLogin;
+	private JButton bSignUp;
+	private JButton bClose;
+	private JLabel lNeverEmpty;
+	private JLabel lUsername; 
+	private JLabel lPassword;
 	private NeverEmptyController neverEmptyController;
 	private VentanaInicio ventanaInicio;
 
@@ -53,7 +43,7 @@ public class VentanaInicio extends JFrame{
 	public VentanaInicio(NeverEmptyController neverEmptyController) {
 		this.ventanaInicio = this;
 		this.neverEmptyController = neverEmptyController;
-		
+
 		setSize(800, 400);
 		setLocationRelativeTo(null);
 
@@ -69,46 +59,46 @@ public class VentanaInicio extends JFrame{
 		Font titleBold = new Font("Arial", Font.BOLD, 55);
 		Font textPlain = new Font("Arial", Font.PLAIN, 16);
 		this.setTitle("NeverEmpty");
-		JLabel lblNeverEmpty = new JLabel("NeverEmpty", SwingConstants.CENTER);
-		lblNeverEmpty.setBounds(200, 0, 400, 150);
-		lblNeverEmpty.setFont(titleBold);
-		lblNeverEmpty.setForeground(new Color(253, 253, 253));
+		lNeverEmpty = new JLabel("NeverEmpty", SwingConstants.CENTER);
+		lNeverEmpty.setBounds(200, 0, 400, 150);
+		lNeverEmpty.setFont(titleBold);
+		lNeverEmpty.setForeground(new Color(253, 253, 253));
 
-		getContentPane().add(lblNeverEmpty);
+		getContentPane().add(lNeverEmpty);
 
-		JButton btnSignUp = new JButton("Registro");
-		btnSignUp.addActionListener(new ActionListener() {
+		bSignUp = new JButton("Registro");
+		bSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				VentanaSeleccionarRegistro vsr = new VentanaSeleccionarRegistro(neverEmptyController, ventanaInicio);
 				vsr.setVisible(true);
 
 			}
 		});
-		btnSignUp.setContentAreaFilled(false);
-		btnSignUp.setBorder(BorderFactory.createLineBorder(Color.white,2));
-		btnSignUp.setForeground(Color.white);
-		btnSignUp.setBounds(425, 300, 150, 30);
-		btnSignUp.setFont(textPlain);
-		getContentPane().add(btnSignUp);
+		bSignUp.setContentAreaFilled(false);
+		bSignUp.setBorder(BorderFactory.createLineBorder(Color.white,2));
+		bSignUp.setForeground(Color.white);
+		bSignUp.setBounds(425, 300, 150, 30);
+		bSignUp.setFont(textPlain);
+		getContentPane().add(bSignUp);
 
-		JButton btnSalir = new JButton();
-		btnSalir.addActionListener(new ActionListener() {
+		bClose = new JButton();
+		bClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		btnSalir.setBounds(750, 20, 30, 30);
+		bClose.setBounds(750, 20, 30, 30);
 		ImageIcon closeIcon = util.getImageFromResources("close-white.png");
-		btnSalir.setIcon(closeIcon);
-		btnSalir.setSize(30, 30);
-		btnSalir.setPreferredSize(new Dimension(30, 30));
-		btnSalir.setHorizontalAlignment(SwingConstants.CENTER);
-		btnSalir.setOpaque(false);
-		btnSalir.setBackground(new Color(255, 255, 255));
-		btnSalir.setBorder(null);
+		bClose.setIcon(closeIcon);
+		bClose.setSize(30, 30);
+		bClose.setPreferredSize(new Dimension(30, 30));
+		bClose.setHorizontalAlignment(SwingConstants.CENTER);
+		bClose.setOpaque(false);
+		bClose.setBackground(new Color(255, 255, 255));
+		bClose.setBorder(null);
 
-		getContentPane().add(btnSalir);
+		getContentPane().add(bClose);
 
 		textFieldUserFinal = new JTextField();
 		textFieldUserFinal.setBounds(350, 150, 200, 30);
@@ -121,66 +111,54 @@ public class VentanaInicio extends JFrame{
 		passwordFieldFinal.setBounds(350, 200, 200, 30);
 		getContentPane().add(passwordFieldFinal);
 
-		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setFont(textPlain);
-		lblUsuario.setForeground(new Color(253, 253, 253));
-		lblUsuario.setBounds(250, 155, 100, 16);
-		getContentPane().add(lblUsuario);
+		lUsername = new JLabel("Usuario");
+		lUsername.setFont(textPlain);
+		lUsername.setForeground(new Color(253, 253, 253));
+		lUsername.setBounds(250, 155, 100, 16);
+		getContentPane().add(lUsername);
 
-		JLabel lblPassword = new JLabel("Contraseña");
-		lblPassword.setFont(textPlain);
-		lblPassword.setForeground(new Color(253, 253, 253));
-		lblPassword.setBounds(250, 205, 100, 16);
-		getContentPane().add(lblPassword);
+		lPassword = new JLabel("Contraseña");
+		lPassword.setFont(textPlain);
+		lPassword.setForeground(new Color(253, 253, 253));
+		lPassword.setBounds(250, 205, 100, 16);
+		getContentPane().add(lPassword);
 
-		JButton botonLogin = new JButton("Entrar");
-		botonLogin.addActionListener(new ActionListener() {
+		bLogin = new JButton("Entrar");
+		bLogin.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 
 				//Comprobar que los datos insertados en el campo esten en el ArrayList 
 				String user = textFieldUserFinal.getText().toString();
-
-				//Creamos un metodo para obtener la passsword no encripada
-				String pass = "";
-				char [] password= passwordFieldFinal.getPassword();
-				for(int x = 0; x < password.length; x++) {
-					pass += password[x];
-				}
-
-				System.out.println("La password introducida es"+ password);
-
 				//Comprobar que esos datos estan en un la lista de usuario registrados
 
 				boolean registered = false;
 				try{
-					registered = neverEmptyController.login(user, String.valueOf(password));
+					registered = neverEmptyController.login(user, String.valueOf(passwordFieldFinal.getPassword()));
 				}catch (Exception ex) {
 					System.out.println(ex);
 				}
 				if(registered){ 
 					iniciarAplicacion();
 				}else{
-					System.out.println("Tienes que registrarte antes de iniciar sesion");
+					logger.info("Usuario no registrado.");
 					JOptionPane.showMessageDialog(null, "Error, los datos introducidos son incorrectos.", "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
-		botonLogin.setContentAreaFilled(false);
-		botonLogin.setBorder(BorderFactory.createLineBorder(Color.white,2));
-		botonLogin.setForeground(Color.white);
-		botonLogin.setBounds(225, 300, 150, 30);
-		botonLogin.setFont(textPlain);
-		getContentPane().add(botonLogin);
+		bLogin.setContentAreaFilled(false);
+		bLogin.setBorder(BorderFactory.createLineBorder(Color.white,2));
+		bLogin.setForeground(Color.white);
+		bLogin.setBounds(225, 300, 150, 30);
+		bLogin.setFont(textPlain);
+		getContentPane().add(bLogin);
 
 	}
 
 	public void iniciarAplicacion() {
-		System.out.println("EL USUARIO ESTA REGISTRADO");
-		//Abrimos la ventana principal TODO
+		logger.info("Iniciando NeverEmpty...");
 		VentanaPrincipal vPrincipal = new VentanaPrincipal(this.neverEmptyController);
 		vPrincipal.setVisible(true);
-		//Y cerramos la ventana de inicio al haber podido iniciar sesion
 		dispose();
 	}
 

@@ -3,5 +3,6 @@ package SPQ.dao;
 import SPQ.data.User;
 
 public interface IUserDAO {
-	public User getUser (String email);
+	public boolean pay (User user, double total);
+	public void storeUser(User user);
 }

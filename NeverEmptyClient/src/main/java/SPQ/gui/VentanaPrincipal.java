@@ -20,6 +20,7 @@ import SPQ.data.Product;
 import SPQ.dto.ProductDTO;
 
 import SPQ.gui.component.ProductLabel;
+import org.apache.log4j.Logger;
 
 
 public class VentanaPrincipal extends JFrame implements ActionListener{
@@ -163,14 +164,15 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 				ProductLabel p = (ProductLabel) c;
 				shoppingCart.add(p);
 			}
-			VentanaTicket r = new VentanaTicket(this.neverEmptyController, shoppingCart);
-			r.setVisible(true);
+			VentanaTicket vt = new VentanaTicket(this.neverEmptyController, shoppingCart, this);
+			vt.setVisible(true);
+			this.setVisible(false);
 		}
 
 		if (e.getSource() == bPerfil) {
-			VentanaPerfil r = new VentanaPerfil(this.neverEmptyController);
-			r.setVisible(true);
-			dispose();
+			VentanaPerfil vp = new VentanaPerfil(this.neverEmptyController, this);
+			vp.setVisible(true);
+			this.setVisible(false);
 		}
 	}
 

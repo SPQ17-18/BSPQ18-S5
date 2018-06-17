@@ -8,6 +8,7 @@ import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 
 import SPQ.data.Product;
+import SPQ.dto.UserDTO;
 
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
@@ -18,14 +19,13 @@ public class User {
 	private String password;
 	private String registerMethod;
 	
+	private String address;
+	
 	private String payPalEmail = null;
 	private String payPalPassword = null;
 	
-	private int cardNumber = -1;
-	
-
-    @Element(column="USER_ID")
-	private List<Product> shoppingList = null;
+	private long cardNumber = -1;
+	private String cardholder;
 	
 	public User(String username, String email, String password, String registerMethod) {
 		super();
@@ -35,6 +35,56 @@ public class User {
 		this.registerMethod = registerMethod;
 		}
 
+	public User(UserDTO userDTO) {
+		super();
+		this.username = userDTO.getUsername();
+		this.email = userDTO.getEmail();
+		this.password = userDTO.getPassword();
+		this.registerMethod = userDTO.getRegisterMethod();
+		
+		this.address = userDTO.getAddress();
+		this.payPalEmail = userDTO.getPayPalEmail();
+		this.payPalPassword = userDTO.getPayPalPassword();
+		
+		this.cardNumber = userDTO.getCardNumber();
+		this.cardholder = userDTO.getCardholder();
+		
+	}
+
+	
+	public void updateUser(User user) {
+		this.username = user.getUsername();
+		this.email = user.getEmail();
+		this.password = user.getPassword();
+		this.registerMethod = user.getRegisterMethod();
+		
+		this.address = user.getAddress();
+		this.payPalEmail = user.getPayPalEmail();
+		this.payPalPassword = user.getPayPalPassword();
+		
+		this.cardNumber = user.getCardNumber();
+		this.cardholder = user.getCardholder();
+
+	}
+    public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCardholder() {
+		return cardholder;
+	}
+
+	public void setCardholder(String cardholder) {
+		this.cardholder = cardholder;
+	}
+
+	@Element(column="USER_ID")
+	private List<Product> shoppingList = null;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -83,11 +133,11 @@ public class User {
 		this.payPalPassword = payPalPassword;
 	}
 
-	public int getCardNumber() {
+	public long getCardNumber() {
 		return cardNumber;
 	}
 
-	public void setCardNumber(int cardNumber) {
+	public void setCardNumber(long cardNumber) {
 		this.cardNumber = cardNumber;
 	}
 

@@ -13,10 +13,6 @@ public class RMIServiceLocator {
 	public INeverEmptyFacade getNeverEmptyServer() {
 		return this.iNeverEmptyFacade;
 	}
-	
-	public RMIServiceLocator(){ 
-    }
-	
 
 	public void setService(String[] args) {
 		try {
@@ -25,7 +21,6 @@ public class RMIServiceLocator {
 
 		} catch (Exception e) {
 			logger.error("- Exception running NeverEmpty: " + e.getMessage());
-//			e.printStackTrace();
 		}
 }
 }

@@ -11,20 +11,20 @@ import java.net.UnknownHostException;
 
 import SPQ.dto.PaymentDTO;
 
-public class PayPal implements IPayPalGateway{
+public class Visa implements IVisaGateway{
 
 	private boolean answer;
 	private ObjectOutputStream out;
 	private Socket tcpSocket;
 	
-	public PayPal(String serverIP, String serverPort) {
+	public Visa(String serverIP, String serverPort) {
 		super();
 		try {
 			System.out.println("PUERTO " + serverPort);
 			this.tcpSocket = new Socket(serverIP, Integer.parseInt(serverPort));
 			this.out = new ObjectOutputStream(this.tcpSocket.getOutputStream());
 		} catch (IOException e) {
-			System.err.println("# PayPalService - TCPConnection IO error:" + e.getMessage());
+			System.err.println("# VisaService - TCPConnection IO error:" + e.getMessage());
 		}
 	}
 

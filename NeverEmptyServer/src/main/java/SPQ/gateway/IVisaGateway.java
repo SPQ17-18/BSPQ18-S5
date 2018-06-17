@@ -2,6 +2,6 @@ package SPQ.gateway;
 
 import SPQ.dto.PaymentDTO;
 
-public interface IPayPalGateway {
+public interface IVisaGateway {
 	public boolean pay(PaymentDTO paymentDTO);
 }
