@@ -19,6 +19,7 @@ import SPQ.data.Product;
 import SPQ.dto.ProductDTO;
 
 import SPQ.gui.component.ProductLabel;
+import org.apache.log4j.Logger;
 
 
 public class VentanaPrincipal extends JFrame implements ActionListener{

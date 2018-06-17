@@ -2,7 +2,6 @@ package SPQ.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JScrollPane;
@@ -18,7 +17,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
-
+import org.apache.log4j.Logger;
 /*clase que contiene el codigo de la ventana de ticket*/
 
 public class VentanaTicket extends JFrame implements ActionListener{

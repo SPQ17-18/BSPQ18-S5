@@ -19,7 +19,7 @@ import javax.swing.SwingConstants;
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class VentanaInicio extends JFrame{
 	static Logger logger = Logger.getLogger(VentanaInicio.class.getName());
@@ -141,7 +141,7 @@ public class VentanaInicio extends JFrame{
 				if(registered){ 
 					iniciarAplicacion();
 				}else{
-					logger.info("Tienes que registrarte antes de iniciar sesion");
+					logger.info("Usuario no registrado.");
 					JOptionPane.showMessageDialog(null, "Error, los datos introducidos son incorrectos.", "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
@@ -156,7 +156,7 @@ public class VentanaInicio extends JFrame{
 	}
 
 	public void iniciarAplicacion() {
-		logger.info("Entrando...");
+		logger.info("Iniciando NeverEmpty...");
 		VentanaPrincipal vPrincipal = new VentanaPrincipal(this.neverEmptyController);
 		vPrincipal.setVisible(true);
 		dispose();

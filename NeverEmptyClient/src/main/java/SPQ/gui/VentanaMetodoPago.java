@@ -14,6 +14,8 @@ import javax.swing.SwingConstants;
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
 import SPQ.gui.component.ProductLabel;
+import org.apache.log4j.Logger;
+
 public class VentanaMetodoPago extends JFrame implements ActionListener{
 	
 	private NeverEmptyController neverEmptyController;
@@ -21,6 +23,7 @@ public class VentanaMetodoPago extends JFrame implements ActionListener{
 	private double total;
 	private String selected;
 	public VentanaTicket vt;
+	
 	
 	public VentanaMetodoPago (NeverEmptyController neverEmptyController, double total, VentanaTicket ventanaTicket) {
 		this.neverEmptyController = neverEmptyController;

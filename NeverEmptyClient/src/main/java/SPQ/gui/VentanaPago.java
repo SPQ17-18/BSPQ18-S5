@@ -9,7 +9,7 @@ import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
