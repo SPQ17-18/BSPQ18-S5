@@ -17,20 +17,16 @@ public class ProductDAO {
 	static Logger logger = Logger.getLogger(ProductDAO.class.getName());
 	
 //	public static void main(String[] args) {
-//		ProductDAO pdao = new ProductDAO();
-//		List<Product> productos = pdao.getProducts();
-//		for (Product m : productos) {
-//			System.out.println(m.getName());
-//			System.out.println(m.getPrice());
-//			System.out.println(m.getSale());
-//		}
+//		Product p = new Product ("Pera", 0.60, 0);
+//		Product p2 = new Product ("Manzana", 0.40, 0);
+//		Product p3 = new Product ("Huevos", 1.50, 10);
+//		Product p4 = new Product ("Pan de molde", 1, 5);
+//		ProductDAO pd = new ProductDAO();
+//		pd.storeProduct(p);
+//		pd.storeProduct(p2);
+//		pd.storeProduct(p3);
+//		pd.storeProduct(p4);
 //	}
-	
-	public static void main(String[] args) {
-		Product p = new Product ("Pera", 2, 10);
-		ProductDAO pd = new ProductDAO();
-		pd.storeProduct(p);
-	}
 	private PersistenceManagerFactory persistenceManagerFactory;
 
 	public ProductDAO() {
@@ -44,7 +40,7 @@ public class ProductDAO {
 
 		try {
 			tx.begin();
-			logger.info("   * Storing a user: " + product);
+			logger.info("   * Storing a product: " + product);
 			pm.makePersistent(product);
 			tx.commit();
 			

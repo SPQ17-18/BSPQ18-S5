@@ -25,14 +25,18 @@ import org.apache.log4j.Logger;
 
 public class VentanaPrincipal extends JFrame implements ActionListener{
 
-	JLabel lblTitulo;
-	JButton bCatalogue, bShoppingCart, bSales, bPerfil, bBuy;
+	private JLabel lblTitulo;
+	private JButton bCatalogue, bShoppingCart, bSales, bPerfil, bBuy;
 
-	JPanel pCatalogue, pShoppingCart, pSales;
+	private JPanel pCatalogue, pShoppingCart;
 
-	NeverEmptyController neverEmptyController;
+	private NeverEmptyController neverEmptyController;
 
-	List<ProductLabel> productList = new ArrayList<ProductLabel>();
+	private List<ProductLabel> productList = new ArrayList<ProductLabel>();
+
+	static Logger logger = Logger.getLogger(VentanaInicio.class.getName());
+
+	private String state = "all";
 
 	public VentanaPrincipal(NeverEmptyController neverEmptyController) {
 		this.neverEmptyController = neverEmptyController;
@@ -43,7 +47,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		this.setResizable(false);
 		this.getContentPane().setLayout(null);
 		this.setLocationRelativeTo(null);
-		
+
 		this.inicializarComponentes();                
 	}
 
@@ -56,7 +60,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		this.getProducts();
 		for(ProductLabel p :this.productList) {
 			pCatalogue.add(new ProductLabel(p.getproductName().getText(), p.getPrice().getText(), p.getQuantity().getText(),
-					p.getSale().getText()));
+					p.getSale().getText().replace("%", "")));
 		}
 		pCatalogue.setVisible(true);
 
@@ -64,11 +68,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		pShoppingCart.setBackground(Color.RED);
 		pShoppingCart.setBounds(5,112, 350, 200);
 		pShoppingCart.setVisible(false);
-		
-		pSales = new JPanel();
-		pSales.setBackground(Color.GREEN);
-		pSales.setBounds(5,112,350,200);
-		pSales.setVisible(false);
+
 
 		lblTitulo = new JLabel ("Seleccione los productos que desea comprar");
 		lblTitulo.setBounds(10,14,275,51);
@@ -97,9 +97,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		this.getContentPane().add(bBuy);
 
 		this.getContentPane().add(pShoppingCart);
-		this.getContentPane().add(pSales);
 		this.getContentPane().add(pCatalogue);
-		
+
 
 		bPerfil = new JButton("Perfil");
 		bPerfil.setBounds(269, 76, 89, 23);
@@ -126,13 +125,12 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			}
 			this.pCatalogue.setVisible(true);
 			this.pShoppingCart.setVisible(false);
-			this.pSales.setVisible(false);
 		}
 
 		if (e.getSource() == bShoppingCart) {
 			System.out.println("Lista de la compra");
 			this.pCatalogue.setVisible(false);
-			
+
 			for(Component c: this.pCatalogue.getComponents()) {
 				ProductLabel p = (ProductLabel) c;
 				if(!p.getQuantity().getText().equals("0")) {
@@ -141,20 +139,33 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 					System.out.println("Añadido a shoppingList: "+ p.getproductName().getText());
 				}
 			}
-		
+
 			pShoppingCart.setVisible(true);
 		}
 
 		if (e.getSource() == bSales) {
-			System.out.println("Lista de productos en oferta");
-			this.pCatalogue.setVisible(false);
-			
-			for(Component c : this.pCatalogue.getComponents()) {
-				ProductLabel p = (ProductLabel) c;
-				if(p.getSale().getText().equals(0)) {
-					this.pCatalogue.remove(c);
-					this.pSales.add(p);
+			if(state.equals("all")) {
+
+				for(Component c : this.pCatalogue.getComponents()) {
+					ProductLabel p = (ProductLabel) c;
+					if(Double.parseDouble(p.getSale().getText().replace("%", "")) == 0.0) {
+						pCatalogue.remove(c);
+					}
 				}
+
+				pCatalogue.setVisible(false);
+				pCatalogue.setVisible(true);
+				state = "sales";
+				logger.info("Mostrando ofertas.");
+			}else if (state.equals("sales")) {
+				pCatalogue.removeAll();
+				for(ProductLabel pl : productList ) {
+					pCatalogue.add(pl);
+				}
+				pCatalogue.setVisible(false);
+				pCatalogue.setVisible(true);
+				state = "all";
+				logger.info("Mostrando catalogo.");
 			}
 		}
 
@@ -180,9 +191,10 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		ProductDTO productDTO = null;
 		try {
 			productDTO = neverEmptyController.getProducts();
-			System.out.println("Productos: " + productDTO.getProductList().toString());
+			logger.info("Productos: " + productDTO.getProductList().toString());
 			for (Product product : productDTO.getProductList()) {
-				ProductLabel pl = new ProductLabel(product.getName(), product.getPrice());
+				logger.info("Producto: " + product.toString());
+				ProductLabel pl = new ProductLabel(product.getName(), Double.toString(product.getPrice()), Double.toString(product.getSale()));
 				this.productList.add(pl);
 			}
 		}catch(Exception e) {

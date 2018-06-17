@@ -27,6 +27,9 @@ public class VentanaTicket extends JFrame implements ActionListener{
 	private JButton bPay, bBack;
 	private NeverEmptyController neverEmptyController;
 	private static final long serialVersionUID = 1L;
+	
+	static Logger logger = Logger.getLogger(VentanaInicio.class.getName());
+	
     public VentanaPrincipal vp;
 	public VentanaTicket(NeverEmptyController neverEmptyController, List<ProductLabel> shoppingList, VentanaPrincipal ventanaPrincipal) {
 		this.neverEmptyController = neverEmptyController;
@@ -46,36 +49,40 @@ public class VentanaTicket extends JFrame implements ActionListener{
 		scrollPane.setBounds(54, 27, 312, 182);
 		getContentPane().add(scrollPane);
 		
-		this.table = new JTable(new DefaultTableModel());
+		table = new JTable(new DefaultTableModel());
 		DefaultTableModel dmt = (DefaultTableModel) table.getModel();
 		dmt.addColumn("Nombre Producto");
 		dmt.addColumn("Cantidad");
 		dmt.addColumn("Precio/Unidad");
+		dmt.addColumn("Descuento");
 		dmt.addColumn("Precio");
 		
+		double sum = 0;
 		for (ProductLabel p : shoppingList) {
-			double productsPrice = Double.parseDouble(p.getPrice().getText()) * Double.parseDouble(p.getQuantity().getText());
+			
+			double saleFactor = (Double.parseDouble(p.getSale().getText().replace("%", "")) * (Double.parseDouble(p.getQuantity().getText()) * Double.parseDouble(p.getPrice().getText()))) / 100;
+			double productsPrice = (Double.parseDouble(p.getPrice().getText()) * Double.parseDouble(p.getQuantity().getText())) - saleFactor;
 			String fila[] = {
 					p.getproductName().getText(),
 					p.getQuantity().getText(),
 					p.getPrice().getText(),
+					p.getSale().getText(),
 					Double.toString(productsPrice)
 					};
 			dmt.addRow(fila);
+			sum = sum + productsPrice;
 		}
-		this.table.setModel(dmt);
+		table.setModel(dmt);
 		scrollPane.setViewportView(table);
 		
 		JLabel lblTotal = new JLabel("TOTAL ");
 		lblTotal.setBounds(12, 240, 46, 14);
 		getContentPane().add(lblTotal);
 		
-		double d = 0;
-		for(int i = 0; i < this.table.getRowCount(); i++) {
-			 d = d + Double.parseDouble(this.table.getValueAt(i, 3)+""); 
-		}
 		
-		this.total = new JLabel(Double.toString(d));
+		
+		logger.info("Total: " + sum);
+		total = new JLabel(Double.toString(sum));
 		total.setBounds(70, 240, 46, 14);
 		getContentPane().add(total);
 
