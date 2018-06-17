@@ -2,6 +2,7 @@ package SPQ.gui.component;
 
 
 import java.awt.Color;
+
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -26,13 +27,13 @@ import javax.swing.border.Border;
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
 import SPQ.gui.VentanaFavoritos;
-import SPQ.gui.VentanaOfertas;
 import SPQ.gui.VentanaTicket;
 
-public class ProductLabel extends JPanel  implements ActionListener{
+public class ProductLabel extends JPanel implements ActionListener{
 	private JLabel productName;
 	private JLabel price;
 	private JLabel quantity = new JLabel("0");
+	private JLabel sale = new JLabel("0");
 	private JButton bAdd = new JButton();
 	private JButton bSub = new JButton();
 
@@ -41,11 +42,18 @@ public class ProductLabel extends JPanel  implements ActionListener{
 		this.productName = new JLabel(productName);
 		this.price = new JLabel(Double.toString(price));
 	}
+	
+	public ProductLabel(String productName, double price, double sale) {
+		this.productName = new JLabel(productName);
+		this.price = new JLabel (Double.toString(price));
+		this.sale = new JLabel (Double.toString(sale));
+	}
 
-	public ProductLabel(String productName, String price, String quantity) {
+	public ProductLabel(String productName, String price, String quantity, String sale) {
 		this.productName = new JLabel(productName);
 		this.price = new JLabel(price);
 		this.quantity = new JLabel(quantity);
+		this.sale = new JLabel(sale);
 
 		FlowLayout flowLayout = new FlowLayout(SwingConstants.LEFT, 0, 0);
 		this.setLayout(flowLayout);
@@ -128,6 +136,15 @@ public class ProductLabel extends JPanel  implements ActionListener{
 					);
 		}
 	}
+	
+	public JLabel getSale() {
+		return sale;
+	}
+
+	public void setSale(JLabel sale) {
+		this.sale = sale;
+	}
+
 	public JLabel getproductName() {
 		return productName;
 	}

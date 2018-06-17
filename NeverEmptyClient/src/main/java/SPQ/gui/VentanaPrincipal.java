@@ -2,6 +2,7 @@ package SPQ.gui;
 
 
 import java.awt.Color;
+
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,9 +25,9 @@ import SPQ.gui.component.ProductLabel;
 public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	JLabel lblTitulo;
-	JButton bCatalogue, bShoppingCart, btnSales, bPerfil, bBuy;
+	JButton bCatalogue, bShoppingCart, bSales, bPerfil, bBuy;
 
-	JPanel pCatalogue, pShoppingCart;
+	JPanel pCatalogue, pShoppingCart, pSales;
 
 	NeverEmptyController neverEmptyController;
 
@@ -53,14 +54,20 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		pCatalogue.setBounds(5,112, 350, 200);
 		this.getProducts();
 		for(ProductLabel p :this.productList) {
-			pCatalogue.add(new ProductLabel(p.getproductName().getText(), p.getPrice().getText(), p.getQuantity().getText()));
+			pCatalogue.add(new ProductLabel(p.getproductName().getText(), p.getPrice().getText(), p.getQuantity().getText(),
+					p.getSale().getText()));
 		}
 		pCatalogue.setVisible(true);
 
 		pShoppingCart = new JPanel();
 		pShoppingCart.setBackground(Color.RED);
-		pShoppingCart.setBounds(5,112, 370, 170);
+		pShoppingCart.setBounds(5,112, 350, 200);
 		pShoppingCart.setVisible(false);
+		
+		pSales = new JPanel();
+		pSales.setBackground(Color.GREEN);
+		pSales.setBounds(5,112,350,200);
+		pSales.setVisible(false);
 
 		lblTitulo = new JLabel ("Seleccione los productos que desea comprar");
 		lblTitulo.setBounds(10,14,275,51);
@@ -73,8 +80,9 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		bShoppingCart.setBounds(109, 76, 135, 23);
 		bShoppingCart.addActionListener(this);
 
-		btnSales = new JButton("Ofertas");
-		btnSales.setBounds(10, 315, 95, 23);
+		bSales = new JButton("Ofertas");
+		bSales.setBounds(10, 315, 95, 23);
+		bSales.addActionListener(this);
 
 		bBuy = new JButton("Comprar");
 		bBuy.setBounds(10,  290, 350, 23);
@@ -84,11 +92,13 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		this.getContentPane().add(lblTitulo);
 		this.getContentPane().add(bCatalogue);
 		this.getContentPane().add(bShoppingCart);
-		this.getContentPane().add(btnSales);
+		this.getContentPane().add(bSales);
 		this.getContentPane().add(bBuy);
 
 		this.getContentPane().add(pShoppingCart);
+		this.getContentPane().add(pSales);
 		this.getContentPane().add(pCatalogue);
+		
 
 		bPerfil = new JButton("Perfil");
 		bPerfil.setBounds(269, 76, 89, 23);
@@ -115,6 +125,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			}
 			this.pCatalogue.setVisible(true);
 			this.pShoppingCart.setVisible(false);
+			this.pSales.setVisible(false);
 		}
 
 		if (e.getSource() == bShoppingCart) {
@@ -133,10 +144,17 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 			pShoppingCart.setVisible(true);
 		}
 
-		if (e.getSource() == btnSales) {
-			VentanaOfertas o = new VentanaOfertas();
-			o.setVisible(true);
-			dispose();
+		if (e.getSource() == bSales) {
+			System.out.println("Lista de productos en oferta");
+			this.pCatalogue.setVisible(false);
+			
+			for(Component c : this.pCatalogue.getComponents()) {
+				ProductLabel p = (ProductLabel) c;
+				if(p.getSale().getText().equals(0)) {
+					this.pCatalogue.remove(c);
+					this.pSales.add(p);
+				}
+			}
 		}
 
 		if (e.getSource() == bBuy) {
