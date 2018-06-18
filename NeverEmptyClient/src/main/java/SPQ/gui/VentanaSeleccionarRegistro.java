@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
-
+import org.apache.log4j.Logger;
 
 public class VentanaSeleccionarRegistro extends JFrame implements ActionListener{
 

@@ -1,7 +1,5 @@
 package SPQ.gateway;
 
-
-
 import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
@@ -38,7 +36,7 @@ public class Eroski implements IEroskiGateway{
 			//Read response (a Object) from the server
 			products = (ProductDTO) in.readObject();
 			System.out.println(" - TCPSocketClient: Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + products.getProductList().toString() + "'");
-
+			tcpSocket.close();
 		} catch (UnknownHostException e) {
 			System.err.println("# TCPSocketClient: Socket error: " + e.getMessage());
 		} catch (EOFException e) {
@@ -48,7 +46,7 @@ public class Eroski implements IEroskiGateway{
 		} catch (ClassNotFoundException e) {
 			System.err.println("# TCPSocketClient: ClassNotFound error: " + e.getMessage());
 		}
-		
+
 		return products;
 	}
 	

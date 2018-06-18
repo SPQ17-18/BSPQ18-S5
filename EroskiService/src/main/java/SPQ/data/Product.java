@@ -13,25 +13,25 @@ public class Product implements Serializable{
 	private static final long serialVersionUID = 1L;
 	String name;
 	double price;
-	float sale = 0;
+	double sale = 0;
 	
 	public Product (String name, double price) {
 		this.name = name;
 		this.price = price;
 	}
 	
-	public Product(String name, double price, float sale) {
+	public Product(String name, double price, double sale) {
 		super();
 		this.name = name;
 		this.price = price;
 		this.sale = sale;
 	}
 
-	public float getSale() {
+	public double getSale() {
 		return sale;
 	}
 
-	public void setSale(float sale) {
+	public void setSale(double sale) {
 		this.sale = sale;
 	}
 

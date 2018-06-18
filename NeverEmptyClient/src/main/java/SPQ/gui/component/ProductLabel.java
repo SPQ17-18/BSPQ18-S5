@@ -3,18 +3,12 @@ package SPQ.gui.component;
 
 import java.awt.Color;
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Insets;
-import java.awt.RenderingHints;
-import java.awt.Toolkit;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,37 +16,24 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.border.Border;
 
 import SPQ.Utilities;
-import SPQ.controller.NeverEmptyController;
-import SPQ.gui.VentanaFavoritos;
-import SPQ.gui.VentanaTicket;
+import SPQ.gui.VentanaPrincipal;
+
 
 public class ProductLabel extends JPanel implements ActionListener{
 	private JLabel productName;
 	private JLabel price;
 	private JLabel quantity = new JLabel("0");
-	private JLabel sale = new JLabel("0");
+	private JLabel sale;
 	private JButton bAdd = new JButton();
 	private JButton bSub = new JButton();
+	private VentanaPrincipal vp;
 
-
-	public ProductLabel(String productName, double price) {
-		this.productName = new JLabel(productName);
-		this.price = new JLabel(Double.toString(price));
-	}
-	
-	public ProductLabel(String productName, double price, double sale) {
-		this.productName = new JLabel(productName);
-		this.price = new JLabel (Double.toString(price));
-		this.sale = new JLabel (Double.toString(sale));
-	}
-
-	public ProductLabel(String productName, String price, String quantity, String sale) {
+	public ProductLabel(String productName, String price, String sale, VentanaPrincipal vp) {
+		this.vp = vp;
 		this.productName = new JLabel(productName);
 		this.price = new JLabel(price);
-		this.quantity = new JLabel(quantity);
 		this.sale = new JLabel(sale);
 
 		FlowLayout flowLayout = new FlowLayout(SwingConstants.LEFT, 0, 0);
@@ -62,8 +43,24 @@ public class ProductLabel extends JPanel implements ActionListener{
 
 		inicializarComponentes();
 	}
+
+	public ProductLabel(String productName, String price, String quantity, String sale, VentanaPrincipal vp) {
+		this.vp = vp;
+		this.productName = new JLabel(productName);
+		this.quantity = new JLabel(quantity);
+		this.price = new JLabel(price);
+		this.sale = new JLabel(sale);
+
+		FlowLayout flowLayout = new FlowLayout(SwingConstants.LEFT, 0, 0);
+		this.setLayout(flowLayout);
+		this.setBounds(0, 0, 485, 25);
+		this.setBackground(new Color(255, 255, 255));
+
+		inicializarComponentes();
+	}
+
 	private void inicializarComponentes() {
-		this.productName.setPreferredSize(new Dimension(100, 25));
+		this.productName.setPreferredSize(new Dimension(145, 25));
 		this.productName.setHorizontalAlignment(SwingConstants.CENTER);
 		this.productName.setOpaque(true);
 		this.productName.setForeground(new Color(255, 255, 255));
@@ -71,20 +68,38 @@ public class ProductLabel extends JPanel implements ActionListener{
 
 		this.add(this.productName);
 
-		this.price.setPreferredSize(new Dimension(100, 25));
-		this.price.setHorizontalAlignment(SwingConstants.CENTER);
-		this.price.setOpaque(true);
+
+		if( Double.parseDouble(sale.getText()) > 0) {
+			this.price.setPreferredSize(new Dimension(72, 25));
+			this.sale.setPreferredSize(new Dimension(73, 25));
+			this.sale.setForeground(new Color(255, 255, 255));
+			this.sale.setBackground(Color.orange);
+			this.sale.setHorizontalAlignment(SwingConstants.CENTER);
+			this.sale.setOpaque(true);
+
+
+		}else {
+			this.price.setPreferredSize(new Dimension(145, 25));
+
+
+		}
 		this.price.setForeground(new Color(255, 255, 255));
 		this.price.setBackground(new Color(150, 150, 150));
-		this.add(this.price);
+		this.price.setHorizontalAlignment(SwingConstants.CENTER);
+		this.price.setOpaque(true);
+		this.add(this.price);			
+		if(Double.parseDouble(sale.getText()) > 0) {
+			sale.setText(sale.getText() +"%");
+			this.add(sale);
+		}
 
-		this.quantity.setPreferredSize(new Dimension(100, 25));
+		this.quantity.setPreferredSize(new Dimension(145, 25));
 		this.quantity.setHorizontalAlignment(SwingConstants.CENTER);
 		this.quantity.setOpaque(true);
 		this.quantity.setForeground(new Color(255, 255, 255));
 		this.quantity.setBackground(new Color(100, 100, 100));
 		this.add(this.quantity);
-		
+
 
 		Utilities util = new Utilities();
 		ImageIcon plusIcon = util.getImageFromResources("plus-green.png");
@@ -112,8 +127,6 @@ public class ProductLabel extends JPanel implements ActionListener{
 
 	}
 
-
-
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("ActionPerformed");
 		if (e.getSource() == this.bAdd) {
@@ -122,11 +135,33 @@ public class ProductLabel extends JPanel implements ActionListener{
 							Integer.parseInt(this.quantity.getText()) + 1
 							)
 					);
+			if(Integer.parseInt(this.quantity.getText()) == 1) {
+				vp.pCatalogue.remove(this);
+				vp.pShoppingCart.add(this);	
+			}
+			
+			vp.pCatalogue.setVisible(false);
+			vp.pShoppingCart.setVisible(false);
+			
+			vp.pCatalogue.setVisible(true);
+			vp.pShoppingCart.setVisible(true);
+			
+
 		}
 		if (e.getSource() == this.bSub) {
 			int quantity = Integer.parseInt(this.quantity.getText());
-			if (quantity > 0) {
+			if (quantity > 1) {
 				quantity = quantity -1;
+			}else if(quantity == 1){
+				quantity = quantity -1;
+				vp.pCatalogue.add(this);
+				vp.pShoppingCart.remove(this);
+				
+				vp.pCatalogue.setVisible(false);
+				vp.pShoppingCart.setVisible(false);
+				
+				vp.pCatalogue.setVisible(true);
+				vp.pShoppingCart.setVisible(true);
 			}
 
 			this.quantity.setText(
@@ -136,7 +171,7 @@ public class ProductLabel extends JPanel implements ActionListener{
 					);
 		}
 	}
-	
+
 	public JLabel getSale() {
 		return sale;
 	}

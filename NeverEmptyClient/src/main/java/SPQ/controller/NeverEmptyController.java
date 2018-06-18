@@ -4,13 +4,18 @@ import java.rmi.RemoteException;
 
 import org.apache.log4j.Logger;
 
+import SPQ.dto.PaymentDTO;
 import SPQ.dto.ProductDTO;
 import SPQ.dto.UserDTO;
 import SPQ.remote.RMIServiceLocator;
 
 
 public class NeverEmptyController {
+	RMIServiceLocator rmi;
 	private UserDTO userDTO;
+	static Logger logger = Logger.getLogger(NeverEmptyController.class.getName());
+	
+	
 	public UserDTO getUserDTO() {
 		return userDTO;
 	}
@@ -18,9 +23,8 @@ public class NeverEmptyController {
 	public void setUserDTO(UserDTO userDTO) {
 		this.userDTO = userDTO;
 	}
-	RMIServiceLocator rmi;
 	
-	static Logger logger = Logger.getLogger(NeverEmptyController.class.getName());
+	
 	
 	public NeverEmptyController(RMIServiceLocator rmi) {
 		this.rmi = rmi;
@@ -54,6 +58,18 @@ public class NeverEmptyController {
 	}
 	public UserDTO getUser(UserDTO userDTO) throws RemoteException {
 		return rmi.getNeverEmptyServer().getUser(userDTO);
+	}
+	
+	public boolean payWithPayPal (PaymentDTO paymentDTO) throws RemoteException {
+		return rmi.getNeverEmptyServer().payWithPaypal(paymentDTO);
+	}
+	
+	public boolean payWithVisa (PaymentDTO paymentDTO) throws RemoteException {
+		return rmi.getNeverEmptyServer().payWithVisa(paymentDTO);
+	}
+	
+	public boolean updateUser (UserDTO userDTO) throws RemoteException {
+		return rmi.getNeverEmptyServer().updateUser(userDTO);
 	}
 
 }

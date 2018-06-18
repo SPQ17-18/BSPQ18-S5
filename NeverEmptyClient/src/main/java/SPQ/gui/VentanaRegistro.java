@@ -24,6 +24,7 @@ import SPQ.controller.NeverEmptyController;
 
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import org.apache.log4j.Logger;
 
 public class VentanaRegistro extends JFrame{
 

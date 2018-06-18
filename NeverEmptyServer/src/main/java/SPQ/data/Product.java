@@ -14,11 +14,13 @@ public class Product implements Serializable {
 	private String name;
 	private double price;
 	private int quantity;
-	
-	public Product (String name, double price, int quantity) {
+	private double sale;
+
+	public Product (String name, double price, int quantity, double sale) {
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
+		this.sale = sale;
 	}
 	
 	public String getName() {
@@ -42,6 +44,13 @@ public class Product implements Serializable {
 		this.quantity = quantity;
 	}
 	
+	public double getSale() {
+		return sale;
+	}
+
+	public void setSale(double sale) {
+		this.sale = sale;
+	}
 }
 
 
