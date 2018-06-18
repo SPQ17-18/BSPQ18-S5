@@ -9,7 +9,6 @@ import java.rmi.RemoteException;
 
 import org.apache.log4j.Logger;
 
-import SPQ.dao.UserDAO;
 import SPQ.remote.INeverEmptyFacade;
 
 public class NeverEmptyServerManager  {

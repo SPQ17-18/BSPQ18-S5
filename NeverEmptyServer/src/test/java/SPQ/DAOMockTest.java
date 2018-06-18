@@ -23,7 +23,7 @@ import SPQ.dao.UserDAO;
 import SPQ.data.Product;
 import SPQ.data.User;
 /**
- * @author cortazar
+ * @author arosa001
  * Testing of the Service Layer, mocking the DAO layer
  */
 
