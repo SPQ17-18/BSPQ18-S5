@@ -58,12 +58,9 @@ public class VentanaPerfil extends JFrame implements ActionListener{
 		getContentPane().setLayout(null);
 
 		Font titleBold = new Font("Arial", Font.BOLD, 25);
-		Font textPlain = new Font("Arial", Font.PLAIN, 16);
 		this.setTitle("Perfil");
 
 		Utilities util = new Utilities();
-		//		ImageIcon iconVisa = util.getImageFromResources("visa.png");
-		//		ImageIcon iconPaypal = util.getImageFromResources("paypal.png");
 		iEdit = util.getImageFromResources("edit.png");
 		iSave = util.getImageFromResources("save-white.png");
 

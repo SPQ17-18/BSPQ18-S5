@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import SPQ.Utilities;
+import SPQ.gui.VentanaPrincipal;
 
 
 public class ProductLabel extends JPanel implements ActionListener{
@@ -27,31 +28,10 @@ public class ProductLabel extends JPanel implements ActionListener{
 	private JLabel sale;
 	private JButton bAdd = new JButton();
 	private JButton bSub = new JButton();
-	
-	public static void main(String[] args) {
-		JFrame f = new JFrame();
-		f.setBounds(0, 0, 1000, 1000);
-		f.setLayout(null);
-		
-		ProductLabel pl = new ProductLabel("Prueba", "1.5", "5");
-		
-		JPanel p = new JPanel();
-		p.setLayout(null);
-		p.setBackground(Color.black);
-		p.setBounds(10, 76, 350, 23);
-		p.add(pl);
-		
-		f.getContentPane().add(p);
-		f.setVisible(true);
-	}
-	
-//	public ProductLabel(String productName, double price, double sale) {
-//		this.productName = new JLabel(productName);
-//		this.price = new JLabel (Double.toString(price));
-//		this.sale = new JLabel (Double.toString(sale));
-//	}
+	private VentanaPrincipal vp;
 
-	public ProductLabel(String productName, String price, String sale) {
+	public ProductLabel(String productName, String price, String sale, VentanaPrincipal vp) {
+		this.vp = vp;
 		this.productName = new JLabel(productName);
 		this.price = new JLabel(price);
 		this.sale = new JLabel(sale);
@@ -63,8 +43,9 @@ public class ProductLabel extends JPanel implements ActionListener{
 
 		inicializarComponentes();
 	}
-	
-	public ProductLabel(String productName, String price, String quantity, String sale) {
+
+	public ProductLabel(String productName, String price, String quantity, String sale, VentanaPrincipal vp) {
+		this.vp = vp;
 		this.productName = new JLabel(productName);
 		this.quantity = new JLabel(quantity);
 		this.price = new JLabel(price);
@@ -72,14 +53,14 @@ public class ProductLabel extends JPanel implements ActionListener{
 
 		FlowLayout flowLayout = new FlowLayout(SwingConstants.LEFT, 0, 0);
 		this.setLayout(flowLayout);
-		this.setBounds(0, 0, 350, 25);
+		this.setBounds(0, 0, 485, 25);
 		this.setBackground(new Color(255, 255, 255));
 
 		inicializarComponentes();
 	}
-	
+
 	private void inicializarComponentes() {
-		this.productName.setPreferredSize(new Dimension(100, 25));
+		this.productName.setPreferredSize(new Dimension(145, 25));
 		this.productName.setHorizontalAlignment(SwingConstants.CENTER);
 		this.productName.setOpaque(true);
 		this.productName.setForeground(new Color(255, 255, 255));
@@ -87,20 +68,20 @@ public class ProductLabel extends JPanel implements ActionListener{
 
 		this.add(this.productName);
 
-		
+
 		if( Double.parseDouble(sale.getText()) > 0) {
-			this.price.setPreferredSize(new Dimension(50, 25));
-			this.sale.setPreferredSize(new Dimension(50, 25));
+			this.price.setPreferredSize(new Dimension(72, 25));
+			this.sale.setPreferredSize(new Dimension(73, 25));
 			this.sale.setForeground(new Color(255, 255, 255));
 			this.sale.setBackground(Color.orange);
 			this.sale.setHorizontalAlignment(SwingConstants.CENTER);
 			this.sale.setOpaque(true);
-			
+
 
 		}else {
-			this.price.setPreferredSize(new Dimension(100, 25));
-			
-			
+			this.price.setPreferredSize(new Dimension(145, 25));
+
+
 		}
 		this.price.setForeground(new Color(255, 255, 255));
 		this.price.setBackground(new Color(150, 150, 150));
@@ -112,13 +93,13 @@ public class ProductLabel extends JPanel implements ActionListener{
 			this.add(sale);
 		}
 
-		this.quantity.setPreferredSize(new Dimension(100, 25));
+		this.quantity.setPreferredSize(new Dimension(145, 25));
 		this.quantity.setHorizontalAlignment(SwingConstants.CENTER);
 		this.quantity.setOpaque(true);
 		this.quantity.setForeground(new Color(255, 255, 255));
 		this.quantity.setBackground(new Color(100, 100, 100));
 		this.add(this.quantity);
-		
+
 
 		Utilities util = new Utilities();
 		ImageIcon plusIcon = util.getImageFromResources("plus-green.png");
@@ -154,11 +135,33 @@ public class ProductLabel extends JPanel implements ActionListener{
 							Integer.parseInt(this.quantity.getText()) + 1
 							)
 					);
+			if(Integer.parseInt(this.quantity.getText()) == 1) {
+				vp.pCatalogue.remove(this);
+				vp.pShoppingCart.add(this);	
+			}
+			
+			vp.pCatalogue.setVisible(false);
+			vp.pShoppingCart.setVisible(false);
+			
+			vp.pCatalogue.setVisible(true);
+			vp.pShoppingCart.setVisible(true);
+			
+
 		}
 		if (e.getSource() == this.bSub) {
 			int quantity = Integer.parseInt(this.quantity.getText());
-			if (quantity > 0) {
+			if (quantity > 1) {
 				quantity = quantity -1;
+			}else if(quantity == 1){
+				quantity = quantity -1;
+				vp.pCatalogue.add(this);
+				vp.pShoppingCart.remove(this);
+				
+				vp.pCatalogue.setVisible(false);
+				vp.pShoppingCart.setVisible(false);
+				
+				vp.pCatalogue.setVisible(true);
+				vp.pShoppingCart.setVisible(true);
 			}
 
 			this.quantity.setText(
@@ -168,7 +171,7 @@ public class ProductLabel extends JPanel implements ActionListener{
 					);
 		}
 	}
-	
+
 	public JLabel getSale() {
 		return sale;
 	}
