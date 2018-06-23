@@ -2,6 +2,8 @@ package SPQ;
 
 import static org.junit.Assert.*;
 
+import java.rmi.RemoteException;
+
 //import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,7 +11,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import SPQ.data.Product;
 import SPQ.data.User;
+import SPQ.dto.UserDTO;
+import SPQ.gui.VentanaInicio;
+import SPQ.remote.RMIServiceLocator;
+import SPQ.controller.*;
 
 import org.junit.Test;
 
@@ -17,6 +24,7 @@ public class clienteTest {
 
 	//static Logger logger = Logger.getLogger(DATAUserTest.class.getName());
 	
+	private RMIServiceLocator rmi;
 	private User alvaro;
 	private User enara;
 	private User rebeca;
@@ -31,11 +39,16 @@ public class clienteTest {
 		
 		rebeca = new User("rebeca", "rebeca@gmail.com", "12rc", "Google");
 		rebeca.setPayPalEmail("rebecaPaypal@paypal.com");
+		
+		Product calabacin = new Product ("calabacin", 0.58, 1, 10);
+		
+		VentanaInicio vi = new VentanaInicio(null);
 	}
 	
 	@Test
 	public void testlogin() {
 		//logger.info("Comprobando el usuario de Alvaro");
+		//login("alvaro", "alv12");
 		assertEquals("alvaro", alvaro.getUsername());
 		assertEquals("alvaro@opendeusto.es", alvaro.getEmail());
 		assertEquals("alv12", alvaro.getPassword());
@@ -44,12 +57,12 @@ public class clienteTest {
 	
 	@Test
 	public void testgetProducts() {
-		
+		assertTrue(true);
 	}
 	
 	@Test
 	public void testcomprobacionSignup() {
-		
+		assertTrue(true);
 	}
 	
 	@Test
@@ -69,6 +82,12 @@ public class clienteTest {
 	
 	@Test
 	public void testresgisterNeverEmpty() {
+//		try {
+//			assertEquals("alvaro",rmi.getNeverEmptyServer().registerNeverEmpty(new UserDTO("alvaro", "aro34", "arosa001")));
+//		} catch (RemoteException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 	}
 	
