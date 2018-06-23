@@ -35,7 +35,7 @@ import org.apache.log4j.Logger;
 public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	private JLabel lTitle, lCatalogue, lShoppingCart, lName, lPrice, lQuantity, lName2, lPrice2, lQuantity2; 
-	private JButton bSales, bProfile, bBuy, bAddToShoppingCart;
+	private JButton bSales, bProfile, bBuy;
 
 	private JPanel pTitle, pFooter, pProfile, pCatalogueTitle, pShoppingCartTitle, pCatalogueHeader, pShoppingCartHeader;
 
@@ -67,9 +67,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 
 
 	private void inicializarComponentes() {
-
-
-		
 		
 		lName = new JLabel("Nombre");
 		lName.setBounds(0, 0, 145, 30);
@@ -146,7 +143,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		pFooter.setLayout(null);
 
 		pProfile = new JPanel();
-		pProfile.setBounds(875, -40, 150, 150);
+		pProfile.setBounds(880, -40, 150, 150);
 		pProfile.setBackground(null);
 		pProfile.setOpaque(false);
 		pProfile.setBorder(new LineBorder(new Color(30, 30, 30), 400, true));
@@ -316,9 +313,9 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 					ProductLabel p = (ProductLabel) c;
 					shoppingCart.add(p);
 				}
+				this.setEnabled(false);
 				VentanaTicket vt = new VentanaTicket(this.neverEmptyController, shoppingCart, this);
 				vt.setVisible(true);
-				this.setVisible(false);
 			}else {
 				JOptionPane.showMessageDialog(null, "Error, la lista de la compra está vacía.", "ERROR", JOptionPane.ERROR_MESSAGE);
 				

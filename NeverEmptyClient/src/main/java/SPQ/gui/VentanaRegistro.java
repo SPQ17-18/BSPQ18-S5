@@ -208,7 +208,7 @@ public class VentanaRegistro extends JFrame{
 			JOptionPane.showMessageDialog(null, "ERROR! Introduce una segunda contrasenia", "ERROR", JOptionPane.ERROR_MESSAGE);
 		} else if (!new String(passwordField.getPassword()).equals(new String(passwordRepeat.getPassword()))) {
 			System.out.println("Las contrasenias han de coincidir");
-			JOptionPane.showMessageDialog(null, "ERROR! Las contrasenias han de coincidir", "ERROR", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "ERROR! Las contraseñas han de coincidir", "ERROR", JOptionPane.ERROR_MESSAGE);
 		} else if(textFieldUsername.getText().equals("")) {
 			System.out.println("El usuario no puede estar vacio");
 			JOptionPane.showMessageDialog(null, "ERROR! Introduce un usuario", "ERROR", JOptionPane.ERROR_MESSAGE);

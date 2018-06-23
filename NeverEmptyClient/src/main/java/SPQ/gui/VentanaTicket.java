@@ -3,7 +3,10 @@ package SPQ.gui;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.Insets;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -12,12 +15,15 @@ import SPQ.controller.NeverEmptyController;
 import SPQ.data.Product;
 import SPQ.gui.component.ProductLabel;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import org.apache.log4j.Logger;
+
+import SPQ.Utilities;
 /*clase que contiene el codigo de la ventana de ticket*/
 
 public class VentanaTicket extends JFrame implements ActionListener{
@@ -34,19 +40,24 @@ public class VentanaTicket extends JFrame implements ActionListener{
 	public VentanaTicket(NeverEmptyController neverEmptyController, List<ProductLabel> shoppingList, VentanaPrincipal ventanaPrincipal) {
 		this.neverEmptyController = neverEmptyController;
 		vp = ventanaPrincipal;
-		this.setBounds(200, 300, 423, 328);
-		
-		/*Generar un contenedor donde se introducira todos los elementos de la ventana*/
-		this.getContentPane().setLayout(null);
+		setSize(400, 500);
+		setLocationRelativeTo(null);
+		getContentPane().setBackground(new Color(255,255,230));
+		setResizable(false);
+		setUndecorated(true);
+		getContentPane().setLayout(null);
+
+		this.setTitle("Ticket");
 		
 		/*Label para contener el texto ticket compra*/
-		JLabel lblTicketCompra = new JLabel("Ticket compra");
-		lblTicketCompra.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblTicketCompra.setBounds(0, 0, 94, 14);
-		getContentPane().add(lblTicketCompra);
+		JLabel lTicketCompra = new JLabel("Ticket de compra");
+		lTicketCompra.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lTicketCompra.setBounds(150, 10, 100, 15);
+		
+		getContentPane().add(lTicketCompra);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(54, 27, 312, 182);
+		scrollPane.setBounds(25, 30, 350, 400);;
 		getContentPane().add(scrollPane);
 		
 		table = new JTable(new DefaultTableModel());
@@ -70,30 +81,43 @@ public class VentanaTicket extends JFrame implements ActionListener{
 					Double.toString(productsPrice)
 					};
 			dmt.addRow(fila);
+			
 			sum = sum + productsPrice;
 		}
 		table.setModel(dmt);
 		scrollPane.setViewportView(table);
 		
-		JLabel lblTotal = new JLabel("TOTAL ");
-		lblTotal.setBounds(12, 240, 46, 14);
+		JLabel lblTotal = new JLabel("TOTAL: ");
+		lblTotal.setBounds(30, 440, 46, 30);
 		getContentPane().add(lblTotal);
 		
 		
-		
 		logger.info("Total: " + sum);
-		total = new JLabel(Double.toString(sum));
-		total.setBounds(70, 240, 46, 14);
+		total = new JLabel(Double.toString(Math.round(sum * 1e4) / 1e4));
+		total.setBounds(80, 440, 46, 30);
 		getContentPane().add(total);
 
 
-		bBack = new JButton("Volver");
+		bBack = new JButton("<html><u>&#60 atrás</u></html>");
+		bBack.setSize(50, 20);
+		bBack.setBackground(null);
+		bBack.setForeground(Color.black);
+		bBack.setMargin(new Insets(0, 0, 0, 0));
+		bBack.setBorder(null);
+		Font fBack = new Font("Arial", Font.BOLD, 12);
+		bBack.setFont(fBack);
+		bBack.setLocation(10,10);
 		bBack.addActionListener(this);
-		bBack.setBounds(12, 267, 89, 23);
 		getContentPane().add(bBack);
 		
-		bPay = new JButton("Comprar");
-		bPay.setBounds(200, 260, 100, 14);
+		
+		Utilities util = new Utilities();
+		ImageIcon iconPay = util.getImageFromResources("pay.png");
+		
+		bPay = new JButton("Continuar", iconPay);
+		bPay.setBounds(260, 445, 110, 30);
+		bPay.setBorder(null);
+		bPay.setBackground(new Color(153, 200, 51));
 		getContentPane().add(bPay);
 		bPay.addActionListener(this);
 
@@ -110,7 +134,7 @@ public class VentanaTicket extends JFrame implements ActionListener{
 			this.setVisible(false);
 		}
 		if(e.getSource() == bBack) {
-			vp.setVisible(true);
+			vp.setEnabled(true);
 			dispose();
 		}
 		

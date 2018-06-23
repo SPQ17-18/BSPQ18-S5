@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
 import SPQ.controller.NeverEmptyController;
@@ -32,20 +33,19 @@ public class VentanaPago extends JFrame implements ActionListener{
 	private String paymentMethod;
 	double total;
 
-	private JPanel pSavedData, pNewData;
-
-	private JButton bAlt;
-	private JButton bPay;
-	private JButton bBack;
+	private JPanel pSavedData, pNewData, pAddress, pTitle, pFooter, pPayTitle, pAddressTitle;
+	private JLabel lAddressTitle, lAddress, lTitle, lPayTitle, lTotal;
+	private JTextField tfAddress;
+	private JButton bAlt, bPay, bBack;
 
 	//Componentes VISA
-	private JLabel cardnumber, cardholder, lExpDate, lCvv;
+	private JLabel cardnumber, cardholder, lCardnumber, lCardholder, lExpDate, lCvv, lDay, lMonth;
 
 	private JTextField expDateDay, expDateMonth, cvv;
 
-	private JLabel lAltCardnumber, lAltcardholder;
+	private JLabel lAltCardnumber, lAltCardholder;
 	private JTextField altCardnumber1, altCardnumber2, altCardnumber3, altCardnumber4;
-	private JTextField altcardholder;
+	private JTextField altCardholder;
 	private JLabel lAltExpDate, lAltCvv;
 	private JTextField altExpDateDay, altExpDateMonth, altCvv;
 
@@ -68,39 +68,97 @@ public class VentanaPago extends JFrame implements ActionListener{
 		vmp = ventanaMetodoPago;
 		this.paymentMethod = paymentMethod;
 
-		this.setTitle("Seleccionar método de pago");
-		this.setSize(600, 400);
-		this.setLocationRelativeTo(null);
-		this.setUndecorated(true);
-		this.getContentPane().setBackground(new Color(50, 50, 50));
-		this.getContentPane().setLayout(null);
+		this.setTitle("Información de pago");
+		setSize(1000, 600);
+		setLocationRelativeTo(null);
+		getContentPane().setBackground(new Color(50, 50, 50));
+		setResizable(false);
+		setUndecorated(true);
+		getContentPane().setLayout(null);
 
+		pTitle = new JPanel();
+		pTitle.setBounds(0, 0, 1000, 50);
+		pTitle.setBackground(new Color(30, 30, 30));
+		pTitle.setLayout(null);
 
-		this.pSavedData = new JPanel();
-		this.pSavedData.setBounds(0, 40, 600, 360);
-		this.pSavedData.setBackground(new Color(50, 50, 50));
-		this.pSavedData.setLayout(null);
+		Font titleBold = new Font("Arial", Font.BOLD, 25);
+		
+		lTitle = new JLabel("Información de pago", SwingConstants.CENTER);
+		lTitle.setBounds(375, 10, 250, 30);
+		lTitle.setFont(titleBold);
+		lTitle.setForeground(new Color(253, 253, 253));
+		
+		pFooter = new JPanel();
+		pFooter.setBounds(0, 550, 1000, 50);
+		pFooter.setBackground(new Color(30, 30, 30));
+		pFooter.setLayout(null);
+		
+		lPayTitle = new JLabel();
+		lPayTitle.setBounds(20, 0, 200, 30);
+		if(paymentMethod.equals("visa")) {
+			lPayTitle.setText("Datos de VISA del perfil");
+		}else if(paymentMethod.equals("paypal")) {
+			lPayTitle.setText("Datos de PayPal del perfil");
+		}
+		
+		pPayTitle = new JPanel();
+		pPayTitle.setBounds(0, 0, 980, 30);
+		pPayTitle.setBackground(Color.white);
+		pPayTitle.setLayout(null);
+		
+		lAddressTitle = new JLabel("Dirección de envío");
+		lAddressTitle.setBounds(20, 0, 200, 30);
+		
+		pAddressTitle = new JPanel();
+		pAddressTitle.setBounds(0, 0, 980, 30);
+		pAddressTitle.setBackground(Color.white);
+		pAddressTitle.setLayout(null);
+		
+		
+		lAddress = new JLabel("Dirección de envío: ");
+		lAddress.setBounds(40, 65, 200, 30);
+		
+		tfAddress = new JTextField(neverEmptyController.getUserDTO().getAddress());
+		tfAddress.setBounds(40, 95, 540, 30);
+		tfAddress.setEditable(false);
+		
+		pAddress = new JPanel();
+		pAddress.setBounds(10, 60, 980, 170);
+		pAddress.setBackground(Color.lightGray);
+		pAddress.setLayout(null);
+		
+		Font totalFont = new Font("Arial", Font.BOLD, 16);
+		
+		lTotal = new JLabel("TOTAL a pagar: " + total + "€");
+		lTotal.setFont(totalFont);
+		lTotal.setForeground(Color.white);
+		lTotal.setBounds(770, 170, 200, 100);
+		
+		pSavedData = new JPanel();
+		pSavedData.setBounds(10, 240, 980, 300);
+		pSavedData.setBackground(new Color(100, 100, 100));
+		pSavedData.setLayout(null);
 
-		this.pNewData = new JPanel();
-		this.pNewData.setBounds(0, 400, 600, 0);
-		this.pNewData.setBackground(new Color(75, 75, 75));
-		this.pNewData.setLayout(null);
+		pNewData = new JPanel();
+		pNewData.setBounds(10, 1000, 980, 300);
+		pNewData.setBackground(new Color(130, 130, 130));
+		pNewData.setLayout(null);
 
 		//Animation stuff
-		Rectangle fromSavedData = new Rectangle(0, 40, 600, 360);
-		Rectangle toSavedData = new Rectangle(0, -360, 600, 360);
+		Rectangle fromSavedData = new Rectangle(10, 240, 980, 300);
+		Rectangle toSavedData = new Rectangle(10, 1000, 980, 300);
 
-		Rectangle fromNewData = new Rectangle(0, 400, 600, 0);
-		Rectangle toNewData = new Rectangle(0, 40, 600, 360);
-		this.slidUp = new Animate(pSavedData, fromSavedData, toSavedData, pNewData, fromNewData, toNewData);
+		Rectangle fromNewData = new Rectangle(10, 1000, 980, 300);
+		Rectangle toNewData = new Rectangle(10, 240, 980, 300);
+		slidUp = new Animate(pSavedData, fromSavedData, toSavedData, pNewData, fromNewData, toNewData);
 
-		fromSavedData = new Rectangle(0, -360, 600, 360);
-		toSavedData = new Rectangle(0, 40, 600, 360);
+		fromSavedData = new Rectangle(10, 1000, 980, 300);
+		toSavedData = new Rectangle(10, 240, 980, 300);
 
-		fromNewData = new Rectangle(0, 40, 600, 360);
-		toNewData = new Rectangle(0, 400, 600, 360);
+		fromNewData = new Rectangle(10, 240, 980, 300);
+		toNewData = new Rectangle(10, 1000, 980, 300);
 
-		this.slidDown = new Animate(pSavedData, fromSavedData, toSavedData, pNewData, fromNewData, toNewData);
+		slidDown = new Animate(pSavedData, fromSavedData, toSavedData, pNewData, fromNewData, toNewData);
 
 
 		if(paymentMethod.equals("visa")) {
@@ -109,76 +167,113 @@ public class VentanaPago extends JFrame implements ActionListener{
 			this.loadPayPalComponents();
 		}
 
-		this.bBack = new JButton("<html><u>&#60 atrás</u></html>");
-		this.bBack.setSize(50, 20);
-		this.bBack.setBackground(null);
-		this.bBack.setForeground(Color.white);
-		this.bBack.setMargin(new Insets(0, 0, 0, 0));
-		this.bBack.setBorder(null);
+		bBack = new JButton("<html><u>&#60 atrás</u></html>");
+		bBack.setSize(50, 20);
+		bBack.setBackground(null);
+		bBack.setForeground(Color.white);
+		bBack.setMargin(new Insets(0, 0, 0, 0));
+		bBack.setBorder(null);
 		Font fBack = new Font("Arial", Font.BOLD, 12);
-		this.bBack.setFont(fBack);
-		this.bBack.setLocation(10,10);
+		bBack.setFont(fBack);
+		bBack.setLocation(10,10);
 
-		this.bAlt = new JButton("Pagar con otra tarjeta");
-		this.bAlt.setForeground(Color.WHITE);
-		this.bAlt.setBackground(new Color(40, 100, 40));
-		this.bAlt.setBorder(null);
-		this.bAlt.setBounds(10, 320, 200, 30);
+		bAlt = new JButton("Pagar con otra tarjeta");
+		bAlt.setForeground(Color.WHITE);
+		bAlt.setBackground(new Color (255, 193, 51));
+		bAlt.setBorder(null);
+		bAlt.setBounds(10, 260, 200, 30);
 
-		this.bPay = new JButton("Finalizar pago");
-		this.bPay.setForeground(Color.WHITE);
-		this.bPay.setBackground(new Color(40, 40, 100));
-		this.bPay.setBorder(null);
-		this.bPay.setBounds(390, 320, 200, 30);
+		bPay = new JButton("Finalizar pago");
+		bPay.setForeground(Color.WHITE);
+		bPay.setBackground(new Color(153, 200, 51));
+		bPay.setBorder(null);
+		bPay.setBounds(770, 260, 200, 30);
 
 
-		this.bBack.addActionListener(this);
-		this.bAlt.addActionListener(this);
-		this.bPay.addActionListener(this);
+		bBack.addActionListener(this);
+		bAlt.addActionListener(this);
+		bPay.addActionListener(this);
 
-		this.pSavedData.add(bAlt);
-		this.pSavedData.add(bPay);
+		pAddressTitle.add(lAddressTitle);
+		pAddress.add(pAddressTitle);
+		pAddress.add(lAddress);
+		pAddress.add(tfAddress);
+		getContentPane().add(pAddress);
+		getContentPane().add(pSavedData);
+		getContentPane().add(pNewData);
+		pPayTitle.add(lPayTitle);
+		pSavedData.add(pPayTitle);
+		pSavedData.add(bAlt);
+		pSavedData.add(bPay);
+		pSavedData.add(lTotal);
 
-		this.getContentPane().add(bBack);
-		this.getContentPane().add(pSavedData);
-		this.getContentPane().add(pNewData);
-
+		pTitle.add(bBack);
+		pTitle.add(lTitle);
+		getContentPane().add(pTitle);
+		getContentPane().add(pFooter);
 
 	}
 
 	private void loadVisaComponents() {
 		UserDTO user = this.neverEmptyController.getUserDTO();
+		
+		this.lCardnumber = new JLabel("Número de tarjeta: ");
+		this.lCardnumber.setBounds(40, 70, 200, 30);
+		this.lCardnumber.setForeground(Color.white);
+		String cardText = "XXXX    XXXX    XXXX    XXXX";
+		if(user.getCardNumber() != -1) {
+			String card = Long.toString(user.getCardNumber());
+			cardText = card.substring(0, 4) + "    " + card.substring(4, 8) + "    " + card.substring(8, 12) + "    " + card.substring(12, 16);
+					
+		}
+		String tmpCardnumber = cardText;
+		cardnumber = new JLabel(tmpCardnumber);
+		cardnumber.setBounds(260, 70, 200, 30 );
+		cardnumber.setForeground(Color.white);
 
-		this.cardnumber = new JLabel("Número de tarjeta: " + Long.toString(user.getCardNumber()));
-		this.cardnumber.setBounds(40, 30, 200, 25);
-		this.cardnumber.setForeground(Color.white);
-
-		this.cardholder = new JLabel("Titular: " + user.getUsername());
-		this.cardholder.setBounds(40, 70, 200, 25);
-		this.cardholder.setForeground(Color.white);
-
+		this.lCardholder = new JLabel("Titular: ");
+		this.lCardholder.setBounds(40, 105, 200, 30);
+		this.lCardholder.setForeground(Color.white);
+		
+		String tmpCardholder = user.getCardholder();
+		cardholder = new JLabel(tmpCardholder);
+		cardholder.setBounds(260, 105, 200, 30 );
+		cardholder.setForeground(Color.white);
+		
 		this.lExpDate = new JLabel("Válido hasta: ");
 		this.lExpDate.setForeground(Color.white);
-		this.lExpDate.setBounds(40, 110, 100, 25);
+		this.lExpDate.setBounds(40, 140, 100, 30);
 
+		lDay = new JLabel("d: ");
+		lDay.setBounds(260, 140, 25, 25);
+		lDay.setForeground(Color.white);
+		
 		this.expDateDay = new JTextField();
 		this.expDateDay.setBorder(null);
-		this.expDateDay.setBounds(120, 110, 25, 25);
+		this.expDateDay.setBounds(285, 140, 25, 30);
+		
+		lMonth = new JLabel("m: ");
+		lMonth.setBounds(320, 140, 25, 25);
+		lMonth.setForeground(Color.white);
 
 		this.expDateMonth = new JTextField();
 		this.expDateMonth.setBorder(null);
-		this.expDateMonth.setBounds(150, 110, 25, 25);
+		this.expDateMonth.setBounds(345, 140, 25, 30);
 
 		this.lCvv = new JLabel("CVV: ");
 		this.lCvv.setForeground(Color.white);
-		this.lCvv.setBounds(40, 150, 100, 25);
+		this.lCvv.setBounds(40, 175, 100, 30);
 
 		this.cvv = new JTextField();
 		this.cvv.setBorder(null);
-		this.cvv.setBounds(75, 150, 50, 25);
+		this.cvv.setBounds(260, 175, 50, 30);
 
+		this.pSavedData.add(lDay);
+		this.pSavedData.add(lMonth);
 		this.pSavedData.add(cardnumber);
 		this.pSavedData.add(cardholder);
+		this.pSavedData.add(lCardnumber);
+		this.pSavedData.add(lCardholder);
 		this.pSavedData.add(lExpDate);
 		this.pSavedData.add(expDateDay);
 		this.pSavedData.add(expDateMonth);
@@ -186,61 +281,62 @@ public class VentanaPago extends JFrame implements ActionListener{
 		this.pSavedData.add(cvv);
 
 		this.lAltCardnumber = new JLabel("Número de tarjeta: ");
-		this.lAltCardnumber.setBounds(40, 50, 200, 25);
+		this.lAltCardnumber.setBounds(40, 70, 200, 30);
 		this.lAltCardnumber.setForeground(Color.white);
 
 		this.altCardnumber1 = new JTextField();
-		this.altCardnumber1.setBounds(160, 50, 50, 25);
+		this.altCardnumber1.setBounds(260, 70, 50, 30);
 		this.altCardnumber1.setBorder(null);
 
 		this.altCardnumber2 = new JTextField();
-		this.altCardnumber2.setBounds(230, 50, 50, 25);
+		this.altCardnumber2.setBounds(320, 70, 50, 30 );
 		this.altCardnumber2.setBorder(null);
 
 		this.altCardnumber3 = new JTextField();
-		this.altCardnumber3.setBounds(300, 50, 50, 25);
+		this.altCardnumber3.setBounds(380, 70, 50, 30 );
 		this.altCardnumber3.setBorder(null);
 
 		this.altCardnumber4 = new JTextField();
-		this.altCardnumber4.setBounds(370, 50, 50, 25);
+		this.altCardnumber4.setBounds(440, 70, 50, 30);
 		this.altCardnumber4.setBorder(null);
 
 
-		this.lAltcardholder = new JLabel("Titular: ");
-		this.lAltcardholder.setForeground(Color.white);
-		this.lAltcardholder.setBounds(40, 90, 50, 25);
+		this.lAltCardholder = new JLabel("Titular: ");
+		this.lAltCardholder.setForeground(Color.white);
+		this.lAltCardholder.setBounds(40, 105, 200, 30);
 
-		this.altcardholder = new JTextField();
-		this.altcardholder.setBounds(100, 90, 320, 25);
-		this.altcardholder.setBorder(null);
+		this.altCardholder = new JTextField();
+		this.altCardholder.setBounds(260, 105, 320, 30);
+		this.altCardholder.setBorder(null);
 
 		this.lAltExpDate = new JLabel("Válido hasta: ");
 		this.lAltExpDate.setForeground(Color.white);
-		this.lAltExpDate.setBounds(40, 130, 100, 25);
+		this.lAltExpDate.setBounds(40, 140, 100, 30);
 
 		this.altExpDateDay = new JTextField();
 		this.altExpDateDay.setBorder(null);
-		this.altExpDateDay.setBounds(130, 130, 25, 25);
+		this.altExpDateDay.setBounds(285, 140, 25, 30);
 
 		this.altExpDateMonth = new JTextField();
 		this.altExpDateMonth.setBorder(null);
-		this.altExpDateMonth.setBounds(160, 130, 25, 25);
+		this.altExpDateMonth.setBounds(345, 140, 25, 30);
 
 		this.lAltCvv = new JLabel("CVV: ");
 		this.lAltCvv.setForeground(Color.white);
-		this.lAltCvv.setBounds(40, 170, 100, 25);
+		this.lAltCvv.setBounds(40, 175, 100, 30);
 
 		this.altCvv = new JTextField();
 		this.altCvv.setBorder(null);
-		this.altCvv.setBounds(100, 170, 50, 25);
+		this.altCvv.setBounds(260, 175, 50, 30);
 
+		
 		this.pNewData.add(lAltCardnumber);
 		this.pNewData.add(altCardnumber1);
 		this.pNewData.add(altCardnumber2);
 		this.pNewData.add(altCardnumber3);
 		this.pNewData.add(altCardnumber4);
-		this.pNewData.add(lAltcardholder);
-		this.pNewData.add(altcardholder);
+		this.pNewData.add(lAltCardholder);
+		this.pNewData.add(altCardholder);
 		this.pNewData.add(lAltExpDate);
 		this.pNewData.add(altExpDateDay);
 		this.pNewData.add(altExpDateMonth);
@@ -299,21 +395,51 @@ public class VentanaPago extends JFrame implements ActionListener{
 
 				this.pSavedData.remove(this.bAlt);
 				this.pSavedData.remove(this.bPay);
-				this.bAlt.setLocation(10, 10);
+				this.pSavedData.remove(this.pPayTitle);
+				this.pSavedData.remove(this.lTotal);
 				this.bAlt.setText("Pagar con los datos de perfil");
+				
+				if(paymentMethod.equals("visa")) {
+					this.pSavedData.remove(this.lDay);
+					this.pSavedData.remove(this.lMonth);
+					lPayTitle.setText("Datos de VISA alternativos");
+					this.pNewData.add(this.lDay);
+					this.pNewData.add(this.lMonth);
+				}else if(paymentMethod.equals("paypal")) {
+					lPayTitle.setText("Datos de PayPal alternativos");
+				}
+				
 				this.pNewData.add(this.bAlt);
 				this.pNewData.add(this.bPay);
+				this.pNewData.add(this.pPayTitle);
+				this.pNewData.add(this.lTotal);
+				
 				this.state = "new";
 			}else if(state.equals("new")) {
 				this.slidDown.start();
 
 				this.pNewData.remove(this.bAlt);
 				this.pNewData.remove(this.bPay);
-				this.bAlt.setLocation(10, 320);
+				this.pNewData.remove(this.pPayTitle);
+				this.pNewData.remove(this.lTotal);
+				
+				if(paymentMethod.equals("visa")) {
+					this.pNewData.remove(this.lDay);
+					this.pNewData.remove(this.lMonth);
+					lPayTitle.setText("Datos de VISA del perfil");
+					this.pSavedData.add(this.lDay);
+					this.pSavedData.add(this.lMonth);
+				}else if(paymentMethod.equals("paypal")) {
+					lPayTitle.setText("Datos de PayPal del perfil");
+				}
+				
+				this.bAlt.setLocation(10, 260);
 				this.bAlt.setText("Pagar con otra tarjeta");
 				this.pSavedData.add(this.bAlt);
 				this.pSavedData.add(this.bPay);
-
+				this.pSavedData.add(this.pPayTitle);
+				this.pSavedData.add(this.lTotal);
+				
 				this.state = "saved";
 			}
 		}
@@ -340,12 +466,13 @@ public class VentanaPago extends JFrame implements ActionListener{
 					}
 				}else if(paymentMethod.equals("visa")) {
 					if(state.equals("saved")) {
-						PaymentDTO paymentDTO = new PaymentDTO(total, udto.getCardNumber(), udto.getUsername(), expDateDay.getText()+"/"+expDateMonth.getText(), Integer.parseInt(cvv.getText()));
+			
+						PaymentDTO paymentDTO = new PaymentDTO(total, udto.getCardNumber(), udto.getCardholder(), expDateDay.getText()+"/"+expDateMonth.getText(), Integer.parseInt(cvv.getText()));
 						paid = neverEmptyController.payWithVisa(paymentDTO);
 					}else if(state.equals("new")) {
 						long tmpCarnumber = Long.parseLong(altCardnumber1.getText()+altCardnumber2.getText()+altCardnumber3.getText()+altCardnumber4.getText());
 						String tmpExpDate = altExpDateDay.getText() + "/" + altExpDateMonth.getText();
-						PaymentDTO paymentDTO = new PaymentDTO(total, tmpCarnumber, altcardholder.getText(), tmpExpDate, Integer.parseInt(altCvv.getText()));
+						PaymentDTO paymentDTO = new PaymentDTO(total, tmpCarnumber, altCardholder.getText(), tmpExpDate, Integer.parseInt(altCvv.getText()));
 						paid = neverEmptyController.payWithVisa(paymentDTO);
 					
 					}
