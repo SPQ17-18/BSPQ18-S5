@@ -6,14 +6,17 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.mockito.internal.stubbing.answers.ThrowsException;
 
+import SPQ.dao.UserDAO;
 import SPQ.data.Product;
 import SPQ.data.User;
 import SPQ.remote.NeverEmptyFacade;
 
 public class CoberturaTest {
+	static Logger logger = Logger.getLogger(DAOMockTest.class.getName());
 
 	@Test
 	public void test() {
@@ -24,7 +27,6 @@ public class CoberturaTest {
 		u.setRegisterMethod("Facebook");
 		u.setPayPalEmail("arosa001@opendeusto.es");
 		u.setPayPalPassword("1234p");
-		u.setShoppingList(new ArrayList<Product>());
 		u.getUsername();
 		u.getPassword();
 		u.getEmail();
@@ -33,6 +35,9 @@ public class CoberturaTest {
 		u.getPayPalEmail();
 		u.getRegisterMethod();
 	}
-	
+
+
+
+
 
 }

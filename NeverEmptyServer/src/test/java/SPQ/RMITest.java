@@ -2,6 +2,7 @@ package SPQ;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.net.MalformedURLException;
@@ -25,7 +26,9 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import SPQ.dao.UserDAO;
 import SPQ.data.User;
+import SPQ.dto.PaymentDTO;
 import SPQ.dto.UserDTO;
 import SPQ.remote.INeverEmptyFacade;
 import junit.framework.JUnit4TestAdapter;
@@ -126,7 +129,6 @@ public class RMITest {
 		}
 		catch (Exception re) {
 			logger.error(" # Messenger RemoteException: " + re.getMessage());
-	//		re.printStackTrace();
 			System.exit(-1);
 		} 
 		
@@ -222,31 +224,12 @@ public class RMITest {
 		logger.info("Si es TRUE, no se ha podido registar");
 		assertFalse(resul);
 	}
-	
-	
-	//Este test funciona pero la funcion registerUser la tiene jesus SOLO
-	/*
-	@Test 
-	public void registerNewUserTest() {
-		try{
-			logger.info("Test 4 - Register new user");
-			NeverEmptyFacade.registerUser("jesus", "jesus");
-		}
-		catch (Exception re) {
-			logger.error(" # Messenger RemoteException: " + re.getMessage());
-		} 
-		
-		 //Very simple test, inserting a valid new user
-		 
-		assertTrue( true );
-	}
-	
-*/
+
 	
 	
 	//Vamos a suponer que no hay ningun usuario registrado con google
 	@Test 
-	public void registerNewUserGoogleTest() {
+	public void registerUserGoogleTest() {
 		logger.info("registerExistingUserGoogleTest");
 		boolean resul=false;
 		try{
@@ -266,9 +249,9 @@ public class RMITest {
 	
 	//Vamos a suponer que no hay ningun usuario registrado con facebook
 	@Test 
-	public void registerNewUserFacebookTest() {
+	public void registerUserFacebookTest() {
 		logger.info("registerExistingUserFacebookTest");
-		boolean resul=false;
+		boolean resul = false;
 		try{
 			logger.info("Test 6 - Register new user");
 			resul = NeverEmptyFacade.registerFacebook(new UserDTO("alvaro", "alvaro12@gmail.com", "alv332"));
@@ -282,7 +265,38 @@ public class RMITest {
 		assertFalse( resul );
 	}
 	
+	@Test
+	public void testPayWithPayPal() {
+		logger.info("Testing pay with PayPal.");
+		PaymentDTO pdto = new PaymentDTO(10, "enara@paypal.es", "1234");
+		try {
+			assertTrue(NeverEmptyFacade.payWithPaypal(pdto));
+		} catch (RemoteException e) {
+			logger.error(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testPayWithVisa() {
+		logger.info("Testing pay with Visa.");
+		PaymentDTO pdto = new PaymentDTO(10, 1111222233334444L, "Enara Etxaniz Ibañez", "05/19", 123);
+		try {
+			assertTrue(NeverEmptyFacade.payWithVisa(pdto));
+		} catch (RemoteException e) {
+			logger.error(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testGetProducts() {
+		logger.info("Testing get products from Eroski");
 
+		try {
+			assertNotNull(NeverEmptyFacade.getProducts());
+		} catch (RemoteException e) {
+			logger.error(e.getMessage());
+		}
+	}
 	
 	
 	@After public  void deleteDatabase() {
@@ -315,6 +329,9 @@ public class RMITest {
 		try	{
 			rmiServerThread.join();
 			rmiRegistryThread.join();
+			UserDAO udao = new UserDAO();
+			User user = new User("Alvaro", "arosa001@gmail.com", "1234", "Google");
+			udao.storeUser(user);
 		} catch (InterruptedException ie) {
 			ie.printStackTrace();
 		}

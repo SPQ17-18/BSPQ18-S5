@@ -54,6 +54,7 @@ public class UserDAO {
 	
 	public boolean storeUser(User user) {
 		boolean stored = false;
+		this.persistenceManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 

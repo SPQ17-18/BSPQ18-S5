@@ -9,6 +9,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import SPQ.data.User;
+import SPQ.dto.UserDTO;
 
 public class DATAUserTest {
 
@@ -24,15 +25,10 @@ public class DATAUserTest {
 	public void setUp() throws Exception {
 		jesus = new User("jesus", "jesus@gmail.com", "1234", "Google");
 		jesus.setCardNumber(1245);
-		
 		alvaro = new User("alvaro", "alvaro@gmail.com", "alv12", "Facebook");
 		alvaro.setEmail("alvaro@opendeusto.es");
-		
 		enara = new User("enara", "enara@gmail.com", "enr23", "Facebook");
-		
 		cristian = new User("cristian", "cristian@gmail.com", "12cr", "Google");
-		cristian.setPayPalEmail("cristianPaypal@paypal.com");
-
 		ekaitz= new User("ekaitz", "ekaitz@gmail.com", "we3", "Google");
 				
 	}
@@ -66,27 +62,35 @@ public class DATAUserTest {
 	@Test
 	public void Cristiantest() {
 		logger.info("Comprobando el usuario de Cristian");
+		
+		cristian.setPassword("password");
+		cristian.setPayPalEmail("paypalEmail");
+		cristian.setPayPalPassword("paypalPassword");
+		cristian.setAddress("address");
+		cristian.setCardholder("cardholder");
+		cristian.setCardNumber(1111222233334444L);
+		assertEquals("password", cristian.getPassword());
 		assertEquals("cristian", cristian.getUsername());
 		assertEquals("cristian@gmail.com", cristian.getEmail());
-		assertEquals("12cr", cristian.getPassword());
-		assertEquals("cristianPaypal@paypal.com",cristian.getPayPalEmail());
+		assertEquals("password", cristian.getPassword());
+		
+		assertEquals("paypalEmail", cristian.getPayPalEmail());
+		assertEquals("paypalPassword", cristian.getPayPalPassword());
+		assertEquals("address", cristian.getAddress());
+		assertEquals("cardholder",cristian.getCardholder());
+		assertEquals(1111222233334444L,cristian.getCardNumber());
+		
+		
 	}
 	
 	@Test
 	public void Ekaitztest() {
 		logger.info("Comprobando el usuario de Ekaitz");
-		assertEquals("ekaitz", ekaitz.getUsername());
-		assertEquals("ekaitz@gmail.com", ekaitz.getEmail());
-		assertEquals("we3", ekaitz.getPassword());
+		UserDTO ek = new UserDTO(ekaitz);
+		User user = new User(ek);
+		ekaitz.updateUser(user);
+		
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

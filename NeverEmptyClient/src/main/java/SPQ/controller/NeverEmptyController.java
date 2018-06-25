@@ -15,6 +15,10 @@ public class NeverEmptyController {
 	private UserDTO userDTO;
 	static Logger logger = Logger.getLogger(NeverEmptyController.class.getName());
 	
+
+	public NeverEmptyController(RMIServiceLocator rmi) {
+		this.rmi = rmi;
+	}
 	
 	public UserDTO getUserDTO() {
 		return userDTO;
@@ -23,13 +27,6 @@ public class NeverEmptyController {
 	public void setUserDTO(UserDTO userDTO) {
 		this.userDTO = userDTO;
 	}
-	
-	
-	
-	public NeverEmptyController(RMIServiceLocator rmi) {
-		this.rmi = rmi;
-	}
-
 	public boolean registerGoogle(String username, String email, String password) throws RemoteException { 
 		return rmi.getNeverEmptyServer().registerGoogle(new UserDTO(username, password, email));
 	}
@@ -43,7 +40,7 @@ public class NeverEmptyController {
 	}
 
 	public boolean login(String username, String password) throws RemoteException {
-		logger.debug("Username: " +username + " , Password"+ password);
+		logger.debug("Login user: " +username + " , password: "+ password);
 		if(rmi.getNeverEmptyServer().login(new UserDTO(username, password))) {
 			logger.info("User " + username + " logged successfully.");
 			UserDTO userFetched = this.getUser(new UserDTO(username, password));

@@ -13,6 +13,8 @@ public class Main {
 	static Logger logger = Logger.getLogger(Main.class.getName());
 	
 	public static void main(String[] args) {
+		
+		System.out.println(args[0] + args[1] + args[2]);
 		if (args.length != 3) {
 			logger.error("- NeverEmptyCLient: Wrong number of arguments");
 			System.exit(0);

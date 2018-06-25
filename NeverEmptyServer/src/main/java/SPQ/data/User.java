@@ -7,7 +7,6 @@ import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 
-import SPQ.data.Product;
 import SPQ.dto.UserDTO;
 
 @PersistenceCapable(detachable = "true")
@@ -82,8 +81,6 @@ public class User {
 		this.cardholder = cardholder;
 	}
 
-	@Element(column="USER_ID")
-	private List<Product> shoppingList = null;
 	
 	public String getUsername() {
 		return username;
@@ -141,13 +138,6 @@ public class User {
 		this.cardNumber = cardNumber;
 	}
 
-	public List<Product> getShoppingList() {
-		return shoppingList;
-	}
-
-	public void setShoppingList(List<Product> shoppingList) {
-		this.shoppingList = shoppingList;
-	}
 	
 	
 }
