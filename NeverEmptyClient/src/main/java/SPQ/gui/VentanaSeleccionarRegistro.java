@@ -1,3 +1,12 @@
+/** @package SPQ.gui
+ 	@brief This is the brief documentation for the java package SPQ.gui
+ */
+
+/** @class VentanaSeleccionarRegistro class.h "inc/class.h" 
+* @brief This is a VentanaSeleccionarRegistro class.
+* Some details about the VentanaSeleccionarRegistro class 
+*/
+
 package SPQ.gui;
 
 import java.awt.Color;

@@ -1,3 +1,12 @@
+/** @package SPQ.controller
+
+ 	@brief This is the brief documentation for the java package SPQ.controller
+ */
+
+/** @class NeverEmptyCotroller class.h "inc/class.h" 
+* @brief This is a NeverEmptyController class.
+* Some details about the NeverEMprtyController class 
+*/
 package SPQ.controller;
 
 import java.rmi.RemoteException;

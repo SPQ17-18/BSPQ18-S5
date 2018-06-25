@@ -9,6 +9,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import SPQ.data.Product;
@@ -46,64 +47,77 @@ public class clienteTest {
 	}
 	
 	@Test
-	public void testlogin() {
-		//logger.info("Comprobando el usuario de Alvaro");
-		//login("alvaro", "alv12");
-		assertEquals("alvaro", alvaro.getUsername());
-		assertEquals("alvaro@opendeusto.es", alvaro.getEmail());
-		assertEquals("alv12", alvaro.getPassword());
+	public void testController() {
+		RMIServiceLocator rmi = new RMIServiceLocator();
+		NeverEmptyController nc = new NeverEmptyController(rmi);
+		try {
+			assertEquals(true, nc.login("Enara", "1234"));;
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 	}
-	
-	
-	@Test
-	public void testgetProducts() {
-		assertTrue(true);
-	}
-	
-	@Test
-	public void testcomprobacionSignup() {
-		assertTrue(true);
-	}
-	
-	@Test
-	public void testfinalizarRegistro() {
-		
-	}
-	
-	@Test
-	public void testresgisterGoogle() {
-		
-	}
-	
-	@Test
-	public void testregisterFacebook() {
-		
-	}
-	
-	@Test
-	public void testresgisterNeverEmpty() {
-//		try {
-//			assertEquals("alvaro",rmi.getNeverEmptyServer().registerNeverEmpty(new UserDTO("alvaro", "aro34", "arosa001")));
-//		} catch (RemoteException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-	}
-	
-	@Test
-	public void testgetProduct() {
-		
-	}
-	
-	@Test
-	public void testgetUser() {
-		
-	}
-	
-	@Test
-	public void testiniciarAplicacion() {
-		
-	}
-	
+//	
+//	
+//	@Ignore
+//	@Test
+//	public void testlogin() {
+//		//logger.info("Comprobando el usuario de Alvaro");
+//		//login("alvaro", "alv12");
+//		assertEquals("alvaro", alvaro.getUsername());
+//		assertEquals("alvaro@opendeusto.es", alvaro.getEmail());
+//		assertEquals("alv12", alvaro.getPassword());
+//	}
+//	
+//	@Ignore
+//	@Test
+//	public void testgetProducts() {
+//		//assertTrue(true);
+//	}
+//	
+//	@Test
+//	public void testcomprobacionSignup() {
+//		//assertTrue(true);
+//	}
+//	
+//	@Test
+//	public void testfinalizarRegistro() {
+//		
+//	}
+//	
+//	@Test
+//	public void testresgisterGoogle() {
+//		
+//	}
+//	
+//	@Test
+//	public void testregisterFacebook() {
+//		
+//	}
+//	
+//	@Test
+//	public void testresgisterNeverEmpty() {
+////		try {
+////			assertEquals("alvaro",rmi.getNeverEmptyServer().registerNeverEmpty(new UserDTO("alvaro", "aro34", "arosa001")));
+////		} catch (RemoteException e) {
+////			// TODO Auto-generated catch block
+////			e.printStackTrace();
+////		}
+//		
+//	}
+//	
+//	@Test
+//	public void testgetProduct() {
+//		
+//	}
+//	
+//	@Test
+//	public void testgetUser() {
+//		
+//	}
+//	
+//	@Test
+//	public void testiniciarAplicacion() {
+//		
+//	}
+//	
 }

@@ -1,3 +1,12 @@
+/** @package SPQ.gui
+ 	@brief This is the brief documentation for the java package SPQ.gui
+ */
+
+/** @class VentanaPrincipal class.h "inc/class.h" 
+* @brief This is a VentanaPrincipal class.
+* Some details about the VentanaPrincipal class 
+*/
+
 package SPQ.gui;
 
 

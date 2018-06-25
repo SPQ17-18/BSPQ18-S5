@@ -1,3 +1,12 @@
+/** @package SPQ.main
+ 	@brief This is the brief documentation for the java package SPQ.main
+ */
+
+/** @class Main class.h "inc/class.h" 
+* @brief This is a Main class.
+* Some details about the Main class 
+*/
+
 package SPQ.main;
 
 import java.awt.EventQueue;
