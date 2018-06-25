@@ -1,6 +1,9 @@
 package SPQ;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
@@ -10,6 +13,7 @@ import org.junit.Test;
 
 import SPQ.data.Product;
 import SPQ.data.User;
+import SPQ.dto.ProductDTO;
 
 public class DATAProductTest {
 
@@ -37,6 +41,14 @@ public class DATAProductTest {
 		assertEquals(2, manzana.getQuantity());
 		assertEquals("20.0", Double.toString(manzana.getSale()));
 		assertEquals("pera", p.getName());
+	}
+	
+	@Test
+	public void ProductDTOTest () {
+		ArrayList<Product> lp = new ArrayList<Product>();
+		lp.add(manzana);
+		ProductDTO pdto = new ProductDTO(lp);
+		assertEquals("manzana", pdto.getProductList().get(0).getName());
 	}
 	
 	

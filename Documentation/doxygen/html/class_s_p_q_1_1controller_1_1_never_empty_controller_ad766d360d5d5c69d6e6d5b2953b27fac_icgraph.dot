@@ -1,0 +1,15 @@
+digraph "SPQ.controller.NeverEmptyController.registerFacebook"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node49 [label="SPQ.controller.NeverEmpty\lController.registerFacebook",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node49 -> Node50 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="SPQ.gui.VentanaRegistro.\lComprobacionSignup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a409053f213651ce392699ee8c4f07e66"];
+  Node50 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="SPQ.gui.VentanaRegistro.\lVentanaRegistro",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a40069db92c94222331b181f23744c14f"];
+  Node51 -> Node52 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="SPQ.gui.VentanaRegistro.main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a8d80a5efba104ecaefab065592e23a68"];
+  Node49 -> Node53 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node53 [label="SPQ.ClientTest.testRegister\lUserFacebook",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_client_test.html#ae74ec6f1a9672b8dbffeaf89abe44bbd"];
+}

@@ -11,11 +11,8 @@ package SPQ.gui;
 
 
 import java.awt.Color;
-
 import java.awt.Component;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -43,6 +40,7 @@ import org.apache.log4j.Logger;
 
 public class VentanaPrincipal extends JFrame implements ActionListener{
 
+	private static final long serialVersionUID = 1L;
 	private JLabel lTitle, lCatalogue, lShoppingCart, lName, lPrice, lQuantity, lName2, lPrice2, lQuantity2; 
 	private JButton bSales, bProfile, bBuy;
 
@@ -54,7 +52,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	private List<ProductLabel> productList = new ArrayList<ProductLabel>();
 
-	static Logger logger = Logger.getLogger(VentanaInicio.class.getName());
+	static Logger logger = Logger.getLogger(VentanaPrincipal.class.getName());
 
 	private String state = "all";
 
@@ -274,7 +272,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		}
 
 		if (e.getSource() == pShoppingCartTitle) {
-			System.out.println("Lista de la compra");
 			this.pCatalogue.setVisible(false);
 
 			for(Component c: this.pCatalogue.getComponents()) {
@@ -282,7 +279,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 				if(!p.getQuantity().getText().equals("0")) {
 					this.pCatalogue.remove(c);
 					this.pShoppingCart.add(p);
-					System.out.println("Añadido a shoppingList: "+ p.getproductName().getText());
+					logger.info("Añadido a shoppingList: "+ p.getproductName().getText());
 				}
 			}
 
@@ -348,7 +345,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 					this.productList.add(pl);
 				}
 			}catch(Exception e) {
-				System.out.println(e);
+				logger.error("Error al obtener productos:" + e.getMessage());
 			}
 		}
 

@@ -131,13 +131,13 @@
 							The coverage is higher -->
 						<ignoreTrivial>true</ignoreTrivial>
 						<excludes>
-							<exclude>es/deusto/client/*.class</exclude>
-							<exclude>es/deusto/server/Server.class</exclude>
-							<exclude>es/deusto/server/**/I*.*</exclude>
-
+							<exclude>SPQ/NeverEmptyServerManager.class</exclude>
+							<exclude>SPQ/remote/*</exclude>
+							<exclude>SPQ/NeverEmptyServerManager$1RMIRegistryRunnable.class</exclude>
+							<exclude>SPQ/NeverEmptyServerManager$1RMIServerRunnable.class</exclude>
+					
 							<!-- This lines is for excluding from the instrumentation and the 
 								coverage calculations all the classes from server down <exclude>es/deusto/server/**/*</exclude> -->
-
 						</excludes>
 					</instrumentation>
 					<check>
@@ -155,8 +155,6 @@
 					</check>
 				</configuration>
 			</plugin>
-
-
 
 
 			<plugin>
@@ -193,7 +191,13 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.6</version>
+				<version>2.7</version>
+				<configuration>
+					<formats>
+						<format>xml</format>
+						<format>html</format>
+					</formats>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>

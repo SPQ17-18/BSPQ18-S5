@@ -1,7 +1,5 @@
 package SPQ.dao;
 
-import java.util.EmptyStackException;
-
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -27,8 +25,8 @@ public class AccountDAO implements IAccountDAO{
 		Transaction tx = pm.currentTransaction();
 
 		try {
-			System.out.println("   * Actualizando cuenta: " + account.getCardnumber());
-	
+			logger.info("Actualizando cuenta: " + account.getCardnumber());
+
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM "+ Account.class.getName() + " WHERE cardnumber == " + account.getCardnumber() +
 					" && cvv == " + account.getCvv() + 
@@ -38,19 +36,19 @@ public class AccountDAO implements IAccountDAO{
 			query.setUnique(true);
 			account = (Account) query.execute();
 			if (account == null) throw new Exception("Pago rechazado, datos de pago incorrectos.");
-	
+
 			double balance = account.getBalance();
 			if (account.getBalance() >= total) {
-				 balance = account.getBalance() - total;
+				balance = account.getBalance() - total;
 			}else {
 				throw new Exception("Pago rechazado, la cuenta no tiene suficiente credito.");
 			}
-			
+
 			account.setBalance(balance);
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error updating an account: " + ex.getMessage());
+			logger.error("Error updating an account: " + ex.getMessage());
 			return false;
 		} finally {
 			if (tx != null && tx.isActive()) {
@@ -64,31 +62,23 @@ public class AccountDAO implements IAccountDAO{
 		return true;
 	}
 
-
-
 	public void storeAccount (Account account) {
 		PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
 		try {
 			tx.begin();
-			logger.info("   * Storing a user: " + account);
+			logger.info("Storing a user: " + account);
 			pm.makePersistent(account);
 			tx.commit();
 		} catch (Exception ex) {
-			logger.error("   $ Error storing a user: " + ex.getMessage());
+			logger.error("Error storing a user: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
 			}		
 			pm.close();
 		}
-	}
-
-	public static void main(String[] args) {
-		Account account = new Account("Enara Etxaniz Ibañez", 1111222233334444L, 123, 0, "05/19");
-		AccountDAO adao = new AccountDAO();
-		System.out.println(adao.pay(account, 500));
 	}
 
 }

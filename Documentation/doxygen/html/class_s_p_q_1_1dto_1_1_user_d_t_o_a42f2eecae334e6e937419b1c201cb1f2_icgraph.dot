@@ -1,0 +1,15 @@
+digraph "SPQ.dto.UserDTO.getPayPalEmail"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node101 [label="SPQ.dto.UserDTO.getPayPal\lEmail",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node101 -> Node102 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node102 [label="SPQ.data.User.User",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1data_1_1_user.html#af8e381901a649027950a0b0f8b22a235"];
+  Node101 -> Node103 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node103 [label="SPQ.gui.VentanaPago.action\lPerformed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_pago.html#a64947ae1b81ff8e561792d9db382b1f9"];
+  Node101 -> Node104 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node104 [label="SPQ.gui.VentanaPerfil.Ventana\lPerfil",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_perfil.html#a16166538d7497a79cdc1e383ae852ac1"];
+  Node101 -> Node105 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node105 [label="SPQ.ClientTest.testUpdateUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_client_test.html#ab6d14403cd66b3b0ab32f8022902588f"];
+}

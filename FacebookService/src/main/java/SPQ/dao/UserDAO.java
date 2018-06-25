@@ -1,17 +1,18 @@
 package SPQ.dao;
 
-import java.util.Arrays;
-
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
+
+import org.apache.log4j.Logger;
+
 import javax.jdo.Query;
 import SPQ.data.User;
 
 public class UserDAO implements IUserDAO{
 	private PersistenceManagerFactory persistenceManagerFactory;
-
+	static Logger logger = Logger.getLogger(UserDAO.class.getName());
 	public UserDAO() {
 		this.persistenceManagerFactory = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
@@ -26,7 +27,7 @@ public class UserDAO implements IUserDAO{
 		User user = null;
 
 		try {
-			System.out.println("   * Buscando user: " + email);
+			logger.info("Buscando user: " + email);
 
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE email == '" + email +"'");
@@ -35,7 +36,7 @@ public class UserDAO implements IUserDAO{
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error retreiving an user: " + ex.getMessage());
+			logger.error("Error retreiving an user: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -45,8 +46,5 @@ public class UserDAO implements IUserDAO{
 		}
 
 		return user;
-
-
-
 	}
 }

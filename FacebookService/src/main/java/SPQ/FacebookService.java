@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
+import org.apache.log4j.Logger;
+
 import SPQ.dao.UserDAO;
 import SPQ.data.User;
 import SPQ.dto.UserDTO;
@@ -14,6 +16,7 @@ public class FacebookService extends Thread {
 	private ObjectInputStream in;
 	private DataOutputStream out;
 	private Socket tcpSocket;
+	static Logger logger = Logger.getLogger(FacebookService.class.getName());
 	// Se instancia el socket
 	public FacebookService(Socket socket) {
 		try {
@@ -22,28 +25,28 @@ public class FacebookService extends Thread {
 			this.out = new DataOutputStream(socket.getOutputStream());
 			this.start();	//start llama a run()
 		} catch (IOException e) {
-			System.err.println("# FacebookService - TCPConnection IO error:" + e.getMessage());
+			logger.error("TCPConnection IO error:" + e.getMessage());
 		}
 	}
 
 	public void run() {
 		try {
 			UserDTO userDTO = (UserDTO) this.in.readObject();
-			System.out.println("   - FacebookService - Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + userDTO.toString() + "'");					
+			logger.info("Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + userDTO.toString() + "'");					
 			String data = this.readData(userDTO);
 			this.out.writeUTF(data);					
-			System.out.println("   - FacebookService - Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data + "'");
+			logger.info("Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data + "'");
 		} catch (EOFException e) {
-			System.err.println("   # FacebookService - TCPConnection EOF error" + e.getMessage());
+			logger.error("TCPConnection EOF error" + e.getMessage());
 		} catch (IOException e) {
-			System.err.println("   # FacebookService - TCPConnection IO error:" + e.getMessage());
+			logger.error("TCPConnection IO error:" + e.getMessage());
 		}catch (ClassNotFoundException e) {
-			System.err.println("   # FacebookService - ClassNotFound error:" + e.getMessage());
+			logger.error("ClassNotFound error:" + e.getMessage());
 		} finally {
 			try {
 				tcpSocket.close();
 			} catch (IOException e) {
-				System.err.println("   # FacebookService - TCPConnection IO error:" + e.getMessage());
+				logger.error("TCPConnection IO error:" + e.getMessage());
 			}
 		}
 	}
@@ -63,7 +66,7 @@ public class FacebookService extends Thread {
 				data = "incorrect";
 			}
 		}catch (RuntimeException e) {
-			System.err.println(" # FacebookService - Wrong data : '" + data +"'");
+			logger.error(" Wrong data : '" + data +"'");
 		}
 		return data;
 	}

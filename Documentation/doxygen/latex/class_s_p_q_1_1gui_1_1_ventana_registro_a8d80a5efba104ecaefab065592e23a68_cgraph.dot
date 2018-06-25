@@ -1,0 +1,31 @@
+digraph "SPQ.gui.VentanaRegistro.main"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node28 [label="SPQ.gui.VentanaRegistro.main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node28 -> Node29 [color="midnightblue",fontsize="10",style="solid"];
+  Node29 [label="SPQ.gui.VentanaRegistro.\lVentanaRegistro",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a40069db92c94222331b181f23744c14f"];
+  Node29 -> Node30 [color="midnightblue",fontsize="10",style="solid"];
+  Node30 [label="SPQ.Utilities.getImageFrom\lResources",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_utilities.html#a1ca9779d00f9480c9c0ccb654c558fbb"];
+  Node29 -> Node31 [color="midnightblue",fontsize="10",style="solid"];
+  Node31 [label="SPQ.gui.VentanaRegistro.finalizar\lRegistro",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_registro.html#ac33d30ad4e6980a453a3a6c3de20f468"];
+  Node29 -> Node32 [color="midnightblue",fontsize="10",style="solid"];
+  Node32 [label="SPQ.gui.VentanaRegistro.\lComprobacionSignup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a409053f213651ce392699ee8c4f07e66"];
+  Node32 -> Node33 [color="midnightblue",fontsize="10",style="solid"];
+  Node33 [label="SPQ.controller.NeverEmpty\lController.registerGoogle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a0adc4a1885dcc8ef6fe53bd23ee2316a"];
+  Node33 -> Node34 [color="midnightblue",fontsize="10",style="solid"];
+  Node34 [label="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae"];
+  Node33 -> Node35 [color="midnightblue",fontsize="10",style="solid"];
+  Node35 [label="SPQ.remote.INeverEmptyFacade.register\lGoogle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a93f3250c09a26fdb1d65219599dfd542"];
+  Node32 -> Node36 [color="midnightblue",fontsize="10",style="solid"];
+  Node36 [label="SPQ.controller.NeverEmpty\lController.registerFacebook",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ad766d360d5d5c69d6e6d5b2953b27fac"];
+  Node36 -> Node34 [color="midnightblue",fontsize="10",style="solid"];
+  Node36 -> Node37 [color="midnightblue",fontsize="10",style="solid"];
+  Node37 [label="SPQ.remote.INeverEmptyFacade.register\lFacebook",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a7b2f025522489fe9070d09a4fb08f0a1"];
+  Node32 -> Node38 [color="midnightblue",fontsize="10",style="solid"];
+  Node38 [label="SPQ.controller.NeverEmpty\lController.registerNeverEmpty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ad02b010ba25f24bf105fe7b4605e3de1"];
+  Node38 -> Node34 [color="midnightblue",fontsize="10",style="solid"];
+  Node38 -> Node39 [color="midnightblue",fontsize="10",style="solid"];
+  Node39 [label="SPQ.remote.INeverEmptyFacade.register\lNeverEmpty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a7867e1e698fea32a535a1daeda4e8d6a"];
+}

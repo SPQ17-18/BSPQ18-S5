@@ -1,0 +1,17 @@
+digraph "SPQ.GoogleService.run"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node9 [label="SPQ.GoogleService.run",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="SPQ.GoogleService.readData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_google_service.html#a94e224618cc0433776bcb49bff80067f"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="SPQ.dto.UserDTO.getEmail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a67038ab8bab7cb7119ece00bcb20a360"];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="SPQ.dto.UserDTO.getPassword",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a955f436e60336683283a6fcd6fc5f874"];
+  Node10 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="SPQ.dao.UserDAO.getUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#aeb3901e9e260ad977a1b412fe7a9fc0e"];
+  Node10 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="SPQ.data.User.getPassword",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1data_1_1_user.html#a688c1eadd21594d52967d87289e23ce2"];
+}

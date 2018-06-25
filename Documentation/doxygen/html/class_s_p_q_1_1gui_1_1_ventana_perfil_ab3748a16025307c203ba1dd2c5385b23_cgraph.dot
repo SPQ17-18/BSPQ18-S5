@@ -1,0 +1,19 @@
+digraph "SPQ.gui.VentanaPerfil.actionPerformed"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node13 [label="SPQ.gui.VentanaPerfil.action\lPerformed",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="SPQ.controller.NeverEmpty\lController.getUserDTO",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ac6b9878caf6a1f22117adf18c5ca56b5"];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="SPQ.dto.UserDTO.getRegister\lMethod",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#ab2180112e27f967d77dd4696f88bd2ef"];
+  Node13 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="SPQ.controller.NeverEmpty\lController.updateUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#abac74fe36817d476abdd20d19df2092b"];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae"];
+  Node16 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="SPQ.remote.INeverEmptyFacade.updateUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#add6dafb25f59c549e924c76c6e8f31c6"];
+  Node13 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="SPQ.controller.NeverEmpty\lController.setUserDTO",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a847c0288b7c18327d81c092f8c234d01"];
+}

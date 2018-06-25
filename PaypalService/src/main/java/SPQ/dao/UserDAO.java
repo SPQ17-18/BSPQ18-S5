@@ -46,7 +46,7 @@ public class UserDAO implements IUserDAO{
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error updating an user: " + ex.getMessage());
+			logger.error("Error updating an user: " + ex.getMessage());
 			return (false);
 		} finally {
 			if (tx != null && tx.isActive()) {

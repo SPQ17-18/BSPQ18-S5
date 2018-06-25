@@ -1,0 +1,17 @@
+digraph "SPQ.gateway.Google.register"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node3 [label="SPQ.gateway.Google.register",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SPQ.NeverEmptyServer.register\lGoogle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_never_empty_server.html#ac97355451c02fc378cb5d8f33f442ce6"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SPQ.remote.NeverEmptyFacade.register\lGoogle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#aaa8d4a6148957029af068d00da24890b"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SPQ.RMITest.registerGoogle\lExistingUserTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_r_m_i_test.html#ad375aaea37b3b8f68c670f4c09834a7b"];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="SPQ.RMITest.registerFacebook\lExistingUserTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_r_m_i_test.html#aebfcce491b9fa13cafa971bac73f88b8"];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="SPQ.RMITest.registerUser\lGoogleTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_r_m_i_test.html#a18c26a1a1882c74b0ff9a0142c9492c8"];
+}

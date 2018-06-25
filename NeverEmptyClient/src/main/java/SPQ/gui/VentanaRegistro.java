@@ -10,23 +10,16 @@
 package SPQ.gui;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Insets;
-import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
@@ -37,12 +30,13 @@ import org.apache.log4j.Logger;
 
 public class VentanaRegistro extends JFrame{
 
+	private static final long serialVersionUID = 1L;
 	private JLabel lTitle;
 	private JLabel lIcon;
 
 	private JPasswordField passwordField, passwordRepeat;
 
-	private JButton btnBack,btnSignUp;
+	private JButton btnBack;
 
 	private JTextField textFieldMail;
 	private JTextField textFieldUsername;
@@ -50,6 +44,8 @@ public class VentanaRegistro extends JFrame{
 	private String registerMethod;
 
 	NeverEmptyController neverEmptyController;
+	
+	static Logger logger = Logger.getLogger(VentanaRegistro.class.getName());
 
 	public static void main(String[] args) {
 		VentanaRegistro vr = new VentanaRegistro(new NeverEmptyController(null), "Google");
@@ -177,7 +173,6 @@ public class VentanaRegistro extends JFrame{
 
 				//Comprobamos que el usuario introducido introduzca correctamente los datos.
 				Boolean SignUp = ComprobacionSignup();
-				System.out.println("SINGUP : " + SignUp);
 				if(SignUp) { 
 					//Registro completado con exito
 					JOptionPane.showMessageDialog(null, "Registro completado con exito", "REGISTRADO", JOptionPane.INFORMATION_MESSAGE);
@@ -207,31 +202,26 @@ public class VentanaRegistro extends JFrame{
 	public boolean ComprobacionSignup() {
 
 		if (textFieldMail.getText().equals("")) {
-			System.out.println("El mail no puede estar vacio");
+			logger.info("El mail no puede estar vacio");
 			JOptionPane.showMessageDialog(null, "ERROR! Introduce un mail", "ERROR", JOptionPane.ERROR_MESSAGE);
 		} else if (new String(passwordField.getPassword()).isEmpty()) {
-			System.out.println("Introduce una contrasenia");
+			logger.info("Introduce una contrasenia");
 			JOptionPane.showMessageDialog(null, "ERROR! Introduce una cotrasenia", "ERROR", JOptionPane.ERROR_MESSAGE);
 		} else if (new String(passwordRepeat.getPassword()).isEmpty()) {
-			System.out.println("Confirma la contrasenia");
+			logger.info("Confirma la contrasenia");
 			JOptionPane.showMessageDialog(null, "ERROR! Introduce una segunda contrasenia", "ERROR", JOptionPane.ERROR_MESSAGE);
 		} else if (!new String(passwordField.getPassword()).equals(new String(passwordRepeat.getPassword()))) {
-			System.out.println("Las contrasenias han de coincidir");
+			logger.info("Las contrasenias han de coincidir");
 			JOptionPane.showMessageDialog(null, "ERROR! Las contraseñas han de coincidir", "ERROR", JOptionPane.ERROR_MESSAGE);
 		} else if(textFieldUsername.getText().equals("")) {
-			System.out.println("El usuario no puede estar vacio");
+			logger.info("El usuario no puede estar vacio");
 			JOptionPane.showMessageDialog(null, "ERROR! Introduce un usuario", "ERROR", JOptionPane.ERROR_MESSAGE);
 		}
+		
 		String user= textFieldUsername.getText();
-
-		String pass = "";
 		char [] password= passwordField.getPassword();
-		for(int x = 0; x < password.length; x++) {
-			pass += password[x];
-		}
 		String mail = textFieldMail.getText();	
-		System.out.println(user + ", " + pass + ", " + mail);
-
+		
 		boolean registro = false;
 		try {
 			if(this.registerMethod.equals("Google")) {
@@ -242,7 +232,7 @@ public class VentanaRegistro extends JFrame{
 				registro = this.neverEmptyController.registerNeverEmpty(user, mail, String.valueOf(password));
 			}
 		}catch (Exception e) {
-			System.out.println(e);
+			logger.error("Error en el registro.");
 		}
 
 		return registro;

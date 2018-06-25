@@ -3,13 +3,15 @@ package SPQ;
 import java.io.IOException;
 import java.net.ServerSocket;
 
-public class VisaServer {
+import org.apache.log4j.Logger;
 
+public class VisaServer {
+	static Logger logger = Logger.getLogger(VisaServer.class.getName());
 	private static int numClients = 0;
 		
 		public static void main(String args[]) {
 			if (args.length < 1) {
-				System.err.println(" # Usage: VisaServer [PORT]");
+				logger.error("Invalid argument number.");
 				System.exit(1);
 			}
 			
@@ -18,15 +20,15 @@ public class VisaServer {
 			
 			try {
 				ServerSocket tcpServerSocket = new ServerSocket(serverPort);
-				System.out.println(" - VisaServer: Waiting for connections '" + tcpServerSocket.getInetAddress().getHostAddress() + ":" + tcpServerSocket.getLocalPort() + "' ...");
+				logger.info("Waiting for connections '" + tcpServerSocket.getInetAddress().getHostAddress() + ":" + tcpServerSocket.getLocalPort() + "' ...");
 				
 				while (true) {
-					//Ejecuta el googleservice
+					//Ejecuta el visaService
 					new VisaService(tcpServerSocket.accept());
-					System.out.println(" - VisaServer: New client connection accepted. Client number: " + ++numClients);
+					logger.info("New client connection accepted. Client number: " + ++numClients);
 				}
 			} catch (IOException e) {
-				System.err.println("# VisaServer: IO error:" + e.getMessage());
+				logger.error("IO error:" + e.getMessage());
 			}
 		}
 		

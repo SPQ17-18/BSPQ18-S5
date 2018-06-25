@@ -1,0 +1,994 @@
+\begin{theindex}
+
+  \item {Account}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{17}
+  \item {Account\+D\+AO}
+    \subitem {S\+P\+Q\+::dao\+::\+Account\+D\+AO}, \hyperpage{20}
+  \item {action\+Performed}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Metodo\+Pago}, 
+		\hyperpage{103}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Pago}, \hyperpage{105}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Perfil}, \hyperpage{107}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Principal}, \hyperpage{109}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Seleccionar\+Registro}, 
+		\hyperpage{111}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Ticket}, \hyperpage{113}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{75}
+  \item {Alvarotest}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+User\+Test}, \hyperpage{25}
+
+  \indexspace
+
+  \item {calculate\+Progress}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Pago}, \hyperpage{105, 106}
+  \item {Comprobacion\+Signup}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Registro}, \hyperpage{110}
+  \item {Cristiantest}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+User\+Test}, \hyperpage{25}
+
+  \indexspace
+
+  \item {delete\+Database}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{79}
+  \item {delete\+Product}
+    \subitem {S\+P\+Q\+::dao\+::\+Product\+D\+AO}, \hyperpage{71}
+
+  \indexspace
+
+  \item {Ekaitztest}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+User\+Test}, \hyperpage{25}
+  \item {Enaratest}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+User\+Test}, \hyperpage{25}
+  \item {Eroski}
+    \subitem {S\+P\+Q\+::gateway\+::\+Eroski}, \hyperpage{26}
+  \item {Eroski\+Service}
+    \subitem {S\+P\+Q\+::\+Eroski\+Service}, \hyperpage{28}
+  \item {Eroski\+Service/src/main/java/\+S\+P\+Q/\+Eroski\+Server.\+java}, 
+		\hyperpage{118}
+  \item {Eroski\+Service/src/main/java/\+S\+P\+Q/\+Eroski\+Service.\+java}, 
+		\hyperpage{118}
+  \item {Eroski\+Service/src/main/java/\+S\+P\+Q/dao/\+Product\+D\+A\+O.\+java}, 
+		\hyperpage{117}
+  \item {Eroski\+Service/src/main/java/\+S\+P\+Q/data/\+Product.\+java}, 
+		\hyperpage{117}
+  \item {Eroski\+Service/src/main/java/\+S\+P\+Q/dto/\+Product\+D\+T\+O.\+java}, 
+		\hyperpage{118}
+
+  \indexspace
+
+  \item {Facebook}
+    \subitem {S\+P\+Q\+::gateway\+::\+Facebook}, \hyperpage{29}
+  \item {Facebook\+Service}
+    \subitem {S\+P\+Q\+::\+Facebook\+Service}, \hyperpage{31}
+  \item {Facebook\+Service/src/main/java/\+S\+P\+Q/\+Facebook\+Server.\+java}, 
+		\hyperpage{122}
+  \item {Facebook\+Service/src/main/java/\+S\+P\+Q/\+Facebook\+Service.\+java}, 
+		\hyperpage{122}
+  \item {Facebook\+Service/src/main/java/\+S\+P\+Q/dao/\+I\+User\+D\+A\+O.\+java}, 
+		\hyperpage{119}
+  \item {Facebook\+Service/src/main/java/\+S\+P\+Q/dao/\+User\+D\+A\+O.\+java}, 
+		\hyperpage{119}
+  \item {Facebook\+Service/src/main/java/\+S\+P\+Q/data/\+User.\+java}, 
+		\hyperpage{120}
+  \item {Facebook\+Service/src/main/java/\+S\+P\+Q/dto/\+User\+D\+T\+O.\+java}, 
+		\hyperpage{121}
+  \item {finalizar\+Registro}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Registro}, \hyperpage{110}
+
+  \indexspace
+
+  \item {get\+Address}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{84}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{96}
+  \item {get\+Balance}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{18}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{84}
+  \item {get\+Card\+Number}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{84}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{96}
+  \item {get\+Cardholder}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{18}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{84}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{57}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{96}
+  \item {get\+Cardnumber}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{18}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{57, 58}
+  \item {get\+Cvv}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{18}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{58}
+  \item {get\+Email}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{84, 85}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{96, 97}
+  \item {get\+Exp\+Date}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{18}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{58, 59}
+  \item {get\+Image\+From\+Resources}
+    \subitem {S\+P\+Q\+::\+Utilities}, \hyperpage{101}
+  \item {get\+Name}
+    \subitem {S\+P\+Q\+::data\+::\+Product}, \hyperpage{68}
+  \item {get\+Never\+Empty\+Server}
+    \subitem {S\+P\+Q\+::remote\+::\+R\+M\+I\+Service\+Locator}, 
+		\hyperpage{78}
+  \item {get\+Password}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{85}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{59}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{97}
+  \item {get\+Pay\+Pal\+Email}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{86}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{97}
+  \item {get\+Pay\+Pal\+Password}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{86}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{97}
+  \item {get\+Price}
+    \subitem {S\+P\+Q\+::data\+::\+Product}, \hyperpage{69}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{75}
+  \item {get\+Product\+List}
+    \subitem {S\+P\+Q\+::dto\+::\+Product\+D\+TO}, \hyperpage{73}
+  \item {get\+Products}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{52}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{43}
+    \subitem {S\+P\+Q\+::dao\+::\+Product\+D\+AO}, \hyperpage{72}
+    \subitem {S\+P\+Q\+::gateway\+::\+Eroski}, \hyperpage{27}
+    \subitem {S\+P\+Q\+::gateway\+::\+I\+Eroski\+Gateway}, 
+		\hyperpage{35}
+    \subitem {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}, 
+		\hyperpage{37}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{49}
+  \item {get\+Quantity}
+    \subitem {S\+P\+Q\+::data\+::\+Product}, \hyperpage{69}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{76}
+  \item {get\+Register\+Method}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{86}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{98}
+  \item {get\+Sale}
+    \subitem {S\+P\+Q\+::data\+::\+Product}, \hyperpage{69}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{76}
+  \item {get\+Total}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{59, 60}
+  \item {get\+User}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{52}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{43}
+    \subitem {S\+P\+Q\+::dao\+::\+I\+User\+D\+AO}, \hyperpage{40}
+    \subitem {S\+P\+Q\+::dao\+::\+User\+D\+AO}, \hyperpage{91}
+    \subitem {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}, 
+		\hyperpage{37}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{49}
+  \item {get\+User\+D\+TO}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{44}
+  \item {get\+Username}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{86}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{60}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{98}
+  \item {getb\+Add}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{75}
+  \item {getb\+Sub}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{75}
+  \item {getproduct\+Name}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{76}
+  \item {Google}
+    \subitem {S\+P\+Q\+::gateway\+::\+Google}, \hyperpage{32}
+  \item {Google\+Service}
+    \subitem {S\+P\+Q\+::\+Google\+Service}, \hyperpage{34}
+  \item {Google\+Service/src/main/java/\+S\+P\+Q/\+Google\+Server.\+java}, 
+		\hyperpage{123}
+  \item {Google\+Service/src/main/java/\+S\+P\+Q/\+Google\+Service.\+java}, 
+		\hyperpage{123}
+  \item {Google\+Service/src/main/java/\+S\+P\+Q/dao/\+I\+User\+D\+A\+O.\+java}, 
+		\hyperpage{119}
+  \item {Google\+Service/src/main/java/\+S\+P\+Q/dao/\+User\+D\+A\+O.\+java}, 
+		\hyperpage{120}
+  \item {Google\+Service/src/main/java/\+S\+P\+Q/data/\+User.\+java}, 
+		\hyperpage{121}
+  \item {Google\+Service/src/main/java/\+S\+P\+Q/dto/\+User\+D\+T\+O.\+java}, 
+		\hyperpage{122}
+
+  \indexspace
+
+  \item {iniciar\+Aplicacion}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Inicio}, \hyperpage{102}
+
+  \indexspace
+
+  \item {Jesustest}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+User\+Test}, \hyperpage{25}
+
+  \indexspace
+
+  \item {login}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{52}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{44}
+    \subitem {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}, 
+		\hyperpage{38}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{49}
+  \item {login\+Existing\+User\+Test}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{79}
+  \item {login\+New\+User\+Test}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{79}
+
+  \indexspace
+
+  \item {main}
+    \subitem {S\+P\+Q\+::\+Eroski\+Server}, \hyperpage{27}
+    \subitem {S\+P\+Q\+::\+Facebook\+Server}, \hyperpage{30}
+    \subitem {S\+P\+Q\+::\+Google\+Server}, \hyperpage{33}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server\+Manager}, 
+		\hyperpage{54}
+    \subitem {S\+P\+Q\+::\+Paypal\+Server}, \hyperpage{65}
+    \subitem {S\+P\+Q\+::\+Visa\+Server}, \hyperpage{115}
+    \subitem {S\+P\+Q\+::dao\+::\+User\+D\+AO}, \hyperpage{91}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Inicio}, \hyperpage{102}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Principal}, \hyperpage{109}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Registro}, \hyperpage{110}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Ticket}, \hyperpage{113}
+    \subitem {S\+P\+Q\+::main\+::\+Main}, \hyperpage{42}
+
+  \indexspace
+
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/\+Utilities.\+java}, 
+		\hyperpage{126}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/controller/\+Never\+Empty\+Controller.\+java}, 
+		\hyperpage{123}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/gui/\+Ventana\+Inicio.\+java}, 
+		\hyperpage{124}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/gui/\+Ventana\+Metodo\+Pago.\+java}, 
+		\hyperpage{124}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/gui/\+Ventana\+Pago.\+java}, 
+		\hyperpage{124}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/gui/\+Ventana\+Perfil.\+java}, 
+		\hyperpage{125}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/gui/\+Ventana\+Principal.\+java}, 
+		\hyperpage{125}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/gui/\+Ventana\+Registro.\+java}, 
+		\hyperpage{125}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/gui/\+Ventana\+Seleccionar\+Registro.\+java}, 
+		\hyperpage{125}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/gui/\+Ventana\+Ticket.\+java}, 
+		\hyperpage{126}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/gui/component/\+Product\+Label.\+java}, 
+		\hyperpage{123}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/main/\+Main.\+java}, 
+		\hyperpage{126}
+  \item {Never\+Empty\+Client/src/main/java/\+S\+P\+Q/remote/\+R\+M\+I\+Service\+Locator.\+java}, 
+		\hyperpage{126}
+  \item {Never\+Empty\+Client/src/test/java/\+S\+P\+Q/\+Client\+Test.\+java}, 
+		\hyperpage{127}
+  \item {Never\+Empty\+Controller}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{43}
+  \item {Never\+Empty\+Facade}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{49}
+  \item {Never\+Empty\+Server}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{51}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/\+Never\+Empty\+Server.\+java}, 
+		\hyperpage{130}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/\+Never\+Empty\+Server\+Manager.\+java}, 
+		\hyperpage{130}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/dao/\+User\+D\+A\+O.\+java}, 
+		\hyperpage{120}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/data/\+Product.\+java}, 
+		\hyperpage{117}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/data/\+User.\+java}, 
+		\hyperpage{121}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/dto/\+Payment\+D\+T\+O.\+java}, 
+		\hyperpage{127}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/dto/\+Product\+D\+T\+O.\+java}, 
+		\hyperpage{118}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/dto/\+User\+D\+T\+O.\+java}, 
+		\hyperpage{122}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+Eroski.\+java}, 
+		\hyperpage{128}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+Facebook.\+java}, 
+		\hyperpage{128}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+Google.\+java}, 
+		\hyperpage{128}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+I\+Eroski\+Gateway.\+java}, 
+		\hyperpage{128}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+I\+Facebook\+Gateway.\+java}, 
+		\hyperpage{129}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+I\+Google\+Gateway.\+java}, 
+		\hyperpage{129}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+I\+Pay\+Pal\+Gateway.\+java}, 
+		\hyperpage{129}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+I\+Visa\+Gateway.\+java}, 
+		\hyperpage{129}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+Pay\+Pal.\+java}, 
+		\hyperpage{130}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/gateway/\+Visa.\+java}, 
+		\hyperpage{130}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/remote/\+I\+Never\+Empty\+Facade.\+java}, 
+		\hyperpage{131}
+  \item {Never\+Empty\+Server/src/main/java/\+S\+P\+Q/remote/\+Never\+Empty\+Facade.\+java}, 
+		\hyperpage{131}
+  \item {Never\+Empty\+Server/src/test/java/\+S\+P\+Q/\+Cobertura\+Test.\+java}, 
+		\hyperpage{131}
+  \item {Never\+Empty\+Server/src/test/java/\+S\+P\+Q/\+D\+A\+O\+Mock\+Test.\+java}, 
+		\hyperpage{132}
+  \item {Never\+Empty\+Server/src/test/java/\+S\+P\+Q/\+D\+A\+T\+A\+Product\+Test.\+java}, 
+		\hyperpage{132}
+  \item {Never\+Empty\+Server/src/test/java/\+S\+P\+Q/\+D\+A\+T\+A\+User\+Test.\+java}, 
+		\hyperpage{132}
+  \item {Never\+Empty\+Server/src/test/java/\+S\+P\+Q/\+R\+M\+I\+Test.\+java}, 
+		\hyperpage{132}
+
+  \indexspace
+
+  \item {p\+Catalogue}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Principal}, \hyperpage{109}
+  \item {password\+Modified}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Perfil}, \hyperpage{107}
+  \item {pay}
+    \subitem {S\+P\+Q\+::dao\+::\+Account\+D\+AO}, \hyperpage{20}
+    \subitem {S\+P\+Q\+::dao\+::\+I\+Account\+D\+AO}, \hyperpage{35}
+    \subitem {S\+P\+Q\+::dao\+::\+I\+User\+D\+AO}, \hyperpage{40}
+    \subitem {S\+P\+Q\+::dao\+::\+User\+D\+AO}, \hyperpage{91}
+    \subitem {S\+P\+Q\+::gateway\+::\+I\+Pay\+Pal\+Gateway}, 
+		\hyperpage{39}
+    \subitem {S\+P\+Q\+::gateway\+::\+I\+Visa\+Gateway}, \hyperpage{41}
+    \subitem {S\+P\+Q\+::gateway\+::\+Pay\+Pal}, \hyperpage{65}
+    \subitem {S\+P\+Q\+::gateway\+::\+Visa}, \hyperpage{114}
+  \item {Pay\+Pal}
+    \subitem {S\+P\+Q\+::gateway\+::\+Pay\+Pal}, \hyperpage{64}
+  \item {pay\+With\+Pay\+Pal}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{45}
+  \item {pay\+With\+Paypal}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{52}
+    \subitem {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}, 
+		\hyperpage{38}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{49}
+  \item {pay\+With\+Visa}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{52}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{45}
+    \subitem {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}, 
+		\hyperpage{38}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{50}
+  \item {Payment\+D\+TO}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{56, 57}
+  \item {Paypal\+Service}
+    \subitem {S\+P\+Q\+::\+Paypal\+Service}, \hyperpage{66}
+  \item {Paypal\+Service/src/main/java/\+S\+P\+Q/\+Paypal\+Server.\+java}, 
+		\hyperpage{133}
+  \item {Paypal\+Service/src/main/java/\+S\+P\+Q/\+Paypal\+Service.\+java}, 
+		\hyperpage{133}
+  \item {Paypal\+Service/src/main/java/\+S\+P\+Q/dao/\+I\+User\+D\+A\+O.\+java}, 
+		\hyperpage{119}
+  \item {Paypal\+Service/src/main/java/\+S\+P\+Q/dao/\+User\+D\+A\+O.\+java}, 
+		\hyperpage{120}
+  \item {Paypal\+Service/src/main/java/\+S\+P\+Q/data/\+User.\+java}, 
+		\hyperpage{121}
+  \item {Paypal\+Service/src/main/java/\+S\+P\+Q/dto/\+Payment\+D\+T\+O.\+java}, 
+		\hyperpage{127}
+  \item {Product}
+    \subitem {S\+P\+Q\+::data\+::\+Product}, \hyperpage{68}
+  \item {Product\+D\+AO}
+    \subitem {S\+P\+Q\+::dao\+::\+Product\+D\+AO}, \hyperpage{71}
+  \item {Product\+D\+T\+O\+Test}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+Product\+Test}, \hyperpage{23}
+  \item {Product\+D\+TO}
+    \subitem {S\+P\+Q\+::dto\+::\+Product\+D\+TO}, \hyperpage{73}
+  \item {Product\+Label}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{74, 75}
+  \item {Product\+Test}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+Product\+Test}, \hyperpage{24}
+
+  \indexspace
+
+  \item {R\+E\+A\+D\+M\+E.\+md}, \hyperpage{133}
+  \item {read\+Data}
+    \subitem {S\+P\+Q\+::\+Eroski\+Service}, \hyperpage{28}
+    \subitem {S\+P\+Q\+::\+Facebook\+Service}, \hyperpage{31}
+    \subitem {S\+P\+Q\+::\+Google\+Service}, \hyperpage{34}
+    \subitem {S\+P\+Q\+::\+Paypal\+Service}, \hyperpage{66}
+    \subitem {S\+P\+Q\+::\+Visa\+Service}, \hyperpage{116}
+  \item {register}
+    \subitem {S\+P\+Q\+::gateway\+::\+Facebook}, \hyperpage{29}
+    \subitem {S\+P\+Q\+::gateway\+::\+Google}, \hyperpage{32}
+    \subitem {S\+P\+Q\+::gateway\+::\+I\+Facebook\+Gateway}, 
+		\hyperpage{36}
+    \subitem {S\+P\+Q\+::gateway\+::\+I\+Google\+Gateway}, 
+		\hyperpage{36}
+  \item {register\+Facebook}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{53}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{46}
+    \subitem {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}, 
+		\hyperpage{38}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{50}
+  \item {register\+Facebook\+Existing\+User\+Test}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{79}
+  \item {register\+Google}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{53}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{46}
+    \subitem {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}, 
+		\hyperpage{38}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{50}
+  \item {register\+Google\+Existing\+User\+Test}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{79}
+  \item {register\+Never\+Empty}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{53}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{47}
+    \subitem {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}, 
+		\hyperpage{38}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{50}
+  \item {register\+User\+Facebook\+Test}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{80}
+  \item {register\+User\+Google\+Test}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{80}
+  \item {run}
+    \subitem {S\+P\+Q\+::\+Eroski\+Service}, \hyperpage{28}
+    \subitem {S\+P\+Q\+::\+Facebook\+Service}, \hyperpage{31}
+    \subitem {S\+P\+Q\+::\+Google\+Service}, \hyperpage{34}
+    \subitem {S\+P\+Q\+::\+Paypal\+Service}, \hyperpage{67}
+    \subitem {S\+P\+Q\+::\+Visa\+Service}, \hyperpage{116}
+
+  \indexspace
+
+  \item {S\+P\+Q.\+Client\+Test}, \hyperpage{21}
+  \item {S\+P\+Q.\+Cobertura\+Test}, \hyperpage{21}
+  \item {S\+P\+Q.\+component}, \hyperpage{12}
+  \item {S\+P\+Q.\+controller}, \hyperpage{12}
+  \item {S\+P\+Q.\+controller.\+Never\+Empty\+Controller}, 
+		\hyperpage{42}
+  \item {S\+P\+Q.\+D\+A\+O\+Mock\+Test}, \hyperpage{22}
+  \item {S\+P\+Q.\+D\+A\+T\+A\+Product\+Test}, \hyperpage{23}
+  \item {S\+P\+Q.\+D\+A\+T\+A\+User\+Test}, \hyperpage{24}
+  \item {S\+P\+Q.\+dao}, \hyperpage{13}
+  \item {S\+P\+Q.\+dao.\+Account\+D\+AO}, \hyperpage{20}
+  \item {S\+P\+Q.\+dao.\+I\+Account\+D\+AO}, \hyperpage{34}
+  \item {S\+P\+Q.\+dao.\+I\+User\+D\+AO}, \hyperpage{40}
+  \item {S\+P\+Q.\+dao.\+Product\+D\+AO}, \hyperpage{71}
+  \item {S\+P\+Q.\+dao.\+User\+D\+AO}, \hyperpage{89}
+  \item {S\+P\+Q.\+data}, \hyperpage{13}
+  \item {S\+P\+Q.\+data.\+Account}, \hyperpage{17}
+  \item {S\+P\+Q.\+data.\+Product}, \hyperpage{67}
+  \item {S\+P\+Q.\+data.\+User}, \hyperpage{81}
+  \item {S\+P\+Q.\+dto}, \hyperpage{13}
+  \item {S\+P\+Q.\+dto.\+Payment\+D\+TO}, \hyperpage{54}
+  \item {S\+P\+Q.\+dto.\+Product\+D\+TO}, \hyperpage{72}
+  \item {S\+P\+Q.\+dto.\+User\+D\+TO}, \hyperpage{92}
+  \item {S\+P\+Q.\+Eroski\+Server}, \hyperpage{27}
+  \item {S\+P\+Q.\+Eroski\+Service}, \hyperpage{28}
+  \item {S\+P\+Q.\+Facebook\+Server}, \hyperpage{30}
+  \item {S\+P\+Q.\+Facebook\+Service}, \hyperpage{30}
+  \item {S\+P\+Q.\+gateway}, \hyperpage{13}
+  \item {S\+P\+Q.\+gateway.\+Eroski}, \hyperpage{26}
+  \item {S\+P\+Q.\+gateway.\+Facebook}, \hyperpage{29}
+  \item {S\+P\+Q.\+gateway.\+Google}, \hyperpage{32}
+  \item {S\+P\+Q.\+gateway.\+I\+Eroski\+Gateway}, \hyperpage{35}
+  \item {S\+P\+Q.\+gateway.\+I\+Facebook\+Gateway}, \hyperpage{36}
+  \item {S\+P\+Q.\+gateway.\+I\+Google\+Gateway}, \hyperpage{36}
+  \item {S\+P\+Q.\+gateway.\+I\+Pay\+Pal\+Gateway}, \hyperpage{39}
+  \item {S\+P\+Q.\+gateway.\+I\+Visa\+Gateway}, \hyperpage{41}
+  \item {S\+P\+Q.\+gateway.\+Pay\+Pal}, \hyperpage{64}
+  \item {S\+P\+Q.\+gateway.\+Visa}, \hyperpage{113}
+  \item {S\+P\+Q.\+Google\+Server}, \hyperpage{33}
+  \item {S\+P\+Q.\+Google\+Service}, \hyperpage{33}
+  \item {S\+P\+Q.\+gui}, \hyperpage{13}
+  \item {S\+P\+Q.\+gui.\+component}, \hyperpage{14}
+  \item {S\+P\+Q.\+gui.\+component.\+Product\+Label}, \hyperpage{74}
+  \item {S\+P\+Q.\+gui.\+Ventana\+Inicio}, \hyperpage{101}
+  \item {S\+P\+Q.\+gui.\+Ventana\+Metodo\+Pago}, \hyperpage{103}
+  \item {S\+P\+Q.\+gui.\+Ventana\+Pago}, \hyperpage{104}
+  \item {S\+P\+Q.\+gui.\+Ventana\+Perfil}, \hyperpage{107}
+  \item {S\+P\+Q.\+gui.\+Ventana\+Principal}, \hyperpage{108}
+  \item {S\+P\+Q.\+gui.\+Ventana\+Registro}, \hyperpage{109}
+  \item {S\+P\+Q.\+gui.\+Ventana\+Seleccionar\+Registro}, 
+		\hyperpage{111}
+  \item {S\+P\+Q.\+gui.\+Ventana\+Ticket}, \hyperpage{112}
+  \item {S\+P\+Q.\+main}, \hyperpage{14}
+  \item {S\+P\+Q.\+main.\+Main}, \hyperpage{41}
+  \item {S\+P\+Q.\+Never\+Empty\+Server}, \hyperpage{51}
+  \item {S\+P\+Q.\+Never\+Empty\+Server\+Manager}, \hyperpage{54}
+  \item {S\+P\+Q.\+Paypal\+Server}, \hyperpage{65}
+  \item {S\+P\+Q.\+Paypal\+Service}, \hyperpage{66}
+  \item {S\+P\+Q.\+R\+M\+I\+Test}, \hyperpage{78}
+  \item {S\+P\+Q.\+remote}, \hyperpage{15}
+  \item {S\+P\+Q.\+remote.\+I\+Never\+Empty\+Facade}, \hyperpage{37}
+  \item {S\+P\+Q.\+remote.\+Never\+Empty\+Facade}, \hyperpage{48}
+  \item {S\+P\+Q.\+remote.\+R\+M\+I\+Service\+Locator}, \hyperpage{77}
+  \item {S\+P\+Q.\+Utilities}, \hyperpage{100}
+  \item {S\+P\+Q.\+Visa\+Server}, \hyperpage{114}
+  \item {S\+P\+Q.\+Visa\+Service}, \hyperpage{115}
+  \item {S\+P\+Q\+::\+Cobertura\+Test}
+    \subitem {test}, \hyperpage{21}
+  \item {S\+P\+Q\+::\+D\+A\+O\+Mock\+Test}
+    \subitem {set\+Up}, \hyperpage{22}
+    \subitem {suite}, \hyperpage{22}
+    \subitem {test\+Register\+User\+Already\+Exists}, \hyperpage{23}
+    \subitem {test\+Register\+User\+Correctly}, \hyperpage{23}
+  \item {S\+P\+Q\+::\+D\+A\+T\+A\+Product\+Test}
+    \subitem {Product\+D\+T\+O\+Test}, \hyperpage{23}
+    \subitem {Product\+Test}, \hyperpage{24}
+    \subitem {set\+Up}, \hyperpage{24}
+  \item {S\+P\+Q\+::\+D\+A\+T\+A\+User\+Test}
+    \subitem {Alvarotest}, \hyperpage{25}
+    \subitem {Cristiantest}, \hyperpage{25}
+    \subitem {Ekaitztest}, \hyperpage{25}
+    \subitem {Enaratest}, \hyperpage{25}
+    \subitem {Jesustest}, \hyperpage{25}
+    \subitem {set\+Up}, \hyperpage{25}
+    \subitem {User\+D\+T\+O\+Test}, \hyperpage{26}
+  \item {S\+P\+Q\+::\+Eroski\+Server}
+    \subitem {main}, \hyperpage{27}
+  \item {S\+P\+Q\+::\+Eroski\+Service}
+    \subitem {Eroski\+Service}, \hyperpage{28}
+    \subitem {read\+Data}, \hyperpage{28}
+    \subitem {run}, \hyperpage{28}
+  \item {S\+P\+Q\+::\+Facebook\+Server}
+    \subitem {main}, \hyperpage{30}
+  \item {S\+P\+Q\+::\+Facebook\+Service}
+    \subitem {Facebook\+Service}, \hyperpage{31}
+    \subitem {read\+Data}, \hyperpage{31}
+    \subitem {run}, \hyperpage{31}
+  \item {S\+P\+Q\+::\+Google\+Server}
+    \subitem {main}, \hyperpage{33}
+  \item {S\+P\+Q\+::\+Google\+Service}
+    \subitem {Google\+Service}, \hyperpage{34}
+    \subitem {read\+Data}, \hyperpage{34}
+    \subitem {run}, \hyperpage{34}
+  \item {S\+P\+Q\+::\+Never\+Empty\+Server}
+    \subitem {get\+Products}, \hyperpage{52}
+    \subitem {get\+User}, \hyperpage{52}
+    \subitem {login}, \hyperpage{52}
+    \subitem {Never\+Empty\+Server}, \hyperpage{51}
+    \subitem {pay\+With\+Paypal}, \hyperpage{52}
+    \subitem {pay\+With\+Visa}, \hyperpage{52}
+    \subitem {register\+Facebook}, \hyperpage{53}
+    \subitem {register\+Google}, \hyperpage{53}
+    \subitem {register\+Never\+Empty}, \hyperpage{53}
+    \subitem {update\+User}, \hyperpage{53}
+  \item {S\+P\+Q\+::\+Never\+Empty\+Server\+Manager}
+    \subitem {main}, \hyperpage{54}
+  \item {S\+P\+Q\+::\+Paypal\+Server}
+    \subitem {main}, \hyperpage{65}
+  \item {S\+P\+Q\+::\+Paypal\+Service}
+    \subitem {Paypal\+Service}, \hyperpage{66}
+    \subitem {read\+Data}, \hyperpage{66}
+    \subitem {run}, \hyperpage{67}
+  \item {S\+P\+Q\+::\+R\+M\+I\+Test}
+    \subitem {delete\+Database}, \hyperpage{79}
+    \subitem {login\+Existing\+User\+Test}, \hyperpage{79}
+    \subitem {login\+New\+User\+Test}, \hyperpage{79}
+    \subitem {register\+Facebook\+Existing\+User\+Test}, \hyperpage{79}
+    \subitem {register\+Google\+Existing\+User\+Test}, \hyperpage{79}
+    \subitem {register\+User\+Facebook\+Test}, \hyperpage{80}
+    \subitem {register\+User\+Google\+Test}, \hyperpage{80}
+    \subitem {set\+Up}, \hyperpage{80}
+    \subitem {set\+Up\+Client}, \hyperpage{80}
+    \subitem {suite}, \hyperpage{80}
+    \subitem {tear\+Down}, \hyperpage{80}
+    \subitem {test\+Get\+Products}, \hyperpage{81}
+    \subitem {test\+Pay\+With\+Pay\+Pal}, \hyperpage{81}
+    \subitem {test\+Pay\+With\+Visa}, \hyperpage{81}
+  \item {S\+P\+Q\+::\+Utilities}
+    \subitem {get\+Image\+From\+Resources}, \hyperpage{101}
+  \item {S\+P\+Q\+::\+Visa\+Server}
+    \subitem {main}, \hyperpage{115}
+  \item {S\+P\+Q\+::\+Visa\+Service}
+    \subitem {read\+Data}, \hyperpage{116}
+    \subitem {run}, \hyperpage{116}
+    \subitem {Visa\+Service}, \hyperpage{115}
+  \item {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}
+    \subitem {get\+Products}, \hyperpage{43}
+    \subitem {get\+User}, \hyperpage{43}
+    \subitem {get\+User\+D\+TO}, \hyperpage{44}
+    \subitem {login}, \hyperpage{44}
+    \subitem {Never\+Empty\+Controller}, \hyperpage{43}
+    \subitem {pay\+With\+Pay\+Pal}, \hyperpage{45}
+    \subitem {pay\+With\+Visa}, \hyperpage{45}
+    \subitem {register\+Facebook}, \hyperpage{46}
+    \subitem {register\+Google}, \hyperpage{46}
+    \subitem {register\+Never\+Empty}, \hyperpage{47}
+    \subitem {set\+User\+D\+TO}, \hyperpage{47}
+    \subitem {update\+User}, \hyperpage{47}
+  \item {S\+P\+Q\+::dao\+::\+Account\+D\+AO}
+    \subitem {Account\+D\+AO}, \hyperpage{20}
+    \subitem {pay}, \hyperpage{20}
+    \subitem {store\+Account}, \hyperpage{21}
+  \item {S\+P\+Q\+::dao\+::\+I\+Account\+D\+AO}
+    \subitem {pay}, \hyperpage{35}
+  \item {S\+P\+Q\+::dao\+::\+I\+User\+D\+AO}
+    \subitem {get\+User}, \hyperpage{40}
+    \subitem {pay}, \hyperpage{40}
+    \subitem {store\+User}, \hyperpage{40}
+  \item {S\+P\+Q\+::dao\+::\+Product\+D\+AO}
+    \subitem {delete\+Product}, \hyperpage{71}
+    \subitem {get\+Products}, \hyperpage{72}
+    \subitem {Product\+D\+AO}, \hyperpage{71}
+    \subitem {store\+Product}, \hyperpage{72}
+  \item {S\+P\+Q\+::dao\+::\+User\+D\+AO}
+    \subitem {get\+User}, \hyperpage{91}
+    \subitem {main}, \hyperpage{91}
+    \subitem {pay}, \hyperpage{91}
+    \subitem {store\+User}, \hyperpage{92}
+    \subitem {update\+User}, \hyperpage{92}
+    \subitem {User\+D\+AO}, \hyperpage{90}
+  \item {S\+P\+Q\+::data\+::\+Account}
+    \subitem {Account}, \hyperpage{17}
+    \subitem {get\+Balance}, \hyperpage{18}
+    \subitem {get\+Cardholder}, \hyperpage{18}
+    \subitem {get\+Cardnumber}, \hyperpage{18}
+    \subitem {get\+Cvv}, \hyperpage{18}
+    \subitem {get\+Exp\+Date}, \hyperpage{18}
+    \subitem {set\+Balance}, \hyperpage{19}
+    \subitem {set\+Cardholder}, \hyperpage{19}
+    \subitem {set\+Cardnumber}, \hyperpage{19}
+    \subitem {set\+Cvv}, \hyperpage{19}
+    \subitem {set\+Exp\+Date}, \hyperpage{19}
+  \item {S\+P\+Q\+::data\+::\+Product}
+    \subitem {get\+Name}, \hyperpage{68}
+    \subitem {get\+Price}, \hyperpage{69}
+    \subitem {get\+Quantity}, \hyperpage{69}
+    \subitem {get\+Sale}, \hyperpage{69}
+    \subitem {Product}, \hyperpage{68}
+    \subitem {set\+Name}, \hyperpage{69, 70}
+    \subitem {set\+Price}, \hyperpage{70}
+    \subitem {set\+Quantity}, \hyperpage{70}
+    \subitem {set\+Sale}, \hyperpage{70}
+  \item {S\+P\+Q\+::data\+::\+User}
+    \subitem {get\+Address}, \hyperpage{84}
+    \subitem {get\+Balance}, \hyperpage{84}
+    \subitem {get\+Card\+Number}, \hyperpage{84}
+    \subitem {get\+Cardholder}, \hyperpage{84}
+    \subitem {get\+Email}, \hyperpage{84, 85}
+    \subitem {get\+Password}, \hyperpage{85}
+    \subitem {get\+Pay\+Pal\+Email}, \hyperpage{86}
+    \subitem {get\+Pay\+Pal\+Password}, \hyperpage{86}
+    \subitem {get\+Register\+Method}, \hyperpage{86}
+    \subitem {get\+Username}, \hyperpage{86}
+    \subitem {set\+Address}, \hyperpage{86}
+    \subitem {set\+Balance}, \hyperpage{86}
+    \subitem {set\+Card\+Number}, \hyperpage{87}
+    \subitem {set\+Cardholder}, \hyperpage{87}
+    \subitem {set\+Email}, \hyperpage{87}
+    \subitem {set\+Password}, \hyperpage{88}
+    \subitem {set\+Pay\+Pal\+Email}, \hyperpage{88}
+    \subitem {set\+Pay\+Pal\+Password}, \hyperpage{88}
+    \subitem {set\+Register\+Method}, \hyperpage{89}
+    \subitem {set\+Username}, \hyperpage{89}
+    \subitem {update\+User}, \hyperpage{89}
+    \subitem {User}, \hyperpage{82, 83}
+  \item {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}
+    \subitem {get\+Cardholder}, \hyperpage{57}
+    \subitem {get\+Cardnumber}, \hyperpage{57, 58}
+    \subitem {get\+Cvv}, \hyperpage{58}
+    \subitem {get\+Exp\+Date}, \hyperpage{58, 59}
+    \subitem {get\+Password}, \hyperpage{59}
+    \subitem {get\+Total}, \hyperpage{59, 60}
+    \subitem {get\+Username}, \hyperpage{60}
+    \subitem {Payment\+D\+TO}, \hyperpage{56, 57}
+    \subitem {set\+Cardholder}, \hyperpage{60, 61}
+    \subitem {set\+Cardnumber}, \hyperpage{61}
+    \subitem {set\+Cvv}, \hyperpage{61, 62}
+    \subitem {set\+Exp\+Date}, \hyperpage{62}
+    \subitem {set\+Password}, \hyperpage{62, 63}
+    \subitem {set\+Total}, \hyperpage{63}
+    \subitem {set\+Username}, \hyperpage{63, 64}
+  \item {S\+P\+Q\+::dto\+::\+Product\+D\+TO}
+    \subitem {get\+Product\+List}, \hyperpage{73}
+    \subitem {Product\+D\+TO}, \hyperpage{73}
+    \subitem {set\+Product\+List}, \hyperpage{73}
+  \item {S\+P\+Q\+::dto\+::\+User\+D\+TO}
+    \subitem {get\+Address}, \hyperpage{96}
+    \subitem {get\+Card\+Number}, \hyperpage{96}
+    \subitem {get\+Cardholder}, \hyperpage{96}
+    \subitem {get\+Email}, \hyperpage{96, 97}
+    \subitem {get\+Password}, \hyperpage{97}
+    \subitem {get\+Pay\+Pal\+Email}, \hyperpage{97}
+    \subitem {get\+Pay\+Pal\+Password}, \hyperpage{97}
+    \subitem {get\+Register\+Method}, \hyperpage{98}
+    \subitem {get\+Username}, \hyperpage{98}
+    \subitem {set\+Address}, \hyperpage{98}
+    \subitem {set\+Card\+Number}, \hyperpage{98}
+    \subitem {set\+Cardholder}, \hyperpage{98}
+    \subitem {set\+Email}, \hyperpage{98, 99}
+    \subitem {set\+Password}, \hyperpage{99}
+    \subitem {set\+Pay\+Pal\+Email}, \hyperpage{99}
+    \subitem {set\+Pay\+Pal\+Password}, \hyperpage{100}
+    \subitem {set\+Register\+Method}, \hyperpage{100}
+    \subitem {set\+Username}, \hyperpage{100}
+    \subitem {User\+D\+TO}, \hyperpage{93--95}
+  \item {S\+P\+Q\+::gateway\+::\+Eroski}
+    \subitem {Eroski}, \hyperpage{26}
+    \subitem {get\+Products}, \hyperpage{27}
+  \item {S\+P\+Q\+::gateway\+::\+Facebook}
+    \subitem {Facebook}, \hyperpage{29}
+    \subitem {register}, \hyperpage{29}
+  \item {S\+P\+Q\+::gateway\+::\+Google}
+    \subitem {Google}, \hyperpage{32}
+    \subitem {register}, \hyperpage{32}
+  \item {S\+P\+Q\+::gateway\+::\+I\+Eroski\+Gateway}
+    \subitem {get\+Products}, \hyperpage{35}
+  \item {S\+P\+Q\+::gateway\+::\+I\+Facebook\+Gateway}
+    \subitem {register}, \hyperpage{36}
+  \item {S\+P\+Q\+::gateway\+::\+I\+Google\+Gateway}
+    \subitem {register}, \hyperpage{36}
+  \item {S\+P\+Q\+::gateway\+::\+I\+Pay\+Pal\+Gateway}
+    \subitem {pay}, \hyperpage{39}
+  \item {S\+P\+Q\+::gateway\+::\+I\+Visa\+Gateway}
+    \subitem {pay}, \hyperpage{41}
+  \item {S\+P\+Q\+::gateway\+::\+Pay\+Pal}
+    \subitem {pay}, \hyperpage{65}
+    \subitem {Pay\+Pal}, \hyperpage{64}
+  \item {S\+P\+Q\+::gateway\+::\+Visa}
+    \subitem {pay}, \hyperpage{114}
+    \subitem {Visa}, \hyperpage{114}
+  \item {S\+P\+Q\+::gui\+::\+Ventana\+Inicio}
+    \subitem {iniciar\+Aplicacion}, \hyperpage{102}
+    \subitem {main}, \hyperpage{102}
+    \subitem {Ventana\+Inicio}, \hyperpage{102}
+  \item {S\+P\+Q\+::gui\+::\+Ventana\+Metodo\+Pago}
+    \subitem {action\+Performed}, \hyperpage{103}
+    \subitem {Ventana\+Metodo\+Pago}, \hyperpage{103}
+    \subitem {vt}, \hyperpage{104}
+  \item {S\+P\+Q\+::gui\+::\+Ventana\+Pago}
+    \subitem {action\+Performed}, \hyperpage{105}
+    \subitem {calculate\+Progress}, \hyperpage{105, 106}
+    \subitem {Ventana\+Pago}, \hyperpage{105}
+    \subitem {vmp}, \hyperpage{106}
+  \item {S\+P\+Q\+::gui\+::\+Ventana\+Perfil}
+    \subitem {action\+Performed}, \hyperpage{107}
+    \subitem {password\+Modified}, \hyperpage{107}
+    \subitem {Ventana\+Perfil}, \hyperpage{107}
+  \item {S\+P\+Q\+::gui\+::\+Ventana\+Principal}
+    \subitem {action\+Performed}, \hyperpage{109}
+    \subitem {main}, \hyperpage{109}
+    \subitem {p\+Catalogue}, \hyperpage{109}
+    \subitem {Ventana\+Principal}, \hyperpage{108}
+  \item {S\+P\+Q\+::gui\+::\+Ventana\+Registro}
+    \subitem {Comprobacion\+Signup}, \hyperpage{110}
+    \subitem {finalizar\+Registro}, \hyperpage{110}
+    \subitem {main}, \hyperpage{110}
+    \subitem {Ventana\+Registro}, \hyperpage{110}
+  \item {S\+P\+Q\+::gui\+::\+Ventana\+Seleccionar\+Registro}
+    \subitem {action\+Performed}, \hyperpage{111}
+    \subitem {Ventana\+Seleccionar\+Registro}, \hyperpage{111}
+  \item {S\+P\+Q\+::gui\+::\+Ventana\+Ticket}
+    \subitem {action\+Performed}, \hyperpage{113}
+    \subitem {main}, \hyperpage{113}
+    \subitem {Ventana\+Ticket}, \hyperpage{112}
+    \subitem {vp}, \hyperpage{113}
+  \item {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}
+    \subitem {action\+Performed}, \hyperpage{75}
+    \subitem {get\+Price}, \hyperpage{75}
+    \subitem {get\+Quantity}, \hyperpage{76}
+    \subitem {get\+Sale}, \hyperpage{76}
+    \subitem {getb\+Add}, \hyperpage{75}
+    \subitem {getb\+Sub}, \hyperpage{75}
+    \subitem {getproduct\+Name}, \hyperpage{76}
+    \subitem {Product\+Label}, \hyperpage{74, 75}
+    \subitem {set\+Price}, \hyperpage{76}
+    \subitem {set\+Quantity}, \hyperpage{77}
+    \subitem {set\+Sale}, \hyperpage{77}
+    \subitem {setb\+Add}, \hyperpage{76}
+    \subitem {setb\+Sub}, \hyperpage{76}
+    \subitem {setproduct\+Name}, \hyperpage{77}
+  \item {S\+P\+Q\+::main\+::\+Main}
+    \subitem {main}, \hyperpage{42}
+  \item {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}
+    \subitem {get\+Products}, \hyperpage{37}
+    \subitem {get\+User}, \hyperpage{37}
+    \subitem {login}, \hyperpage{38}
+    \subitem {pay\+With\+Paypal}, \hyperpage{38}
+    \subitem {pay\+With\+Visa}, \hyperpage{38}
+    \subitem {register\+Facebook}, \hyperpage{38}
+    \subitem {register\+Google}, \hyperpage{38}
+    \subitem {register\+Never\+Empty}, \hyperpage{38}
+    \subitem {update\+User}, \hyperpage{39}
+  \item {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}
+    \subitem {get\+Products}, \hyperpage{49}
+    \subitem {get\+User}, \hyperpage{49}
+    \subitem {login}, \hyperpage{49}
+    \subitem {Never\+Empty\+Facade}, \hyperpage{49}
+    \subitem {pay\+With\+Paypal}, \hyperpage{49}
+    \subitem {pay\+With\+Visa}, \hyperpage{50}
+    \subitem {register\+Facebook}, \hyperpage{50}
+    \subitem {register\+Google}, \hyperpage{50}
+    \subitem {register\+Never\+Empty}, \hyperpage{50}
+    \subitem {update\+User}, \hyperpage{50}
+  \item {S\+P\+Q\+::remote\+::\+R\+M\+I\+Service\+Locator}
+    \subitem {get\+Never\+Empty\+Server}, \hyperpage{78}
+    \subitem {set\+Service}, \hyperpage{78}
+  \item {S\+PQ}, \hyperpage{11}
+  \item {set\+Address}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{86}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{98}
+  \item {set\+Balance}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{19}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{86}
+  \item {set\+Card\+Number}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{87}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{98}
+  \item {set\+Cardholder}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{19}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{87}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{60, 61}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{98}
+  \item {set\+Cardnumber}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{19}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{61}
+  \item {set\+Cvv}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{19}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{61, 62}
+  \item {set\+Email}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{87}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{98, 99}
+  \item {set\+Exp\+Date}
+    \subitem {S\+P\+Q\+::data\+::\+Account}, \hyperpage{19}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{62}
+  \item {set\+Name}
+    \subitem {S\+P\+Q\+::data\+::\+Product}, \hyperpage{69, 70}
+  \item {set\+Password}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{88}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{62, 63}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{99}
+  \item {set\+Pay\+Pal\+Email}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{88}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{99}
+  \item {set\+Pay\+Pal\+Password}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{88}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{100}
+  \item {set\+Price}
+    \subitem {S\+P\+Q\+::data\+::\+Product}, \hyperpage{70}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{76}
+  \item {set\+Product\+List}
+    \subitem {S\+P\+Q\+::dto\+::\+Product\+D\+TO}, \hyperpage{73}
+  \item {set\+Quantity}
+    \subitem {S\+P\+Q\+::data\+::\+Product}, \hyperpage{70}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{77}
+  \item {set\+Register\+Method}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{89}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{100}
+  \item {set\+Sale}
+    \subitem {S\+P\+Q\+::data\+::\+Product}, \hyperpage{70}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{77}
+  \item {set\+Service}
+    \subitem {S\+P\+Q\+::remote\+::\+R\+M\+I\+Service\+Locator}, 
+		\hyperpage{78}
+  \item {set\+Total}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{63}
+  \item {set\+Up}
+    \subitem {S\+P\+Q\+::\+D\+A\+O\+Mock\+Test}, \hyperpage{22}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+Product\+Test}, \hyperpage{24}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+User\+Test}, \hyperpage{25}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{80}
+  \item {set\+Up\+Client}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{80}
+  \item {set\+User\+D\+TO}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{47}
+  \item {set\+Username}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{89}
+    \subitem {S\+P\+Q\+::dto\+::\+Payment\+D\+TO}, \hyperpage{63, 64}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{100}
+  \item {setb\+Add}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{76}
+  \item {setb\+Sub}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{76}
+  \item {setproduct\+Name}
+    \subitem {S\+P\+Q\+::gui\+::component\+::\+Product\+Label}, 
+		\hyperpage{77}
+  \item {store\+Account}
+    \subitem {S\+P\+Q\+::dao\+::\+Account\+D\+AO}, \hyperpage{21}
+  \item {store\+Product}
+    \subitem {S\+P\+Q\+::dao\+::\+Product\+D\+AO}, \hyperpage{72}
+  \item {store\+User}
+    \subitem {S\+P\+Q\+::dao\+::\+I\+User\+D\+AO}, \hyperpage{40}
+    \subitem {S\+P\+Q\+::dao\+::\+User\+D\+AO}, \hyperpage{92}
+  \item {suite}
+    \subitem {S\+P\+Q\+::\+D\+A\+O\+Mock\+Test}, \hyperpage{22}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{80}
+
+  \indexspace
+
+  \item {tear\+Down}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{80}
+  \item {test}
+    \subitem {S\+P\+Q\+::\+Cobertura\+Test}, \hyperpage{21}
+  \item {test\+Get\+Products}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{81}
+  \item {test\+Pay\+With\+Pay\+Pal}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{81}
+  \item {test\+Pay\+With\+Visa}
+    \subitem {S\+P\+Q\+::\+R\+M\+I\+Test}, \hyperpage{81}
+  \item {test\+Register\+User\+Already\+Exists}
+    \subitem {S\+P\+Q\+::\+D\+A\+O\+Mock\+Test}, \hyperpage{23}
+  \item {test\+Register\+User\+Correctly}
+    \subitem {S\+P\+Q\+::\+D\+A\+O\+Mock\+Test}, \hyperpage{23}
+
+  \indexspace
+
+  \item {update\+User}
+    \subitem {S\+P\+Q\+::\+Never\+Empty\+Server}, \hyperpage{53}
+    \subitem {S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}, 
+		\hyperpage{47}
+    \subitem {S\+P\+Q\+::dao\+::\+User\+D\+AO}, \hyperpage{92}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{89}
+    \subitem {S\+P\+Q\+::remote\+::\+I\+Never\+Empty\+Facade}, 
+		\hyperpage{39}
+    \subitem {S\+P\+Q\+::remote\+::\+Never\+Empty\+Facade}, 
+		\hyperpage{50}
+  \item {User}
+    \subitem {S\+P\+Q\+::data\+::\+User}, \hyperpage{82, 83}
+  \item {User\+D\+AO}
+    \subitem {S\+P\+Q\+::dao\+::\+User\+D\+AO}, \hyperpage{90}
+  \item {User\+D\+T\+O\+Test}
+    \subitem {S\+P\+Q\+::\+D\+A\+T\+A\+User\+Test}, \hyperpage{26}
+  \item {User\+D\+TO}
+    \subitem {S\+P\+Q\+::dto\+::\+User\+D\+TO}, \hyperpage{93--95}
+
+  \indexspace
+
+  \item {Ventana\+Inicio}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Inicio}, \hyperpage{102}
+  \item {Ventana\+Metodo\+Pago}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Metodo\+Pago}, 
+		\hyperpage{103}
+  \item {Ventana\+Pago}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Pago}, \hyperpage{105}
+  \item {Ventana\+Perfil}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Perfil}, \hyperpage{107}
+  \item {Ventana\+Principal}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Principal}, \hyperpage{108}
+  \item {Ventana\+Registro}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Registro}, \hyperpage{110}
+  \item {Ventana\+Seleccionar\+Registro}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Seleccionar\+Registro}, 
+		\hyperpage{111}
+  \item {Ventana\+Ticket}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Ticket}, \hyperpage{112}
+  \item {Visa}
+    \subitem {S\+P\+Q\+::gateway\+::\+Visa}, \hyperpage{114}
+  \item {Visa\+Service}
+    \subitem {S\+P\+Q\+::\+Visa\+Service}, \hyperpage{115}
+  \item {Visa\+Service/src/main/java/\+S\+P\+Q/\+Visa\+Server.\+java}, 
+		\hyperpage{134}
+  \item {Visa\+Service/src/main/java/\+S\+P\+Q/\+Visa\+Service.\+java}, 
+		\hyperpage{134}
+  \item {Visa\+Service/src/main/java/\+S\+P\+Q/dao/\+Account\+D\+A\+O.\+java}, 
+		\hyperpage{133}
+  \item {Visa\+Service/src/main/java/\+S\+P\+Q/dao/\+I\+Account\+D\+A\+O.\+java}, 
+		\hyperpage{133}
+  \item {Visa\+Service/src/main/java/\+S\+P\+Q/data/\+Account.\+java}, 
+		\hyperpage{134}
+  \item {Visa\+Service/src/main/java/\+S\+P\+Q/dto/\+Payment\+D\+T\+O.\+java}, 
+		\hyperpage{127}
+  \item {vmp}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Pago}, \hyperpage{106}
+  \item {vp}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Ticket}, \hyperpage{113}
+  \item {vt}
+    \subitem {S\+P\+Q\+::gui\+::\+Ventana\+Metodo\+Pago}, 
+		\hyperpage{104}
+
+\end{theindex}

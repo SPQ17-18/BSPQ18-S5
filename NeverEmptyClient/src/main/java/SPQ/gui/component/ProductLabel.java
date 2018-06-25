@@ -21,7 +21,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -31,6 +30,8 @@ import SPQ.gui.VentanaPrincipal;
 
 
 public class ProductLabel extends JPanel implements ActionListener{
+
+	private static final long serialVersionUID = 1L;
 	private JLabel productName;
 	private JLabel price;
 	private JLabel quantity = new JLabel("0");

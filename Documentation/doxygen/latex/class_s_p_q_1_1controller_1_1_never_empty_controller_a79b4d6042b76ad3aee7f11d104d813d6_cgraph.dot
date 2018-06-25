@@ -1,0 +1,11 @@
+digraph "SPQ.controller.NeverEmptyController.payWithVisa"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node40 [label="SPQ.controller.NeverEmpty\lController.payWithVisa",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node40 -> Node41 [color="midnightblue",fontsize="10",style="solid"];
+  Node41 [label="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae"];
+  Node40 -> Node42 [color="midnightblue",fontsize="10",style="solid"];
+  Node42 [label="SPQ.remote.INeverEmptyFacade.pay\lWithVisa",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a3b7058d95e7b73bdcc09220ecfc2d744"];
+}

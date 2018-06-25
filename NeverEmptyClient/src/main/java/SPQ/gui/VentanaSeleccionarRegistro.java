@@ -11,13 +11,10 @@ package SPQ.gui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.Insets;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,9 +23,10 @@ import javax.swing.SwingConstants;
 
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
-import org.apache.log4j.Logger;
 
 public class VentanaSeleccionarRegistro extends JFrame implements ActionListener{
+
+	private static final long serialVersionUID = 1L;
 
 	JLabel lTitle;
 	

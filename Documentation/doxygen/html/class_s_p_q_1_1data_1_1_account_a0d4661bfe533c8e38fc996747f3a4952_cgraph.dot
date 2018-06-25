@@ -1,0 +1,15 @@
+digraph "SPQ.data.Account.Account"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node2 [label="SPQ.data.Account.Account",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SPQ.dto.PaymentDTO.getCardholder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_payment_d_t_o.html#ac4812465bc4dd874aad6269fe8486e0b"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SPQ.dto.PaymentDTO.getCardnumber",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_payment_d_t_o.html#ac2a8a2ab315f3027f25780a84da0b824"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SPQ.dto.PaymentDTO.getCvv",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_payment_d_t_o.html#a64fb9df59333fcc2a0c8bea48024354d"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SPQ.dto.PaymentDTO.getExpDate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_payment_d_t_o.html#aa91402a8c96a306fcf125973e4f35912"];
+}

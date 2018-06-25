@@ -1,0 +1,13 @@
+digraph "SPQ.remote.INeverEmptyFacade.payWithPaypal"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node22 [label="SPQ.remote.INeverEmptyFacade.pay\lWithPaypal",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node22 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node23 [label="SPQ.controller.NeverEmpty\lController.payWithPayPal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#aefc0dae2c43c2960719176d390f3ad9c"];
+  Node23 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node24 [label="SPQ.gui.VentanaPago.action\lPerformed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_pago.html#a64947ae1b81ff8e561792d9db382b1f9"];
+  Node23 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node25 [label="SPQ.ClientTest.testPayWith\lPayPal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_client_test.html#afe92931ed84ed471c853004681be4072"];
+}

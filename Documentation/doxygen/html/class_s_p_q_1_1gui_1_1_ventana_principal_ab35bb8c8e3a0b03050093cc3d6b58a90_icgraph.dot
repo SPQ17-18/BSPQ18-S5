@@ -1,0 +1,9 @@
+digraph "SPQ.gui.VentanaPrincipal.VentanaPrincipal"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SPQ.gui.VentanaPrincipal.\lVentanaPrincipal",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SPQ.gui.VentanaPrincipal.main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gui_1_1_ventana_principal.html#a48fb869f7efb018079dac708ed20f7d3"];
+}

@@ -1,0 +1,22 @@
+digraph "SPQ.gui.VentanaPerfil"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="SPQ.gui.VentanaPerfil",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="JFrame",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ActionListener",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" bBack" ,fontname="Helvetica"];
+  Node6 [label="JButton",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" iEdit" ,fontname="Helvetica"];
+  Node7 [label="ImageIcon",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tfCardnumber1\ntfCardnumber2\ntfAddress\ntfCardnumber3\ntfCardnumber4\ntfPayPalEmail\ntfCardholder" ,fontname="Helvetica"];
+  Node8 [label="JTextField",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pfRepeatPaypalPassword\npfPaypalPassword\npfRepeatPassword" ,fontname="Helvetica"];
+  Node9 [label="JPasswordField",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node10 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" lPaypalTitle\nlUsername\nlAddressTitle\nlUserTitle\nlEmail\nlAddress\nlCardnumber\nlEmail2\nlVisaTitle\nlPassword\n..." ,fontname="Helvetica"];
+  Node10 [label="JLabel",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pAddress\npUser\npAddressTitle\npVisaTitle\npFooter\npPaypal\npVisa\npPaypalTitle\npUserTitle" ,fontname="Helvetica"];
+  Node11 [label="JPanel",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

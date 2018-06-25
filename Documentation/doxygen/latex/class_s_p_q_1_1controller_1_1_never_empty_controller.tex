@@ -1,0 +1,347 @@
+\hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller}{}\section{S\+P\+Q.\+controller.\+Never\+Empty\+Controller Class Reference}
+\label{class_s_p_q_1_1controller_1_1_never_empty_controller}\index{S\+P\+Q.\+controller.\+Never\+Empty\+Controller@{S\+P\+Q.\+controller.\+Never\+Empty\+Controller}}
+
+
+This class acts as an intermediary between the graphic user interface and the classes that call the server. It mostly contains registration, login and payment methods.  
+
+
+
+
+Collaboration diagram for S\+P\+Q.\+controller.\+Never\+Empty\+Controller\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_ade8f8a56514a9ef3676a93c79b404be5}{Never\+Empty\+Controller}} (\mbox{\hyperlink{class_s_p_q_1_1remote_1_1_r_m_i_service_locator}{R\+M\+I\+Service\+Locator}} rmi)
+\item 
+\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}} \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_ac6b9878caf6a1f22117adf18c5ca56b5}{get\+User\+D\+TO}} ()
+\item 
+void \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_a847c0288b7c18327d81c092f8c234d01}{set\+User\+D\+TO}} (\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}} user\+D\+TO)
+\item 
+boolean \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_a0adc4a1885dcc8ef6fe53bd23ee2316a}{register\+Google}} (String username, String email, String password)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_ad766d360d5d5c69d6e6d5b2953b27fac}{register\+Facebook}} (String username, String email, String password)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_ad02b010ba25f24bf105fe7b4605e3de1}{register\+Never\+Empty}} (String username, String email, String password)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_adb8f5dbbfedb5f3c231de53dccc88899}{login}} (String username, String password)  throws Remote\+Exception 
+\item 
+\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_product_d_t_o}{Product\+D\+TO}} \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_ace99d4d39979b72d620871475a4817f9}{get\+Products}} ()  throws Remote\+Exception
+\item 
+\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}} \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_a4f799c7fc9ce32740ec45401fa6fd1b1}{get\+User}} (\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}} user\+D\+TO)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_aefc0dae2c43c2960719176d390f3ad9c}{pay\+With\+Pay\+Pal}} (\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_payment_d_t_o}{Payment\+D\+TO}} payment\+D\+TO)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_a79b4d6042b76ad3aee7f11d104d813d6}{pay\+With\+Visa}} (\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_payment_d_t_o}{Payment\+D\+TO}} payment\+D\+TO)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller_abac74fe36817d476abdd20d19df2092b}{update\+User}} (\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}} user\+D\+TO)  throws Remote\+Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class acts as an intermediary between the graphic user interface and the classes that call the server. It mostly contains registration, login and payment methods. 
+
+Definition at line 18 of file Never\+Empty\+Controller.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_ade8f8a56514a9ef3676a93c79b404be5}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_ade8f8a56514a9ef3676a93c79b404be5}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!Never\+Empty\+Controller@{Never\+Empty\+Controller}}
+\index{Never\+Empty\+Controller@{Never\+Empty\+Controller}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{Never\+Empty\+Controller()}{NeverEmptyController()}}
+{\footnotesize\ttfamily S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+Never\+Empty\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1remote_1_1_r_m_i_service_locator}{R\+M\+I\+Service\+Locator}}}]{rmi }\end{DoxyParamCaption})}
+
+Constructor of \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller}{Never\+Empty\+Controller}} class. 
+\begin{DoxyParams}{Parameters}
+{\em rmi.} & Receives R\+M\+I\+Service\+Locator instance. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Never\+Empty\+Controller.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_ace99d4d39979b72d620871475a4817f9}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_ace99d4d39979b72d620871475a4817f9}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!get\+Products@{get\+Products}}
+\index{get\+Products@{get\+Products}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{get\+Products()}{getProducts()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_p_q_1_1dto_1_1_product_d_t_o}{Product\+D\+TO}} S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+get\+Products (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Asks to the \mbox{\hyperlink{class_s_p_q_1_1_never_empty_server}{Never\+Empty\+Server}} for the complete list of products. \begin{DoxyReturn}{Returns}
+A Product\+D\+TO that contains the full list of products. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 102 of file Never\+Empty\+Controller.\+java.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_a4f799c7fc9ce32740ec45401fa6fd1b1}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_a4f799c7fc9ce32740ec45401fa6fd1b1}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!get\+User@{get\+User}}
+\index{get\+User@{get\+User}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{get\+User()}{getUser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}} S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+get\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}}}]{user\+D\+TO }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Asks to the Never\+Empty server for all the data from the user specified in the given user\+D\+TO. 
+\begin{DoxyParams}{Parameters}
+{\em user\+D\+TO} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All the information of the user. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 111 of file Never\+Empty\+Controller.\+java.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_ac6b9878caf6a1f22117adf18c5ca56b5}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_ac6b9878caf6a1f22117adf18c5ca56b5}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!get\+User\+D\+TO@{get\+User\+D\+TO}}
+\index{get\+User\+D\+TO@{get\+User\+D\+TO}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{get\+User\+D\+T\+O()}{getUserDTO()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}} S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+get\+User\+D\+TO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the User\+D\+TO attribute of the class. \begin{DoxyReturn}{Returns}
+User\+D\+TO instance. 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file Never\+Empty\+Controller.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_adb8f5dbbfedb5f3c231de53dccc88899}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_adb8f5dbbfedb5f3c231de53dccc88899}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!login@{login}}
+\index{login@{login}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily boolean S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+login (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{password }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Tries to login in Never\+Empty. It calls the login(\+User\+D\+T\+O) function on Never\+Empty\+Facade and sets the \mbox{\hyperlink{class_s_p_q_1_1controller_1_1_never_empty_controller}{Never\+Empty\+Controller}} User\+D\+TO attribute with the received user. 
+\begin{DoxyParams}{Parameters}
+{\em username} & \\
+\hline
+{\em password} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if credentials are correct, false if not. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 86 of file Never\+Empty\+Controller.\+java.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_aefc0dae2c43c2960719176d390f3ad9c}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_aefc0dae2c43c2960719176d390f3ad9c}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!pay\+With\+Pay\+Pal@{pay\+With\+Pay\+Pal}}
+\index{pay\+With\+Pay\+Pal@{pay\+With\+Pay\+Pal}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{pay\+With\+Pay\+Pal()}{payWithPayPal()}}
+{\footnotesize\ttfamily boolean S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+pay\+With\+Pay\+Pal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_payment_d_t_o}{Payment\+D\+TO}}}]{payment\+D\+TO }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Sends the payment information to the Never\+Empty server, who will manage the payment via Pay\+Pal. 
+\begin{DoxyParams}{Parameters}
+{\em payment\+D\+T\+O.} & At least must be filled the paypal\+Username, paypal\+Password and total amount fields. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the payment has been successful, false if not. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 120 of file Never\+Empty\+Controller.\+java.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_a79b4d6042b76ad3aee7f11d104d813d6}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_a79b4d6042b76ad3aee7f11d104d813d6}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!pay\+With\+Visa@{pay\+With\+Visa}}
+\index{pay\+With\+Visa@{pay\+With\+Visa}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{pay\+With\+Visa()}{payWithVisa()}}
+{\footnotesize\ttfamily boolean S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+pay\+With\+Visa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_payment_d_t_o}{Payment\+D\+TO}}}]{payment\+D\+TO }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Sends the payment information to the Never\+Empty server, who will manage the payment via V\+I\+SA. 
+\begin{DoxyParams}{Parameters}
+{\em payment\+D\+T\+O.} & At least must be filled a cardnumber, cardholder, C\+VV, exp\+Date and the amount to pay. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the payment has been successful, false if not. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 129 of file Never\+Empty\+Controller.\+java.
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_ad766d360d5d5c69d6e6d5b2953b27fac}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_ad766d360d5d5c69d6e6d5b2953b27fac}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!register\+Facebook@{register\+Facebook}}
+\index{register\+Facebook@{register\+Facebook}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{register\+Facebook()}{registerFacebook()}}
+{\footnotesize\ttfamily boolean S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+register\+Facebook (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{email,  }\item[{String}]{password }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+This method allows to sign up on Never\+Empty with an existing Facebook account. It calls the register\+Facebook(\+User\+D\+T\+O) function of Never\+Empty\+Facade. 
+\begin{DoxyParams}{Parameters}
+{\em username.} & String, new Never\+Empty username. \\
+\hline
+{\em email.} & String, existing Facebook email. \\
+\hline
+{\em password.} & String, Facebook password. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the credentials are correct. False if not. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 64 of file Never\+Empty\+Controller.\+java.
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_a0adc4a1885dcc8ef6fe53bd23ee2316a}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_a0adc4a1885dcc8ef6fe53bd23ee2316a}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!register\+Google@{register\+Google}}
+\index{register\+Google@{register\+Google}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{register\+Google()}{registerGoogle()}}
+{\footnotesize\ttfamily boolean S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+register\+Google (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{email,  }\item[{String}]{password }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+This method allows to sign up on Never\+Empty with an existing Google account. It calls the register\+Google(\+User\+D\+T\+O) function of Never\+Empty\+Facade. 
+\begin{DoxyParams}{Parameters}
+{\em username.} & String, Never\+Empty username. \\
+\hline
+{\em email.} & String, existing Google email. \\
+\hline
+{\em password.} & String, Google password. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the credentials are correct. False if not. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 52 of file Never\+Empty\+Controller.\+java.
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_ad02b010ba25f24bf105fe7b4605e3de1}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_ad02b010ba25f24bf105fe7b4605e3de1}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!register\+Never\+Empty@{register\+Never\+Empty}}
+\index{register\+Never\+Empty@{register\+Never\+Empty}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{register\+Never\+Empty()}{registerNeverEmpty()}}
+{\footnotesize\ttfamily boolean S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+register\+Never\+Empty (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{email,  }\item[{String}]{password }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Sign up on Never\+Empty. It calls register\+Never\+Empty(\+User\+D\+T\+O) function of Never\+Empty\+Facade. 
+\begin{DoxyParams}{Parameters}
+{\em username.} & String, new Never\+Empty username. \\
+\hline
+{\em email.} & String, existing email. \\
+\hline
+{\em password.} & String, new password for Never\+Empty. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 75 of file Never\+Empty\+Controller.\+java.
+
+Here is the call graph for this function\+:
+% FIG 16
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_a847c0288b7c18327d81c092f8c234d01}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_a847c0288b7c18327d81c092f8c234d01}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!set\+User\+D\+TO@{set\+User\+D\+TO}}
+\index{set\+User\+D\+TO@{set\+User\+D\+TO}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{set\+User\+D\+T\+O()}{setUserDTO()}}
+{\footnotesize\ttfamily void S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+set\+User\+D\+TO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}}}]{user\+D\+TO }\end{DoxyParamCaption})}
+
+Sets User\+D\+TO attribute of the class. 
+
+Definition at line 40 of file Never\+Empty\+Controller.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{class_s_p_q_1_1controller_1_1_never_empty_controller_abac74fe36817d476abdd20d19df2092b}\label{class_s_p_q_1_1controller_1_1_never_empty_controller_abac74fe36817d476abdd20d19df2092b}} 
+\index{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}!update\+User@{update\+User}}
+\index{update\+User@{update\+User}!S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller@{S\+P\+Q\+::controller\+::\+Never\+Empty\+Controller}}
+\subsubsection{\texorpdfstring{update\+User()}{updateUser()}}
+{\footnotesize\ttfamily boolean S\+P\+Q.\+controller.\+Never\+Empty\+Controller.\+update\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}}}]{user\+D\+TO }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+Sends user data to update the database. The email is the identifier of the user, so it is immutable. 
+\begin{DoxyParams}{Parameters}
+{\em user\+D\+TO} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 138 of file Never\+Empty\+Controller.\+java.
+
+Here is the call graph for this function\+:
+% FIG 19
+Here is the caller graph for this function\+:
+% FIG 20
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Never\+Empty\+Client/src/main/java/\+S\+P\+Q/controller/\mbox{\hyperlink{_never_empty_controller_8java}{Never\+Empty\+Controller.\+java}}\end{DoxyCompactItemize}

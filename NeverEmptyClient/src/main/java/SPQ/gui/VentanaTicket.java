@@ -21,13 +21,11 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import SPQ.controller.NeverEmptyController;
-import SPQ.data.Product;
 import SPQ.gui.component.ProductLabel;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import org.apache.log4j.Logger;

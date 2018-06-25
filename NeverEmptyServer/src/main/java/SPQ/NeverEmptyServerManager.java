@@ -34,11 +34,11 @@ public class NeverEmptyServerManager  {
 			public void run() {
 				try {
 					java.rmi.registry.LocateRegistry.createRegistry(1099);
-
 					logger.info("RMI registry ready.");
+					
 				} catch (Exception e) {
-					logger.error("Exception starting RMI registry:"+e);
-					//e.printStackTrace();
+					logger.error("Exception starting RMI registry:" + e.getStackTrace());
+
 				}	
 			}
 		}
@@ -48,8 +48,8 @@ public class NeverEmptyServerManager  {
 		try {
 			Thread.sleep(1500);
 		} catch (InterruptedException ie) {
-			logger.error("Exception starting RMI registry:"+ie);
-			//ie.printStackTrace();
+			logger.error("Exception starting RMI registry:" + ie.getStackTrace());
+	
 		}
 		
 		class RMIServerRunnable implements Runnable {
@@ -57,7 +57,6 @@ public class NeverEmptyServerManager  {
 		
 			public void run() {
 				System.setProperty("java.security.policy", "target\\classes\\security\\java.policy");
-
 
 				try {
 					INeverEmptyFacade neverEmptyServer = new NeverEmptyServer();
@@ -70,15 +69,12 @@ public class NeverEmptyServerManager  {
 			       
 				} catch (RemoteException re) {
 					logger.error(" # Collector RemoteException: " + re.getMessage());
-					//re.printStackTrace();
 					System.exit(-1);
 				} catch (MalformedURLException murle) {
 					logger.error(" # Collector MalformedURLException: " + murle.getMessage());
-					//murle.printStackTrace();
 					System.exit(-1);
 				} catch (IOException e) {
-					logger.error("Exception starting RMI registry:"+e);
-					//e.printStackTrace();
+					logger.error("Exception starting RMI registry:" + e.getMessage());
 				}
 
 			}

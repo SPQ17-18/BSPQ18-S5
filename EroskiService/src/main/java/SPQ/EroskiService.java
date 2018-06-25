@@ -7,6 +7,8 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import SPQ.dao.ProductDAO;
 import SPQ.data.Product;
 import SPQ.dto.ProductDTO;
@@ -15,6 +17,7 @@ public class EroskiService extends Thread {
 	private DataInputStream in;
 	private ObjectOutputStream out;
 	private Socket tcpSocket;
+	static Logger logger = Logger.getLogger(EroskiServer.class.getName());
 	// Se instancia el socket
 	public EroskiService(Socket socket) {
 		try {
@@ -23,7 +26,7 @@ public class EroskiService extends Thread {
 			this.out = new ObjectOutputStream(socket.getOutputStream());
 			this.start();	//start llama a run()
 		} catch (IOException e) {
-			System.err.println("# EroskiService - TCPConnection IO error:" + e.getMessage());
+			logger.error("TCPConnection IO error:" + e.getMessage());
 		}
 	}
 
@@ -31,24 +34,24 @@ public class EroskiService extends Thread {
 		try {
 			String data = this.in.readUTF();
 			ProductDTO productDTO = null;
-			System.out.println("   - EroskiService - Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data + "'");					
+			logger.info("Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data + "'");					
 			productDTO = this.readData(data);
 			this.out.writeObject(productDTO);					
-			System.out.println("   - EroskiService - Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + productDTO.getProductList().toString() + "'");
+			logger.info("Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + productDTO.getProductList().toString() + "'");
 		} catch (EOFException e) {
-			System.err.println("   # EroskiService - TCPConnection EOF error" + e.getMessage());
+			logger.error("TCPConnection EOF error" + e.getMessage());
 		} catch (IOException e) {
-			System.err.println("   # EroskiService - TCPConnection IO error:" + e.getMessage());
+			logger.error("TCPConnection IO error:" + e.getMessage());
 		} finally {
 			try {
 				tcpSocket.close();
 			} catch (IOException e) {
-				System.err.println("   # EroskiService - TCPConnection IO error:" + e.getMessage());
+				logger.error("TCPConnection IO error:" + e.getMessage());
 			}
 		}
 	}
 	
-	//DEVOLVER TODOS LOS PRODUCTOS
+	//Devolver todos los productos
 	
 	public ProductDTO readData(String data) {
 		ProductDTO productDTO = null;
@@ -57,13 +60,13 @@ public class EroskiService extends Thread {
 			ProductDAO productDAO = new ProductDAO();
 			ArrayList<Product> products = productDAO.getProducts();
 			if ( products.isEmpty()) {
-				System.err.println(" # EroskiService - No product fetched");
+				logger.error("No product fetched.");
 			}else {
 				productDTO = new ProductDTO(products);
 			}
 			
 		}catch (RuntimeException e) {
-			System.err.println(" # EroskiService - Wrong data");
+			logger.error("Wrong data.");
 		}
 		return productDTO;
 	}

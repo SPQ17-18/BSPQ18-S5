@@ -3,9 +3,9 @@
  */
 
 /** @class Main class.h "inc/class.h" 
-* @brief This is a Main class.
-* Some details about the Main class 
-*/
+ * @brief This is a Main class.
+ * Some details about the Main class 
+ */
 
 package SPQ.main;
 
@@ -18,21 +18,21 @@ import SPQ.gui.VentanaInicio;
 import SPQ.remote.RMIServiceLocator;
 
 public class Main {
-	
+
 	static Logger logger = Logger.getLogger(Main.class.getName());
-	
+
 	public static void main(String[] args) {
-		
+
 		System.out.println(args[0] + args[1] + args[2]);
 		if (args.length != 3) {
-			logger.error("- NeverEmptyCLient: Wrong number of arguments");
+			logger.error("Wrong number of arguments");
 			System.exit(0);
 		}
-		
+
 		if (System.getSecurityManager() == null) {
 			System.setSecurityManager(new SecurityManager());
-			}
-		
+		}
+
 		try {
 			RMIServiceLocator rmi = new RMIServiceLocator();
 			rmi.setService(args);
@@ -44,14 +44,13 @@ public class Main {
 						VentanaInicio vInicio = new VentanaInicio(neverEmptyController);
 						vInicio.setVisible(true);
 					} catch (Exception e) {
-						logger.error(e);
-//						e.printStackTrace();
+						logger.error(e.getMessage());
 					}
 				}
 			});
 		} catch (Exception e) {
-			logger.error(e);
-			e.printStackTrace();
+			logger.error(e.getMessage());
+
 		}		
 	}
 }

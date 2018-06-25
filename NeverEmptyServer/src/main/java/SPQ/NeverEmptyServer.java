@@ -2,13 +2,10 @@ package SPQ;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.log4j.Logger;
 
 import SPQ.dao.UserDAO;
-import SPQ.data.Product;
 import SPQ.data.User;
 import SPQ.dto.PaymentDTO;
 import SPQ.dto.ProductDTO;
@@ -33,7 +30,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 
 	public boolean registerGoogle(UserDTO userDTO) {
 		logger.info("Registrar en servidor");
-		Google google = new Google("0.0.0.0", "35600");
+		Google google = new Google("127.0.0.1", "35600");
 		String googleAnswer = google.register(userDTO);
 		if (googleAnswer.equals("correct")){
 			User user = new User(userDTO.getUsername(), userDTO.getEmail(), userDTO.getPassword(), "Google");
@@ -47,7 +44,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	
 	public boolean registerFacebook(UserDTO userDTO) {
 		logger.info("Registrar en servidor");
-		Facebook facebook = new Facebook("0.0.0.0", "35900");
+		Facebook facebook = new Facebook("127.0.0.1", "35900");
 		String facebookAnswer = facebook.register(userDTO);
 		if (facebookAnswer.equals("correct")){
 			User user = new User(userDTO.getUsername(), userDTO.getEmail(), userDTO.getPassword(), "Facebook");
@@ -92,7 +89,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	public ProductDTO getProducts() {
 		ProductDTO eroskiAnswer = null;
 		try {
-			Eroski eroski = new Eroski("0.0.0.0", "35700");
+			Eroski eroski = new Eroski("127.0.0.1", "35700");
 			eroskiAnswer = eroski.getProducts();
 			return eroskiAnswer;
 		}catch (Exception e) {
@@ -105,7 +102,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	public boolean payWithPaypal(PaymentDTO paymentDTO) {
 		boolean paypalAnswer = false;
 		try {
-			PayPal paypal = new PayPal("0.0.0.0", "35800");
+			PayPal paypal = new PayPal("127.0.0.1", "35800");
 			paypalAnswer = paypal.pay(paymentDTO);
 			return paypalAnswer;
 		}catch (Exception e) {
@@ -117,7 +114,7 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 	public boolean payWithVisa(PaymentDTO paymentDTO) {
 		boolean visaAnswer = false;
 		try {
-			Visa visa = new Visa("0.0.0.0", "36000");
+			Visa visa = new Visa("127.0.0.1", "36000");
 			visaAnswer = visa.pay(paymentDTO);
 			return visaAnswer;
 		}catch (Exception e) {
@@ -125,26 +122,6 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		}
 		return visaAnswer;
 	}
-
-//public boolean updateShoppingList (String username, String productList){
-//		try {
-//		User user = new User(username, "", "", "");
-//		//nombre, precio, cantidad
-//		String[] productsString = productList.split(";");
-//		List<Product> products = new ArrayList<>();
-//		for (String product : productsString) {
-//			String[] productSplit = product.split(",");
-//			Product p = new Product(productSplit[0], Double.parseDouble(productSplit[1]), Integer.parseInt(productSplit[2]));
-//			products.add(p);
-//		}
-//		user.setShoppingList(products);
-//		UserDAO userDAO = new UserDAO();
-//		return userDAO.updateShoppingList(user);
-//		}catch (Exception ex) {
-//			logger.error("Update shopping list, datos incorrectos: " + ex.getMessage());
-//			return false;
-//		}
-//	}
 	
 	public boolean updateUser (UserDTO userDTO) {
 		User user = new User(userDTO);

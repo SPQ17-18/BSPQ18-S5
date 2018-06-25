@@ -12,7 +12,6 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,11 +20,17 @@ import javax.swing.SwingConstants;
 
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
-import SPQ.gui.component.ProductLabel;
-import org.apache.log4j.Logger;
 
+/** 
+ * @class VentanaMetodoPago
+ * @brief This is the main window of the application. It contains two lists: the catalog list with all the products and the shoppingcart list.
+ * 
+ * The login button (bLogin) calls the login function of the controller and sends the form data.
+ * The sign up (bSignUp) button calls "VentanaSeleccionarRegistro" window.
+ */
 public class VentanaMetodoPago extends JFrame implements ActionListener{
-	
+
+	private static final long serialVersionUID = 1L;
 	private NeverEmptyController neverEmptyController;
 	private JButton bVisa, bPaypal, bBack;
 	private double total;
@@ -108,8 +113,4 @@ public class VentanaMetodoPago extends JFrame implements ActionListener{
 		
 	}
 
-	public static void main(String[] args) {
-		// VentanaMetodoPago vmp = new VentanaMetodoPago(null, 0);
-		// vmp.setVisible(true);
-	}
 }

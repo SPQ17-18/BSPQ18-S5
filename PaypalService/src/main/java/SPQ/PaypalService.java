@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
+import org.apache.log4j.Logger;
+
 import SPQ.dao.UserDAO;
 import SPQ.data.User;
 import SPQ.dto.PaymentDTO;
@@ -14,7 +16,7 @@ public class PaypalService extends Thread{
 	private ObjectInputStream in;
 	private DataOutputStream out;
 	private Socket tcpSocket;
-	// Se instancia el socket
+	static Logger logger = Logger.getLogger(PaypalService.class.getName());
 	public PaypalService(Socket socket) {
 		try {
 			this.tcpSocket = socket;
@@ -22,28 +24,28 @@ public class PaypalService extends Thread{
 			this.out = new DataOutputStream(socket.getOutputStream());
 			this.start();	//start llama a run()
 		} catch (IOException e) {
-			System.err.println("# PaypalService - TCPConnection IO error:" + e.getMessage());
+			logger.error("TCPConnection IO error:" + e.getMessage());
 		}
 	}
 
 	public void run() {
 		try {
 			PaymentDTO paymentDTO = (PaymentDTO) this.in.readObject();
-			System.out.println("   - PaypalService - Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + paymentDTO.toString() + "'");					
+			logger.info("Received data from '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + paymentDTO.toString() + "'");					
 			String data = this.readData(paymentDTO);
 			this.out.writeUTF(data);					
-			System.out.println("   - PaypalService - Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data + "'");
+			logger.info("Sent data to '" + tcpSocket.getInetAddress().getHostAddress() + ":" + tcpSocket.getPort() + "' -> '" + data + "'");
 		} catch (EOFException e) {
-			System.err.println("   # PaypalService - TCPConnection EOF error" + e.getMessage());
+			logger.error("TCPConnection EOF error" + e.getMessage());
 		} catch (IOException e) {
-			System.err.println("   # PaypalService - TCPConnection IO error:" + e.getMessage());
+			logger.error("TCPConnection IO error:" + e.getMessage());
 		}catch (ClassNotFoundException e) {
-			System.err.println("   # PaypalService - ClassNotFound error:" + e.getMessage());
+			logger.error("ClassNotFound error:" + e.getMessage());
 		} finally {
 			try {
 				tcpSocket.close();
 			} catch (IOException e) {
-				System.err.println("   # PaypalService - TCPConnection IO error:" + e.getMessage());
+				logger.error("TCPConnection IO error:" + e.getMessage());
 			}
 		}
 	}
@@ -57,7 +59,7 @@ public class PaypalService extends Thread{
 			if(userDAO.pay(user, paymentDTO.getTotal())) data = "true";
 			
 		}catch (RuntimeException e) {
-			System.err.println(" # PaypalService - Wrong data");
+			logger.error("Wrong data.");
 		}
 		return data;
 	}

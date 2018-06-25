@@ -10,19 +10,14 @@
 package SPQ.gui;
 
 import javax.swing.JFrame;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
 import SPQ.dto.UserDTO;
-import SPQ.remote.RMIServiceLocator;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -33,12 +28,12 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.Insets;
-import org.apache.log4j.Logger;
 
 public class VentanaPerfil extends JFrame implements ActionListener{
+
+	private static final long serialVersionUID = 1L;
 
 	private NeverEmptyController neverEmptyController;
 

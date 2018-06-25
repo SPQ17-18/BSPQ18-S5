@@ -33,9 +33,10 @@ import javax.swing.Timer;
 import SPQ.controller.NeverEmptyController;
 import SPQ.dto.PaymentDTO;
 import SPQ.dto.UserDTO;
-import SPQ.remote.RMIServiceLocator;
 
 public class VentanaPago extends JFrame implements ActionListener{
+
+	private static final long serialVersionUID = 1L;
 	static Logger logger = Logger.getLogger(VentanaPago.class.getName());
 	private NeverEmptyController neverEmptyController;
 	static public VentanaMetodoPago vmp;

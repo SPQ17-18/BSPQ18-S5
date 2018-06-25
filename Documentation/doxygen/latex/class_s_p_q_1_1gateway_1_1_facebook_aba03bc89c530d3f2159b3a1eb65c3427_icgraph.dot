@@ -1,0 +1,13 @@
+digraph "SPQ.gateway.Facebook.register"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node3 [label="SPQ.gateway.Facebook.register",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="SPQ.NeverEmptyServer.register\lFacebook",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_never_empty_server.html#abf7e271e0edb91e8f8ed73063de74b03"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="SPQ.remote.NeverEmptyFacade.register\lFacebook",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#aa9845001ecd5228135d64415a4c12b20"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="SPQ.RMITest.registerUser\lFacebookTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_r_m_i_test.html#aaba807356f43d06d07e10da5ce5a53c6"];
+}

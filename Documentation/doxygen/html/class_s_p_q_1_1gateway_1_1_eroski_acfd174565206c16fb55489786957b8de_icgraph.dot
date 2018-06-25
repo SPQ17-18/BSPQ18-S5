@@ -1,0 +1,13 @@
+digraph "SPQ.gateway.Eroski.getProducts"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node4 [label="SPQ.gateway.Eroski.getProducts",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SPQ.NeverEmptyServer.get\lProducts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_never_empty_server.html#ad8c5a0afa259c6b8bcc2eb2444742ca2"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SPQ.remote.NeverEmptyFacade.get\lProducts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a4c8bdeeb3d2c3eb2c28aec1043e9274f"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="SPQ.RMITest.testGetProducts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_r_m_i_test.html#afd1616ccf97ef054e05f3ca90d22753e"];
+}

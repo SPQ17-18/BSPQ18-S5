@@ -26,7 +26,7 @@ public class UserDAO {
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-			logger.info("    * Updating a user: " + user.getUsername());
+			logger.info("Updating a user: " + user.getUsername());
 			Query<?> query = pm.newQuery(
 					"SELECT FROM " + User.class.getName() + 
 					" WHERE email == '" + user.getEmail() + "'");
@@ -38,7 +38,7 @@ public class UserDAO {
 			retrievedUser.updateUser(user);
 			tx.commit();
 		}catch (Exception e) {
-			logger.error(UserDAO.class.getName() + ": " + e.getMessage());
+			logger.error(e.getMessage());
 			return false;
 		}finally {
 			if (tx != null && tx.isActive()) {
@@ -60,12 +60,12 @@ public class UserDAO {
 
 		try {
 			tx.begin();
-			logger.info("   * Storing a user: " + user.getUsername());
+			logger.info("Storing a user: " + user.getUsername());
 			pm.makePersistent(user);
 			tx.commit();
 			stored = true;
 		} catch (Exception ex) {
-			logger.error("   $ Error storing a user: " + ex.getMessage());
+			logger.error("Error storing a user: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -84,7 +84,7 @@ public class UserDAO {
 		User userFetched = null;
 
 		try {
-			logger.info("   * Buscando user: " + username);
+			logger.info("Searching for a user: " + username);
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE username == '" + username +"' && password == '" + password + "'");
 			query.setUnique(true);
@@ -92,7 +92,7 @@ public class UserDAO {
 			tx.commit();
 
 		} catch (Exception ex) {
-			logger.error("   $ Error retreiving an user: " + ex.getMessage());
+			logger.error("Error retreiving an user: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

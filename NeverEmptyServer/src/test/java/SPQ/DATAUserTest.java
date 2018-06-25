@@ -1,13 +1,10 @@
 package SPQ;
 
 import static org.junit.Assert.assertEquals;
-
-import org.apache.log4j.Logger;
-
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
+import org.apache.log4j.Logger;
 import SPQ.data.User;
 import SPQ.dto.UserDTO;
 
@@ -93,4 +90,11 @@ public class DATAUserTest {
 		
 	}
 	
+	@Test
+	public void UserDTOTest() {
+		UserDTO enaraDTO = new UserDTO("Enara", "enara96etxaniz@gmail.com", "1234", "Google", "address", "enara@paypal.es", "1234", 111122223333444L, "Enara Etxaniz Ibañez");
+		UserDTO alvaroDTO = new UserDTO("Alvaro", "arosa001@gmail.com", "1223", "Facebook");
+		assertEquals("Enara", enaraDTO.getUsername());
+		assertEquals("Alvaro", alvaroDTO.getUsername());
+	}
 }

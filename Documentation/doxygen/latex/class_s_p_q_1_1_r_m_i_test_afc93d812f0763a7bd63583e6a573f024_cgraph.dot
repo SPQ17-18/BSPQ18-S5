@@ -1,0 +1,13 @@
+digraph "SPQ.RMITest.testPayWithVisa"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node69 [label="SPQ.RMITest.testPayWithVisa",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node69 -> Node70 [color="midnightblue",fontsize="10",style="solid"];
+  Node70 [label="SPQ.remote.NeverEmptyFacade.pay\lWithVisa",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a0ff9201cf33cb76c43dd85c892af93ba"];
+  Node70 -> Node71 [color="midnightblue",fontsize="10",style="solid"];
+  Node71 [label="SPQ.NeverEmptyServer.pay\lWithVisa",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_never_empty_server.html#a455fa773e66917007842f9a92243ffa8"];
+  Node71 -> Node72 [color="midnightblue",fontsize="10",style="solid"];
+  Node72 [label="SPQ.gateway.Visa.pay",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1gateway_1_1_visa.html#a0ecda0414a0685174ec12ae96c8d3a68"];
+}

@@ -1,0 +1,13 @@
+digraph "SPQ.ClientTest.testGetUser"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node13 [label="SPQ.ClientTest.testGetUser",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="SPQ.controller.NeverEmpty\lController.getUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a4f799c7fc9ce32740ec45401fa6fd1b1"];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae"];
+  Node14 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="SPQ.remote.INeverEmptyFacade.getUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#aa329dfc23ab0832e73802bf2df90b9e0"];
+}

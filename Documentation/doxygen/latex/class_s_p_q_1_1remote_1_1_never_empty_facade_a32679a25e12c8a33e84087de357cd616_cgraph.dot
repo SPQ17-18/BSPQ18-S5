@@ -1,0 +1,15 @@
+digraph "SPQ.remote.NeverEmptyFacade.getUser"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node8 [label="SPQ.remote.NeverEmptyFacade.getUser",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="SPQ.NeverEmptyServer.getUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_never_empty_server.html#abb18bd0d72ecb8790068f206c592c58d"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="SPQ.dao.UserDAO.getUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#aeb3901e9e260ad977a1b412fe7a9fc0e"];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="SPQ.dto.UserDTO.getUsername",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a0cd335456c4f53b97069820475742980"];
+  Node9 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="SPQ.dto.UserDTO.getPassword",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a955f436e60336683283a6fcd6fc5f874"];
+}

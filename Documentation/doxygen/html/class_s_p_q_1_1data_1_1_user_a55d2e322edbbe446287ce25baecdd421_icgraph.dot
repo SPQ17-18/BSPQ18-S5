@@ -1,0 +1,40 @@
+digraph "SPQ.data.User.getUsername"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node129 [label="SPQ.data.User.getUsername",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node129 -> Node130 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node130 [label="SPQ.dao.UserDAO.updateUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#a525b7db52aab94cfe24aeac14949504e"];
+  Node130 -> Node131 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node131 [label="SPQ.NeverEmptyServer.updateUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_never_empty_server.html#ad39f95ea2309841407f7e8b9e1b9f664"];
+  Node131 -> Node132 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node132 [label="SPQ.remote.NeverEmptyFacade.updateUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a55ad685d3c176424a7f5f18e5ebe043b"];
+  Node129 -> Node133 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node133 [label="SPQ.dao.UserDAO.storeUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#ad86d4148c7f3fd960fb32de7c68f3f6a"];
+  Node133 -> Node134 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node134 [label="SPQ.DAOMockTest.testRegister\lUserCorrectly",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_d_a_o_mock_test.html#a52505d1cfefe105f8098147df9d2fce0"];
+  Node133 -> Node135 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node135 [label="SPQ.DAOMockTest.testRegister\lUserAlreadyExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_d_a_o_mock_test.html#a76004a006ddce595edc7011aafccbe7e"];
+  Node133 -> Node136 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 [label="SPQ.RMITest.tearDown",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_r_m_i_test.html#a76a8f88205d4a70c8ed81ee03ab7fa45"];
+  Node129 -> Node137 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node137 [label="SPQ.data.User.updateUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1data_1_1_user.html#ac472400b9deed770cf6f3591dc9e2886"];
+  Node137 -> Node130 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node137 -> Node138 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node138 [label="SPQ.DATAUserTest.Ekaitztest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_d_a_t_a_user_test.html#a04242b7156b6bb7828bd569de8027fad"];
+  Node129 -> Node139 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node139 [label="SPQ.dto.UserDTO.UserDTO",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a40cad7b1dea2117ed4cb0e69fdc6b929"];
+  Node129 -> Node140 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node140 [label="SPQ.CoberturaTest.test",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_cobertura_test.html#a638bd1485fb908cc3a97cda6f4d8a857"];
+  Node129 -> Node134 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 -> Node135 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 -> Node141 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node141 [label="SPQ.DATAUserTest.Jesustest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_d_a_t_a_user_test.html#a29a15c9122a588e854a02c6c2fe1d203"];
+  Node129 -> Node142 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node142 [label="SPQ.DATAUserTest.Alvarotest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_d_a_t_a_user_test.html#a9d47696cb1887a6d5712f0e9beae2182"];
+  Node129 -> Node143 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node143 [label="SPQ.DATAUserTest.Enaratest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_d_a_t_a_user_test.html#a84d1c3d3992383e1cb93d07241cf3f02"];
+  Node129 -> Node144 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node144 [label="SPQ.DATAUserTest.Cristiantest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_p_q_1_1_d_a_t_a_user_test.html#a7defc94d9391e6721dee5c627f75e1fb"];
+}

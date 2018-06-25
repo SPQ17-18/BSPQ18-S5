@@ -1,12 +1,8 @@
-/** @package SPQ.gui
-
- 	@brief This is the brief documentation for the java package SPQ.gui
+/** 
+ * @package SPQ.gui
+ * @brief The SPQ.gui package contains the classes responsible for displaying the graphic user interface of the application.
  */
 
-/** @class VentanaInicio class.h "inc/class.h" 
-* @brief This is a VentanaInicio class.
-* Some details about the VentanaInicio class 
-*/
 package SPQ.gui;
 
 import java.awt.Color;
@@ -30,6 +26,12 @@ import SPQ.controller.NeverEmptyController;
 
 import org.apache.log4j.Logger;
 
+/** 
+ * @class VentanaInicio
+ * @brief This is the first window of the application. It contains a form with username and password fields to login. And two buttons: Login and Sign Up.
+ * The login button (bLogin) calls the login function of the controller and sends the form data.
+ * The sign up (bSignUp) button calls "VentanaSeleccionarRegistro" window.
+ */
 public class VentanaInicio extends JFrame{
 	static Logger logger = Logger.getLogger(VentanaInicio.class.getName());
 	private static final long serialVersionUID = 1L;
@@ -137,9 +139,7 @@ public class VentanaInicio extends JFrame{
 
 			public void actionPerformed(ActionEvent e) {
 
-				//Comprobar que los datos insertados en el campo esten en el ArrayList 
 				String user = textFieldUserFinal.getText().toString();
-				//Comprobar que esos datos estan en un la lista de usuario registrados
 
 				boolean registered = false;
 				try{

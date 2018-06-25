@@ -21,15 +21,15 @@ private static int numClients = 0;
 		
 		try {
 			ServerSocket tcpServerSocket = new ServerSocket(serverPort);
-			logger.info(" - EroskiServer: Waiting for connections '" + tcpServerSocket.getInetAddress().getHostAddress() + ":" + tcpServerSocket.getLocalPort() + "' ...");
+			logger.info("Waiting for connections '" + tcpServerSocket.getInetAddress().getHostAddress() + ":" + tcpServerSocket.getLocalPort() + "' ...");
 			
 			while (true) {
 				//Ejecuta el eroskiservice
 				new EroskiService(tcpServerSocket.accept());
-				logger.info(" - EroskiServer: New client connection accepted. Client number: " + ++numClients);
+				logger.info("New client connection accepted. Client number: " + ++numClients);
 			}
 		} catch (IOException e) {
-			logger.error("# EroskiServer: IO error:" + e.getMessage());
+			logger.error("IO error:" + e.getMessage());
 		}
 	}
 }

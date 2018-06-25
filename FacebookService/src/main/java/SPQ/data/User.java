@@ -9,6 +9,7 @@ import javax.jdo.annotations.PersistenceCapable;
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
 public class User implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String email;
 	private String password;
 	
