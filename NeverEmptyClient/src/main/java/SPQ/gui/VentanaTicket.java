@@ -1,3 +1,12 @@
+/** @package SPQ.gui
+ 	@brief This is the brief documentation for the java package SPQ.gui
+ */
+
+/** @class VentanaTicket class.h "inc/class.h" 
+* @brief This is a VentanaTicket class.
+* Some details about the VentanaTicket class 
+*/
+
 package SPQ.gui;
 
 import javax.swing.JFrame;

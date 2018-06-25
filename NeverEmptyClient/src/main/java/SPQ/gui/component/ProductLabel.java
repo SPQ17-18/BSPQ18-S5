@@ -1,3 +1,12 @@
+/** @package SPQ.component
+ 	@brief This is the brief documentation for the java package SPQ.component
+ */
+
+/** @class ProductLabel class.h "inc/class.h" 
+* @brief This is a ProductLabel class.
+* Some details about the ProductLabel class 
+*/
+
 package SPQ.gui.component;
 
 

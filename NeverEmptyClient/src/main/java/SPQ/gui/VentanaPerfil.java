@@ -1,3 +1,12 @@
+/** @package SPQ.gui
+ 	@brief This is the brief documentation for the java package SPQ.gui
+ */
+
+/** @class VentanaPerfil class.h "inc/class.h" 
+* @brief This is a VentanaPerfil class.
+* Some details about the VentanaPerfil class 
+*/
+
 package SPQ.gui;
 
 import javax.swing.JFrame;

@@ -1,3 +1,12 @@
+/** @package SPQ.remote
+ 	@brief This is the brief documentation for the java package SPQ.remote
+ */
+
+/** @class RMIServiceLocator class.h "inc/class.h" 
+* @brief This is a RMIServiceLocator class.
+* Some details about the RMIServiceLocator class 
+*/
+
 package SPQ.remote;
 import org.apache.log4j.Logger;
 

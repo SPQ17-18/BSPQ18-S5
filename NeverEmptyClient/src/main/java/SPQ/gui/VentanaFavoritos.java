@@ -1,3 +1,11 @@
+/** @package SPQ.gui
+ 	@brief This is the brief documentation for the java package SPQ.gui
+ */
+
+/** @class VentanaFavoritos class.h "inc/class.h" 
+* @brief This is a VentanaFavoritos class.
+* Some details about the VentanaFavoritos class 
+*/
 package SPQ.gui;
 
 import javax.swing.JFrame;

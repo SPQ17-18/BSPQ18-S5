@@ -1,3 +1,11 @@
+/** @package SPQ.gui
+ 	@brief This is the brief documentation for the java package SPQ.gui
+ */
+
+/** @class VentanaMetodoPago class.h "inc/class.h" 
+* @brief This is a VentanaMetodoPago class.
+* Some details about the VentanaMetodoPago class 
+*/
 package SPQ.gui;
 import java.awt.Color;
 import java.awt.Font;
