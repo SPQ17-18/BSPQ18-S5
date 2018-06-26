@@ -1,3 +1,7 @@
+/** @package SPQ.dto
+ *  This package prepare some object to transfer to client
+ */
+
 package SPQ.dto;
 
 import java.io.Serializable;
@@ -11,14 +15,27 @@ public class ProductDTO implements Serializable {
 
 	ArrayList<Product> productList = new ArrayList<Product>();
 
+	
+	/**
+	 * This method returns the complete list of products in the list
+	 * @return productList
+	 */
 	public ArrayList<Product> getProductList() {
 		return productList;
 	}
 
+	/**
+	 * Sets productList attribute of the class.
+	 */
 	public void setProductList(ArrayList<Product> productList) {
 		this.productList = productList;
 	}
 
+	
+	/**
+	 * Constructor of ProductDTO
+	 * @param productList
+	 */
 	public ProductDTO(ArrayList<Product> productList) {
 		super();
 		this.productList = productList;

@@ -1,3 +1,6 @@
+/**@package SPQ
+ * @brief This package contains the classes with the main functionality
+ */
 package SPQ;
 
 import java.rmi.RemoteException;
@@ -17,6 +20,9 @@ import SPQ.gateway.PayPal;
 import SPQ.gateway.Visa;
 import SPQ.remote.INeverEmptyFacade;
 
+/**class NeverEmptySwrver
+ * @brief This class contains the methods that register and login a user, and recover information about them
+ */
 
 public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmptyFacade{
 
@@ -28,6 +34,11 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * This method allows to register an user with his google account
+	 * @param UserDTO
+	 * @return a user with username, email, password and the string "google"
+	 */
 	public boolean registerGoogle(UserDTO userDTO) {
 		logger.info("Registrar en servidor");
 		Google google = new Google("127.0.0.1", "35600");
@@ -39,8 +50,12 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 			return true;
 		}
 		return false;
-
 	}
+	/**
+	 * This methods allows register an user with his facebook account 
+	 * @param UsertDTO
+	 * @return a user with username, email, password and the string "facebook"
+	 */
 	
 	public boolean registerFacebook(UserDTO userDTO) {
 		logger.info("Registrar en servidor");
@@ -54,6 +69,14 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		}
 		return false;
 	}
+	
+	/**
+	 * This method pick up all information about a user and register it into NeverEmptyServer
+	 * moves the information to UserDAO to send it to server
+	 * @param UserDTO
+	 * @return if the information is send to server return true, if not return false
+	 * @throws remoteException
+	 */
 	
 	public boolean registerNeverEmpty(UserDTO userDTO) throws RemoteException {
 		try {
@@ -74,6 +97,12 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		return userDTO;
 	}
 	
+	/**
+	 * This method login a user into server
+	 * @param UserDTO
+	 * @return true if name and password coincide, false if not
+	 */
+	
 	public boolean login(UserDTO user) {
 
 		UserDAO userDAO = new UserDAO();
@@ -85,6 +114,11 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		}
 		
 	}
+	
+	/**
+	 * This method ask to the neverEmpty server for the complete list of products
+	 * @return the complete list of products that the server contains
+	 */
 	
 	public ProductDTO getProducts() {
 		ProductDTO eroskiAnswer = null;
@@ -99,6 +133,12 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 
 	}
 	
+	/**
+	 * This method allows a user to pay with his paypal account
+	 * @param paymentDTO
+	 * @return true if the payment connect correctly, false if not
+	 */
+	
 	public boolean payWithPaypal(PaymentDTO paymentDTO) {
 		boolean paypalAnswer = false;
 		try {
@@ -110,6 +150,12 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		}
 		return paypalAnswer;
 	}
+	
+	/**
+	 * This method allows a user to pay with his visa account
+	 * @param paymentDTO
+	 * @return true if the payment connect correctly, false if not
+	 */
 	
 	public boolean payWithVisa(PaymentDTO paymentDTO) {
 		boolean visaAnswer = false;
@@ -123,6 +169,13 @@ public class NeverEmptyServer extends UnicastRemoteObject implements INeverEmpty
 		return visaAnswer;
 	}
 	
+	/**
+	 * This method allows a user to change their credentials except mail
+	 * @param UserDTO
+	 * @param username
+	 * @param password
+	 * @return new user with the new credentials
+	 */
 	public boolean updateUser (UserDTO userDTO) {
 		User user = new User(userDTO);
 		UserDAO udao = new UserDAO();

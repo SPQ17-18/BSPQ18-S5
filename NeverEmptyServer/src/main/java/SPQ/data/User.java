@@ -1,3 +1,6 @@
+/**@package SPQ.data
+ * This package contains the classes that define the object user and product, their parameters and their constructors
+ */
 package SPQ.data;
 
 import java.util.List;
@@ -26,6 +29,14 @@ public class User {
 	private long cardNumber = -1;
 	private String cardholder;
 	
+	/**Constructor of User.class
+	 * 
+	 * @param username
+	 * @param email
+	 * @param password
+	 * @param registerMethod
+	 */
+	
 	public User(String username, String email, String password, String registerMethod) {
 		super();
 		this.username = username;
@@ -34,6 +45,11 @@ public class User {
 		this.registerMethod = registerMethod;
 		}
 
+	
+	/**
+	 * This method override the attributes of UserDTO
+	 * @param userDTO
+	 */
 	public User(UserDTO userDTO) {
 		super();
 		this.username = userDTO.getUsername();
@@ -65,75 +81,138 @@ public class User {
 		this.cardholder = user.getCardholder();
 
 	}
+	
+	/**
+	 * Return the address attribute of the class
+	 * @return name instance
+	 */
     public String getAddress() {
 		return address;
 	}
 
+    /**
+	 * Sets address attribute of the class.
+	 */
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
+	/**
+	 * Return the cardholder attribute of the class
+	 * @return cardholder instance
+	 */
 	public String getCardholder() {
 		return cardholder;
 	}
 
+	/**
+	 * Sets cardholder attribute of the class.
+	 */
 	public void setCardholder(String cardholder) {
 		this.cardholder = cardholder;
 	}
 
-	
+	/**
+	 * Return the username attribute of the class
+	 * @return username instance
+	 */
 	public String getUsername() {
 		return username;
 	}
 
+	/**
+	 * Sets username attribute of the class.
+	 */
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
+	/**
+	 * Return the email attribute of the class
+	 * @return email instance
+	 */
 	public String getEmail() {
 		return email;
 	}
 
+	/**
+	 * Sets email attribute of the class.
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+	/**
+	 * Return the password attribute of the class
+	 * @return password instance
+	 */
 	public String getPassword() {
 		return password;
 	}
 
+	/**
+	 * Sets password attribute of the class.
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
+	/**
+	 * Return the registermethod attribute of the class
+	 * @return registermethod instance
+	 */
 	public String getRegisterMethod() {
 		return registerMethod;
 	}
 
+	/**
+	 * Sets registermethod attribute of the class.
+	 */
 	public void setRegisterMethod(String registerMethod) {
 		this.registerMethod = registerMethod;
 	}
 
+	/**
+	 * Return the paypalemail attribute of the class
+	 * @return paypalemail instance
+	 */
 	public String getPayPalEmail() {
 		return payPalEmail;
 	}
 
+	/**
+	 * Sets paypalemail attribute of the class.
+	 */
 	public void setPayPalEmail(String payPalEmail) {
 		this.payPalEmail = payPalEmail;
 	}
 
+	/**
+	 * Return the paypalpassword attribute of the class
+	 * @return paypalpassword instance
+	 */
 	public String getPayPalPassword() {
 		return payPalPassword;
 	}
 
+	/**
+	 * Sets paypalpassword attribute of the class.
+	 */
 	public void setPayPalPassword(String payPalPassword) {
 		this.payPalPassword = payPalPassword;
 	}
 
+	/**
+	 * Return the cardnumber attribute of the class
+	 * @return cardnumber instance
+	 */
 	public long getCardNumber() {
 		return cardNumber;
 	}
 
+	/**
+	 * Sets cardnumber attribute of the class.
+	 */
 	public void setCardNumber(long cardNumber) {
 		this.cardNumber = cardNumber;
 	}
