@@ -1,0 +1,5 @@
+<map id="SPQ.data.Account.getCardholder" name="SPQ.data.Account.getCardholder">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1dao_1_1_account_d_a_o.html#ad40cd6129f180d4cb235c00756b53930" title="SPQ.dao.AccountDAO.pay" alt="" coords="268,5,448,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_visa_service.html#a9f06022375e8bd98b78a8268bdc4ff05" title="SPQ.VisaService.readData" alt="" coords="496,5,675,32"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_visa_service.html#a4e9434dfb98d1ff247d29794ac96909e" title="SPQ.VisaService.run" alt="" coords="723,5,867,32"/>
+</map>

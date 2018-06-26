@@ -1,0 +1,11 @@
+<map id="SPQ.data.User.User" name="SPQ.data.User.User">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a0cd335456c4f53b97069820475742980" title="SPQ.dto.UserDTO.getUsername" alt="" coords="201,5,411,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a67038ab8bab7cb7119ece00bcb20a360" title="SPQ.dto.UserDTO.getEmail" alt="" coords="214,56,398,83"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a955f436e60336683283a6fcd6fc5f874" title="SPQ.dto.UserDTO.getPassword" alt="" coords="202,107,410,133"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#ab2180112e27f967d77dd4696f88bd2ef" title="SPQ.dto.UserDTO.getRegister\lMethod" alt="" coords="207,158,405,199"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a5234f9e12bcda79c32c4aec80de40ad2" title="SPQ.dto.UserDTO.getAddress" alt="" coords="207,224,405,251"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a42f2eecae334e6e937419b1c201cb1f2" title="SPQ.dto.UserDTO.getPayPal\lEmail" alt="" coords="209,275,403,317"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#ab024e5157674f9bc382edfda06c348ec" title="SPQ.dto.UserDTO.getPayPal\lPassword" alt="" coords="209,341,403,382"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a6ffd8dce998a3e1756aa82e7b2981dd4" title="SPQ.dto.UserDTO.getCardNumber" alt="" coords="195,407,417,433"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a82fe9a242f18d3cb62735cee648e71d9" title="SPQ.dto.UserDTO.getCardholder" alt="" coords="199,457,413,484"/>
+</map>

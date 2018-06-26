@@ -1,0 +1,4 @@
+<map id="SPQ.gui.VentanaMetodoPago" name="SPQ.gui.VentanaMetodoPago">
+<area shape="rect" id="node5" href="$class_s_p_q_1_1gui_1_1_ventana_ticket.html" title="This window shows the list of products added to the shopping list, with its respective prices and the..." alt="" coords="377,301,536,328"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1gui_1_1_ventana_principal.html" title="This is the main window of the application. It contains two lists: the catalog list with all the prod..." alt="" coords="245,197,418,224"/>
+</map>

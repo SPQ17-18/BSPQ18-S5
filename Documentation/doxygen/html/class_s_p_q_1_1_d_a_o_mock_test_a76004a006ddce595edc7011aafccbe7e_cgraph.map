@@ -1,0 +1,6 @@
+<map id="SPQ.DAOMockTest.testRegisterUserAlreadyExists" name="SPQ.DAOMockTest.testRegisterUserAlreadyExists">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#ad86d4148c7f3fd960fb32de7c68f3f6a" title="SPQ.dao.UserDAO.storeUser" alt="" coords="267,5,461,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1data_1_1_user.html#a55d2e322edbbe446287ce25baecdd421" title="SPQ.data.User.getUsername" alt="" coords="509,31,700,57"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#aeb3901e9e260ad977a1b412fe7a9fc0e" title="SPQ.dao.UserDAO.getUser" alt="" coords="273,107,455,133"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1data_1_1_user.html#a688c1eadd21594d52967d87289e23ce2" title="SPQ.data.User.getPassword" alt="" coords="269,157,459,184"/>
+</map>

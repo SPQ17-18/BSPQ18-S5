@@ -1,0 +1,6 @@
+<map id="SPQ.controller.NeverEmptyController.getUserDTO" name="SPQ.controller.NeverEmptyController.getUserDTO">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1gui_1_1_ventana_pago.html#ac192c8e330c672202608380ffaabd275" title="SPQ.gui.VentanaPago.VentanaPago" alt="" coords="235,5,469,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1gui_1_1_ventana_pago.html#a64947ae1b81ff8e561792d9db382b1f9" title="SPQ.gui.VentanaPago.action\lPerformed" alt="" coords="256,57,448,98"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1gui_1_1_ventana_perfil.html#a16166538d7497a79cdc1e383ae852ac1" title="SPQ.gui.VentanaPerfil.Ventana\lPerfil" alt="" coords="250,122,454,163"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1gui_1_1_ventana_perfil.html#ab3748a16025307c203ba1dd2c5385b23" title="SPQ.gui.VentanaPerfil.action\lPerformed" alt="" coords="257,187,447,229"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="SPQ.Utilities.getImageFromResources" name="SPQ.Utilities.getImageFromResources">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1gui_1_1_ventana_inicio.html#ab74166cbe23810e4b8586849fb86b54e" title="SPQ.gui.VentanaInicio.Ventana\lInicio" alt="" coords="254,5,459,47"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1gui_1_1_ventana_metodo_pago.html#a26f9c85826129e253d02d7faa3b6f329" title="SPQ.gui.VentanaMetodoPago.\lVentanaMetodoPago" alt="" coords="257,71,457,112"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1gui_1_1_ventana_perfil.html#a16166538d7497a79cdc1e383ae852ac1" title="SPQ.gui.VentanaPerfil.Ventana\lPerfil" alt="" coords="255,136,459,177"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a40069db92c94222331b181f23744c14f" title="SPQ.gui.VentanaRegistro.\lVentanaRegistro" alt="" coords="269,201,444,243"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1gui_1_1_ventana_seleccionar_registro.html#ada3229c157db0999beb117311151fed1" title="SPQ.gui.VentanaSeleccionar\lRegistro.VentanaSeleccionarRegistro" alt="" coords="237,267,476,308"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1gui_1_1_ventana_ticket.html#a27ed535b91869f2e407303220482288e" title="SPQ.gui.VentanaTicket.Ventana\lTicket" alt="" coords="251,332,462,373"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1gui_1_1_ventana_inicio.html#ab33d2c349f8f7475d2d6833e9bf75e76" title="SPQ.gui.VentanaInicio.main" alt="" coords="533,13,718,39"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a8d80a5efba104ecaefab065592e23a68" title="SPQ.gui.VentanaRegistro.main" alt="" coords="524,209,727,235"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1gui_1_1_ventana_ticket.html#a12b988a7f931a5e82ff48a47c7c07409" title="SPQ.gui.VentanaTicket.main" alt="" coords="530,339,721,366"/>
+</map>

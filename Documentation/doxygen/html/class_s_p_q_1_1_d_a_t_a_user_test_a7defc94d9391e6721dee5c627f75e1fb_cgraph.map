@@ -1,0 +1,16 @@
+<map id="SPQ.DATAUserTest.Cristiantest" name="SPQ.DATAUserTest.Cristiantest">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1data_1_1_user.html#aa5bcf362d3c9c4746f406239bcb041f5" title="SPQ.data.User.setPassword" alt="" coords="285,5,474,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1data_1_1_user.html#abe8156eec92d2d94d290b96af8e8ea94" title="SPQ.data.User.setPayPalEmail" alt="" coords="276,56,483,83"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1data_1_1_user.html#a61ca04ab3f3c854aa272f3097b355eb9" title="SPQ.data.User.setPayPalPassword" alt="" coords="264,107,495,133"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1data_1_1_user.html#ab6e40ae379cda1d98a5873365df30736" title="SPQ.data.User.setAddress" alt="" coords="289,157,469,184"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1data_1_1_user.html#a0fe49415c82bbbbfa0b22822f054157f" title="SPQ.data.User.setCardholder" alt="" coords="282,208,477,235"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1data_1_1_user.html#a6d98a72cb61e95f5417e10e0ba80afab" title="SPQ.data.User.setCardNumber" alt="" coords="277,259,481,285"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1data_1_1_user.html#a688c1eadd21594d52967d87289e23ce2" title="SPQ.data.User.getPassword" alt="" coords="285,309,474,336"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1data_1_1_user.html#a55d2e322edbbe446287ce25baecdd421" title="SPQ.data.User.getUsername" alt="" coords="284,360,475,387"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1data_1_1_user.html#a4f3ae0062ee7529314a5b791707ff4b4" title="SPQ.data.User.getEmail" alt="" coords="297,411,462,437"/>
+<area shape="rect" id="node11" href="$class_s_p_q_1_1data_1_1_user.html#ad3a5ab9fa36272afbc99e7ebfc7de108" title="SPQ.data.User.getPayPalEmail" alt="" coords="276,461,483,488"/>
+<area shape="rect" id="node12" href="$class_s_p_q_1_1data_1_1_user.html#aa3a0bdf1676addb67307fa9a66495fa4" title="SPQ.data.User.getPayPalPassword" alt="" coords="264,512,495,539"/>
+<area shape="rect" id="node13" href="$class_s_p_q_1_1data_1_1_user.html#a47d0065ad917d39d23acd62835575179" title="SPQ.data.User.getAddress" alt="" coords="289,563,469,589"/>
+<area shape="rect" id="node14" href="$class_s_p_q_1_1data_1_1_user.html#a6184a8aa1ccfc02796356f648ebf37ee" title="SPQ.data.User.getCardholder" alt="" coords="282,613,477,640"/>
+<area shape="rect" id="node15" href="$class_s_p_q_1_1data_1_1_user.html#ab847d5c61fe4980ae2a15a537b22939b" title="SPQ.data.User.getCardNumber" alt="" coords="277,664,481,691"/>
+</map>

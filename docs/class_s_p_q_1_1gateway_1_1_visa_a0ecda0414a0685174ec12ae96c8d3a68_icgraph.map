@@ -1,0 +1,5 @@
+<map id="SPQ.gateway.Visa.pay" name="SPQ.gateway.Visa.pay">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_never_empty_server.html#a455fa773e66917007842f9a92243ffa8" title="SPQ.NeverEmptyServer.pay\lWithVisa" alt="" coords="211,5,396,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a0ff9201cf33cb76c43dd85c892af93ba" title="SPQ.remote.NeverEmptyFacade.pay\lWithVisa" alt="" coords="444,5,680,47"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_r_m_i_test.html#afc93d812f0763a7bd63583e6a573f024" title="SPQ.RMITest.testPayWithVisa" alt="" coords="728,13,932,39"/>
+</map>

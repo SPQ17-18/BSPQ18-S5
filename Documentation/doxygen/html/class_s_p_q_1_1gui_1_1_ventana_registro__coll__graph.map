@@ -1,0 +1,4 @@
+<map id="SPQ.gui.VentanaRegistro" name="SPQ.gui.VentanaRegistro">
+<area shape="rect" id="node4" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html" title="This class acts as an intermediary between the graphic user interface and the classes that call the s..." alt="" coords="146,184,327,225"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html" title="RMIServiceLocator prepares the connection to the server side by founding the NeverEmptyFacade in the ..." alt="" coords="235,95,441,121"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="SPQ.controller.NeverEmptyController.getUser" name="SPQ.controller.NeverEmptyController.getUser">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="252,5,480,47"/>
+<area shape="rect" id="node3" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#aa329dfc23ab0832e73802bf2df90b9e0" title="SPQ.remote.INeverEmptyFacade.getUser" alt="" coords="235,71,497,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SPQ.ClientTest.testRegisterUserFacebook" name="SPQ.ClientTest.testRegisterUserFacebook">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ad766d360d5d5c69d6e6d5b2953b27fac" title="SPQ.controller.NeverEmpty\lController.registerFacebook" alt="" coords="240,39,421,80"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="486,5,714,47"/>
+<area shape="rect" id="node4" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a7b2f025522489fe9070d09a4fb08f0a1" title="SPQ.remote.INeverEmptyFacade.register\lFacebook" alt="" coords="469,71,731,112"/>
+</map>

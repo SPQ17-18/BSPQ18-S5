@@ -1,0 +1,4 @@
+<map id="SPQ.controller.NeverEmptyController.registerNeverEmpty" name="SPQ.controller.NeverEmptyController.registerNeverEmpty">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="265,5,493,47"/>
+<area shape="rect" id="node3" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a7867e1e698fea32a535a1daeda4e8d6a" title="SPQ.remote.INeverEmptyFacade.register\lNeverEmpty" alt="" coords="248,71,509,112"/>
+</map>

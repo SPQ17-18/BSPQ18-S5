@@ -1,12 +1,7 @@
-/** @package SPQ.gui
- 	@brief This is the brief documentation for the java package SPQ.gui
+/** 
+ * @package SPQ.gui
+ * @brief The SPQ.gui package contains the classes responsible for displaying the graphic user interface of the application.
  */
-
-/** @class VentanaSeleccionarRegistro class.h "inc/class.h" 
-* @brief This is a VentanaSeleccionarRegistro class.
-* Some details about the VentanaSeleccionarRegistro class 
-*/
-
 package SPQ.gui;
 
 import java.awt.Color;
@@ -23,7 +18,11 @@ import javax.swing.SwingConstants;
 
 import SPQ.Utilities;
 import SPQ.controller.NeverEmptyController;
-
+/** 
+ * @class VentanaSeleccionarRegistro
+ * @brief This window shows the options available to sign up.
+ * There are three sign up options: Sign up with google, facebook or NeverEmpty.
+ */
 public class VentanaSeleccionarRegistro extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 1L;

@@ -1,12 +1,7 @@
-/** @package SPQ.gui
- 	@brief This is the brief documentation for the java package SPQ.gui
+/** 
+ * @package SPQ.gui
+ * @brief The SPQ.gui package contains the classes responsible for displaying the graphic user interface of the application.
  */
-
-/** @class VentanaTicket class.h "inc/class.h" 
-* @brief This is a VentanaTicket class.
-* Some details about the VentanaTicket class 
-*/
-
 package SPQ.gui;
 
 import javax.swing.JFrame;
@@ -31,8 +26,10 @@ import java.awt.event.ActionEvent;
 import org.apache.log4j.Logger;
 
 import SPQ.Utilities;
-/*clase que contiene el codigo de la ventana de ticket*/
-
+/** 
+ * @class VentanaTicket
+ * @brief This window shows the list of products added to the shopping list, with its respective prices and the total amount in a table.
+ */
 public class VentanaTicket extends JFrame implements ActionListener{
 	
 	private JTable table;

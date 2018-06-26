@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_eroski_service.html" title="SPQ.EroskiService" alt="" coords="125,5,258,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_facebook_service.html" title="SPQ.FacebookService" alt="" coords="115,56,268,83"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_google_service.html" title="SPQ.GoogleService" alt="" coords="123,107,260,133"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1_paypal_service.html" title="SPQ.PaypalService" alt="" coords="123,157,259,184"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1_visa_service.html" title="SPQ.VisaService" alt="" coords="130,208,253,235"/>
+</map>

@@ -1,5 +1,5 @@
 /** @package SPQ.controller
- * @brief TThis package contains the classes that act as intermediaries between the graphic user interface and the classes that speak with the server.
+ * @brief This package contains the classes that act as intermediaries between the graphic user interface and the classes that speak with the server.
  */
 package SPQ.controller;
 import java.rmi.RemoteException;

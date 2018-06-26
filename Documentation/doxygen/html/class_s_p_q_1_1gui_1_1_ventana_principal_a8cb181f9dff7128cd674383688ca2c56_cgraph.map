@@ -1,0 +1,5 @@
+<map id="SPQ.gui.VentanaPrincipal.actionPerformed" name="SPQ.gui.VentanaPrincipal.actionPerformed">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1gui_1_1component_1_1_product_label.html#adcfdea4cb072291bea24728bf75aac10" title="SPQ.gui.component.Product\lLabel.getQuantity" alt="" coords="265,5,453,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1gui_1_1component_1_1_product_label.html#a614cfb4f7e9b89e21e7225ac7c93ef2c" title="SPQ.gui.component.Product\lLabel.getproductName" alt="" coords="265,71,453,112"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1gui_1_1component_1_1_product_label.html#a7841fcd56578df74918d99fa2b705e24" title="SPQ.gui.component.Product\lLabel.getSale" alt="" coords="265,136,453,177"/>
+</map>

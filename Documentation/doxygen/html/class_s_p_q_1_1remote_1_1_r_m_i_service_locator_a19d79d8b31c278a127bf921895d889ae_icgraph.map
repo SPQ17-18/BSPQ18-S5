@@ -1,0 +1,29 @@
+<map id="SPQ.remote.RMIServiceLocator.getNeverEmptyServer" name="SPQ.remote.RMIServiceLocator.getNeverEmptyServer">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a0adc4a1885dcc8ef6fe53bd23ee2316a" title="SPQ.controller.NeverEmpty\lController.registerGoogle" alt="" coords="288,136,469,177"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ad766d360d5d5c69d6e6d5b2953b27fac" title="SPQ.controller.NeverEmpty\lController.registerFacebook" alt="" coords="288,71,469,112"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ad02b010ba25f24bf105fe7b4605e3de1" title="SPQ.controller.NeverEmpty\lController.registerNeverEmpty" alt="" coords="281,201,476,243"/>
+<area shape="rect" id="node11" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#adb8f5dbbfedb5f3c231de53dccc88899" title="SPQ.controller.NeverEmpty\lController.login" alt="" coords="541,267,722,308"/>
+<area shape="rect" id="node16" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ace99d4d39979b72d620871475a4817f9" title="SPQ.controller.NeverEmpty\lController.getProducts" alt="" coords="288,508,469,549"/>
+<area shape="rect" id="node18" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a4f799c7fc9ce32740ec45401fa6fd1b1" title="SPQ.controller.NeverEmpty\lController.getUser" alt="" coords="288,325,469,367"/>
+<area shape="rect" id="node21" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#aefc0dae2c43c2960719176d390f3ad9c" title="SPQ.controller.NeverEmpty\lController.payWithPayPal" alt="" coords="288,656,469,697"/>
+<area shape="rect" id="node24" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a79b4d6042b76ad3aee7f11d104d813d6" title="SPQ.controller.NeverEmpty\lController.payWithVisa" alt="" coords="288,591,469,632"/>
+<area shape="rect" id="node26" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#abac74fe36817d476abdd20d19df2092b" title="SPQ.controller.NeverEmpty\lController.updateUser" alt="" coords="288,408,469,449"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a409053f213651ce392699ee8c4f07e66" title="SPQ.gui.VentanaRegistro.\lComprobacionSignup" alt="" coords="544,136,719,177"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1_client_test.html#a5f10079da4053b4e2c183b715c246bfa" title="SPQ.ClientTest.testRegister\lUserGoogle" alt="" coords="538,71,725,112"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a40069db92c94222331b181f23744c14f" title="SPQ.gui.VentanaRegistro.\lVentanaRegistro" alt="" coords="802,136,977,177"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a8d80a5efba104ecaefab065592e23a68" title="SPQ.gui.VentanaRegistro.main" alt="" coords="1040,143,1243,170"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1_client_test.html#ae74ec6f1a9672b8dbffeaf89abe44bbd" title="SPQ.ClientTest.testRegister\lUserFacebook" alt="" coords="538,5,725,47"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1_client_test.html#ae5a5c27b65ff1dea107d913ea609cb0c" title="SPQ.ClientTest.testRegister\lUserNeverEmpty" alt="" coords="538,201,725,243"/>
+<area shape="rect" id="node12" href="$class_s_p_q_1_1gui_1_1_ventana_inicio.html#ab74166cbe23810e4b8586849fb86b54e" title="SPQ.gui.VentanaInicio.Ventana\lInicio" alt="" coords="787,208,992,249"/>
+<area shape="rect" id="node14" href="$class_s_p_q_1_1_client_test.html#a88728d2e3535750655d518d73f81e22b" title="SPQ.ClientTest.testLogin" alt="" coords="805,274,974,301"/>
+<area shape="rect" id="node15" href="$class_s_p_q_1_1_client_test.html#ac05d043ac92f1c1083d19eec58e5bbd9" title="SPQ.ClientTest.testLogin\lFails" alt="" coords="805,325,974,367"/>
+<area shape="rect" id="node13" href="$class_s_p_q_1_1gui_1_1_ventana_inicio.html#ab33d2c349f8f7475d2d6833e9bf75e76" title="SPQ.gui.VentanaInicio.main" alt="" coords="1049,215,1234,242"/>
+<area shape="rect" id="node17" href="$class_s_p_q_1_1_client_test.html#ab83877066a3bb92e514ca496cb96cdbf" title="SPQ.ClientTest.testGetProducts" alt="" coords="526,551,737,578"/>
+<area shape="rect" id="node19" href="$class_s_p_q_1_1_client_test.html#a611b894c9d3826db1d2104e2aae23267" title="SPQ.ClientTest.testGetUser" alt="" coords="538,333,725,359"/>
+<area shape="rect" id="node20" href="$class_s_p_q_1_1_client_test.html#ab6d14403cd66b3b0ab32f8022902588f" title="SPQ.ClientTest.testUpdateUser" alt="" coords="528,383,735,410"/>
+<area shape="rect" id="node22" href="$class_s_p_q_1_1gui_1_1_ventana_pago.html#a64947ae1b81ff8e561792d9db382b1f9" title="SPQ.gui.VentanaPago.action\lPerformed" alt="" coords="535,653,727,695"/>
+<area shape="rect" id="node23" href="$class_s_p_q_1_1_client_test.html#afe92931ed84ed471c853004681be4072" title="SPQ.ClientTest.testPayWith\lPayPal" alt="" coords="537,719,725,760"/>
+<area shape="rect" id="node25" href="$class_s_p_q_1_1_client_test.html#ae6f432ec2c9b37a231883ad94ffb624d" title="SPQ.ClientTest.testPayWithVisa" alt="" coords="524,602,739,629"/>
+<area shape="rect" id="node27" href="$class_s_p_q_1_1gui_1_1_ventana_perfil.html#ab3748a16025307c203ba1dd2c5385b23" title="SPQ.gui.VentanaPerfil.action\lPerformed" alt="" coords="536,485,727,527"/>
+<area shape="rect" id="node28" href="$class_s_p_q_1_1_client_test.html#acc91cf7e3927e95fc4515abeae043969" title="SPQ.ClientTest.restoreUser" alt="" coords="540,434,723,461"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SPQ.gateway.Facebook.register" name="SPQ.gateway.Facebook.register">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_never_empty_server.html#abf7e271e0edb91e8f8ed73063de74b03" title="SPQ.NeverEmptyServer.register\lFacebook" alt="" coords="264,5,471,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#aa9845001ecd5228135d64415a4c12b20" title="SPQ.remote.NeverEmptyFacade.register\lFacebook" alt="" coords="519,5,777,47"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_r_m_i_test.html#aaba807356f43d06d07e10da5ce5a53c6" title="SPQ.RMITest.registerUser\lFacebookTest" alt="" coords="825,5,1001,47"/>
+</map>

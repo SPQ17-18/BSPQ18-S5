@@ -1,0 +1,5 @@
+<map id="SPQ.dao.UserDAO.pay" name="SPQ.dao.UserDAO.pay">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1data_1_1_user.html#a4f3ae0062ee7529314a5b791707ff4b4" title="SPQ.data.User.getEmail" alt="" coords="219,5,384,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1data_1_1_user.html#a03cc880edbf4758b44318af1587824e5" title="SPQ.data.User.getBalance" alt="" coords="212,56,391,83"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1data_1_1_user.html#ab9b205d96fa6c53cc3956c2ddcc9c4a7" title="SPQ.data.User.setBalance" alt="" coords="212,107,391,133"/>
+</map>

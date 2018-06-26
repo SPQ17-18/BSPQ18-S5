@@ -1,0 +1,6 @@
+<map id="SPQ.data.User.updateUser" name="SPQ.data.User.updateUser">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#a525b7db52aab94cfe24aeac14949504e" title="SPQ.dao.UserDAO.updateUser" alt="" coords="233,5,437,32"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1_d_a_t_a_user_test.html#a04242b7156b6bb7828bd569de8027fad" title="SPQ.DATAUserTest.Ekaitztest" alt="" coords="234,56,437,83"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_never_empty_server.html#ad39f95ea2309841407f7e8b9e1b9f664" title="SPQ.NeverEmptyServer.updateUser" alt="" coords="485,5,716,32"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a55ad685d3c176424a7f5f18e5ebe043b" title="SPQ.remote.NeverEmptyFacade.updateUser" alt="" coords="764,5,1045,32"/>
+</map>

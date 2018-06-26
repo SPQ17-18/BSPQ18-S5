@@ -1,0 +1,9 @@
+<map id="SPQ.controller.NeverEmptyController.getUser" name="SPQ.controller.NeverEmptyController.getUser">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#adb8f5dbbfedb5f3c231de53dccc88899" title="SPQ.controller.NeverEmpty\lController.login" alt="" coords="247,64,429,105"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1_client_test.html#a611b894c9d3826db1d2104e2aae23267" title="SPQ.ClientTest.testGetUser" alt="" coords="245,130,431,157"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1_client_test.html#ab6d14403cd66b3b0ab32f8022902588f" title="SPQ.ClientTest.testUpdateUser" alt="" coords="235,181,441,207"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1gui_1_1_ventana_inicio.html#ab74166cbe23810e4b8586849fb86b54e" title="SPQ.gui.VentanaInicio.Ventana\lInicio" alt="" coords="489,5,695,47"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1_client_test.html#a88728d2e3535750655d518d73f81e22b" title="SPQ.ClientTest.testLogin" alt="" coords="507,71,677,98"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1_client_test.html#ac05d043ac92f1c1083d19eec58e5bbd9" title="SPQ.ClientTest.testLogin\lFails" alt="" coords="507,123,677,164"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1gui_1_1_ventana_inicio.html#ab33d2c349f8f7475d2d6833e9bf75e76" title="SPQ.gui.VentanaInicio.main" alt="" coords="743,13,928,39"/>
+</map>

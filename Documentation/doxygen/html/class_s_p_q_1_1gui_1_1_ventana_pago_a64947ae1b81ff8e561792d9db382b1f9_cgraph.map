@@ -1,0 +1,12 @@
+<map id="SPQ.gui.VentanaPago.actionPerformed" name="SPQ.gui.VentanaPago.actionPerformed">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ac6b9878caf6a1f22117adf18c5ca56b5" title="SPQ.controller.NeverEmpty\lController.getUserDTO" alt="" coords="266,5,447,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a42f2eecae334e6e937419b1c201cb1f2" title="SPQ.dto.UserDTO.getPayPal\lEmail" alt="" coords="260,71,453,112"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#ab024e5157674f9bc382edfda06c348ec" title="SPQ.dto.UserDTO.getPayPal\lPassword" alt="" coords="260,136,453,177"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#aefc0dae2c43c2960719176d390f3ad9c" title="SPQ.controller.NeverEmpty\lController.payWithPayPal" alt="" coords="266,201,447,243"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a6ffd8dce998a3e1756aa82e7b2981dd4" title="SPQ.dto.UserDTO.getCardNumber" alt="" coords="245,267,468,294"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a82fe9a242f18d3cb62735cee648e71d9" title="SPQ.dto.UserDTO.getCardholder" alt="" coords="250,318,463,345"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a79b4d6042b76ad3aee7f11d104d813d6" title="SPQ.controller.NeverEmpty\lController.payWithVisa" alt="" coords="266,369,447,411"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="521,285,749,327"/>
+<area shape="rect" id="node7" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a2d34c64f91537d8c7138094e418de785" title="SPQ.remote.INeverEmptyFacade.pay\lWithPaypal" alt="" coords="516,201,755,243"/>
+<area shape="rect" id="node11" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a3b7058d95e7b73bdcc09220ecfc2d744" title="SPQ.remote.INeverEmptyFacade.pay\lWithVisa" alt="" coords="516,369,755,411"/>
+</map>

@@ -1,12 +1,7 @@
-/** @package SPQ.gui
- 	@brief This is the brief documentation for the java package SPQ.gui
+/** 
+ * @package SPQ.gui
+ * @brief The SPQ.gui package contains the classes responsible for displaying the graphic user interface of the application.
  */
-
-/** @class VentanaPago class.h "inc/class.h" 
-* @brief This is a VentanaPago class.
-* Some details about the VentanaPago class 
-*/
-
 package SPQ.gui;
 
 import java.awt.Color;
@@ -33,7 +28,16 @@ import javax.swing.Timer;
 import SPQ.controller.NeverEmptyController;
 import SPQ.dto.PaymentDTO;
 import SPQ.dto.UserDTO;
-
+/** 
+ * @class VentanaPago
+ * @brief This window shows the last step to make a payment.
+ * VentanaPago has two modes: visa and paypal. Depending on the input attribute the form changes.
+ * On the top is always shown the shipping address that can be modified in "VentanaPerfil"
+ * The PayPal form consist of two fields: username and password.
+ * The VISA form consist of four fields: cardnumber, cardholder, expiration date and CVV.
+ * The left bottom button allows to use a new paypal user or visa data to pay. It calls "Animation" and transforms the form.
+ * The right bottom button calls the NeverEmptyController payWithPayPal(PaymentDTO) or payWithVisa(PaymentDTO) function.
+ */
 public class VentanaPago extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 1L;

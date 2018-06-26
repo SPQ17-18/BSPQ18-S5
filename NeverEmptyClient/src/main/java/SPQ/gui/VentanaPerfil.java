@@ -1,11 +1,7 @@
-/** @package SPQ.gui
- 	@brief This is the brief documentation for the java package SPQ.gui
+/** 
+ * @package SPQ.gui
+ * @brief The SPQ.gui package contains the classes responsible for displaying the graphic user interface of the application.
  */
-
-/** @class VentanaPerfil class.h "inc/class.h" 
-* @brief This is a VentanaPerfil class.
-* Some details about the VentanaPerfil class 
-*/
 
 package SPQ.gui;
 
@@ -30,7 +26,10 @@ import javax.swing.JPasswordField;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
-
+/** @class VentanaPerfil
+* @brief VentanaPerfil is a windows that shows the user profile data.
+* It has 4 sections: NeverEmpty profile data, shipping address, VISA data, PayPal data. On the bottom there is a button that allows the form editing.
+*/
 public class VentanaPerfil extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 1L;

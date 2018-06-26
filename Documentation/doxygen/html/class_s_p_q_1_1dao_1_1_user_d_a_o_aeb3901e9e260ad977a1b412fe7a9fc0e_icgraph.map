@@ -1,0 +1,14 @@
+<map id="SPQ.dao.UserDAO.getUser" name="SPQ.dao.UserDAO.getUser">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_facebook_service.html#a087e3aab2d870149c0ef74f3adf75efa" title="SPQ.FacebookService.readData" alt="" coords="238,5,447,32"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_google_service.html#a94e224618cc0433776bcb49bff80067f" title="SPQ.GoogleService.readData" alt="" coords="246,56,439,83"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1_never_empty_server.html#abb18bd0d72ecb8790068f206c592c58d" title="SPQ.NeverEmptyServer.getUser" alt="" coords="238,107,447,133"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1_never_empty_server.html#a79e3b01cc25be204f24e01c7fccbef13" title="SPQ.NeverEmptyServer.login" alt="" coords="247,157,438,184"/>
+<area shape="rect" id="node12" href="$class_s_p_q_1_1_d_a_o_mock_test.html#a52505d1cfefe105f8098147df9d2fce0" title="SPQ.DAOMockTest.testRegister\lUserCorrectly" alt="" coords="236,209,449,250"/>
+<area shape="rect" id="node13" href="$class_s_p_q_1_1_d_a_o_mock_test.html#a76004a006ddce595edc7011aafccbe7e" title="SPQ.DAOMockTest.testRegister\lUserAlreadyExists" alt="" coords="236,274,449,315"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_facebook_service.html#a24a62bc6a32966419548314bc417abfb" title="SPQ.FacebookService.run" alt="" coords="540,5,715,32"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1_google_service.html#aecd41a7e761dc392fc96e096547dc504" title="SPQ.GoogleService.run" alt="" coords="548,56,707,83"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a32679a25e12c8a33e84087de357cd616" title="SPQ.remote.NeverEmptyFacade.getUser" alt="" coords="497,107,757,133"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a3fdd96efa1256ea520a497b8a20578e8" title="SPQ.remote.NeverEmptyFacade.login" alt="" coords="506,157,749,184"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1_r_m_i_test.html#a07409afe054b3fd3ee0481236e45b680" title="SPQ.RMITest.loginNewUserTest" alt="" coords="805,128,1016,155"/>
+<area shape="rect" id="node11" href="$class_s_p_q_1_1_r_m_i_test.html#a0e9430910652b8ebeb99d2e871476ff1" title="SPQ.RMITest.loginExisting\lUserTest" alt="" coords="821,179,1001,221"/>
+</map>

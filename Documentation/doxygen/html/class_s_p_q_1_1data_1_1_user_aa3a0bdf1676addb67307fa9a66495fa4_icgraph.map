@@ -1,0 +1,10 @@
+<map id="SPQ.data.User.getPayPalPassword" name="SPQ.data.User.getPayPalPassword">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1data_1_1_user.html#ac472400b9deed770cf6f3591dc9e2886" title="SPQ.data.User.updateUser" alt="" coords="299,31,479,57"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a40cad7b1dea2117ed4cb0e69fdc6b929" title="SPQ.dto.UserDTO.UserDTO" alt="" coords="296,81,483,108"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1_cobertura_test.html#a638bd1485fb908cc3a97cda6f4d8a857" title="SPQ.CoberturaTest.test" alt="" coords="309,132,470,159"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1_d_a_t_a_user_test.html#a7defc94d9391e6721dee5c627f75e1fb" title="SPQ.DATAUserTest.Cristiantest" alt="" coords="284,183,495,209"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#a525b7db52aab94cfe24aeac14949504e" title="SPQ.dao.UserDAO.updateUser" alt="" coords="543,5,747,32"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1_d_a_t_a_user_test.html#a04242b7156b6bb7828bd569de8027fad" title="SPQ.DATAUserTest.Ekaitztest" alt="" coords="543,56,746,83"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_never_empty_server.html#ad39f95ea2309841407f7e8b9e1b9f664" title="SPQ.NeverEmptyServer.updateUser" alt="" coords="795,5,1025,32"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a55ad685d3c176424a7f5f18e5ebe043b" title="SPQ.remote.NeverEmptyFacade.updateUser" alt="" coords="1073,5,1355,32"/>
+</map>

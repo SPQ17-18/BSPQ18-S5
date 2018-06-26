@@ -1,0 +1,13 @@
+<map id="SPQ.gui.VentanaPerfil.VentanaPerfil" name="SPQ.gui.VentanaPerfil.VentanaPerfil">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_utilities.html#a1ca9779d00f9480c9c0ccb654c558fbb" title="SPQ.Utilities.getImageFrom\lResources" alt="" coords="277,5,461,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ac6b9878caf6a1f22117adf18c5ca56b5" title="SPQ.controller.NeverEmpty\lController.getUserDTO" alt="" coords="278,71,459,112"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a67038ab8bab7cb7119ece00bcb20a360" title="SPQ.dto.UserDTO.getEmail" alt="" coords="277,137,461,163"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a0cd335456c4f53b97069820475742980" title="SPQ.dto.UserDTO.getUsername" alt="" coords="263,187,474,214"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a955f436e60336683283a6fcd6fc5f874" title="SPQ.dto.UserDTO.getPassword" alt="" coords="265,238,473,265"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1gui_1_1_ventana_perfil.html#a65b1807fdef3dcfdaf5564d2148fc46d" title="SPQ.gui.VentanaPerfil.password\lModified" alt="" coords="263,289,474,331"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a5234f9e12bcda79c32c4aec80de40ad2" title="SPQ.dto.UserDTO.getAddress" alt="" coords="269,355,468,382"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a6ffd8dce998a3e1756aa82e7b2981dd4" title="SPQ.dto.UserDTO.getCardNumber" alt="" coords="257,406,480,433"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a82fe9a242f18d3cb62735cee648e71d9" title="SPQ.dto.UserDTO.getCardholder" alt="" coords="262,457,475,483"/>
+<area shape="rect" id="node11" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a42f2eecae334e6e937419b1c201cb1f2" title="SPQ.dto.UserDTO.getPayPal\lEmail" alt="" coords="272,508,465,549"/>
+<area shape="rect" id="node12" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#ab024e5157674f9bc382edfda06c348ec" title="SPQ.dto.UserDTO.getPayPal\lPassword" alt="" coords="272,573,465,615"/>
+</map>

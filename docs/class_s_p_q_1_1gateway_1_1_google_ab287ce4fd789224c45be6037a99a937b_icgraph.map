@@ -1,0 +1,7 @@
+<map id="SPQ.gateway.Google.register" name="SPQ.gateway.Google.register">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_never_empty_server.html#ac97355451c02fc378cb5d8f33f442ce6" title="SPQ.NeverEmptyServer.register\lGoogle" alt="" coords="248,71,455,112"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#aaa8d4a6148957029af068d00da24890b" title="SPQ.remote.NeverEmptyFacade.register\lGoogle" alt="" coords="503,71,761,112"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_r_m_i_test.html#ad375aaea37b3b8f68c670f4c09834a7b" title="SPQ.RMITest.registerGoogle\lExistingUserTest" alt="" coords="817,5,1008,47"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1_r_m_i_test.html#aebfcce491b9fa13cafa971bac73f88b8" title="SPQ.RMITest.registerFacebook\lExistingUserTest" alt="" coords="809,71,1016,112"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1_r_m_i_test.html#a18c26a1a1882c74b0ff9a0142c9492c8" title="SPQ.RMITest.registerUser\lGoogleTest" alt="" coords="825,136,1001,177"/>
+</map>

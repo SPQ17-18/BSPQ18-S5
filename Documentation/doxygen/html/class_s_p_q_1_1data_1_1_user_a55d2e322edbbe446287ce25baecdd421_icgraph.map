@@ -1,0 +1,17 @@
+<map id="SPQ.data.User.getUsername" name="SPQ.data.User.getUsername">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#a525b7db52aab94cfe24aeac14949504e" title="SPQ.dao.UserDAO.updateUser" alt="" coords="507,13,711,39"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#ad86d4148c7f3fd960fb32de7c68f3f6a" title="SPQ.dao.UserDAO.storeUser" alt="" coords="252,173,447,199"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1_d_a_o_mock_test.html#a52505d1cfefe105f8098147df9d2fce0" title="SPQ.DAOMockTest.testRegister\lUserCorrectly" alt="" coords="503,115,716,156"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1_d_a_o_mock_test.html#a76004a006ddce595edc7011aafccbe7e" title="SPQ.DAOMockTest.testRegister\lUserAlreadyExists" alt="" coords="503,232,716,273"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1data_1_1_user.html#ac472400b9deed770cf6f3591dc9e2886" title="SPQ.data.User.updateUser" alt="" coords="259,63,439,90"/>
+<area shape="rect" id="node11" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a40cad7b1dea2117ed4cb0e69fdc6b929" title="SPQ.dto.UserDTO.UserDTO" alt="" coords="256,274,443,301"/>
+<area shape="rect" id="node12" href="$class_s_p_q_1_1_cobertura_test.html#a638bd1485fb908cc3a97cda6f4d8a857" title="SPQ.CoberturaTest.test" alt="" coords="269,325,430,351"/>
+<area shape="rect" id="node13" href="$class_s_p_q_1_1_d_a_t_a_user_test.html#a29a15c9122a588e854a02c6c2fe1d203" title="SPQ.DATAUserTest.Jesustest" alt="" coords="249,375,449,402"/>
+<area shape="rect" id="node14" href="$class_s_p_q_1_1_d_a_t_a_user_test.html#a9d47696cb1887a6d5712f0e9beae2182" title="SPQ.DATAUserTest.Alvarotest" alt="" coords="249,426,450,453"/>
+<area shape="rect" id="node15" href="$class_s_p_q_1_1_d_a_t_a_user_test.html#a84d1c3d3992383e1cb93d07241cf3f02" title="SPQ.DATAUserTest.Enaratest" alt="" coords="249,477,449,503"/>
+<area shape="rect" id="node16" href="$class_s_p_q_1_1_d_a_t_a_user_test.html#a7defc94d9391e6721dee5c627f75e1fb" title="SPQ.DATAUserTest.Cristiantest" alt="" coords="244,527,455,554"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_never_empty_server.html#ad39f95ea2309841407f7e8b9e1b9f664" title="SPQ.NeverEmptyServer.updateUser" alt="" coords="764,13,995,39"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a55ad685d3c176424a7f5f18e5ebe043b" title="SPQ.remote.NeverEmptyFacade.updateUser" alt="" coords="1043,13,1324,39"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1_r_m_i_test.html#a76a8f88205d4a70c8ed81ee03ab7fa45" title="SPQ.RMITest.tearDown" alt="" coords="529,181,689,207"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1_d_a_t_a_user_test.html#a04242b7156b6bb7828bd569de8027fad" title="SPQ.DATAUserTest.Ekaitztest" alt="" coords="508,63,711,90"/>
+</map>

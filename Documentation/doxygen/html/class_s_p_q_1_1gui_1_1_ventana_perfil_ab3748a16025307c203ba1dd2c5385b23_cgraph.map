@@ -1,0 +1,8 @@
+<map id="SPQ.gui.VentanaPerfil.actionPerformed" name="SPQ.gui.VentanaPerfil.actionPerformed">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ac6b9878caf6a1f22117adf18c5ca56b5" title="SPQ.controller.NeverEmpty\lController.getUserDTO" alt="" coords="253,5,434,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#ab2180112e27f967d77dd4696f88bd2ef" title="SPQ.dto.UserDTO.getRegister\lMethod" alt="" coords="244,71,443,112"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#abac74fe36817d476abdd20d19df2092b" title="SPQ.controller.NeverEmpty\lController.updateUser" alt="" coords="253,136,434,177"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a847c0288b7c18327d81c092f8c234d01" title="SPQ.controller.NeverEmpty\lController.setUserDTO" alt="" coords="253,201,434,243"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="519,107,747,148"/>
+<area shape="rect" id="node6" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#add6dafb25f59c549e924c76c6e8f31c6" title="SPQ.remote.INeverEmptyFacade.updateUser" alt="" coords="491,173,775,199"/>
+</map>

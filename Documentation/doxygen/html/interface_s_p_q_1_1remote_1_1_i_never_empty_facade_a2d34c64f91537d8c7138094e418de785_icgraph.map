@@ -1,0 +1,5 @@
+<map id="SPQ.remote.INeverEmptyFacade.payWithPaypal" name="SPQ.remote.INeverEmptyFacade.payWithPaypal">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#aefc0dae2c43c2960719176d390f3ad9c" title="SPQ.controller.NeverEmpty\lController.payWithPayPal" alt="" coords="292,39,473,80"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1gui_1_1_ventana_pago.html#a64947ae1b81ff8e561792d9db382b1f9" title="SPQ.gui.VentanaPago.action\lPerformed" alt="" coords="521,5,713,47"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_client_test.html#afe92931ed84ed471c853004681be4072" title="SPQ.ClientTest.testPayWith\lPayPal" alt="" coords="523,71,711,112"/>
+</map>

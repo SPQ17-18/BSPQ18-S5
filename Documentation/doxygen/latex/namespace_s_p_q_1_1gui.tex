@@ -9,29 +9,27 @@ The \mbox{\hyperlink{namespace_s_p_q_1_1gui}{S\+P\+Q.\+gui}} package contains th
 \begin{DoxyCompactItemize}
 \item 
 package \mbox{\hyperlink{namespace_s_p_q_1_1gui_1_1component}{component}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{namespace_s_p_q_1_1gui_1_1component}{S\+P\+Q.\+gui.\+component}} consist of G\+UI tiny components that are used by other G\+UI bigger components as windows. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_inicio}{Ventana\+Inicio}}
 \begin{DoxyCompactList}\small\item\em This is the first window of the application. It contains a form with username and password fields to login. And two buttons\+: Login and Sign Up. The login button (b\+Login) calls the login function of the controller and sends the form data. The sign up (b\+Sign\+Up) button calls \char`\"{}\+Ventana\+Seleccionar\+Registro\char`\"{} window. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_metodo_pago}{Ventana\+Metodo\+Pago}}
-\begin{DoxyCompactList}\small\item\em This is the main window of the application. It contains two lists\+: the catalog list with all the products and the shoppingcart list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This window contains two main buttons, paypal (b\+Paypal) button and visa button (b\+Visa). Both of them call \char`\"{}\+Ventana\+Pago\char`\"{} but b\+Pay\+Pal passes \char`\"{}paypal\char`\"{} String to \char`\"{}\+Ventana\+Pago\char`\"{} and b\+Visa \char`\"{}visa\char`\"{}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_pago}{Ventana\+Pago}}
-\item 
+\begin{DoxyCompactList}\small\item\em This window shows the last step to make a payment. \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_pago}{Ventana\+Pago}} has two modes\+: visa and paypal. Depending on the input attribute the form changes. On the top is always shown the shipping address that can be modified in \char`\"{}\+Ventana\+Perfil\char`\"{} The Pay\+Pal form consist of two fields\+: username and password. The V\+I\+SA form consist of four fields\+: cardnumber, cardholder, expiration date and C\+VV. The left bottom button allows to use a new paypal user or visa data to pay. It calls \char`\"{}\+Animation\char`\"{} and transforms the form. The right bottom button calls the Never\+Empty\+Controller pay\+With\+Pay\+Pal(\+Payment\+D\+T\+O) or pay\+With\+Visa(\+Payment\+D\+T\+O) function. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_perfil}{Ventana\+Perfil}}
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_perfil}{Ventana\+Perfil}} is a windows that shows the user profile data. It has 4 sections\+: Never\+Empty profile data, shipping address, V\+I\+SA data, Pay\+Pal data. On the bottom there is a button that allows the form editing. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_principal}{Ventana\+Principal}}
-\item 
+\begin{DoxyCompactList}\small\item\em This is the main window of the application. It contains two lists\+: the catalog list with all the products and the shoppingcart list. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_registro}{Ventana\+Registro}}
-\item 
+\begin{DoxyCompactList}\small\item\em This window shows the form to sign\+Up on Never\+Empty. The form has 4 fields\+: username, password, repeat password and email. It is the only information needed to sign up in Never\+Empty. When the register button is pressed the Never\+Empty\+Controller login function is called, the form data and the register method is passed to the controller. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_seleccionar_registro}{Ventana\+Seleccionar\+Registro}}
-\item 
+\begin{DoxyCompactList}\small\item\em This window shows the options available to sign up. There are three sign up options\+: Sign up with google, facebook or Never\+Empty. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_s_p_q_1_1gui_1_1_ventana_ticket}{Ventana\+Ticket}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This window shows the list of products added to the shopping list, with its respective prices and the total amount in a table. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 The \mbox{\hyperlink{namespace_s_p_q_1_1gui}{S\+P\+Q.\+gui}} package contains the classes responsible for displaying the graphic user interface of the application. 
-
-This is the brief documentation for the java package \mbox{\hyperlink{namespace_s_p_q_1_1gui}{S\+P\+Q.\+gui}}. 

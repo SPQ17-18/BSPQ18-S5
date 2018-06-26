@@ -1,0 +1,5 @@
+<map id="SPQ.gui.VentanaPago" name="SPQ.gui.VentanaPago">
+<area shape="rect" id="node7" href="$class_s_p_q_1_1gui_1_1_ventana_metodo_pago.html" title="This window contains two main buttons, paypal (bPaypal) button and visa button (bVisa). Both of them call &quot;VentanaPago&quot; but bPayPal passes &quot;paypal&quot; String to &quot;VentanaPago&quot; and bVisa &quot;visa&quot;. " alt="" coords="227,525,423,552"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1gui_1_1_ventana_ticket.html" title="This window shows the list of products added to the shopping list, with its respective prices and the..." alt="" coords="246,369,405,395"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1gui_1_1_ventana_principal.html" title="This is the main window of the application. It contains two lists: the catalog list with all the prod..." alt="" coords="384,197,557,224"/>
+</map>
