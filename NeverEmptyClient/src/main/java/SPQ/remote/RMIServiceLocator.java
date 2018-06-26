@@ -1,28 +1,29 @@
-/** @package SPQ.remote
- 	@brief This is the brief documentation for the java package SPQ.remote
+/** 
+ * @package SPQ.remote
+ * @brief The SPQ.remote contains the RMI service locator.
  */
-
-/** @class RMIServiceLocator class.h "inc/class.h" 
-* @brief This is a RMIServiceLocator class.
-* Some details about the RMIServiceLocator class 
-*/
-
 package SPQ.remote;
 import org.apache.log4j.Logger;
-
-//import SPQ.NeverEmptyServer;
 import SPQ.remote.INeverEmptyFacade;
-public class RMIServiceLocator {
-	
-	static Logger logger = Logger.getLogger(RMIServiceLocator.class.getName());
-	
-	private INeverEmptyFacade iNeverEmptyFacade;
 
+/** 
+ * @class RMIServiceLocator
+ * @brief RMIServiceLocator prepares the connection to the server side by founding the NeverEmptyFacade in the rmi registry.
+ */
+public class RMIServiceLocator {
+
+	static Logger logger = Logger.getLogger(RMIServiceLocator.class.getName());
+
+	private INeverEmptyFacade iNeverEmptyFacade;
 
 	public INeverEmptyFacade getNeverEmptyServer() {
 		return this.iNeverEmptyFacade;
 	}
 
+	/**
+	 * Prepares the connection to the server side by finding the NeverEmptyFacade in the rmi registry.
+	 * @param args
+	 */
 	public void setService(String[] args) {
 		logger.info(args[0] + " " + args[1] + " " + args[2]);
 		try {
@@ -32,5 +33,5 @@ public class RMIServiceLocator {
 		} catch (Exception e) {
 			logger.error("setService throwed an exception: " + e.getMessage());
 		}
-}
+	}
 }

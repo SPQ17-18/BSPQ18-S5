@@ -1,11 +1,7 @@
-/** @package SPQ.gui
- 	@brief This is the brief documentation for the java package SPQ.gui
+/** 
+ * @package SPQ.gui
+ * @brief The SPQ.gui package contains the classes responsible for displaying the graphic user interface of the application.
  */
-
-/** @class VentanaMetodoPago class.h "inc/class.h" 
-* @brief This is a VentanaMetodoPago class.
-* Some details about the VentanaMetodoPago class 
-*/
 package SPQ.gui;
 import java.awt.Color;
 import java.awt.Font;
@@ -23,10 +19,8 @@ import SPQ.controller.NeverEmptyController;
 
 /** 
  * @class VentanaMetodoPago
- * @brief This is the main window of the application. It contains two lists: the catalog list with all the products and the shoppingcart list.
- * 
- * The login button (bLogin) calls the login function of the controller and sends the form data.
- * The sign up (bSignUp) button calls "VentanaSeleccionarRegistro" window.
+ * @brief This window contains two main buttons, paypal (bPaypal) button and visa button (bVisa).
+ *  Both of them call "VentanaPago" but bPayPal passes "paypal" String to "VentanaPago" and bVisa "visa".
  */
 public class VentanaMetodoPago extends JFrame implements ActionListener{
 

@@ -1,12 +1,7 @@
-/** @package SPQ.component
- 	@brief This is the brief documentation for the java package SPQ.component
+/** 
+ * @package SPQ.gui.component
+ * @brief The SPQ.gui.component consist of GUI tiny components that are used by other GUI bigger components as windows.
  */
-
-/** @class ProductLabel class.h "inc/class.h" 
-* @brief This is a ProductLabel class.
-* Some details about the ProductLabel class 
-*/
-
 package SPQ.gui.component;
 
 
@@ -28,7 +23,11 @@ import javax.swing.SwingConstants;
 import SPQ.Utilities;
 import SPQ.gui.VentanaPrincipal;
 
-
+/** 
+ * @class ProductLabel
+ * @brief This component extends JPanel. Represents one product.
+ * ProductLabel consists of four labels: product name, price, sale (if > 0%), quantity; and two buttons:  to increase the quantity by one and to subtract by one.
+ */
 public class ProductLabel extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;

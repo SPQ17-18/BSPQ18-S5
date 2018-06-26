@@ -1,3 +1,7 @@
+/** 
+ * @package SPQ
+ * @brief This SPQ package is the client testing root package. Contains the client tests.
+ */
 package SPQ;
 
 import static org.junit.Assert.*;
@@ -15,12 +19,19 @@ import SPQ.remote.RMIServiceLocator;
 import SPQ.controller.*;
 import org.apache.log4j.Logger;
 
+/** 
+ * @class ClientTest
+ * @brief ClientTest contains the junit tests of the client side.
+ */
 public class ClientTest {
 
 	static Logger logger = Logger.getLogger(ClientTest.class.getName());
 
 	private NeverEmptyController nc;
 
+	/**
+	 * Prepares the class for testing instantiating the NeverEmptyController attribute. 
+	 */
 	@Before
 	public void setUp(){
 
@@ -39,7 +50,9 @@ public class ClientTest {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * Tests the exception control of the setting up from RMIServiceLocator passing wrong arguments.
+	 */
 	@Test
 	public void testSetUpBadArguments() {
 		logger.info("Testing setting up with bad arguments.");
@@ -60,7 +73,9 @@ public class ClientTest {
 		}
 	
 	}
-	
+	/**
+	 * Tests getting products from the server.
+	 */
 	@Test
 	public void testGetProducts() {
 		logger.info("Testing getting products.");
@@ -71,6 +86,9 @@ public class ClientTest {
 		}
 	}
 
+	/**
+	 * Tests getting a user from the server.
+	 */
 	@Test
 	public void testGetUser() {
 		logger.info("Testing getting user.");
@@ -82,6 +100,9 @@ public class ClientTest {
 		}
 	}
 
+	/**
+	 * Tests a payment with PayPal
+	 */
 	@Test
 	public void testPayWithPayPal () {
 		logger.info("Testing paying with PayPal.");
@@ -93,6 +114,9 @@ public class ClientTest {
 		}
 	}
 
+	/**
+	 * Tests a payment with VISA
+	 */
 	@Test
 	public void testPayWithVisa () {
 		logger.info("Testing paying with PayPal.");
@@ -104,6 +128,9 @@ public class ClientTest {
 		}
 	}
 	
+	/**
+	 * Tests the update of an existing user.
+	 */
 	@Test
 	public void testUpdateUser () {
 		UserDTO udto = new UserDTO("updated", "arosa001@gmail.com", "updated", "Google", "updated", "updated", "updated", 1111222233334444L, "updated");
@@ -124,6 +151,9 @@ public class ClientTest {
 		
 	}
 	
+	/**
+	 * Restores a previous user to maintain the database as it was before the testing.
+	 */
 	@After
 	public void restoreUser () {
 		UserDTO udto = new UserDTO("Alvaro", "arosa001@gmail.com", "1234", "Google", null, null, null, -1, null);
@@ -134,7 +164,9 @@ public class ClientTest {
 			logger.error(e.getMessage());
 		}
 	}
-
+	/**
+	 * Tests a signing up with the NeverEmpty method.
+	 */
 	@Test
 	public void testRegisterUserNeverEmpty() {
 		try {
@@ -146,6 +178,9 @@ public class ClientTest {
 		}
 	}
 
+	/**
+	 * Tests a signing up with Google method.
+	 */
 	@Test
 	public void testRegisterUserGoogle() {
 		try {
@@ -156,7 +191,10 @@ public class ClientTest {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * Tests a signing up with Facebook method.
+	 */
 	@Test
 	public void testRegisterUserFacebook() {
 		try {
@@ -168,6 +206,9 @@ public class ClientTest {
 		}
 	}
 
+	/**
+	 * Tests a signing in into the application.
+	 */
 	@Test
 	public void testLogin() {
 
@@ -181,6 +222,9 @@ public class ClientTest {
 		assertEquals(true, response);
 	}
 
+	/**
+	 * Tests a signing in with wrong user data. It is expected to fail.
+	 */
 	@Test
 	public void testLoginFails() {
 		boolean response = false;

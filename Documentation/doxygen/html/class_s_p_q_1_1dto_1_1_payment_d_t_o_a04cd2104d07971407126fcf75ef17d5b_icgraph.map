@@ -1,0 +1,6 @@
+<map id="SPQ.dto.PaymentDTO.getTotal" name="SPQ.dto.PaymentDTO.getTotal">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_paypal_service.html#aae478af6069bf1ffa928b09f2a91328d" title="SPQ.PaypalService.readData" alt="" coords="257,5,449,32"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_visa_service.html#a9f06022375e8bd98b78a8268bdc4ff05" title="SPQ.VisaService.readData" alt="" coords="264,56,443,83"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_paypal_service.html#a05e65efee1bcfa26a215ea48b7c8696a" title="SPQ.PaypalService.run" alt="" coords="497,5,656,32"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1_visa_service.html#a4e9434dfb98d1ff247d29794ac96909e" title="SPQ.VisaService.run" alt="" coords="505,56,649,83"/>
+</map>

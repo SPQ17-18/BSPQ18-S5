@@ -1,14 +1,9 @@
-/** @package SPQ.gui
- 	@brief This is the brief documentation for the java package SPQ.gui
+/** 
+ * @package SPQ.gui
+ * @brief The SPQ.gui package contains the classes responsible for displaying the graphic user interface of the application.
  */
 
-/** @class VentanaPrincipal class.h "inc/class.h" 
-* @brief This is a VentanaPrincipal class.
-* Some details about the VentanaPrincipal class 
-*/
-
 package SPQ.gui;
-
 
 import java.awt.Color;
 import java.awt.Component;
@@ -38,6 +33,14 @@ import SPQ.gui.component.ProductLabel;
 import org.apache.log4j.Logger;
 
 
+/** 
+ * @class VentanaPrincipal
+ * @brief This is the main window of the application. It contains two lists: the catalog list with all the products and the shoppingcart list.
+ * 
+ * The profile button (bProfile) calls "VentanaPerfil"
+ * The sales filter button (bSales) filters the catalog list to show only products with discount.
+ * The buy button (bBuy) calls "VentanaTicket"
+ */
 public class VentanaPrincipal extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 1L;

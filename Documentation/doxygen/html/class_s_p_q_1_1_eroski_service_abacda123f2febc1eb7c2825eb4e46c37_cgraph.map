@@ -1,0 +1,5 @@
+<map id="SPQ.EroskiService.run" name="SPQ.EroskiService.run">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_eroski_service.html#a89fa3f97cdca647e3c6d6606e5dc2443" title="SPQ.EroskiService.readData" alt="" coords="231,5,420,32"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1dto_1_1_product_d_t_o.html#a4b7df5983f4342285d495a335fb9019f" title="SPQ.dto.ProductDTO.getProductList" alt="" coords="208,56,443,83"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1dao_1_1_product_d_a_o.html#addd0016628e2b0db06969de5a944eace" title="SPQ.dao.ProductDAO.getProducts" alt="" coords="491,5,717,32"/>
+</map>

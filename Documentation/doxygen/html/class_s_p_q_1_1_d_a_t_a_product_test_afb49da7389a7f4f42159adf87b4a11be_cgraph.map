@@ -1,0 +1,10 @@
+<map id="SPQ.DATAProductTest.ProductTest" name="SPQ.DATAProductTest.ProductTest">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1data_1_1_product.html#a257a5e290694db0588a9ac9aad598360" title="SPQ.data.Product.setName" alt="" coords="293,5,477,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1data_1_1_product.html#a6a12ed828fa7745b6bc8f5f2bc5dd014" title="SPQ.data.Product.setPrice" alt="" coords="295,56,475,83"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1data_1_1_product.html#a057c7298cb6575a0d709f3fe2bf73ea7" title="SPQ.data.Product.setQuantity" alt="" coords="285,107,484,133"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1data_1_1_product.html#ab7714f5e5a6f1b0a293ad7140c351c3c" title="SPQ.data.Product.setSale" alt="" coords="297,157,473,184"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1data_1_1_product.html#a03b62c19f01f4c231b742de9eba2ed25" title="SPQ.data.Product.getName" alt="" coords="293,208,477,235"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1data_1_1_product.html#ad8200addd74d2e3b6ea9cfff4e8b8c7e" title="SPQ.data.Product.getPrice" alt="" coords="295,259,475,285"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1data_1_1_product.html#a1bcbc2a00b31563677cea1ab4cb8095c" title="SPQ.data.Product.getQuantity" alt="" coords="285,309,484,336"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1data_1_1_product.html#a07ba2dea61bb96215609776cc4d7058d" title="SPQ.data.Product.getSale" alt="" coords="297,360,473,387"/>
+</map>

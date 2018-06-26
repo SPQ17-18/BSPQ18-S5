@@ -1,0 +1,20 @@
+<map id="SPQ.dto.UserDTO.getUsername" name="SPQ.dto.UserDTO.getUsername">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1data_1_1_user.html#af8e381901a649027950a0b0f8b22a235" title="SPQ.data.User.User" alt="" coords="305,5,446,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1gui_1_1_ventana_perfil.html#a16166538d7497a79cdc1e383ae852ac1" title="SPQ.gui.VentanaPerfil.Ventana\lPerfil" alt="" coords="273,57,477,98"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_client_test.html#ab6d14403cd66b3b0ab32f8022902588f" title="SPQ.ClientTest.testUpdateUser" alt="" coords="272,123,479,149"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1_never_empty_server.html#ac97355451c02fc378cb5d8f33f442ce6" title="SPQ.NeverEmptyServer.register\lGoogle" alt="" coords="272,174,479,215"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1_never_empty_server.html#abf7e271e0edb91e8f8ed73063de74b03" title="SPQ.NeverEmptyServer.register\lFacebook" alt="" coords="272,239,479,281"/>
+<area shape="rect" id="node13" href="$class_s_p_q_1_1_never_empty_server.html#abb18bd0d72ecb8790068f206c592c58d" title="SPQ.NeverEmptyServer.getUser" alt="" coords="271,305,480,332"/>
+<area shape="rect" id="node15" href="$class_s_p_q_1_1_never_empty_server.html#a79e3b01cc25be204f24e01c7fccbef13" title="SPQ.NeverEmptyServer.login" alt="" coords="280,356,471,383"/>
+<area shape="rect" id="node19" href="$class_s_p_q_1_1_d_a_t_a_user_test.html#a4feb113d2b2971c37851e1b6bddca741" title="SPQ.DATAUserTest.UserDTOTest" alt="" coords="264,407,487,433"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#aaa8d4a6148957029af068d00da24890b" title="SPQ.remote.NeverEmptyFacade.register\lGoogle" alt="" coords="535,142,794,183"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1_r_m_i_test.html#ad375aaea37b3b8f68c670f4c09834a7b" title="SPQ.RMITest.registerGoogle\lExistingUserTest" alt="" coords="853,59,1043,101"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1_r_m_i_test.html#aebfcce491b9fa13cafa971bac73f88b8" title="SPQ.RMITest.registerFacebook\lExistingUserTest" alt="" coords="845,125,1051,166"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1_r_m_i_test.html#a18c26a1a1882c74b0ff9a0142c9492c8" title="SPQ.RMITest.registerUser\lGoogleTest" alt="" coords="860,190,1036,231"/>
+<area shape="rect" id="node11" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#aa9845001ecd5228135d64415a4c12b20" title="SPQ.remote.NeverEmptyFacade.register\lFacebook" alt="" coords="535,239,794,281"/>
+<area shape="rect" id="node12" href="$class_s_p_q_1_1_r_m_i_test.html#aaba807356f43d06d07e10da5ce5a53c6" title="SPQ.RMITest.registerUser\lFacebookTest" alt="" coords="860,255,1036,297"/>
+<area shape="rect" id="node14" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a32679a25e12c8a33e84087de357cd616" title="SPQ.remote.NeverEmptyFacade.getUser" alt="" coords="535,305,795,332"/>
+<area shape="rect" id="node16" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a3fdd96efa1256ea520a497b8a20578e8" title="SPQ.remote.NeverEmptyFacade.login" alt="" coords="543,356,786,383"/>
+<area shape="rect" id="node17" href="$class_s_p_q_1_1_r_m_i_test.html#a07409afe054b3fd3ee0481236e45b680" title="SPQ.RMITest.loginNewUserTest" alt="" coords="843,339,1053,365"/>
+<area shape="rect" id="node18" href="$class_s_p_q_1_1_r_m_i_test.html#a0e9430910652b8ebeb99d2e871476ff1" title="SPQ.RMITest.loginExisting\lUserTest" alt="" coords="858,390,1038,431"/>
+</map>

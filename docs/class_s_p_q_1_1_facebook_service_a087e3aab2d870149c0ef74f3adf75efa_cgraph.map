@@ -1,0 +1,6 @@
+<map id="SPQ.FacebookService.readData" name="SPQ.FacebookService.readData">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a67038ab8bab7cb7119ece00bcb20a360" title="SPQ.dto.UserDTO.getEmail" alt="" coords="275,5,459,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a955f436e60336683283a6fcd6fc5f874" title="SPQ.dto.UserDTO.getPassword" alt="" coords="263,56,471,83"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#aeb3901e9e260ad977a1b412fe7a9fc0e" title="SPQ.dao.UserDAO.getUser" alt="" coords="275,107,458,133"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1data_1_1_user.html#a688c1eadd21594d52967d87289e23ce2" title="SPQ.data.User.getPassword" alt="" coords="272,157,461,184"/>
+</map>

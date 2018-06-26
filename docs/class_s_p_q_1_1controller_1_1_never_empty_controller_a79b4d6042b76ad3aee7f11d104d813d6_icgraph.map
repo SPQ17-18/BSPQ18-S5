@@ -1,0 +1,4 @@
+<map id="SPQ.controller.NeverEmptyController.payWithVisa" name="SPQ.controller.NeverEmptyController.payWithVisa">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1gui_1_1_ventana_pago.html#a64947ae1b81ff8e561792d9db382b1f9" title="SPQ.gui.VentanaPago.action\lPerformed" alt="" coords="246,5,438,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_client_test.html#ae6f432ec2c9b37a231883ad94ffb624d" title="SPQ.ClientTest.testPayWithVisa" alt="" coords="235,71,449,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SPQ.NeverEmptyServer.login" name="SPQ.NeverEmptyServer.login">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#a3fdd96efa1256ea520a497b8a20578e8" title="SPQ.remote.NeverEmptyFacade.login" alt="" coords="244,35,487,61"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_r_m_i_test.html#a07409afe054b3fd3ee0481236e45b680" title="SPQ.RMITest.loginNewUserTest" alt="" coords="535,5,745,32"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_r_m_i_test.html#a0e9430910652b8ebeb99d2e871476ff1" title="SPQ.RMITest.loginExisting\lUserTest" alt="" coords="550,57,730,98"/>
+</map>

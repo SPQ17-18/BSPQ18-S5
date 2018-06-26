@@ -1,0 +1,10 @@
+<map id="SPQ.PaypalService.run" name="SPQ.PaypalService.run">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_paypal_service.html#aae478af6069bf1ffa928b09f2a91328d" title="SPQ.PaypalService.readData" alt="" coords="212,81,404,108"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1dto_1_1_payment_d_t_o.html#a31d0edbb3ec64b406e70cd3deaa5ab1a" title="SPQ.dto.PaymentDTO.getUsername" alt="" coords="452,5,687,32"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1dto_1_1_payment_d_t_o.html#ae012449dd0baea7f169bb64dcf973dec" title="SPQ.dto.PaymentDTO.getPassword" alt="" coords="453,56,686,83"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#a8223c677b1ae55147860ea533be434a7" title="SPQ.dao.UserDAO.pay" alt="" coords="490,107,649,133"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1dto_1_1_payment_d_t_o.html#a04cd2104d07971407126fcf75ef17d5b" title="SPQ.dto.PaymentDTO.getTotal" alt="" coords="467,157,671,184"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1data_1_1_user.html#a4f3ae0062ee7529314a5b791707ff4b4" title="SPQ.data.User.getEmail" alt="" coords="741,56,907,83"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1data_1_1_user.html#a03cc880edbf4758b44318af1587824e5" title="SPQ.data.User.getBalance" alt="" coords="735,107,913,133"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1data_1_1_user.html#ab9b205d96fa6c53cc3956c2ddcc9c4a7" title="SPQ.data.User.setBalance" alt="" coords="735,157,913,184"/>
+</map>

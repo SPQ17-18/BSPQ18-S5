@@ -1,0 +1,5 @@
+<map id="SPQ.ClientTest.testPayWithPayPal" name="SPQ.ClientTest.testPayWithPayPal">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#aefc0dae2c43c2960719176d390f3ad9c" title="SPQ.controller.NeverEmpty\lController.payWithPayPal" alt="" coords="241,39,423,80"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="476,5,704,47"/>
+<area shape="rect" id="node4" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a2d34c64f91537d8c7138094e418de785" title="SPQ.remote.INeverEmptyFacade.pay\lWithPaypal" alt="" coords="471,71,709,112"/>
+</map>

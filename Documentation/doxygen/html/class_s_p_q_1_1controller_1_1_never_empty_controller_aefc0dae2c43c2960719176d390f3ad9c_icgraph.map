@@ -1,0 +1,4 @@
+<map id="SPQ.controller.NeverEmptyController.payWithPayPal" name="SPQ.controller.NeverEmptyController.payWithPayPal">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1gui_1_1_ventana_pago.html#a64947ae1b81ff8e561792d9db382b1f9" title="SPQ.gui.VentanaPago.action\lPerformed" alt="" coords="235,5,427,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_client_test.html#afe92931ed84ed471c853004681be4072" title="SPQ.ClientTest.testPayWith\lPayPal" alt="" coords="237,71,425,112"/>
+</map>

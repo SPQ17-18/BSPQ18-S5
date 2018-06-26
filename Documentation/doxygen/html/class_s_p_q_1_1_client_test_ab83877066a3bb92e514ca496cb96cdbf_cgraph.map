@@ -1,0 +1,5 @@
+<map id="SPQ.ClientTest.testGetProducts" name="SPQ.ClientTest.testGetProducts">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ace99d4d39979b72d620871475a4817f9" title="SPQ.controller.NeverEmpty\lController.getProducts" alt="" coords="264,39,445,80"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="497,5,725,47"/>
+<area shape="rect" id="node4" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a62d4a1747b8ba90f451fc9f9343055f3" title="SPQ.remote.INeverEmptyFacade.get\lProducts" alt="" coords="493,71,729,112"/>
+</map>

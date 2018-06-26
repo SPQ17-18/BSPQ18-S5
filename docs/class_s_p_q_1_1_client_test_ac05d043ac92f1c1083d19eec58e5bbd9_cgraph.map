@@ -1,0 +1,7 @@
+<map id="SPQ.ClientTest.testLoginFails" name="SPQ.ClientTest.testLoginFails">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#adb8f5dbbfedb5f3c231de53dccc88899" title="SPQ.controller.NeverEmpty\lController.login" alt="" coords="223,31,404,72"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="763,5,991,47"/>
+<area shape="rect" id="node4" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a2440fa36695c63e4e4c30fc25965f853" title="SPQ.remote.INeverEmptyFacade.login" alt="" coords="452,38,697,65"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a4f799c7fc9ce32740ec45401fa6fd1b1" title="SPQ.controller.NeverEmpty\lController.getUser" alt="" coords="484,89,665,131"/>
+<area shape="rect" id="node6" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#aa329dfc23ab0832e73802bf2df90b9e0" title="SPQ.remote.INeverEmptyFacade.getUser" alt="" coords="745,97,1008,123"/>
+</map>

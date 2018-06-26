@@ -1,0 +1,6 @@
+<map id="SPQ.remote.NeverEmptyFacade.getUser" name="SPQ.remote.NeverEmptyFacade.getUser">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_never_empty_server.html#abb18bd0d72ecb8790068f206c592c58d" title="SPQ.NeverEmptyServer.getUser" alt="" coords="313,56,523,83"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#aeb3901e9e260ad977a1b412fe7a9fc0e" title="SPQ.dao.UserDAO.getUser" alt="" coords="585,5,767,32"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a0cd335456c4f53b97069820475742980" title="SPQ.dto.UserDTO.getUsername" alt="" coords="571,56,781,83"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a955f436e60336683283a6fcd6fc5f874" title="SPQ.dto.UserDTO.getPassword" alt="" coords="572,107,780,133"/>
+</map>

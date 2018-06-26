@@ -1,0 +1,5 @@
+<map id="SPQ.DAOMockTest.testRegisterUserCorrectly" name="SPQ.DAOMockTest.testRegisterUserCorrectly">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#aeb3901e9e260ad977a1b412fe7a9fc0e" title="SPQ.dao.UserDAO.getUser" alt="" coords="273,5,455,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#ad86d4148c7f3fd960fb32de7c68f3f6a" title="SPQ.dao.UserDAO.storeUser" alt="" coords="267,56,461,83"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1data_1_1_user.html#a55d2e322edbbe446287ce25baecdd421" title="SPQ.data.User.getUsername" alt="" coords="509,81,700,108"/>
+</map>

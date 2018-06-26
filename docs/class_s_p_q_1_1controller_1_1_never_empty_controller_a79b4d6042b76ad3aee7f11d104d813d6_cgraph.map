@@ -1,0 +1,4 @@
+<map id="SPQ.controller.NeverEmptyController.payWithVisa" name="SPQ.controller.NeverEmptyController.payWithVisa">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="240,5,468,47"/>
+<area shape="rect" id="node3" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a3b7058d95e7b73bdcc09220ecfc2d744" title="SPQ.remote.INeverEmptyFacade.pay\lWithVisa" alt="" coords="235,71,473,112"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="SPQ.gui.VentanaInicio.main" name="SPQ.gui.VentanaInicio.main">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1gui_1_1_ventana_inicio.html#ab74166cbe23810e4b8586849fb86b54e" title="SPQ.gui.VentanaInicio.Ventana\lInicio" alt="" coords="239,71,444,112"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_utilities.html#a1ca9779d00f9480c9c0ccb654c558fbb" title="SPQ.Utilities.getImageFrom\lResources" alt="" coords="495,5,679,47"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#adb8f5dbbfedb5f3c231de53dccc88899" title="SPQ.controller.NeverEmpty\lController.login" alt="" coords="497,71,678,112"/>
+<area shape="rect" id="node9" href="$class_s_p_q_1_1gui_1_1_ventana_inicio.html#a0588d157580852e153c5dd2291645173" title="SPQ.gui.VentanaInicio.iniciar\lAplicacion" alt="" coords="492,136,683,177"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="1041,45,1269,87"/>
+<area shape="rect" id="node6" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a2440fa36695c63e4e4c30fc25965f853" title="SPQ.remote.INeverEmptyFacade.login" alt="" coords="731,78,976,105"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a4f799c7fc9ce32740ec45401fa6fd1b1" title="SPQ.controller.NeverEmpty\lController.getUser" alt="" coords="763,129,944,171"/>
+<area shape="rect" id="node8" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#aa329dfc23ab0832e73802bf2df90b9e0" title="SPQ.remote.INeverEmptyFacade.getUser" alt="" coords="1024,137,1287,163"/>
+</map>

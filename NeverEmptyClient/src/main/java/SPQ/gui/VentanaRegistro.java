@@ -1,12 +1,7 @@
-/** @package SPQ.gui
- 	@brief This is the brief documentation for the java package SPQ.gui
+/** 
+ * @package SPQ.gui
+ * @brief The SPQ.gui package contains the classes responsible for displaying the graphic user interface of the application.
  */
-
-/** @class VentanaRegistro class.h "inc/class.h" 
-* @brief This is a VentanaRegistro class.
-* Some details about the VentanaRegistro class 
-*/
-
 package SPQ.gui;
 
 import java.awt.Color;
@@ -27,7 +22,12 @@ import SPQ.controller.NeverEmptyController;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import org.apache.log4j.Logger;
-
+/** 
+ * @class VentanaRegistro
+ * @brief This window shows the form to signUp on NeverEmpty.
+ * The form has 4 fields: username, password, repeat password and email. It is the only information needed to sign up in NeverEmpty.
+ * When the register button is pressed the NeverEmptyController login function is called, the form data and the register method is passed to the controller.
+ */
 public class VentanaRegistro extends JFrame{
 
 	private static final long serialVersionUID = 1L;

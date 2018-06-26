@@ -1,0 +1,5 @@
+<map id="SPQ.controller.NeverEmptyController.updateUser" name="SPQ.controller.NeverEmptyController.updateUser">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1gui_1_1_ventana_perfil.html#ab3748a16025307c203ba1dd2c5385b23" title="SPQ.gui.VentanaPerfil.action\lPerformed" alt="" coords="243,5,433,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_client_test.html#ab6d14403cd66b3b0ab32f8022902588f" title="SPQ.ClientTest.testUpdateUser" alt="" coords="235,71,441,98"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_client_test.html#acc91cf7e3927e95fc4515abeae043969" title="SPQ.ClientTest.restoreUser" alt="" coords="247,122,429,149"/>
+</map>

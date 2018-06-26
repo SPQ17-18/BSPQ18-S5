@@ -1,0 +1,8 @@
+<map id="SPQ.RMITest.registerFacebookExistingUserTest" name="SPQ.RMITest.registerFacebookExistingUserTest">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1remote_1_1_never_empty_facade.html#aaa8d4a6148957029af068d00da24890b" title="SPQ.remote.NeverEmptyFacade.register\lGoogle" alt="" coords="260,74,519,115"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_never_empty_server.html#ac97355451c02fc378cb5d8f33f442ce6" title="SPQ.NeverEmptyServer.register\lGoogle" alt="" coords="567,74,773,115"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1gateway_1_1_google.html#ab287ce4fd789224c45be6037a99a937b" title="SPQ.gateway.Google.register" alt="" coords="829,5,1024,32"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a0cd335456c4f53b97069820475742980" title="SPQ.dto.UserDTO.getUsername" alt="" coords="821,56,1032,83"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a67038ab8bab7cb7119ece00bcb20a360" title="SPQ.dto.UserDTO.getEmail" alt="" coords="835,107,1019,133"/>
+<area shape="rect" id="node7" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html#a955f436e60336683283a6fcd6fc5f874" title="SPQ.dto.UserDTO.getPassword" alt="" coords="823,157,1031,184"/>
+</map>

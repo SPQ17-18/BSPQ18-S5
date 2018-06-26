@@ -1,0 +1,5 @@
+<map id="SPQ.data.User.getBalance" name="SPQ.data.User.getBalance">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1dao_1_1_user_d_a_o.html#a8223c677b1ae55147860ea533be434a7" title="SPQ.dao.UserDAO.pay" alt="" coords="232,5,391,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1_paypal_service.html#aae478af6069bf1ffa928b09f2a91328d" title="SPQ.PaypalService.readData" alt="" coords="439,5,631,32"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1_paypal_service.html#a05e65efee1bcfa26a215ea48b7c8696a" title="SPQ.PaypalService.run" alt="" coords="679,5,837,32"/>
+</map>

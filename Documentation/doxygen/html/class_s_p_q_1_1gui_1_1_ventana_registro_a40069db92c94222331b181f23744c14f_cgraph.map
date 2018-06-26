@@ -1,0 +1,12 @@
+<map id="SPQ.gui.VentanaRegistro.VentanaRegistro" name="SPQ.gui.VentanaRegistro.VentanaRegistro">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1_utilities.html#a1ca9779d00f9480c9c0ccb654c558fbb" title="SPQ.Utilities.getImageFrom\lResources" alt="" coords="245,5,429,47"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1gui_1_1_ventana_registro.html#ac33d30ad4e6980a453a3a6c3de20f468" title="SPQ.gui.VentanaRegistro.finalizar\lRegistro" alt="" coords="228,71,447,112"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1gui_1_1_ventana_registro.html#a409053f213651ce392699ee8c4f07e66" title="SPQ.gui.VentanaRegistro.\lComprobacionSignup" alt="" coords="250,136,425,177"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#a0adc4a1885dcc8ef6fe53bd23ee2316a" title="SPQ.controller.NeverEmpty\lController.registerGoogle" alt="" coords="501,136,683,177"/>
+<area shape="rect" id="node8" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ad766d360d5d5c69d6e6d5b2953b27fac" title="SPQ.controller.NeverEmpty\lController.registerFacebook" alt="" coords="501,71,683,112"/>
+<area shape="rect" id="node10" href="$class_s_p_q_1_1controller_1_1_never_empty_controller.html#ad02b010ba25f24bf105fe7b4605e3de1" title="SPQ.controller.NeverEmpty\lController.registerNeverEmpty" alt="" coords="495,201,689,243"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1remote_1_1_r_m_i_service_locator.html#a19d79d8b31c278a127bf921895d889ae" title="SPQ.remote.RMIServiceLocator.get\lNeverEmptyServer" alt="" coords="754,103,982,144"/>
+<area shape="rect" id="node7" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a93f3250c09a26fdb1d65219599dfd542" title="SPQ.remote.INeverEmptyFacade.register\lGoogle" alt="" coords="737,168,999,209"/>
+<area shape="rect" id="node9" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a7b2f025522489fe9070d09a4fb08f0a1" title="SPQ.remote.INeverEmptyFacade.register\lFacebook" alt="" coords="737,37,999,79"/>
+<area shape="rect" id="node11" href="$interface_s_p_q_1_1remote_1_1_i_never_empty_facade.html#a7867e1e698fea32a535a1daeda4e8d6a" title="SPQ.remote.INeverEmptyFacade.register\lNeverEmpty" alt="" coords="737,233,999,275"/>
+</map>

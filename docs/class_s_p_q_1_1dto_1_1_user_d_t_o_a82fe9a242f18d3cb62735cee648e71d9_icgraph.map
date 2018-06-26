@@ -1,0 +1,6 @@
+<map id="SPQ.dto.UserDTO.getCardholder" name="SPQ.dto.UserDTO.getCardholder">
+<area shape="rect" id="node2" href="$class_s_p_q_1_1data_1_1_user.html#af8e381901a649027950a0b0f8b22a235" title="SPQ.data.User.User" alt="" coords="299,5,441,32"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1gui_1_1_ventana_pago.html#a64947ae1b81ff8e561792d9db382b1f9" title="SPQ.gui.VentanaPago.action\lPerformed" alt="" coords="274,57,466,98"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1gui_1_1_ventana_perfil.html#a16166538d7497a79cdc1e383ae852ac1" title="SPQ.gui.VentanaPerfil.Ventana\lPerfil" alt="" coords="268,122,472,163"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1_client_test.html#ab6d14403cd66b3b0ab32f8022902588f" title="SPQ.ClientTest.testUpdateUser" alt="" coords="267,188,473,215"/>
+</map>
