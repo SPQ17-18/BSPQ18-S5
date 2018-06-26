@@ -17,11 +17,12 @@ import javax.jdo.Transaction;
 
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
-
+import org.databene.contiperf.junit.ContiPerfRule;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 
 import SPQ.dao.UserDAO;
@@ -33,6 +34,9 @@ import junit.framework.JUnit4TestAdapter;
 
 public class RMITest {
 
+	@Rule
+	public ContiPerfRule contiperfRule = new ContiPerfRule();
+	
 	private static String cwd = RMITest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
 	private static Thread rmiRegistryThread = null;
 	private static Thread rmiServerThread = null;
@@ -137,7 +141,7 @@ public class RMITest {
 	 * Test Login con un usuario no registrado
 	 */	
 	@Test
-	@Required(totalTime = 500)
+	@Required(totalTime = 600)
 	public void loginNewUserTest() {
 		logger.info("loginNewUserTest");
 		boolean resul=false;
@@ -163,7 +167,7 @@ public class RMITest {
 	
 	@Test
 	@PerfTest(invocations = 100, threads = 10)
-	@Required(max = 1000, average = 1000)
+	@Required(max = 10000, average = 4000)
 	public void loginExistingUserTest() {
 		logger.info("loginExistingUserTest");
 		boolean resul = false;
@@ -183,7 +187,8 @@ public class RMITest {
 	
 	
 	@Test
-	@Required(throughput = 20000)
+	@PerfTest(threads = 20, duration = 2000)
+	@Required(average = 5000, max = 10000, throughput = 2)
 	public void registerGoogleExistingUserTest() {
 		logger.info("registerGoogleExistingUserTest");
 		boolean resul=false;
@@ -204,7 +209,7 @@ public class RMITest {
 	}
 	
 	@Test
-	@Required(throughput = 30000)
+	@Required(throughput = 1)
 	public void registerFacebookExistingUserTest() {
 		logger.info("registerFacebookExistingUserTest");
 		boolean resul=false;
