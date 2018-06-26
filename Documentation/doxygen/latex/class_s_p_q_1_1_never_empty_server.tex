@@ -2,8 +2,12 @@
 \label{class_s_p_q_1_1_never_empty_server}\index{S\+P\+Q.\+Never\+Empty\+Server@{S\+P\+Q.\+Never\+Empty\+Server}}
 
 
-Inheritance diagram for S\+P\+Q.\+Never\+Empty\+Server\+:
-\nopagebreak
+This class contains the methods that register and login a user, and recover information about them.  
+
+
+
+
+Inheritance diagram for S\+P\+Q.\+Never\+Empty\+Server\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for S\+P\+Q.\+Never\+Empty\+Server\+:
 \end{figure}
 
 
-Collaboration diagram for S\+P\+Q.\+Never\+Empty\+Server\+:
-\nopagebreak
+Collaboration diagram for S\+P\+Q.\+Never\+Empty\+Server\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -49,9 +52,9 @@ boolean \mbox{\hyperlink{class_s_p_q_1_1_never_empty_server_ad39f95ea2309841407f
 
 
 \subsection{Detailed Description}
+This class contains the methods that register and login a user, and recover information about them. 
 
-
-Definition at line 21 of file Never\+Empty\+Server.\+java.
+Definition at line 28 of file Never\+Empty\+Server.\+java.
 
 
 
@@ -64,7 +67,7 @@ Definition at line 21 of file Never\+Empty\+Server.\+java.
 
 
 
-Definition at line 23 of file Never\+Empty\+Server.\+java.
+Definition at line 30 of file Never\+Empty\+Server.\+java.
 
 
 
@@ -75,24 +78,25 @@ Definition at line 23 of file Never\+Empty\+Server.\+java.
 \subsubsection{\texorpdfstring{get\+Products()}{getProducts()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_s_p_q_1_1dto_1_1_product_d_t_o}{Product\+D\+TO}} S\+P\+Q.\+Never\+Empty\+Server.\+get\+Products (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+This method ask to the never\+Empty server for the complete list of products \begin{DoxyReturn}{Returns}
+the complete list of products that the server contains 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_s_p_q_1_1remote_1_1_i_never_empty_facade_a62d4a1747b8ba90f451fc9f9343055f3}{S\+P\+Q.\+remote.\+I\+Never\+Empty\+Facade}}.
 
 
 
-Definition at line 89 of file Never\+Empty\+Server.\+java.
+Definition at line 124 of file Never\+Empty\+Server.\+java.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_s_p_q_1_1_never_empty_server_ad8c5a0afa259c6b8bcc2eb2444742ca2_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -111,18 +115,16 @@ Implements \mbox{\hyperlink{interface_s_p_q_1_1remote_1_1_i_never_empty_facade_a
 
 
 
-Definition at line 70 of file Never\+Empty\+Server.\+java.
+Definition at line 94 of file Never\+Empty\+Server.\+java.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_s_p_q_1_1_never_empty_server_abb18bd0d72ecb8790068f206c592c58d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -135,24 +137,30 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{login()}{login()}}
 {\footnotesize\ttfamily boolean S\+P\+Q.\+Never\+Empty\+Server.\+login (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}}}]{user }\end{DoxyParamCaption})}
 
+This method login a user into server 
+\begin{DoxyParams}{Parameters}
+{\em User\+D\+TO} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if name and password coincide, false if not 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_s_p_q_1_1remote_1_1_i_never_empty_facade_a2440fa36695c63e4e4c30fc25965f853}{S\+P\+Q.\+remote.\+I\+Never\+Empty\+Facade}}.
 
 
 
-Definition at line 77 of file Never\+Empty\+Server.\+java.
+Definition at line 107 of file Never\+Empty\+Server.\+java.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_s_p_q_1_1_never_empty_server_a79e3b01cc25be204f24e01c7fccbef13_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -165,24 +173,30 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{pay\+With\+Paypal()}{payWithPaypal()}}
 {\footnotesize\ttfamily boolean S\+P\+Q.\+Never\+Empty\+Server.\+pay\+With\+Paypal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_payment_d_t_o}{Payment\+D\+TO}}}]{payment\+D\+TO }\end{DoxyParamCaption})}
 
+This method allows a user to pay with his paypal account 
+\begin{DoxyParams}{Parameters}
+{\em payment\+D\+TO} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the payment connect correctly, false if not 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_s_p_q_1_1remote_1_1_i_never_empty_facade_a2d34c64f91537d8c7138094e418de785}{S\+P\+Q.\+remote.\+I\+Never\+Empty\+Facade}}.
 
 
 
-Definition at line 102 of file Never\+Empty\+Server.\+java.
+Definition at line 143 of file Never\+Empty\+Server.\+java.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_s_p_q_1_1_never_empty_server_a954ea8c563055eae79564b357e557f85_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -195,24 +209,30 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{pay\+With\+Visa()}{payWithVisa()}}
 {\footnotesize\ttfamily boolean S\+P\+Q.\+Never\+Empty\+Server.\+pay\+With\+Visa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_payment_d_t_o}{Payment\+D\+TO}}}]{payment\+D\+TO }\end{DoxyParamCaption})}
 
+This method allows a user to pay with his visa account 
+\begin{DoxyParams}{Parameters}
+{\em payment\+D\+TO} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the payment connect correctly, false if not 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_s_p_q_1_1remote_1_1_i_never_empty_facade_a3b7058d95e7b73bdcc09220ecfc2d744}{S\+P\+Q.\+remote.\+I\+Never\+Empty\+Facade}}.
 
 
 
-Definition at line 114 of file Never\+Empty\+Server.\+java.
+Definition at line 161 of file Never\+Empty\+Server.\+java.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_s_p_q_1_1_never_empty_server_a455fa773e66917007842f9a92243ffa8_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -225,24 +245,30 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{register\+Facebook()}{registerFacebook()}}
 {\footnotesize\ttfamily boolean S\+P\+Q.\+Never\+Empty\+Server.\+register\+Facebook (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}}}]{user\+D\+TO }\end{DoxyParamCaption})}
 
+This methods allows register an user with his facebook account 
+\begin{DoxyParams}{Parameters}
+{\em Usert\+D\+TO} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a user with username, email, password and the string \char`\"{}facebook\char`\"{} 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_s_p_q_1_1remote_1_1_i_never_empty_facade_a7b2f025522489fe9070d09a4fb08f0a1}{S\+P\+Q.\+remote.\+I\+Never\+Empty\+Facade}}.
 
 
 
-Definition at line 45 of file Never\+Empty\+Server.\+java.
+Definition at line 61 of file Never\+Empty\+Server.\+java.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_s_p_q_1_1_never_empty_server_abf7e271e0edb91e8f8ed73063de74b03_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -255,24 +281,30 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{register\+Google()}{registerGoogle()}}
 {\footnotesize\ttfamily boolean S\+P\+Q.\+Never\+Empty\+Server.\+register\+Google (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}}}]{user\+D\+TO }\end{DoxyParamCaption})}
 
+This method allows to register an user with his google account 
+\begin{DoxyParams}{Parameters}
+{\em User\+D\+TO} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a user with username, email, password and the string \char`\"{}google\char`\"{} 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_s_p_q_1_1remote_1_1_i_never_empty_facade_a93f3250c09a26fdb1d65219599dfd542}{S\+P\+Q.\+remote.\+I\+Never\+Empty\+Facade}}.
 
 
 
-Definition at line 31 of file Never\+Empty\+Server.\+java.
+Definition at line 43 of file Never\+Empty\+Server.\+java.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_s_p_q_1_1_never_empty_server_ac97355451c02fc378cb5d8f33f442ce6_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -285,16 +317,28 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{register\+Never\+Empty()}{registerNeverEmpty()}}
 {\footnotesize\ttfamily boolean S\+P\+Q.\+Never\+Empty\+Server.\+register\+Never\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}}}]{user\+D\+TO }\end{DoxyParamCaption}) throws Remote\+Exception}
 
+This method pick up all information about a user and register it into \mbox{\hyperlink{class_s_p_q_1_1_never_empty_server}{Never\+Empty\+Server}} moves the information to User\+D\+AO to send it to server 
+\begin{DoxyParams}{Parameters}
+{\em User\+D\+TO} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the information is send to server return true, if not return false 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em remote\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 
 
 Implements \mbox{\hyperlink{interface_s_p_q_1_1remote_1_1_i_never_empty_facade_a7867e1e698fea32a535a1daeda4e8d6a}{S\+P\+Q.\+remote.\+I\+Never\+Empty\+Facade}}.
 
 
 
-Definition at line 58 of file Never\+Empty\+Server.\+java.
+Definition at line 82 of file Never\+Empty\+Server.\+java.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -307,24 +351,34 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{update\+User()}{updateUser()}}
 {\footnotesize\ttfamily boolean S\+P\+Q.\+Never\+Empty\+Server.\+update\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_p_q_1_1dto_1_1_user_d_t_o}{User\+D\+TO}}}]{user\+D\+TO }\end{DoxyParamCaption})}
 
+This method allows a user to change their credentials except mail 
+\begin{DoxyParams}{Parameters}
+{\em User\+D\+TO} & \\
+\hline
+{\em username} & \\
+\hline
+{\em password} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new user with the new credentials 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_s_p_q_1_1remote_1_1_i_never_empty_facade_add6dafb25f59c549e924c76c6e8f31c6}{S\+P\+Q.\+remote.\+I\+Never\+Empty\+Facade}}.
 
 
 
-Definition at line 126 of file Never\+Empty\+Server.\+java.
+Definition at line 180 of file Never\+Empty\+Server.\+java.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_s_p_q_1_1_never_empty_server_ad39f95ea2309841407f7e8b9e1b9f664_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -8,8 +8,9 @@ import java.io.Serializable;
 import SPQ.data.User;
 
 
-/**This class prepare the object to be transferable
- *
+/** 
+ * @class UserDTO
+ * @brief This class prepares a user to be transferred.
  */
 public class UserDTO implements Serializable{
 	

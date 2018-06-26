@@ -1,4 +1,5 @@
-/**@package SPQ.data
+/**
+ * @package SPQ.data
  * This package contains the classes that define the object user and product, their parameters and their constructors
  */
 package SPQ.data;
@@ -12,6 +13,10 @@ import javax.jdo.annotations.PersistenceCapable;
 
 import SPQ.dto.UserDTO;
 
+/**
+ * @class User
+ * @brief This class defines a User
+ */
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
 public class User {

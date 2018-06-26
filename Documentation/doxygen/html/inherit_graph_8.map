@@ -1,7 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node2" href="$class_s_p_q_1_1data_1_1_product.html" title="SPQ.data.Product" alt="" coords="156,5,284,32"/>
-<area shape="rect" id="node3" href="$class_s_p_q_1_1data_1_1_user.html" title="SPQ.data.User" alt="" coords="165,56,275,83"/>
-<area shape="rect" id="node4" href="$class_s_p_q_1_1dto_1_1_payment_d_t_o.html" title="SPQ.dto.PaymentDTO" alt="" coords="143,107,297,133"/>
-<area shape="rect" id="node5" href="$class_s_p_q_1_1dto_1_1_product_d_t_o.html" title="SPQ.dto.ProductDTO" alt="" coords="147,157,293,184"/>
-<area shape="rect" id="node6" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html" title="SPQ.dto.UserDTO" alt="" coords="155,208,285,235"/>
+<area shape="rect" id="node3" href="$class_s_p_q_1_1data_1_1_user.html" title="This class defines a User. " alt="" coords="165,56,275,83"/>
+<area shape="rect" id="node4" href="$class_s_p_q_1_1dto_1_1_payment_d_t_o.html" title="This class prepares a payment to be transferred. " alt="" coords="143,107,297,133"/>
+<area shape="rect" id="node5" href="$class_s_p_q_1_1dto_1_1_product_d_t_o.html" title="This class prepares a product to be transferred. " alt="" coords="147,157,293,184"/>
+<area shape="rect" id="node6" href="$class_s_p_q_1_1dto_1_1_user_d_t_o.html" title="This class prepares a user to be transferred. " alt="" coords="155,208,285,235"/>
 </map>

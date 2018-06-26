@@ -11,6 +11,10 @@ import org.apache.log4j.Logger;
 
 import SPQ.remote.INeverEmptyFacade;
 
+/**
+ * @class NeverEmptyServerManager
+ * @brief This class contains the main method to execute the server side.
+ */
 public class NeverEmptyServerManager  {
 	
 	static Logger logger = Logger.getLogger(NeverEmptyServerManager.class.getName());

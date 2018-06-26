@@ -5,6 +5,10 @@ package SPQ.dto;
 
 import java.io.Serializable;
 
+/** 
+ * @class PaymentDTO
+ * @brief This class prepares a payment to be transferred.
+ */
 public class PaymentDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	

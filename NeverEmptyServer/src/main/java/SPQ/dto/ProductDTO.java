@@ -9,6 +9,10 @@ import java.util.ArrayList;
 
 import SPQ.data.Product;
 
+/** 
+ * @class ProductDTO
+ * @brief This class prepares a product to be transferred.
+ */
 public class ProductDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

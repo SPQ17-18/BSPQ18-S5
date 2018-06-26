@@ -1,24 +1,26 @@
 # BSPQ18-S5
 Repository for Team BSPQ18-S5
 
-DESCRIPCION:
+DESCRIPCIÓN:
 
-Nuestro proyecto consiste en una compra de comida online. Esta estructura como un proyecto de maven Cliente-Servidor.
+Nuestro proyecto consiste en una compra de comida online. Está estructurada como un proyecto de maven Cliente-Servidor.
 
-La parte cliente la delimita la carpeta: NeverEmptyCliet.
+La parte de cliente se encuentra en la carpeta: NeverEmptyClient.
 
-La parte servidora la delimitan las carpetas: NeverEmptyServer, EroskiService, FacebookService, GoogleService, PaypalService y VisaService.
+La parte servidor se encuentra en la carpeta: NeverEmptyServer.
+
+Los servicios con los que se conecta el servidor son: EroskiService, FacebookService, GoogleService, PaypalService y VisaService.
 
 PARA EJECUTAR EL PROYECTO:
 
 1º Para compilar: mvn clean compile
 
-2º 
+2º  2.1) Para ejecutar cualquier servicio ir a la carpeta x y ejecutar: mvn exec:java -Pserver 
 
-   2.1) Para ejecutar el cliente: mvn exec:java -Pclient
-
-   2.2) Para ejecutar el servidor: mvn exec:java -Pserver
-
+	2.2) Para ejecutar el servidor ir a la carpeta NeverEmptyServer y ejecutar: mvn exec:java -Pserver
+	
+	2.3) Para ejecutar el cliente ir a la carpeta NeverEmptyClient y ejecutar: mvn exec:java -Pclient
+   
 3º Para los test: mvn test
 
    Este comando generará el report Contiperf

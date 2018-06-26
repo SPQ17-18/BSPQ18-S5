@@ -20,7 +20,8 @@ import SPQ.gateway.PayPal;
 import SPQ.gateway.Visa;
 import SPQ.remote.INeverEmptyFacade;
 
-/**class NeverEmptySwrver
+/**
+ * @class NeverEmptyServer
  * @brief This class contains the methods that register and login a user, and recover information about them
  */
 
